@@ -1,10 +1,10 @@
 name: tests
 
 on:
-  pull_request:
   push:
-    branches:
-      - master
+  pull_request:
+  schedule:
+    - cron: '0 0 * * *'
 
 jobs:
   ecs:
@@ -37,4 +37,9 @@ jobs:
         run: composer update --prefer-stable --prefer-dist --no-interaction
 
       - name: Execute tests
-        run: vendor/bin/phpunit -- --coverage-clover coverage.xml
+        run: vendor/bin/phpunit --coverage-clover coverage.xml
+
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
