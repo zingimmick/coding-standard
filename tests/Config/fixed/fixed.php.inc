@@ -1,8 +1,6 @@
 <?php
 
-declare(strict_types=1);
-
-namespace Zing\CodingStandard\Tests\PhpCsFixer;
+namespace Zing\CodingStandard\Tests\Config;
 
 class Foo
 {

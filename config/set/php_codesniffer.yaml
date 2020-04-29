@@ -10,7 +10,8 @@ services:
   PHP_CodeSniffer\Standards\PSR12\Sniffs\Files\FileHeaderSniff: ~
   PHP_CodeSniffer\Standards\PSR12\Sniffs\Files\OpenTagSniff: ~
   PHP_CodeSniffer\Standards\PSR12\Sniffs\Files\DeclareStatementSniff: ~
-  PHP_CodeSniffer\Standards\PSR12\Sniffs\Functions\NullableTypeDeclarationSniff: ~
+#  报错
+#  PHP_CodeSniffer\Standards\PSR12\Sniffs\Functions\NullableTypeDeclarationSniff: ~
   PHP_CodeSniffer\Standards\PSR12\Sniffs\Functions\ReturnTypeDeclarationSniff: ~
   PHP_CodeSniffer\Standards\PSR12\Sniffs\ControlStructures\ControlStructureSpacingSniff: ~
   PHP_CodeSniffer\Standards\PSR12\Sniffs\ControlStructures\BooleanOperatorPlacementSniff: ~

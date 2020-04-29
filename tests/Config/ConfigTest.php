@@ -13,7 +13,6 @@ class ConfigTest extends TestCase
         $this->doTestFiles(
             [
                 [__DIR__ . '/wrong/wrong.php.inc', __DIR__ . '/fixed/fixed.php.inc'],
-            // 2 items in array → wrong to fixed
             ]
         );
     }
