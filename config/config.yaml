@@ -24,8 +24,6 @@ services:
       - 'constant_public'
       - 'constant_protected'
       - 'constant_private'
-  PhpCsFixer\Fixer\PhpUnit\PhpUnitMethodCasingFixer:
-    case: snake_case
   PhpCsFixer\Fixer\Operator\IncrementStyleFixer:
     style: post
 
