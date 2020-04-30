@@ -180,6 +180,7 @@ parameters:
     SlevomatCodingStandard\Sniffs\TypeHints\ReturnTypeHintSniff.MissingAnyTypeHint: ~
     SlevomatCodingStandard\Sniffs\TypeHints\ReturnTypeHintSniff.MissingNativeTypeHint: ~
     SlevomatCodingStandard\Sniffs\TypeHints\ReturnTypeHintSniff.UselessAnnotation: ~
+    SlevomatCodingStandard\Sniffs\TypeHints\ReturnTypeHintSniff.SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingNativeTypeHint: ~
     SlevomatCodingStandard\Sniffs\TypeHints\PropertyTypeHintSniff.MissingTraversableTypeHintSpecification: ~
     SlevomatCodingStandard\Sniffs\TypeHints\PropertyTypeHintSniff.MissingAnyTypeHint: ~
     SlevomatCodingStandard\Sniffs\TypeHints\PropertyTypeHintSniff.MissingNativeTypeHint: ~
@@ -207,3 +208,5 @@ parameters:
     SlevomatCodingStandard\Sniffs\Classes\UnusedPrivateElementsSniff.UnusedMethod: ~
     SlevomatCodingStandard\Sniffs\Commenting\UselessFunctionDocCommentSniff.UselessDocComment: ~
     PHP_CodeSniffer\Standards\Squiz\Sniffs\WhiteSpace\ControlStructureSpacingSniff.LineAfterClose: ~
+    PHP_CodeSniffer\Standards\PSR12\Sniffs\Traits\UseDeclarationSniff.UseAfterBrace: ~
+    PHP_CodeSniffer\Standards\PSR12\Sniffs\Classes\AnonClassDeclarationSniff.SpaceAfterKeyword: ~
