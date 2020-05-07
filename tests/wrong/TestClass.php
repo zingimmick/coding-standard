@@ -1,9 +1,8 @@
 <?php
 
 
-namespace Zing\CodingStandard\Tests\PhpCsFixer;
-
-class Foo
+namespace Zing\CodingStandard\Tests\wrong;
+class TestClass
 {public const A = 1;
 
     /**
@@ -11,7 +10,7 @@ class Foo
      * @param $b
      * @return string
      */
-    function a($a,$b){
+   public function a($a,$b){
 
         return  $a+$b;
     }

@@ -24,5 +24,12 @@
     "psr-4": {
       "Zing\\CodingStandard\\Tests\\": "tests"
     }
+  },
+  "scripts": {
+    "test": [
+      "cp -R tests/wrong/* tests/fixed/",
+      "vendor/bin/ecs check --fix --clear-cache",
+      "vendor/bin/phpunit"
+    ]
   }
 }
