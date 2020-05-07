@@ -1,3 +1,5 @@
+!.gitkeep
 vendor/
 composer.lock
 .php_cs.cache
+tests/fixed

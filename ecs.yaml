@@ -12,3 +12,5 @@ parameters:
   paths:
     - config
     - tests
+  exclude_files:
+    - tests/wrong/*.php

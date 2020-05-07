@@ -1,17 +1,12 @@
 <?php
 
+declare(strict_types=1);
 
-namespace Zing\CodingStandard\Tests\Config;
+namespace Zing\CodingStandard\Tests\wrong;
 
-class Foo
+class TestClass
 {
     public const A = 1;
-
-    public const ARRAY = [
-        'a', 'b' => [
-            'd' => 1,
-        ], 'c',
-    ];
 
     /**
      * @param $a
