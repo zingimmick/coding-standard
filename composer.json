@@ -13,7 +13,7 @@
   },
   "require-dev": {
     "roave/security-advisories": "dev-master",
-    "symplify/easy-coding-standard-tester": "^7.2"
+    "phpunir/phpunit": "^7.0|^8.0|^9.0"
   },
   "autoload": {
     "psr-4": {

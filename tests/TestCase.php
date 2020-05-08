@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Zing\CodingStandard\Tests;
 
-class TestCase extends \PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase as BaseTestCase;
+
+class TestCase extends BaseTestCase
 {
 }
