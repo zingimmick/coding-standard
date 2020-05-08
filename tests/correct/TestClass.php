@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Zing\CodingStandard\Tests;
 
-class TestClass
+class TestClass implements TestableContract
 {
     use Testable;
 
@@ -28,5 +28,9 @@ class TestClass
     public function concat($a)
     {
         return $a . '';
+    }
+
+    public function test(): void
+    {
     }
 }

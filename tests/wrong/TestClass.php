@@ -2,7 +2,7 @@
 
 
 namespace Zing\CodingStandard\Tests;
-class TestClass
+class TestClass implements TestableContract
 {use Testable;
     public const A = 1;
 
@@ -20,4 +20,11 @@ class TestClass
     {
         return  $a.'';
     }
+
+    public function test(): void
+    {
+
+
+    }
+
 }
