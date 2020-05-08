@@ -27,7 +27,7 @@
   },
   "scripts": {
     "test": [
-      "rm tests/fixed/*.php",
+      "rm -rf tests/fixed/*.php",
       "cp -R tests/wrong/* tests/fixed/",
       "vendor/bin/ecs check --fix --clear-cache",
       "vendor/bin/phpunit"
