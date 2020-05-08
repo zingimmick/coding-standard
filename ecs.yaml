@@ -13,4 +13,5 @@ parameters:
     - config
     - tests
   exclude_files:
+    - tests/correct/*.php
     - tests/wrong/*.php

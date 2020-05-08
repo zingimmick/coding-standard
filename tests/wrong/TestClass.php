@@ -1,9 +1,10 @@
 <?php
 
 
-namespace Zing\CodingStandard\Tests\wrong;
+namespace Zing\CodingStandard\Tests;
 class TestClass
-{public const A = 1;
+{use Testable;
+    public const A = 1;
 
     /**
      * @param $a
@@ -11,7 +12,12 @@ class TestClass
      * @return string
      */
    public function a($a,$b){
-
+       if(!$a)return 0;
         return  $a+$b;
+    }
+
+    public function concat($a)
+    {
+        return  $a.'';
     }
 }
