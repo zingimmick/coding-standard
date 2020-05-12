@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Zing\CodingStandard\Tests;
+namespace Zing\CodingStandard\Correct;
+
+use Zing\CodingStandard\Correct\Concerns\Testable;
 
 class TestClass implements TestableContract
 {
@@ -13,14 +15,26 @@ class TestClass implements TestableContract
     private const A = 1;
 
     /**
-     * @var \Foo
+     * @var \Zing\CodingStandard\Correct\Foo
      */
     protected $foo;
 
     /**
-     * @var \Bar
+     * @var \Zing\CodingStandard\Correct\Bar
      */
     public $bar;
+
+    /**
+     * TestClass constructor.
+     *
+     * @param \Zing\CodingStandard\Correct\Foo $foo
+     * @param \Zing\CodingStandard\Correct\Bar $bar
+     */
+    public function __construct(Foo $foo, Bar $bar)
+    {
+        $this->foo = $foo;
+        $this->bar = $bar;
+    }
 
     /**
      * @param $a

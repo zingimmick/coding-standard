@@ -1,7 +1,10 @@
 * text=auto
 
 /.github export-ignore
+/correct export-ignore
+/fixed export-ignore
 /tests export-ignore
+/wrong export-ignore
 .gitattributes export-ignore
 .gitignore export-ignore
 .php_cs export-ignore

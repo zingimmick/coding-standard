@@ -7,6 +7,10 @@
       "email": "zingimmick@outlook.com"
     }
   ],
+  "config": {
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
   "require": {
     "php": "^7.2",
     "symplify/easy-coding-standard": "^7.2"
@@ -22,13 +26,14 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Zing\\CodingStandard\\Tests\\": "tests"
+      "Zing\\CodingStandard\\Tests\\": "tests",
+      "Zing\\CodingStandard\\Correct\\": "correct"
     }
   },
   "scripts": {
     "test": [
-      "rm -rf tests/fixed/*.php",
-      "cp -R tests/wrong/* tests/fixed/",
+      "rm -rf fixed/*.php",
+      "cp -R wrong/* fixed/",
       "vendor/bin/ecs check --fix --clear-cache",
       "vendor/bin/phpunit"
     ]

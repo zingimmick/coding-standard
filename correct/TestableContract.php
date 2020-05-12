@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Zing\CodingStandard\Tests;
+namespace Zing\CodingStandard\Correct;
 
 interface TestableContract
 {

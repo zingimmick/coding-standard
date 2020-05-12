@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Zing\CodingStandard\Tests;
+namespace Zing\CodingStandard\Correct;
 
 
 interface TestableContract

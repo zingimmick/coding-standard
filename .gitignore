@@ -2,4 +2,4 @@
 vendor/
 composer.lock
 .php_cs.cache
-tests/fixed
+fixed
