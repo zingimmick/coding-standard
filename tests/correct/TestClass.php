@@ -8,7 +8,19 @@ class TestClass implements TestableContract
 {
     use Testable;
 
-    public const A = 1;
+    public const C = 2;
+
+    private const A = 1;
+
+    /**
+     * @var \Foo
+     */
+    protected $foo;
+
+    /**
+     * @var \Bar
+     */
+    public $bar;
 
     /**
      * @param $a
@@ -32,5 +44,10 @@ class TestClass implements TestableContract
 
     public function test(): void
     {
+    }
+
+    public function formatConst()
+    {
+        return self::A ?? self::C;
     }
 }

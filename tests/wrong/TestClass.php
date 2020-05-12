@@ -2,10 +2,19 @@
 
 
 namespace Zing\CodingStandard\Tests;
+use Foo;
+use Bar;
 class TestClass implements TestableContract
 {use Testable;
-    public const A = 1;
+private const A=1;
+public const C = 2;
 
+    /** @var Foo */
+protected $foo;
+    /**
+     * @var Bar
+     */
+public $bar;
     /**
      * @param $a
      * @param $b
@@ -27,4 +36,8 @@ class TestClass implements TestableContract
 
     }
 
+    public function formatConst()
+    {
+        return self::A??self::C;
+    }
 }
