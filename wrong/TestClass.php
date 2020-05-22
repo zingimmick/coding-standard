@@ -8,7 +8,10 @@ class TestClass implements TestableContract
 {use Testable;
 private const A=1;
 public const C = 2;
-
+    public static $config = [
+// test
+        'test' => true,
+    ];
     /** @var Foo */
 protected $foo;
     /**

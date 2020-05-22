@@ -37,7 +37,6 @@ parameters:
     PhpCsFixer\Fixer\Phpdoc\PhpdocTypesOrderFixer: ~
     PhpCsFixer\Fixer\PhpUnit\PhpUnitTestClassRequiresCoversFixer: ~
     PhpCsFixer\Fixer\PhpUnit\PhpUnitInternalClassFixer: ~
-    PhpCsFixer\Fixer\Whitespace\ArrayIndentationFixer: ~
     PhpCsFixer\Fixer\Phpdoc\NoSuperfluousPhpdocTagsFixer: ~
 #    冲突
     PhpCsFixer\Fixer\ControlStructure\IncludeFixer: ~

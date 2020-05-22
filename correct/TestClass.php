@@ -14,6 +14,11 @@ class TestClass implements TestableContract
 
     private const A = 1;
 
+    public static $config = [
+        // test
+        'test' => true,
+    ];
+
     /**
      * @var \Zing\CodingStandard\Correct\Foo
      */
