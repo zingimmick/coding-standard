@@ -20,7 +20,7 @@ protected $foo;
 public $bar;
 
     /**
-     * TestClass constructor.
+     * TestClass constructor
      * @param Foo $foo
      * @param Bar $bar
      */

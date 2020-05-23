@@ -30,7 +30,7 @@ class TestClass implements TestableContract
     public $bar;
 
     /**
-     * TestClass constructor.
+     * TestClass constructor
      *
      * @param \Zing\CodingStandard\Correct\Foo $foo
      * @param \Zing\CodingStandard\Correct\Bar $bar
