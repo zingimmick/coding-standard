@@ -13,7 +13,7 @@
   },
   "require": {
     "php": "^7.2",
-    "slevomat/coding-standard": "dev-master as 6.4.0",
+    "slevomat/coding-standard": "dev-master",
     "symplify/easy-coding-standard": "^7.2 || ^8.0"
   },
   "require-dev": {
