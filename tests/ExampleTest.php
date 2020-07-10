@@ -12,5 +12,6 @@ class ExampleTest extends TestCase
     {
         self::assertTrue(class_exists(Example::class));
         self::assertTrue(method_exists(Example::class, 'foo'));
+        self::assertTrue((new Example())->foo());
     }
 }

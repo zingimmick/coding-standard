@@ -6,7 +6,8 @@ namespace Zing\Skeleton;
 
 class Example
 {
-    public function foo(): void
+    public function foo(): bool
     {
+        return true;
     }
 }
