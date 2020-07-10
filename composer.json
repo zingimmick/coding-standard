@@ -1,5 +1,7 @@
 {
     "name": "zing/package-skeleton-php",
+    "description": "A skeleton repository for PHP Packages",
+    "keywords": ["php", "package", "skeleton"],
     "license": "MIT",
     "authors": [
         {
