@@ -39,3 +39,4 @@ parameters:
     PhpCsFixer\Fixer\PhpUnit\PhpUnitInternalClassFixer: ~
     PhpCsFixer\Fixer\Phpdoc\NoSuperfluousPhpdocTagsFixer: ~
     SlevomatCodingStandard\Sniffs\Commenting\DisallowCommentAfterCodeSniff.DisallowedCommentAfterCode: ~
+    PHP_CodeSniffer\Standards\PSR12\Sniffs\Files\FileHeaderSniff: ~
