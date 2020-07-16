@@ -31,7 +31,6 @@ class TestClass implements TestableContract
 
     /**
      * TestClass constructor
-     *
      * @param \Zing\CodingStandard\Correct\Foo $foo
      * @param \Zing\CodingStandard\Correct\Bar $bar
      */
@@ -44,7 +43,6 @@ class TestClass implements TestableContract
     /**
      * @param $a
      * @param $b
-     *
      * @return string
      */
     public function a($a, $b)
