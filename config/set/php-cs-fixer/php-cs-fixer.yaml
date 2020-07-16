@@ -1,6 +1,6 @@
 imports:
-  - { resource: '../../../vendor/symplify/easy-coding-standard/config/set/symfony.yaml', ignore_errors: not_found }
-  - { resource: '../../../../../symplify/easy-coding-standard/config/set/symfony.yaml', ignore_errors: not_found }
+  - { resource: '../../../vendor/symplify/easy-coding-standard/config/set/symfony.php', ignore_errors: not_found }
+  - { resource: '../../../../../symplify/easy-coding-standard/config/set/symfony.php', ignore_errors: not_found }
 
 services:
   PhpCsFixer\Fixer\Phpdoc\AlignMultilineCommentFixer: ~
