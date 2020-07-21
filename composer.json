@@ -8,18 +8,17 @@
     }
   ],
   "minimum-stability": "dev",
+  "prefer-stable": true,
   "config": {
     "preferred-install": "dist",
     "sort-packages": true
   },
   "require": {
     "php": "^7.2",
-    "rector/rector": "dev-master",
-    "slevomat/coding-standard": "dev-master",
-    "symplify/easy-coding-standard": "dev-master"
+    "rector/rector": "^0.7.50",
+    "symplify/easy-coding-standard": "^8.1"
   },
   "require-dev": {
-    "migrify/config-transformer": "9999999-dev",
     "phpunit/phpunit": "^7.0|^8.0|^9.0",
     "roave/security-advisories": "dev-master"
   },
