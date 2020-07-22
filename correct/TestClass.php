@@ -5,10 +5,14 @@ declare(strict_types=1);
 namespace Zing\CodingStandard\Correct;
 
 use Zing\CodingStandard\Correct\Concerns\Testable;
+use Zing\CodingStandard\Correct\Concerns\TraitA;
+use Zing\CodingStandard\Correct\Concerns\TraitB;
 
 class TestClass implements TestableContract
 {
     use Testable;
+    use TraitA;
+    use TraitB;
 
     public const C = 2;
 
@@ -45,9 +49,9 @@ class TestClass implements TestableContract
      * @param $a
      * @param $b
      *
-     * @return string
+     * @return int
      */
-    public function a($a, $b)
+    public function a($a, $b): int
     {
         if (! $a) {
             return 0;

@@ -358,6 +358,8 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             ArrayDeclarationSniff::class . '.CloseBraceNotAligned' => null,
             ArrayDeclarationSniff::class . '.CloseBraceNewLine' => null,
             ArrayDeclarationSniff::class . '.MultiLineNotAllowed' => null,
+            UselessFunctionDocCommentSniff::class . '.UselessDocComment' => null,
+            UseDeclarationSniff::class . '.UseAfterBrace' => null,
         ]
     );
 };
