@@ -2,8 +2,6 @@
 
 declare(strict_types=1);
 
-namespace Symfony\Component\DependencyInjection\Loader\Configurator;
-
 use PhpCsFixer\Fixer\CastNotation\NoUnsetCastFixer;
 use PhpCsFixer\Fixer\ClassNotation\NoNullPropertyInitializationFixer;
 use PhpCsFixer\Fixer\ClassNotation\NoUnneededFinalMethodFixer;
@@ -16,14 +14,19 @@ use PhpCsFixer\Fixer\ControlStructure\NoSuperfluousElseifFixer;
 use PhpCsFixer\Fixer\ControlStructure\NoUnneededCurlyBracesFixer;
 use PhpCsFixer\Fixer\ControlStructure\NoUselessElseFixer;
 use PhpCsFixer\Fixer\FunctionNotation\MethodArgumentSpaceFixer;
+use PhpCsFixer\Fixer\FunctionNotation\SingleLineThrowFixer;
 use PhpCsFixer\Fixer\Import\FullyQualifiedStrictTypesFixer;
 use PhpCsFixer\Fixer\LanguageConstruct\CombineConsecutiveIssetsFixer;
 use PhpCsFixer\Fixer\LanguageConstruct\CombineConsecutiveUnsetsFixer;
 use PhpCsFixer\Fixer\LanguageConstruct\ExplicitIndirectVariableFixer;
 use PhpCsFixer\Fixer\Phpdoc\AlignMultilineCommentFixer;
+use PhpCsFixer\Fixer\Phpdoc\NoSuperfluousPhpdocTagsFixer;
 use PhpCsFixer\Fixer\Phpdoc\PhpdocAddMissingParamAnnotationFixer;
+use PhpCsFixer\Fixer\Phpdoc\PhpdocNoAliasTagFixer;
 use PhpCsFixer\Fixer\Phpdoc\PhpdocNoEmptyReturnFixer;
 use PhpCsFixer\Fixer\Phpdoc\PhpdocOrderFixer;
+use PhpCsFixer\Fixer\Phpdoc\PhpdocSummaryFixer;
+use PhpCsFixer\Fixer\Phpdoc\PhpdocToCommentFixer;
 use PhpCsFixer\Fixer\Phpdoc\PhpdocTypesOrderFixer;
 use PhpCsFixer\Fixer\Phpdoc\PhpdocVarAnnotationCorrectOrderFixer;
 use PhpCsFixer\Fixer\PhpTag\NoShortEchoTagFixer;
@@ -44,30 +47,47 @@ use PhpCsFixer\Fixer\Whitespace\BlankLineBeforeStatementFixer;
 use PhpCsFixer\Fixer\Whitespace\CompactNullableTypehintFixer;
 use PhpCsFixer\Fixer\Whitespace\MethodChainingIndentationFixer;
 use PhpCsFixer\Fixer\Whitespace\NoExtraBlankLinesFixer;
+use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+use Symplify\EasyCodingStandard\Configuration\Option;
 
 return static function (ContainerConfigurator $containerConfigurator): void {
-    $containerConfigurator->import(__DIR__ . '../../../vendor/symplify/easy-coding-standard/config/set/symfony.php', null, true);
-    $containerConfigurator->import(__DIR__ . '../../../../../symplify/easy-coding-standard/config/set/symfony.php', null, true);
+    $containerConfigurator->import(__DIR__ . '/../../../vendor/symplify/easy-coding-standard/config/set/symfony.php', null, true);
+
+    $containerConfigurator->import(__DIR__ . '/../../../../../symplify/easy-coding-standard/config/set/symfony.php', null, true);
+
     $services = $containerConfigurator->services();
+
     $services->set(AlignMultilineCommentFixer::class);
+
     $services->set(ArrayIndentationFixer::class);
+
     $services->set(BlankLineBeforeStatementFixer::class);
+
     $services->set(CombineConsecutiveIssetsFixer::class);
+
     $services->set(CombineConsecutiveUnsetsFixer::class);
+
     $services->set(CompactNullableTypehintFixer::class);
+
     $services->set(EscapeImplicitBackslashesFixer::class);
+
     $services->set(ExplicitIndirectVariableFixer::class);
+
     $services->set(ExplicitStringVariableFixer::class);
+
     $services->set(FullyQualifiedStrictTypesFixer::class);
+
     $services->set(HeredocToNowdocFixer::class);
     $services->set(MethodArgumentSpaceFixer::class)
         ->call('configure', [['on_multiline' => 'ensure_fully_multiline']]);
     $services->set(MethodChainingIndentationFixer::class);
+
     $services->set(MultilineCommentOpeningClosingFixer::class);
     $services->set(MultilineWhitespaceBeforeSemicolonsFixer::class)
         ->call('configure', [['strategy' => 'new_line_for_chained_calls']]);
 
     $services->set(NoAlternativeSyntaxFixer::class);
+
     $services->set(NoBinaryStringFixer::class);
     $services->set(NoExtraBlankLinesFixer::class)
         ->call(
@@ -90,25 +110,63 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         );
 
     $services->set(NoNullPropertyInitializationFixer::class);
+
     $services->set(NoShortEchoTagFixer::class);
+
     $services->set(NoSuperfluousElseifFixer::class);
+
     $services->set(NoUnneededCurlyBracesFixer::class);
+
     $services->set(NoUnneededFinalMethodFixer::class);
+
     $services->set(NoUnsetCastFixer::class);
+
     $services->set(NoUselessElseFixer::class);
+
     $services->set(NoUselessReturnFixer::class);
+
     $services->set(OrderedClassElementsFixer::class);
+
     $services->set(PhpUnitInternalClassFixer::class);
+
     $services->set(PhpUnitMethodCasingFixer::class);
+
     $services->set(PhpUnitOrderedCoversFixer::class);
+
     $services->set(PhpUnitTestClassRequiresCoversFixer::class);
+
     $services->set(PhpdocAddMissingParamAnnotationFixer::class);
+
     $services->set(PhpdocNoEmptyReturnFixer::class);
+
     $services->set(PhpdocOrderFixer::class);
+
     $services->set(PhpdocTypesOrderFixer::class);
+
     $services->set(PhpdocVarAnnotationCorrectOrderFixer::class);
+
     $services->set(ProtectedToPrivateFixer::class);
+
     $services->set(ReturnAssignmentFixer::class);
+
     $services->set(SimpleToComplexStringVariableFixer::class);
+
     $services->set(SingleLineCommentStyleFixer::class);
+
+    $parameters = $containerConfigurator->parameters();
+    $parameters->set(
+        Option::SKIP,
+        [
+            SingleLineThrowFixer::class => null,
+            PhpdocSummaryFixer::class => null,
+            PhpdocToCommentFixer::class => null,
+            PhpdocNoEmptyReturnFixer::class => null,
+            PhpdocNoAliasTagFixer::class => null,
+            PhpdocTypesOrderFixer::class => null,
+            PhpUnitTestClassRequiresCoversFixer::class => null,
+            PhpUnitInternalClassFixer::class => null,
+            NoSuperfluousPhpdocTagsFixer::class => null,
+            PhpCsFixer\Fixer\ControlStructure\YodaStyleFixer::class => null,
+        ]
+    );
 };

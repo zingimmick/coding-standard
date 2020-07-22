@@ -1,0 +1,20 @@
+imports:
+  - { resource: config/config.php }
+
+parameters:
+  sets:
+    - 'psr12'
+    - 'php70'
+    - 'php71'
+    - 'dead-code'
+    - 'clean-code'
+    - 'common'
+  paths:
+    - config
+    - fixed
+    - tests
+  exclude_files:
+    - correct/*.php
+    - wrong/*.php
+  skip:
+    PhpCsFixer\Fixer\ControlStructure\YodaStyleFixer: null
