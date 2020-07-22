@@ -88,4 +88,8 @@ public $bar;
             echo 22;
         }
     }
+    public function logicalOperators():bool
+    {
+        return random_int(0, 1) !== 0 and random_int(0, 1) !== 0;
+    }
 }

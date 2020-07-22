@@ -102,4 +102,9 @@ class TestClass implements TestableContract
             echo 22;
         }//end if
     }
+
+    public function logicalOperators(): bool
+    {
+        return random_int(0, 1) !== 0 && random_int(0, 1) !== 0;
+    }
 }

@@ -16,6 +16,7 @@ use PhpCsFixer\Fixer\ControlStructure\YodaStyleFixer;
 use PhpCsFixer\Fixer\FunctionNotation\SingleLineThrowFixer;
 use PhpCsFixer\Fixer\Operator\ConcatSpaceFixer;
 use PhpCsFixer\Fixer\Operator\IncrementStyleFixer;
+use PhpCsFixer\Fixer\Operator\LogicalOperatorsFixer;
 use PhpCsFixer\Fixer\Operator\NotOperatorWithSuccessorSpaceFixer;
 use PhpCsFixer\Fixer\Phpdoc\NoSuperfluousPhpdocTagsFixer;
 use PhpCsFixer\Fixer\Phpdoc\PhpdocAlignFixer;
@@ -44,6 +45,8 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(MultilineWhitespaceBeforeSemicolonsFixer::class);
     $services->set(SimplifiedNullReturnFixer::class);
     $services->set(NotOperatorWithSuccessorSpaceFixer::class);
+    $services->set(LogicalOperatorsFixer::class);
+
     $services->set(ConcatSpaceFixer::class)
         ->call('configure', [['spacing' => 'one']]);
     $services->set(PhpdocAlignFixer::class)
