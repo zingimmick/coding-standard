@@ -20,13 +20,9 @@ use PhpCsFixer\Fixer\LanguageConstruct\CombineConsecutiveIssetsFixer;
 use PhpCsFixer\Fixer\LanguageConstruct\CombineConsecutiveUnsetsFixer;
 use PhpCsFixer\Fixer\LanguageConstruct\ExplicitIndirectVariableFixer;
 use PhpCsFixer\Fixer\Phpdoc\AlignMultilineCommentFixer;
-use PhpCsFixer\Fixer\Phpdoc\NoSuperfluousPhpdocTagsFixer;
 use PhpCsFixer\Fixer\Phpdoc\PhpdocAddMissingParamAnnotationFixer;
-use PhpCsFixer\Fixer\Phpdoc\PhpdocNoAliasTagFixer;
 use PhpCsFixer\Fixer\Phpdoc\PhpdocNoEmptyReturnFixer;
 use PhpCsFixer\Fixer\Phpdoc\PhpdocOrderFixer;
-use PhpCsFixer\Fixer\Phpdoc\PhpdocSummaryFixer;
-use PhpCsFixer\Fixer\Phpdoc\PhpdocToCommentFixer;
 use PhpCsFixer\Fixer\Phpdoc\PhpdocTypesOrderFixer;
 use PhpCsFixer\Fixer\Phpdoc\PhpdocVarAnnotationCorrectOrderFixer;
 use PhpCsFixer\Fixer\PhpTag\NoShortEchoTagFixer;
@@ -158,15 +154,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         Option::SKIP,
         [
             SingleLineThrowFixer::class => null,
-            PhpdocSummaryFixer::class => null,
-            PhpdocToCommentFixer::class => null,
-            PhpdocNoEmptyReturnFixer::class => null,
-            PhpdocNoAliasTagFixer::class => null,
-            PhpdocTypesOrderFixer::class => null,
-            PhpUnitTestClassRequiresCoversFixer::class => null,
-            PhpUnitInternalClassFixer::class => null,
-            NoSuperfluousPhpdocTagsFixer::class => null,
-            PhpCsFixer\Fixer\ControlStructure\YodaStyleFixer::class => null,
         ]
     );
 };
