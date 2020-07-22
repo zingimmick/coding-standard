@@ -111,7 +111,6 @@ use SlevomatCodingStandard\Sniffs\Classes\SuperfluousInterfaceNamingSniff;
 use SlevomatCodingStandard\Sniffs\Classes\SuperfluousTraitNamingSniff;
 use SlevomatCodingStandard\Sniffs\Classes\UnusedPrivateElementsSniff;
 use SlevomatCodingStandard\Sniffs\Classes\UselessLateStaticBindingSniff;
-use SlevomatCodingStandard\Sniffs\Commenting\DisallowCommentAfterCodeSniff;
 use SlevomatCodingStandard\Sniffs\Commenting\EmptyCommentSniff;
 use SlevomatCodingStandard\Sniffs\Commenting\ForbiddenCommentsSniff;
 use SlevomatCodingStandard\Sniffs\Commenting\InlineDocCommentDeclarationSniff;
@@ -152,7 +151,6 @@ use SlevomatCodingStandard\Sniffs\TypeHints\ReturnTypeHintSpacingSniff;
 use SlevomatCodingStandard\Sniffs\TypeHints\UselessConstantTypeHintSniff;
 use SlevomatCodingStandard\Sniffs\Variables\DuplicateAssignmentToVariableSniff;
 use SlevomatCodingStandard\Sniffs\Variables\UselessVariableSniff;
-use Symplify\EasyCodingStandard\Configuration\Option;
 
 return static function (ContainerConfigurator $containerConfigurator): void {
     $services = $containerConfigurator->services();
@@ -325,41 +323,4 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(NamespaceDeclarationSniff::class);
     $services->set(OneTraitPerFileSniff::class);
     $services->set(SuperfluousTraitNamingSniff::class);
-    $parameters = $containerConfigurator->parameters();
-    $parameters->set(
-        Option::SKIP,
-        [
-            DisallowCommentAfterCodeSniff::class . '.DisallowedCommentAfterCode' => null,
-            FileHeaderSniff::class => null,
-            FileHeaderSniff::class . '.SpacingAfterBlock' => null,
-            FileHeaderSniff::class . '.IncorrectOrder' => null,
-            FileHeaderSniff::class . '.IncorrectGrouping' => null,
-            InlineDocCommentDeclarationSniff::class . '.MissingVariable' => null,
-            InlineDocCommentDeclarationSniff::class . '.NoAssignment' => null,
-            ParameterTypeHintSniff::class . '.MissingTraversableTypeHintSpecification' => null,
-            ParameterTypeHintSniff::class . '.MissingAnyTypeHint' => null,
-            ParameterTypeHintSniff::class . '.MissingNativeTypeHint' => null,
-            ParameterTypeHintSniff::class . '.UselessAnnotation' => null,
-            ReturnTypeHintSniff::class . '.MissingTraversableTypeHintSpecification' => null,
-            ReturnTypeHintSniff::class . '.MissingAnyTypeHint' => null,
-            ReturnTypeHintSniff::class . '.MissingNativeTypeHint' => null,
-            ReturnTypeHintSniff::class . '.UselessAnnotation' => null,
-            ReturnTypeHintSniff::class . '.SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingNativeTypeHint' => null,
-            PropertyTypeHintSniff::class . '.MissingTraversableTypeHintSpecification' => null,
-            PropertyTypeHintSniff::class . '.MissingAnyTypeHint' => null,
-            PropertyTypeHintSniff::class . '.MissingNativeTypeHint' => null,
-            PropertyTypeHintSniff::class . '.UselessAnnotation' => null,
-            ArrayDeclarationSniff::class . '.DoubleArrowNotAligned' => null,
-            ArrayDeclarationSniff::class . '.NoKeySpecified' => null,
-            ArrayDeclarationSniff::class . '.KeySpecified' => null,
-            ArrayDeclarationSniff::class . '.SingleLineNotAllowed' => null,
-            ArrayDeclarationSniff::class . '.KeyNotAligned' => null,
-            ArrayDeclarationSniff::class . '.ValueNotAligned' => null,
-            ArrayDeclarationSniff::class . '.CloseBraceNotAligned' => null,
-            ArrayDeclarationSniff::class . '.CloseBraceNewLine' => null,
-            ArrayDeclarationSniff::class . '.MultiLineNotAllowed' => null,
-            UselessFunctionDocCommentSniff::class . '.UselessDocComment' => null,
-            UseDeclarationSniff::class . '.UseAfterBrace' => null,
-        ]
-    );
 };
