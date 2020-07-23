@@ -8,6 +8,7 @@ use PHP_CodeSniffer\Standards\PSR12\Sniffs\Classes\AnonClassDeclarationSniff;
 use PHP_CodeSniffer\Standards\PSR12\Sniffs\Files\FileHeaderSniff;
 use PHP_CodeSniffer\Standards\PSR12\Sniffs\Traits\UseDeclarationSniff;
 use PHP_CodeSniffer\Standards\Squiz\Sniffs\Arrays\ArrayDeclarationSniff;
+use PHP_CodeSniffer\Standards\Squiz\Sniffs\WhiteSpace\ControlStructureSpacingSniff;
 use PhpCsFixer\Fixer\ArrayNotation\ArraySyntaxFixer;
 use PhpCsFixer\Fixer\ClassNotation\ClassAttributesSeparationFixer;
 use PhpCsFixer\Fixer\ClassNotation\OrderedClassElementsFixer;
@@ -108,6 +109,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             UselessFunctionDocCommentSniff::class . '.UselessDocComment' => null,
             UseDeclarationSniff::class . '.UseAfterBrace' => null,
             AnonClassDeclarationSniff::class . '.SpaceAfterKeyword' => null,
+            ControlStructureSpacingSniff::class.'.LineAfterClose'=>null
         ]
     );
 };
