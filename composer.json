@@ -20,7 +20,8 @@
   },
   "require-dev": {
     "phpunit/phpunit": "^7.0|^8.0|^9.0",
-    "roave/security-advisories": "dev-master"
+    "roave/security-advisories": "dev-master",
+    "symplify/changelog-linker": "^8.1"
   },
   "autoload-dev": {
     "psr-4": {
@@ -35,6 +36,11 @@
       "vendor/bin/ecs check --fix --clear-cache",
       "vendor/bin/rector process",
       "vendor/bin/phpunit"
+    ],
+    "changelog": [
+      "vendor/bin/changelog-linker dump-merges --in-categories --ansi",
+      "vendor/bin/changelog-linker link --ansi",
+      "vendor/bin/changelog-linker cleanup --ansi"
     ]
   }
 }
