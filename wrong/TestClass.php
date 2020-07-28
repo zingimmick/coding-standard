@@ -2,6 +2,8 @@
 
 
 namespace Zing\CodingStandard\Correct;
+use const PHP_EOL;
+use function count;
 use Zing\CodingStandard\Correct\Concerns\Testable;
 use Zing\CodingStandard\Correct\Concerns\TraitA;
 use Zing\CodingStandard\Correct\Concerns\TraitB;
@@ -91,5 +93,15 @@ public $bar;
     public function logicalOperators():bool
     {
         return random_int(0, 1) !== 0 and random_int(0, 1) !== 0;
+    }
+
+    public function useFunction()
+    {
+        return count([]);
+    }
+
+    public function useConst()
+    {
+        return PHP_EOL;
     }
 }

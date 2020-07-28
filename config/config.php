@@ -109,7 +109,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             UselessFunctionDocCommentSniff::class . '.UselessDocComment' => null,
             UseDeclarationSniff::class . '.UseAfterBrace' => null,
             AnonClassDeclarationSniff::class . '.SpaceAfterKeyword' => null,
-            ControlStructureSpacingSniff::class.'.LineAfterClose'=>null
+            ControlStructureSpacingSniff::class . '.LineAfterClose' => null,
         ]
     );
 };

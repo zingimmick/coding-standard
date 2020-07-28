@@ -10,12 +10,12 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $containerConfigurator->import(__DIR__.'/config/config.php');
     $parameters = $containerConfigurator->parameters();
     $parameters->set(Option::SETS, [
-        SetList::PSR_12,
         SetList::PHP_70,
         SetList::PHP_71,
         SetList::DEAD_CODE,
         SetList::CLEAN_CODE,
         SetList::COMMON,
+        SetList::PSR_12,
     ]);
     $parameters->set(Option::PATHS, [
         'config',
