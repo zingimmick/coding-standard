@@ -7,6 +7,8 @@ namespace Zing\CodingStandard\Correct;
 use Zing\CodingStandard\Correct\Concerns\Testable;
 use Zing\CodingStandard\Correct\Concerns\TraitA;
 use Zing\CodingStandard\Correct\Concerns\TraitB;
+use function count;
+use const PHP_EOL;
 
 class TestClass implements TestableContract
 {
@@ -106,5 +108,15 @@ class TestClass implements TestableContract
     public function logicalOperators(): bool
     {
         return random_int(0, 1) !== 0 && random_int(0, 1) !== 0;
+    }
+
+    public function useFunction()
+    {
+        return count([]);
+    }
+
+    public function useConst()
+    {
+        return PHP_EOL;
     }
 }
