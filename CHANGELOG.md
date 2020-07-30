@@ -13,6 +13,8 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 
 ### Added
 
+- [#23] Support for rector 0.7.55
+- [#22] Add changelog generator
 - [#21] Add kodiak config
 - [#20] Add ordered imports test
 
@@ -81,3 +83,5 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 [1.3.1]: https://github.com/zingimmick/coding-standard/compare/1.2.4...1.3.1
 [1.2.4]: https://github.com/zingimmick/coding-standard/compare/1.2.0...1.2.4
 [1.2.0]: https://github.com/zingimmick/coding-standard/compare/1.0.5...1.2.0
+[#23]: https://github.com/zingimmick/coding-standard/pull/23
+[#22]: https://github.com/zingimmick/coding-standard/pull/22

@@ -7,8 +7,9 @@
 /wrong export-ignore
 .gitattributes export-ignore
 .gitignore export-ignore
+.kodiak.toml export-ignore
 .php_cs export-ignore
-.scrutinizer.yml export-ignore
+changelog-linker.yaml export-ignore
 ecs.php export-ignore
 phpcs.xml export-ignore
 phpunit.xml.dist export-ignore
