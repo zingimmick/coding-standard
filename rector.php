@@ -14,11 +14,14 @@ use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigura
 
 return static function (ContainerConfigurator $containerConfigurator): void {
     $parameters = $containerConfigurator->parameters();
+
+    $parameters->set(Option::AUTOLOAD_PATHS, [
+        __DIR__ . '/vendor/squizlabs/php_codesniffer/autoload.php',
+    ]);
+
     $parameters->set(Option::SETS, [
         SetList::ACTION_INJECTION_TO_CONSTRUCTOR_INJECTION,
         SetList::ARRAY_STR_FUNCTIONS_TO_STATIC_CALL,
-        SetList::CELEBRITY,
-//        'doctrine',
         SetList::PHPSTAN,
         SetList::PHPUNIT_CODE_QUALITY,
         SetList::SOLID,
@@ -29,6 +32,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         SetList::PHP_71,
         SetList::PHP_72,
     ]);
+
     $parameters->set(Option::EXCLUDE_RECTORS, [
         FinalizeClassesWithoutChildrenRector::class,
         ChangeReadOnlyVariableWithDefaultValueToConstantRector::class,
@@ -37,6 +41,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         AddSeeTestAnnotationRector::class,
         RemoveUnusedFunctionRector::class,
     ]);
+
     $parameters->set(Option::PATHS, [
         'config',
         'fixed',
