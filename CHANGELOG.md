@@ -61,8 +61,8 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 
 ## [1.0.5] - 2020-07-01
 
-- [#3] Update symplify/easy-coding-standard requirement from ^7.2 to ^8.1, Thanks to [@dependabot][bot]
-- [#2] Bump actions/cache from v1 to v2, Thanks to [@dependabot][bot]
+- [#3] Update symplify/easy-coding-standard requirement from ^7.2 to ^8.1
+- [#2] Bump actions/cache from v1 to v2
 
 [#21]: https://github.com/zingimmick/coding-standard/pull/21
 [#20]: https://github.com/zingimmick/coding-standard/pull/20
@@ -77,7 +77,6 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 [#4]: https://github.com/zingimmick/coding-standard/pull/4
 [#3]: https://github.com/zingimmick/coding-standard/pull/3
 [#2]: https://github.com/zingimmick/coding-standard/pull/2
-[@dependabot]: https://github.com/dependabot
 [2.0.1]: https://github.com/zingimmick/coding-standard/compare/2.0.0...2.0.1
 [2.0.0]: https://github.com/zingimmick/coding-standard/compare/1.3.1...2.0.0
 [1.3.1]: https://github.com/zingimmick/coding-standard/compare/1.2.4...1.3.1
