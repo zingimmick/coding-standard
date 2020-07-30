@@ -8,7 +8,9 @@ use Symplify\EasyCodingStandard\ValueObject\Set\SetList;
 
 return static function (ContainerConfigurator $containerConfigurator): void {
     $containerConfigurator->import(__DIR__.'/config/config.php');
+
     $parameters = $containerConfigurator->parameters();
+
     $parameters->set(Option::SETS, [
         SetList::PHP_70,
         SetList::PHP_71,
@@ -17,11 +19,13 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         SetList::COMMON,
         SetList::PSR_12,
     ]);
+
     $parameters->set(Option::PATHS, [
         'config',
         'fixed',
         'tests',
     ]);
+
     $parameters->set(Option::EXCLUDE_PATHS, [
         'correct/*.php',
         'wrong/*.php',
