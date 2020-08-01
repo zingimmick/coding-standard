@@ -11,17 +11,19 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 
 ## Unreleased
 
+### Changed
+
+- [#25] Update rector/rector requirement from ^0.7.50 to ^0.7.50,<0.7.54
+- [#24] Configure Renovate
+
+## [2.0.3] - 2020-07-30
+
 ### Added
 
 - [#23] Support for rector 0.7.55
 - [#22] Add changelog generator
 - [#21] Add kodiak config
 - [#20] Add ordered imports test
-
-### Changed
-
-- [#25] Update rector/rector requirement from ^0.7.50 to ^0.7.50,<0.7.54
-- [#24] Configure Renovate
 
 ## [2.0.1] - 2020-07-23
 
@@ -82,6 +84,7 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 [#4]: https://github.com/zingimmick/coding-standard/pull/4
 [#3]: https://github.com/zingimmick/coding-standard/pull/3
 [#2]: https://github.com/zingimmick/coding-standard/pull/2
+[2.0.3]: https://github.com/zingimmick/coding-standard/compare/2.0.2...2.0.3
 [2.0.1]: https://github.com/zingimmick/coding-standard/compare/2.0.0...2.0.1
 [2.0.0]: https://github.com/zingimmick/coding-standard/compare/1.3.1...2.0.0
 [1.3.1]: https://github.com/zingimmick/coding-standard/compare/1.2.4...1.3.1
