@@ -18,6 +18,11 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 - [#21] Add kodiak config
 - [#20] Add ordered imports test
 
+### Changed
+
+- [#25] Update rector/rector requirement from ^0.7.50 to ^0.7.50,<0.7.54
+- [#24] Configure Renovate
+
 ## [2.0.1] - 2020-07-23
 
 ### Changed
@@ -84,3 +89,5 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 [1.2.0]: https://github.com/zingimmick/coding-standard/compare/1.0.5...1.2.0
 [#23]: https://github.com/zingimmick/coding-standard/pull/23
 [#22]: https://github.com/zingimmick/coding-standard/pull/22
+[#25]: https://github.com/zingimmick/coding-standard/pull/25
+[#24]: https://github.com/zingimmick/coding-standard/pull/24
