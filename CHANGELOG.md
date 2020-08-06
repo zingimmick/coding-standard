@@ -9,14 +9,12 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 
 <!-- changelog-linker -->
 
-<!-- dumped content start -->
 ## Unreleased
 
 ### Added
 
 - [#27] Add conflict rule for rector 0.7.62 and ecs 8.1.20
 
-<!-- dumped content end -->
 
 ## [2.0.5] - 2020-08-01
 

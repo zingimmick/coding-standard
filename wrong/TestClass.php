@@ -28,7 +28,7 @@ public $bar;
     /**
      * TestClass constructor
      * @param Foo $foo
-     * @param Bar $bar
+     * @param \Zing\CodingStandard\Correct\Bar $bar
      */
     public function __construct(Foo $foo, Bar $bar)
     {
