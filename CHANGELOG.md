@@ -11,6 +11,12 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 
 ## Unreleased
 
+### Changed
+
+- [#28] Suport for ecs 8.1.20
+
+## [2.1.0] - 2020-08-06
+
 ### Added
 
 - [#27] Add conflict rule for rector 0.7.62 and ecs 8.1.20
@@ -112,3 +118,5 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 [#26]: https://github.com/zingimmick/coding-standard/pull/26
 [2.0.5]: https://github.com/zingimmick/coding-standard/compare/2.0.4...2.0.5
 [#27]: https://github.com/zingimmick/coding-standard/pull/27
+[#28]: https://github.com/zingimmick/coding-standard/pull/28
+[2.1.0]: https://github.com/zingimmick/coding-standard/compare/2.0.5...2.1.0
