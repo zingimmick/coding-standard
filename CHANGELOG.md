@@ -9,6 +9,15 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 
 <!-- changelog-linker -->
 
+<!-- dumped content start -->
+## Unreleased
+
+### Added
+
+- [#27] Add conflict rule for rector 0.7.62 and ecs 8.1.20
+
+<!-- dumped content end -->
+
 ## [2.0.5] - 2020-08-01
 
 ### Added
@@ -104,3 +113,4 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 [#24]: https://github.com/zingimmick/coding-standard/pull/24
 [#26]: https://github.com/zingimmick/coding-standard/pull/26
 [2.0.5]: https://github.com/zingimmick/coding-standard/compare/2.0.4...2.0.5
+[#27]: https://github.com/zingimmick/coding-standard/pull/27
