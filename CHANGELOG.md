@@ -9,14 +9,12 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 
 <!-- changelog-linker -->
 
-<!-- dumped content start -->
-## Unreleased
+## [2.0.5] - 2020-08-01
 
 ### Added
 
 - [#26] Add conflict rule for rector
 
-<!-- dumped content end -->
 
 ## [2.0.4] - 2020-08-01
 
@@ -105,3 +103,4 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 [#25]: https://github.com/zingimmick/coding-standard/pull/25
 [#24]: https://github.com/zingimmick/coding-standard/pull/24
 [#26]: https://github.com/zingimmick/coding-standard/pull/26
+[2.0.5]: https://github.com/zingimmick/coding-standard/compare/2.0.4...2.0.5
