@@ -1,5 +1,7 @@
 {
   "name": "zing/coding-standard",
+  "description": "The coding standard of the project.",
+  "keywords": ["coding-standard", "php"],
   "license": "MIT",
   "authors": [
     {
@@ -25,6 +27,7 @@
     "roave/security-advisories": "dev-master"
   },
   "conflict": {
+    "nikic/php-parser": "4.8.0",
     "rector/rector": ">=0.7.54,<=0.7.57 || 0.7.62"
   },
   "autoload-dev": {
