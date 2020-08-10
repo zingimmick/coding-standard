@@ -13,6 +13,7 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 
 ### Changed
 
+- [#30] Improve doc
 - [#29] Support for phpdoc-parser 0.4.9
 
 ## [2.2.0] - 2020-08-06
@@ -127,3 +128,5 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 [#28]: https://github.com/zingimmick/coding-standard/pull/28
 [2.1.0]: https://github.com/zingimmick/coding-standard/compare/2.0.5...2.1.0
 [#29]: https://github.com/zingimmick/coding-standard/pull/29
+[#30]: https://github.com/zingimmick/coding-standard/pull/30
+[2.2.0]: https://github.com/zingimmick/coding-standard/compare/2.1.0...2.2.0

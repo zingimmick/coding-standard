@@ -22,12 +22,10 @@
     "symplify/easy-coding-standard": "^8.1"
   },
   "require-dev": {
-    "phpstan/phpdoc-parser": "0.4.9 as 0.4.8",
-    "phpunit/phpunit": "^7.0|^8.0|^9.0",
+    "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0",
     "roave/security-advisories": "dev-master"
   },
   "conflict": {
-    "nikic/php-parser": "4.8.0",
     "rector/rector": ">=0.7.54,<=0.7.57 || 0.7.62"
   },
   "autoload-dev": {
