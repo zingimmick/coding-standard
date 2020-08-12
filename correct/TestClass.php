@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace Zing\CodingStandard\Correct;
 
+use function count;
+use const PHP_EOL;
 use Zing\CodingStandard\Correct\Concerns\Testable;
 use Zing\CodingStandard\Correct\Concerns\TraitA;
 use Zing\CodingStandard\Correct\Concerns\TraitB;
-use function count;
-use const PHP_EOL;
 
 class TestClass implements TestableContract
 {
