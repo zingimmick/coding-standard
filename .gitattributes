@@ -9,6 +9,7 @@
 .gitignore export-ignore
 .kodiak.toml export-ignore
 .php_cs export-ignore
+CHANGELOG.md export-ignore
 changelog-linker.yaml export-ignore
 ecs.php export-ignore
 phpcs.xml export-ignore
