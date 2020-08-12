@@ -8,6 +8,7 @@ use PhpCsFixer\Fixer\ClassNotation\OrderedClassElementsFixer;
 use PhpCsFixer\Fixer\ClassNotation\VisibilityRequiredFixer;
 use PhpCsFixer\Fixer\ControlStructure\YodaStyleFixer;
 use PhpCsFixer\Fixer\FunctionNotation\SingleLineThrowFixer;
+use PhpCsFixer\Fixer\Import\OrderedImportsFixer;
 use PhpCsFixer\Fixer\Operator\ConcatSpaceFixer;
 use PhpCsFixer\Fixer\Operator\IncrementStyleFixer;
 use PhpCsFixer\Fixer\Operator\LogicalOperatorsFixer;
@@ -34,7 +35,15 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(SimplifiedNullReturnFixer::class);
     $services->set(NotOperatorWithSuccessorSpaceFixer::class);
     $services->set(LogicalOperatorsFixer::class);
-
+    $services->set(OrderedImportsFixer::class)
+        ->call(
+            'configure',
+            [
+                [
+                    'importsOrder' => ['class', 'function', 'const'],
+                ],
+            ]
+        );
     $services->set(ConcatSpaceFixer::class)
         ->call('configure', [['spacing' => 'one']]);
     $services->set(PhpdocAlignFixer::class)
