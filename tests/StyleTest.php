@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Zing\CodingStandard\Tests;
 
-class StyleTest extends TestCase
+final class StyleTest extends TestCase
 {
     public function testFileFixed(): void
     {

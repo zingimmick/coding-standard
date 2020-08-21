@@ -3,3 +3,4 @@
 
 function far(){}
 
+far();
