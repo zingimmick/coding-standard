@@ -10,7 +10,7 @@ use Zing\CodingStandard\Correct\Concerns\TraitB;
 use function count;
 use const PHP_EOL;
 
-class TestClass implements TestableContract
+final class TestClass implements TestableContract
 {
     use Testable;
     use TraitA;
