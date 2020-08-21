@@ -11,6 +11,13 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 
 ## Unreleased
 
+### Removed
+
+- [#32] Remove Rector exclude_rectors config
+
+
+## [2.2.2] - 2020-08-12
+
 ### Added
 
 - [#31] Add php-cs-fixer-risky set
@@ -138,3 +145,5 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 [2.2.0]: https://github.com/zingimmick/coding-standard/compare/2.1.0...2.2.0
 [#31]: https://github.com/zingimmick/coding-standard/pull/31
 [2.2.1]: https://github.com/zingimmick/coding-standard/compare/2.2.0...2.2.1
+[#32]: https://github.com/zingimmick/coding-standard/pull/32
+[2.2.2]: https://github.com/zingimmick/coding-standard/compare/2.2.1...2.2.2
