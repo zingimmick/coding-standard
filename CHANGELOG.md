@@ -11,10 +11,15 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 
 ## Unreleased
 
+### Changed
+
+- [#33] Update slevomat/coding-standard from dev-master to ^6.4
+
+## [2.3.0] - 2020-08-21
+
 ### Removed
 
 - [#32] Remove Rector exclude_rectors config
-
 
 ## [2.2.2] - 2020-08-12
 
@@ -147,3 +152,5 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 [2.2.1]: https://github.com/zingimmick/coding-standard/compare/2.2.0...2.2.1
 [#32]: https://github.com/zingimmick/coding-standard/pull/32
 [2.2.2]: https://github.com/zingimmick/coding-standard/compare/2.2.1...2.2.2
+[#33]: https://github.com/zingimmick/coding-standard/pull/33
+[2.3.0]: https://github.com/zingimmick/coding-standard/compare/2.2.2...2.3.0
