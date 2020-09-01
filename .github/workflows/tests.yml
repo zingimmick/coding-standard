@@ -10,9 +10,9 @@ jobs:
   ecs:
     runs-on: ubuntu-latest
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix:
-        php: [7.2, 7.3, 7.4]
+        php: [7.2, 7.3, 7.4, 8.0]
 
     name: PHP ${{ matrix.php }}
 
@@ -30,12 +30,16 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php }}
-          tools: composer:v2
           extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, gd, xdebug
           coverage: true
 
       - name: Install dependencies
         run: composer update --prefer-stable --prefer-dist --no-interaction
+        if: "matrix.php < 8"
+
+      - name: Install dependencies
+        run: composer update --prefer-stable --prefer-dist --no-interaction --ignore-platform-reqs
+        if: "matrix.php >= 8"
 
       - name: Execute tests
         run: composer run-script test

@@ -1,6 +1,6 @@
 !.gitkeep
-vendor/
-composer.lock
-.php_cs.cache
 fixed
+vendor/
+.php_cs.cache
+composer.lock
 .phpunit.result.cache
