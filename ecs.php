@@ -29,6 +29,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             __DIR__ . '/config',
             __DIR__ . '/fixed',
             __DIR__ . '/tests',
+            __DIR__ . '/changelog-linker.php',
             __DIR__ . '/ecs.php',
             __DIR__ . '/rector.php',
         ]
