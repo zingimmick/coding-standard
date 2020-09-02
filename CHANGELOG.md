@@ -13,6 +13,13 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 
 ### Changed
 
+- [#35] YAML to PHP
+- [#34] Update dependency rector/rector to ^0.8.0
+
+## [2.4.0] - 2020-08-31
+
+### Changed
+
 - [#33] Update slevomat/coding-standard from dev-master to ^6.4
 
 ## [2.3.0] - 2020-08-21
@@ -154,3 +161,6 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 [2.2.2]: https://github.com/zingimmick/coding-standard/compare/2.2.1...2.2.2
 [#33]: https://github.com/zingimmick/coding-standard/pull/33
 [2.3.0]: https://github.com/zingimmick/coding-standard/compare/2.2.2...2.3.0
+[#35]: https://github.com/zingimmick/coding-standard/pull/35
+[#34]: https://github.com/zingimmick/coding-standard/pull/34
+[2.4.0]: https://github.com/zingimmick/coding-standard/compare/2.3.0...2.4.0
