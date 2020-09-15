@@ -13,6 +13,12 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 
 ### Changed
 
+- [#36] Skip UnaryOperatorSpacesFixer
+
+## [2.5.0] - 2020-09-02
+
+### Changed
+
 - [#35] YAML to PHP
 - [#34] Update dependency rector/rector to ^0.8.0
 
@@ -164,3 +170,5 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 [#35]: https://github.com/zingimmick/coding-standard/pull/35
 [#34]: https://github.com/zingimmick/coding-standard/pull/34
 [2.4.0]: https://github.com/zingimmick/coding-standard/compare/2.3.0...2.4.0
+[#36]: https://github.com/zingimmick/coding-standard/pull/36
+[2.5.0]: https://github.com/zingimmick/coding-standard/compare/2.4.0...2.5.0
