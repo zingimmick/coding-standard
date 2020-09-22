@@ -11,6 +11,12 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 
 ## Unreleased
 
+### Fixed
+
+- [#38] Fix phpstan/phpstan ^0.12.43 requires unsupported nikic/php-parser 4.10.0
+
+## [2.5.1] - 2020-09-16
+
 ### Changed
 
 - [#36] Skip UnaryOperatorSpacesFixer
@@ -172,3 +178,5 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 [2.4.0]: https://github.com/zingimmick/coding-standard/compare/2.3.0...2.4.0
 [#36]: https://github.com/zingimmick/coding-standard/pull/36
 [2.5.0]: https://github.com/zingimmick/coding-standard/compare/2.4.0...2.5.0
+[#38]: https://github.com/zingimmick/coding-standard/pull/38
+[2.5.1]: https://github.com/zingimmick/coding-standard/compare/2.5.0...2.5.1
