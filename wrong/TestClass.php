@@ -104,4 +104,9 @@ public $bar;
     {
         return PHP_EOL;
     }
+
+    public function testSingleArray()
+    {
+        return ['a','b'];// post statement comment
+    }
 }

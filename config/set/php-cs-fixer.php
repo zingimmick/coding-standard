@@ -59,6 +59,16 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 
     $services->set(IncrementStyleFixer::class)
         ->call('configure', [['style' => 'post']]);
+    $services->set(PhpdocTypesOrderFixer::class)
+        ->call(
+            'configure',
+            [
+                [
+                    'null_adjustment' => 'always_last',
+                    'sort_algorithm' => 'none',
+                ],
+            ]
+        );
     $parameters = $containerConfigurator->parameters();
     $parameters->set(
         Option::SKIP,
