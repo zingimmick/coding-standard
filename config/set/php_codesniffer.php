@@ -243,6 +243,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             UseDeclarationSniff::class . '.UseAfterBrace' => null,
             AnonClassDeclarationSniff::class . '.SpaceAfterKeyword' => null,
             ControlStructureSpacingSniff::class . '.LineAfterClose' => null,
+            PostStatementCommentSniff::class . '.Found' => null,
         ]
     );
 };
