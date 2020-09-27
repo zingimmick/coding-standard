@@ -13,6 +13,12 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 
 ### Changed
 
+- [#40] Disable PostStatementCommentSniff.Found
+
+## [2.5.3] - 2020-09-25
+
+### Changed
+
 - [#39] Bump rector/rector from 0.8.0 to 0.8.10
 
 ## [2.5.2] - 2020-09-22
@@ -188,3 +194,5 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 [2.5.1]: https://github.com/zingimmick/coding-standard/compare/2.5.0...2.5.1
 [#39]: https://github.com/zingimmick/coding-standard/pull/39
 [2.5.2]: https://github.com/zingimmick/coding-standard/compare/2.5.1...2.5.2
+[#40]: https://github.com/zingimmick/coding-standard/pull/40
+[2.5.3]: https://github.com/zingimmick/coding-standard/compare/2.5.2...2.5.3
