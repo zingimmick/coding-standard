@@ -13,6 +13,21 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 
 ### Changed
 
+- [#44] Disable ArrayListItemNewlineFixer
+- [#43] Use constant instead of string for changelog-linker option
+
+### Deprecated
+
+- [#42] Remove deprecated usage of Symplify\EasyCodingStandard\Configuration\Option
+
+### Removed
+
+- [#41] Remove php-cs-fixer rule sets
+
+## [2.5.4] 2020-09-27
+
+### Changed
+
 - [#40] Disable PostStatementCommentSniff.Found
 
 ## [2.5.3] - 2020-09-25
@@ -196,3 +211,8 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 [2.5.2]: https://github.com/zingimmick/coding-standard/compare/2.5.1...2.5.2
 [#40]: https://github.com/zingimmick/coding-standard/pull/40
 [2.5.3]: https://github.com/zingimmick/coding-standard/compare/2.5.2...2.5.3
+[#44]: https://github.com/zingimmick/coding-standard/pull/44
+[#43]: https://github.com/zingimmick/coding-standard/pull/43
+[#42]: https://github.com/zingimmick/coding-standard/pull/42
+[#41]: https://github.com/zingimmick/coding-standard/pull/41
+[2.5.4]: https://github.com/zingimmick/coding-standard/compare/2.5.3...2.5.4
