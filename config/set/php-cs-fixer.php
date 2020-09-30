@@ -26,7 +26,7 @@ use PhpCsFixer\Fixer\PhpUnit\PhpUnitTestClassRequiresCoversFixer;
 use PhpCsFixer\Fixer\ReturnNotation\SimplifiedNullReturnFixer;
 use PhpCsFixer\Fixer\Semicolon\MultilineWhitespaceBeforeSemicolonsFixer;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
-use Symplify\EasyCodingStandard\Configuration\Option;
+use Symplify\EasyCodingStandard\ValueObject\Option;
 
 return static function (ContainerConfigurator $containerConfigurator): void {
     $containerConfigurator->import(__DIR__ . '/../../vendor/symplify/easy-coding-standard/config/set/php-cs-fixer.php', null, true);

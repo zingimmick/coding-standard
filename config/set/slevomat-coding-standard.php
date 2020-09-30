@@ -66,7 +66,7 @@ use SlevomatCodingStandard\Sniffs\Variables\DuplicateAssignmentToVariableSniff;
 use SlevomatCodingStandard\Sniffs\Variables\UnusedVariableSniff;
 use SlevomatCodingStandard\Sniffs\Variables\UselessVariableSniff;
 use SlevomatCodingStandard\Sniffs\Whitespaces\DuplicateSpacesSniff;
-use Symplify\EasyCodingStandard\Configuration\Option;
+use Symplify\EasyCodingStandard\ValueObject\Option;
 
 return static function (ContainerConfigurator $containerConfigurator): void {
     $services = $containerConfigurator->services();
