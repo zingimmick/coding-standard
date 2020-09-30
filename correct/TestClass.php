@@ -124,4 +124,26 @@ final class TestClass implements TestableContract
     {
         return ['a', 'b']; // post statement comment
     }
+
+    public function testScopeClosingBrace()
+    {
+        return [
+            'eventCrowd' => function ($query) {
+                return $query->with('rule');
+            },
+            'eventAuction' => function ($query) {
+                return $query->with('rule');
+            },
+            'logs' => function ($query) {
+                return $query->with(
+                    [
+                        'admin' => function ($query) {
+                            return $query->select('id', 'name');
+                        },
+                    ]
+                );
+            },
+            'images',
+        ];
+    }
 }

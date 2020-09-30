@@ -49,19 +49,61 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             ]
         );
     $services->set(ConcatSpaceFixer::class)
-        ->call('configure', [['spacing' => 'one']]);
+        ->call(
+            'configure',
+            [
+                [
+                    'spacing' => 'one',
+                ],
+            ]
+        );
     $services->set(PhpdocAlignFixer::class)
-        ->call('configure', [['align' => 'left']]);
+        ->call(
+            'configure',
+            [
+                [
+                    'align' => 'left',
+                ],
+            ]
+        );
     $services->set(ArraySyntaxFixer::class)
-        ->call('configure', [['syntax' => 'short']]);
+        ->call(
+            'configure',
+            [
+                [
+                    'syntax' => 'short',
+                ],
+            ]
+        );
     $services->set(VisibilityRequiredFixer::class)
-        ->call('configure', [['elements' => ['property', 'method', 'const']]]);
+        ->call(
+            'configure',
+            [
+                [
+                    'elements' => ['property', 'method', 'const'],
+                ],
+            ]
+        );
 
     $services->set(OrderedClassElementsFixer::class)
-        ->call('configure', [['order' => ['use_trait', 'constant_public', 'constant_protected', 'constant_private']]]);
+        ->call(
+            'configure',
+            [
+                [
+                    'order' => ['use_trait', 'constant_public', 'constant_protected', 'constant_private'],
+                ],
+            ]
+        );
 
     $services->set(IncrementStyleFixer::class)
-        ->call('configure', [['style' => 'post']]);
+        ->call(
+            'configure',
+            [
+                [
+                    'style' => 'post',
+                ],
+            ]
+        );
     $services->set(PhpdocTypesOrderFixer::class)
         ->call(
             'configure',

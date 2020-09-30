@@ -37,7 +37,8 @@
       "cp -R wrong/* fixed/",
       "vendor/bin/ecs check --fix --clear-cache",
       "vendor/bin/rector process --clear-cache",
-      "vendor/bin/phpunit"
+      "vendor/bin/phpunit",
+      "vendor/bin/ecs check correct --clear-cache"
     ],
     "changelog": [
       "vendor/bin/changelog-linker dump-merges --in-categories --ansi",
