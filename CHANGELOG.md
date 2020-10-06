@@ -13,6 +13,12 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 
 ### Changed
 
+- [#45] Re-enable ArrayListItemNewlineFixer
+
+## [2.6.0] - 2020-09-30
+
+### Changed
+
 - [#44] Disable ArrayListItemNewlineFixer
 - [#43] Use constant instead of string for changelog-linker option
 
@@ -24,7 +30,7 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 
 - [#41] Remove php-cs-fixer rule sets
 
-## [2.5.4] 2020-09-27
+## [2.5.4] - 2020-09-27
 
 ### Changed
 
@@ -216,3 +222,5 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 [#42]: https://github.com/zingimmick/coding-standard/pull/42
 [#41]: https://github.com/zingimmick/coding-standard/pull/41
 [2.5.4]: https://github.com/zingimmick/coding-standard/compare/2.5.3...2.5.4
+[#45]: https://github.com/zingimmick/coding-standard/pull/45
+[2.6.0]: https://github.com/zingimmick/coding-standard/compare/2.5.4...2.6.0
