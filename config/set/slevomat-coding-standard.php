@@ -74,8 +74,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(NamespaceSpacingSniff::class);
     $services->set(RequireOneNamespaceInFileSniff::class);
     $services->set(FullyQualifiedClassNameInAnnotationSniff::class);
-    $services->set(UnusedUsesSniff::class)
-        ->property('searchAnnotations', 'true');
     $services->set(UseDoesNotStartWithBackslashSniff::class);
     $services->set(UseSpacingSniff::class);
     $services->set(SpreadOperatorSpacingSniff::class);
