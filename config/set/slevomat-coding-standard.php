@@ -39,7 +39,6 @@ use SlevomatCodingStandard\Sniffs\Namespaces\FullyQualifiedClassNameInAnnotation
 use SlevomatCodingStandard\Sniffs\Namespaces\NamespaceDeclarationSniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\NamespaceSpacingSniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\RequireOneNamespaceInFileSniff;
-use SlevomatCodingStandard\Sniffs\Namespaces\UnusedUsesSniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\UseDoesNotStartWithBackslashSniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\UseFromSameNamespaceSniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\UselessAliasSniff;
