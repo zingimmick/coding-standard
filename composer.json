@@ -1,7 +1,10 @@
 {
   "name": "zing/coding-standard",
   "description": "The coding standard of the project.",
-  "keywords": ["coding-standard", "php"],
+  "keywords": [
+    "coding-standard",
+    "php"
+  ],
   "license": "MIT",
   "authors": [
     {
@@ -17,16 +20,15 @@
   },
   "require": {
     "php": "^7.2 || ^8.0",
-    "rector/rector": "^0.7.65",
+    "rector/rector": "^0.8.10",
     "slevomat/coding-standard": "^6.4",
-    "symplify/easy-coding-standard": "^8.2"
+    "symplify/easy-coding-standard": "^8.4-dev"
   },
   "require-dev": {
+    "cweagans/composer-patches": "^1.7",
+    "migrify/vendor-patches": "^0.3.50",
     "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0",
     "roave/security-advisories": "dev-master"
-  },
-  "conflict": {
-    "rector/rector": ">=0.7.54,<=0.7.57 || 0.7.62"
   },
   "autoload-dev": {
     "psr-4": {
@@ -38,14 +40,25 @@
     "test": [
       "rm -rf fixed/*.php",
       "cp -R wrong/* fixed/",
-      "vendor/bin/ecs check --fix --clear-cache",
       "vendor/bin/rector process --clear-cache",
-      "vendor/bin/phpunit"
+      "vendor/bin/ecs check --fix --clear-cache",
+      "vendor/bin/phpunit",
+      "vendor/bin/ecs check correct --clear-cache"
     ],
     "changelog": [
       "vendor/bin/changelog-linker dump-merges --in-categories --ansi",
       "vendor/bin/changelog-linker link --ansi",
       "vendor/bin/changelog-linker cleanup --ansi"
     ]
+  },
+  "extra": {
+    "patches": {
+      "rector/rector": [
+        "patches/rector-rector-packages-changes-reporting-src-output-consoleoutputformatter-php.patch"
+      ],
+      "nette/utils": [
+        "patches/nette-utils-src-utils-strings-php.patch"
+      ]
+    }
   }
 }

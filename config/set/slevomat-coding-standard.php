@@ -39,7 +39,6 @@ use SlevomatCodingStandard\Sniffs\Namespaces\FullyQualifiedClassNameInAnnotation
 use SlevomatCodingStandard\Sniffs\Namespaces\NamespaceDeclarationSniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\NamespaceSpacingSniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\RequireOneNamespaceInFileSniff;
-use SlevomatCodingStandard\Sniffs\Namespaces\UnusedUsesSniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\UseDoesNotStartWithBackslashSniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\UseFromSameNamespaceSniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\UselessAliasSniff;
@@ -66,7 +65,7 @@ use SlevomatCodingStandard\Sniffs\Variables\DuplicateAssignmentToVariableSniff;
 use SlevomatCodingStandard\Sniffs\Variables\UnusedVariableSniff;
 use SlevomatCodingStandard\Sniffs\Variables\UselessVariableSniff;
 use SlevomatCodingStandard\Sniffs\Whitespaces\DuplicateSpacesSniff;
-use Symplify\EasyCodingStandard\Configuration\Option;
+use Symplify\EasyCodingStandard\ValueObject\Option;
 
 return static function (ContainerConfigurator $containerConfigurator): void {
     $services = $containerConfigurator->services();
@@ -74,8 +73,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(NamespaceSpacingSniff::class);
     $services->set(RequireOneNamespaceInFileSniff::class);
     $services->set(FullyQualifiedClassNameInAnnotationSniff::class);
-    $services->set(UnusedUsesSniff::class)
-        ->property('searchAnnotations', 'true');
     $services->set(UseDoesNotStartWithBackslashSniff::class);
     $services->set(UseSpacingSniff::class);
     $services->set(SpreadOperatorSpacingSniff::class);

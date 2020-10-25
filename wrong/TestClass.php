@@ -2,6 +2,8 @@
 
 
 namespace Zing\CodingStandard\Correct;
+use App\Modules\Event\Models\Event;
+use PHP_CodeSniffer\Standards\PEAR\Sniffs\WhiteSpace\ScopeClosingBraceSniff;
 use const PHP_EOL;
 use function count;
 use Zing\CodingStandard\Correct\Concerns\Testable;
@@ -103,5 +105,32 @@ public $bar;
     public function useConst()
     {
         return PHP_EOL;
+    }
+
+    public function testSingleArray()
+    {
+        return ['a','b'];// post statement comment
+    }
+
+    public function testScopeClosingBrace()
+    {
+        return [
+            'eventCrowd' => function ($query) {
+                return $query->with('rule');
+            },
+            'eventAuction' => function ($query) {
+                return $query->with('rule');
+            },
+            'logs' => function ($query) {
+                return $query->with(
+                    [
+                        'admin' => function ($query) {
+                            return $query->select('id', 'name');
+                        },
+                    ]
+                );
+            },
+            'images',
+        ];
     }
 }

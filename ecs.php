@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
-use Symplify\EasyCodingStandard\Configuration\Option;
+use Symplify\EasyCodingStandard\ValueObject\Option;
 use Symplify\EasyCodingStandard\ValueObject\Set\SetList;
 
 return static function (ContainerConfigurator $containerConfigurator): void {
@@ -29,6 +29,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             __DIR__ . '/config',
             __DIR__ . '/fixed',
             __DIR__ . '/tests',
+            __DIR__ . '/changelog-linker.php',
             __DIR__ . '/ecs.php',
             __DIR__ . '/rector.php',
         ]
