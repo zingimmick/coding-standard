@@ -11,6 +11,17 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 
 ## Unreleased
 
+### Added
+
+- [#48] Add autoapprove with kodiak
+
+### Removed
+
+- [#47] Remove composer v2 option
+- [#46] Remove SlevomatCodingStandard\Sniffs\Namespaces\UnusedUsesSniff
+
+## [2.6.1] - 2020-10-13
+
 ### Changed
 
 - [#45] Re-enable ArrayListItemNewlineFixer
@@ -224,3 +235,6 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 [2.5.4]: https://github.com/zingimmick/coding-standard/compare/2.5.3...2.5.4
 [#45]: https://github.com/zingimmick/coding-standard/pull/45
 [2.6.0]: https://github.com/zingimmick/coding-standard/compare/2.5.4...2.6.0
+[#48]: https://github.com/zingimmick/coding-standard/pull/48
+[#47]: https://github.com/zingimmick/coding-standard/pull/47
+[#46]: https://github.com/zingimmick/coding-standard/pull/46
