@@ -17,7 +17,7 @@
   },
   "require": {
     "php": "^7.2 || ^8.0",
-    "rector/rector": "^0.8.10 || dev-master",
+    "rector/rector": "^0.8.10",
     "slevomat/coding-standard": "^6.4",
     "symplify/easy-coding-standard": "^8.3.25 || ^9.0"
   },
