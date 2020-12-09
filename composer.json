@@ -1,7 +1,16 @@
 {
   "name": "zing/coding-standard",
   "description": "The coding standard of the project.",
+  "keywords": ["coding-standard", "php"],
   "license": "MIT",
+  "authors": [
+    {
+      "name": "zingimmick",
+      "email": "zingimmick@outlook.com"
+    }
+  ],
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "config": {
     "preferred-install": "dist",
     "sort-packages": true
@@ -36,7 +45,5 @@
       "vendor/bin/changelog-linker link --ansi",
       "vendor/bin/changelog-linker cleanup --ansi"
     ]
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true
+  }
 }
