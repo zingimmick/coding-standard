@@ -10,7 +10,7 @@
 .kodiak.toml export-ignore
 .php_cs export-ignore
 CHANGELOG.md export-ignore
-changelog-linker.yaml export-ignore
+changelog-linker.php export-ignore
 ecs.php export-ignore
 phpcs.xml export-ignore
 phpunit.xml.dist export-ignore
