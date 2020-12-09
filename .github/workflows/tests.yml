@@ -35,11 +35,6 @@ jobs:
 
       - name: Install dependencies
         run: composer update --prefer-stable --prefer-dist --no-interaction
-        if: "matrix.php < 8"
-
-      - name: Install dependencies
-        run: composer update --prefer-stable --prefer-dist --no-interaction --ignore-platform-reqs
-        if: "matrix.php >= 8"
 
       - name: Execute tests
         run: composer run-script test

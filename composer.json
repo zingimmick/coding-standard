@@ -8,13 +8,11 @@
   },
   "require": {
     "php": "^7.2 || ^8.0",
-    "rector/rector": "^0.8.10",
+    "rector/rector": "^0.8.10 || dev-master",
     "slevomat/coding-standard": "^6.4",
     "symplify/easy-coding-standard": "^8.3.25 || ^9.0"
   },
   "require-dev": {
-    "cweagans/composer-patches": "^1.7",
-    "migrify/vendor-patches": "^0.4.2",
     "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0",
     "roave/security-advisories": "dev-master"
   },
@@ -40,12 +38,5 @@
     ]
   },
   "minimum-stability": "dev",
-  "prefer-stable": true,
-  "extra": {
-    "patches": {
-      "rector/rector": [
-        "patches/rector-rector-packages-changes-reporting-src-output-consoleoutputformatter-php.patch"
-      ]
-    }
-  }
+  "prefer-stable": true
 }
