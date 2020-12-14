@@ -34,12 +34,4 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             __DIR__ . '/rector.php',
         ]
     );
-
-    $parameters->set(
-        Option::EXCLUDE_PATHS,
-        [
-            'correct/*.php',
-            'wrong/*.php',
-        ]
-    );
 };

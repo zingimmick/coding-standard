@@ -9,7 +9,7 @@ title = "pull_request_title" # default: "github_default"
 body = "pull_request_body" # default: "github_default"
 
 [approve]
-auto_approve_usernames = ["zingimmick", "dependabot", "renovate"]
+auto_approve_usernames = ["zingimmick", "dependabot"]
 
 [update]
 always = true # default: false
