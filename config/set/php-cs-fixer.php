@@ -31,6 +31,8 @@ use Symplify\EasyCodingStandard\ValueObject\Option;
 return static function (ContainerConfigurator $containerConfigurator): void {
     $containerConfigurator->import(__DIR__ . '/../../vendor/symplify/easy-coding-standard/config/set/php-cs-fixer.php', null, true);
 
+    $containerConfigurator->import(__DIR__ . '/../../vendor/symplify/easy-coding-standard-prefixed/config/set/php-cs-fixer.php', null, true);
+
     $containerConfigurator->import(__DIR__ . '/../../../../symplify/easy-coding-standard/config/set/php-cs-fixer.php', null, true);
 
     $services = $containerConfigurator->services();

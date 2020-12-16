@@ -1,49 +1,52 @@
 {
-  "name": "zing/coding-standard",
-  "description": "The coding standard of the project.",
-  "keywords": ["coding-standard", "php"],
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "zingimmick",
-      "email": "zingimmick@outlook.com"
-    }
-  ],
-  "minimum-stability": "dev",
-  "prefer-stable": true,
-  "config": {
-    "preferred-install": "dist",
-    "sort-packages": true
-  },
-  "require": {
-    "php": "^7.2",
-    "rector/rector": "dev-master",
-    "slevomat/coding-standard": "^6.4",
-    "symplify/easy-coding-standard": "^8.3.25 || ^9.0"
-  },
-  "require-dev": {
-    "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0",
-    "roave/security-advisories": "dev-master"
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "Zing\\CodingStandard\\Tests\\": "tests",
-      "Zing\\CodingStandard\\Correct\\": "correct"
-    }
-  },
-  "scripts": {
-    "test": [
-      "rm -rf fixed/*.php",
-      "cp -R wrong/* fixed/",
-      "vendor/bin/rector process --clear-cache",
-      "vendor/bin/ecs check --fix --clear-cache",
-      "vendor/bin/phpunit",
-      "vendor/bin/ecs check correct --clear-cache"
+    "name": "zing/coding-standard",
+    "description": "The coding standard of the project.",
+    "keywords": [
+        "coding-standard",
+        "php"
     ],
-    "changelog": [
-      "vendor/bin/changelog-linker dump-merges --in-categories --ansi",
-      "vendor/bin/changelog-linker link --ansi",
-      "vendor/bin/changelog-linker cleanup --ansi"
-    ]
-  }
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "zingimmick",
+            "email": "zingimmick@outlook.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "require": {
+        "php": "^7.2",
+        "rector/rector-prefixed": "^0.8.10,<0.8.56",
+        "slevomat/coding-standard": "^6.4",
+        "symplify/easy-coding-standard-prefixed": "^8.3.25 || ^9.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0",
+        "roave/security-advisories": "dev-master"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Zing\\CodingStandard\\Tests\\": "tests",
+            "Zing\\CodingStandard\\Correct\\": "correct"
+        }
+    },
+    "scripts": {
+        "test": [
+            "rm -rf fixed/*.php",
+            "cp -R wrong/* fixed/",
+            "vendor/bin/rector process --clear-cache",
+            "vendor/bin/ecs check --fix --clear-cache",
+            "vendor/bin/phpunit",
+            "vendor/bin/ecs check correct --clear-cache"
+        ],
+        "changelog": [
+            "vendor/bin/changelog-linker dump-merges --in-categories --ansi",
+            "vendor/bin/changelog-linker link --ansi",
+            "vendor/bin/changelog-linker cleanup --ansi"
+        ]
+    }
 }
