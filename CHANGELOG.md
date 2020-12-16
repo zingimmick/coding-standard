@@ -9,7 +9,11 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 
 <!-- changelog-linker -->
 
-## Unreleased
+## [Unreleased]
+
+- [#50] Update dependency symplify/easy-coding-standard to v9
+
+## [2.6.2] - 2020-11-20
 
 ### Added
 
@@ -238,3 +242,7 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 [#48]: https://github.com/zingimmick/coding-standard/pull/48
 [#47]: https://github.com/zingimmick/coding-standard/pull/47
 [#46]: https://github.com/zingimmick/coding-standard/pull/46
+[#50]: https://github.com/zingimmick/coding-standard/pull/50
+[#49]: https://github.com/zingimmick/coding-standard/pull/49
+[2.6.2]: https://github.com/zingimmick/coding-standard/compare/2.6.1...2.6.2
+[2.6.1]: https://github.com/zingimmick/coding-standard/compare/2.6.0...2.6.1
