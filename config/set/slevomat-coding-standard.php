@@ -55,10 +55,7 @@ use SlevomatCodingStandard\Sniffs\PHP\UselessSemicolonSniff;
 use SlevomatCodingStandard\Sniffs\TypeHints\LongTypeHintsSniff;
 use SlevomatCodingStandard\Sniffs\TypeHints\NullableTypeForNullDefaultValueSniff;
 use SlevomatCodingStandard\Sniffs\TypeHints\NullTypeHintOnLastPositionSniff;
-use SlevomatCodingStandard\Sniffs\TypeHints\ParameterTypeHintSniff;
 use SlevomatCodingStandard\Sniffs\TypeHints\ParameterTypeHintSpacingSniff;
-use SlevomatCodingStandard\Sniffs\TypeHints\PropertyTypeHintSniff;
-use SlevomatCodingStandard\Sniffs\TypeHints\ReturnTypeHintSniff;
 use SlevomatCodingStandard\Sniffs\TypeHints\ReturnTypeHintSpacingSniff;
 use SlevomatCodingStandard\Sniffs\TypeHints\UselessConstantTypeHintSniff;
 use SlevomatCodingStandard\Sniffs\Variables\DuplicateAssignmentToVariableSniff;
@@ -109,9 +106,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(LongTypeHintsSniff::class);
     $services->set(NullableTypeForNullDefaultValueSniff::class);
     $services->set(NullTypeHintOnLastPositionSniff::class);
-    $services->set(ParameterTypeHintSniff::class);
-    $services->set(PropertyTypeHintSniff::class);
-    $services->set(ReturnTypeHintSniff::class);
     $services->set(UselessConstantTypeHintSniff::class);
     $services->set(SuperfluousAbstractClassNamingSniff::class);
     $services->set(SuperfluousInterfaceNamingSniff::class);
@@ -168,19 +162,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             DisallowCommentAfterCodeSniff::class . '.DisallowedCommentAfterCode' => null,
             InlineDocCommentDeclarationSniff::class . '.MissingVariable' => null,
             InlineDocCommentDeclarationSniff::class . '.NoAssignment' => null,
-            ParameterTypeHintSniff::class . '.MissingTraversableTypeHintSpecification' => null,
-            ParameterTypeHintSniff::class . '.MissingAnyTypeHint' => null,
-            ParameterTypeHintSniff::class . '.MissingNativeTypeHint' => null,
-            ParameterTypeHintSniff::class . '.UselessAnnotation' => null,
-            ReturnTypeHintSniff::class . '.MissingTraversableTypeHintSpecification' => null,
-            ReturnTypeHintSniff::class . '.MissingAnyTypeHint' => null,
-            ReturnTypeHintSniff::class . '.MissingNativeTypeHint' => null,
-            ReturnTypeHintSniff::class . '.UselessAnnotation' => null,
-            ReturnTypeHintSniff::class . '.SlevomatCodingStandard.TypeHints.ReturnTypeHint.MissingNativeTypeHint' => null,
-            PropertyTypeHintSniff::class . '.MissingTraversableTypeHintSpecification' => null,
-            PropertyTypeHintSniff::class . '.MissingAnyTypeHint' => null,
-            PropertyTypeHintSniff::class . '.MissingNativeTypeHint' => null,
-            PropertyTypeHintSniff::class . '.UselessAnnotation' => null,
             UselessFunctionDocCommentSniff::class . '.UselessDocComment' => null,
         ]
     );
