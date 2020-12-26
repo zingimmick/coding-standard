@@ -133,4 +133,9 @@ public $bar;
             'images',
         ];
     }
+
+    public function getClassName($object): string
+    {
+        return get_class($object);
+    }
 }

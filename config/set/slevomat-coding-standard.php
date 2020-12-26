@@ -163,6 +163,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             InlineDocCommentDeclarationSniff::class . '.MissingVariable' => null,
             InlineDocCommentDeclarationSniff::class . '.NoAssignment' => null,
             UselessFunctionDocCommentSniff::class . '.UselessDocComment' => null,
+            ModernClassNameReferenceSniff::class . '.ClassNameReferencedViaFunctionCall' => null,
         ]
     );
 };
