@@ -28,7 +28,7 @@ final class TestClass implements TestableContract
     /**
      * @var \Zing\CodingStandard\Correct\Foo
      */
-    protected $foo;
+    private $foo;
 
     /**
      * @var \Zing\CodingStandard\Correct\Bar
@@ -145,5 +145,10 @@ final class TestClass implements TestableContract
             },
             'images',
         ];
+    }
+
+    public function getClassName($object): string
+    {
+        return get_class($object);
     }
 }

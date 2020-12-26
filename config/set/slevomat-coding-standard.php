@@ -154,6 +154,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(UnusedVariableSniff::class);
 
     $services->set(ReferenceThrowableOnlySniff::class);
+
     $parameters = $containerConfigurator->parameters();
     $parameters->set(
         Option::SKIP,
@@ -163,6 +164,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             InlineDocCommentDeclarationSniff::class . '.MissingVariable' => null,
             InlineDocCommentDeclarationSniff::class . '.NoAssignment' => null,
             UselessFunctionDocCommentSniff::class . '.UselessDocComment' => null,
+            ModernClassNameReferenceSniff::class . '.ClassNameReferencedViaFunctionCall' => null,
         ]
     );
 };
