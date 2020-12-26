@@ -223,6 +223,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(OneClassPerFileSniff::class);
     $services->set(OneInterfacePerFileSniff::class);
     $services->set(OneTraitPerFileSniff::class);
+
     $parameters = $containerConfigurator->parameters();
     $parameters->set(
         Option::SKIP,

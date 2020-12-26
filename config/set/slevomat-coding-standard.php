@@ -154,6 +154,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(UnusedVariableSniff::class);
 
     $services->set(ReferenceThrowableOnlySniff::class);
+
     $parameters = $containerConfigurator->parameters();
     $parameters->set(
         Option::SKIP,
