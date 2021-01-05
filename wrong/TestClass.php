@@ -138,4 +138,9 @@ public $bar;
     {
         return get_class($object);
     }
+
+    public function foo(): Foo
+    {
+        return $this->foo;
+    }
 }
