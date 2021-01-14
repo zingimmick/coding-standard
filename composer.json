@@ -1,10 +1,7 @@
 {
     "name": "zing/coding-standard",
     "description": "The coding standard of the project.",
-    "keywords": [
-        "coding-standard",
-        "php"
-    ],
+    "keywords": ["coding-standard", "php"],
     "license": "MIT",
     "authors": [
         {
@@ -12,15 +9,13 @@
             "email": "zingimmick@outlook.com"
         }
     ],
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "config": {
         "preferred-install": "dist",
         "sort-packages": true
     },
     "require": {
         "php": "^7.3 || ^8.0",
-        "rector/rector": "^0.9.0",
+        "rector/rector": "^0.9.7",
         "slevomat/coding-standard": "^6.4",
         "symplify/easy-coding-standard": "^9.0"
     },
@@ -48,5 +43,7 @@
             "vendor/bin/changelog-linker link --ansi",
             "vendor/bin/changelog-linker cleanup --ansi"
         ]
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
