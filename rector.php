@@ -43,7 +43,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $parameters->set(
         Option::SETS,
         [
-            SetList::ACTION_INJECTION_TO_CONSTRUCTOR_INJECTION,
             SetList::ARRAY_STR_FUNCTIONS_TO_STATIC_CALL,
             SetList::DOCTRINE_CODE_QUALITY,
             SetList::CODING_STYLE,
