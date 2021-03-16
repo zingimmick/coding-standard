@@ -43,7 +43,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $parameters->set(
         Option::SETS,
         [
-            SetList::ARRAY_STR_FUNCTIONS_TO_STATIC_CALL,
             SetList::DOCTRINE_CODE_QUALITY,
             SetList::CODING_STYLE,
             SetList::CODE_QUALITY,
@@ -57,6 +56,8 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             SetList::PHP_71,
             SetList::PHP_72,
             SetList::EARLY_RETURN,
+            SetList::TYPE_DECLARATION,
+            SetList::TYPE_DECLARATION_STRICT,
         ]
     );
 

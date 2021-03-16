@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use PhpCsFixer\Fixer\ControlStructure\YodaStyleFixer;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symplify\EasyCodingStandard\ValueObject\Option;
 use Symplify\EasyCodingStandard\ValueObject\Set\SetList;
@@ -21,7 +22,12 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             SetList::PSR_12,
         ]
     );
-
+    $parameters->set(
+        Option::SKIP,
+        [
+            YodaStyleFixer::class => null,
+        ]
+    );
     $parameters->set(
         Option::PATHS,
         [
