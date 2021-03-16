@@ -6,35 +6,31 @@ use PhpCsFixer\Fixer\ArrayNotation\ArraySyntaxFixer;
 use PhpCsFixer\Fixer\ClassNotation\ClassAttributesSeparationFixer;
 use PhpCsFixer\Fixer\ClassNotation\OrderedClassElementsFixer;
 use PhpCsFixer\Fixer\ClassNotation\VisibilityRequiredFixer;
-use PhpCsFixer\Fixer\ControlStructure\YodaStyleFixer;
-use PhpCsFixer\Fixer\FunctionNotation\SingleLineThrowFixer;
 use PhpCsFixer\Fixer\Import\OrderedImportsFixer;
 use PhpCsFixer\Fixer\Operator\ConcatSpaceFixer;
 use PhpCsFixer\Fixer\Operator\IncrementStyleFixer;
 use PhpCsFixer\Fixer\Operator\LogicalOperatorsFixer;
 use PhpCsFixer\Fixer\Operator\NotOperatorWithSuccessorSpaceFixer;
-use PhpCsFixer\Fixer\Operator\UnaryOperatorSpacesFixer;
-use PhpCsFixer\Fixer\Phpdoc\NoSuperfluousPhpdocTagsFixer;
 use PhpCsFixer\Fixer\Phpdoc\PhpdocAlignFixer;
 use PhpCsFixer\Fixer\Phpdoc\PhpdocNoAliasTagFixer;
-use PhpCsFixer\Fixer\Phpdoc\PhpdocNoEmptyReturnFixer;
-use PhpCsFixer\Fixer\Phpdoc\PhpdocSummaryFixer;
-use PhpCsFixer\Fixer\Phpdoc\PhpdocToCommentFixer;
 use PhpCsFixer\Fixer\Phpdoc\PhpdocTypesOrderFixer;
-use PhpCsFixer\Fixer\PhpUnit\PhpUnitInternalClassFixer;
-use PhpCsFixer\Fixer\PhpUnit\PhpUnitTestClassRequiresCoversFixer;
 use PhpCsFixer\Fixer\ReturnNotation\SimplifiedNullReturnFixer;
 use PhpCsFixer\Fixer\Semicolon\MultilineWhitespaceBeforeSemicolonsFixer;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
-use Symplify\EasyCodingStandard\ValueObject\Option;
 
 return static function (ContainerConfigurator $containerConfigurator): void {
-    $containerConfigurator->import(__DIR__ . '/../../vendor/symplify/easy-coding-standard/config/set/php-cs-fixer.php', null, true);
+    $sets = [
+        'php-cs-fixer',
+        'php70',
+        'php71',
+    ];
+    foreach ($sets as $set) {
+        $containerConfigurator->import(__DIR__ . "/../../vendor/symplify/easy-coding-standard/config/set/{$set}.php", null, true);
 
-    $containerConfigurator->import(__DIR__ . '/../../vendor/symplify/easy-coding-standard-prefixed/config/set/php-cs-fixer.php', null, true);
+        $containerConfigurator->import(__DIR__ . "/../../vendor/symplify/easy-coding-standard-prefixed/config/set/{$set}.php", null, true);
 
-    $containerConfigurator->import(__DIR__ . '/../../../../symplify/easy-coding-standard/config/set/php-cs-fixer.php', null, true);
-
+        $containerConfigurator->import(__DIR__ . "/../../../../symplify/easy-coding-standard/config/set/{$set}.php", null, true);
+    }
     $services = $containerConfigurator->services();
     $services->set(ClassAttributesSeparationFixer::class);
     $services->set(MultilineWhitespaceBeforeSemicolonsFixer::class);
@@ -116,21 +112,16 @@ return static function (ContainerConfigurator $containerConfigurator): void {
                 ],
             ]
         );
-    $parameters = $containerConfigurator->parameters();
-    $parameters->set(
-        Option::SKIP,
-        [
-            UnaryOperatorSpacesFixer::class => null,
-            SingleLineThrowFixer::class => null,
-            PhpdocSummaryFixer::class => null,
-            PhpdocToCommentFixer::class => null,
-            PhpdocNoEmptyReturnFixer::class => null,
-            PhpdocNoAliasTagFixer::class => null,
-            PhpdocTypesOrderFixer::class => null,
-            PhpUnitTestClassRequiresCoversFixer::class => null,
-            PhpUnitInternalClassFixer::class => null,
-            NoSuperfluousPhpdocTagsFixer::class => null,
-            YodaStyleFixer::class => null,
-        ]
-    );
+    $services->set(PhpdocNoAliasTagFixer::class)
+        ->call(
+            'configure',
+            [
+                [
+                    'replacements' => [
+                        'type' => 'var',
+                        'link' => 'see',
+                    ],
+                ],
+            ]
+        );
 };

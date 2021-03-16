@@ -19,11 +19,8 @@ use SlevomatCodingStandard\Sniffs\Classes\TraitUseDeclarationSniff;
 use SlevomatCodingStandard\Sniffs\Classes\TraitUseSpacingSniff;
 use SlevomatCodingStandard\Sniffs\Classes\UnusedPrivateElementsSniff;
 use SlevomatCodingStandard\Sniffs\Classes\UselessLateStaticBindingSniff;
-use SlevomatCodingStandard\Sniffs\Commenting\DisallowCommentAfterCodeSniff;
 use SlevomatCodingStandard\Sniffs\Commenting\EmptyCommentSniff;
 use SlevomatCodingStandard\Sniffs\Commenting\ForbiddenCommentsSniff;
-use SlevomatCodingStandard\Sniffs\Commenting\InlineDocCommentDeclarationSniff;
-use SlevomatCodingStandard\Sniffs\Commenting\UselessFunctionDocCommentSniff;
 use SlevomatCodingStandard\Sniffs\Commenting\UselessInheritDocCommentSniff;
 use SlevomatCodingStandard\Sniffs\ControlStructures\AssignmentInConditionSniff;
 use SlevomatCodingStandard\Sniffs\ControlStructures\DisallowContinueWithoutIntegerOperandInSwitchSniff;
@@ -33,7 +30,6 @@ use SlevomatCodingStandard\Sniffs\ControlStructures\RequireShortTernaryOperatorS
 use SlevomatCodingStandard\Sniffs\Exceptions\DeadCatchSniff;
 use SlevomatCodingStandard\Sniffs\Exceptions\ReferenceThrowableOnlySniff;
 use SlevomatCodingStandard\Sniffs\Functions\UnusedInheritedVariablePassedToClosureSniff;
-use SlevomatCodingStandard\Sniffs\Functions\UnusedParameterSniff;
 use SlevomatCodingStandard\Sniffs\Functions\UselessParameterDefaultValueSniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\FullyQualifiedClassNameInAnnotationSniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\NamespaceDeclarationSniff;
@@ -62,7 +58,6 @@ use SlevomatCodingStandard\Sniffs\Variables\DuplicateAssignmentToVariableSniff;
 use SlevomatCodingStandard\Sniffs\Variables\UnusedVariableSniff;
 use SlevomatCodingStandard\Sniffs\Variables\UselessVariableSniff;
 use SlevomatCodingStandard\Sniffs\Whitespaces\DuplicateSpacesSniff;
-use Symplify\EasyCodingStandard\ValueObject\Option;
 
 return static function (ContainerConfigurator $containerConfigurator): void {
     $services = $containerConfigurator->services();
@@ -94,77 +89,44 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(RequireOnlyStandaloneIncrementAndDecrementOperatorsSniff::class);
     $services->set(OptimizedFunctionsWithoutUnpackingSniff::class);
     $services->set(TypeCastSniff::class);
-    $services->set(UselessParenthesesSniff::class);
-    $services->set(UselessSemicolonSniff::class);
     $services->set(DuplicateAssignmentToVariableSniff::class);
-    $services->set(UselessVariableSniff::class);
     $services->set(EmptyCommentSniff::class);
     $services->set(ForbiddenCommentsSniff::class);
-    $services->set(InlineDocCommentDeclarationSniff::class);
-    $services->set(UselessFunctionDocCommentSniff::class);
     $services->set(UselessInheritDocCommentSniff::class);
     $services->set(LongTypeHintsSniff::class);
     $services->set(NullableTypeForNullDefaultValueSniff::class);
     $services->set(NullTypeHintOnLastPositionSniff::class);
-    $services->set(UselessConstantTypeHintSniff::class);
+    $services->set(DisallowDirectMagicInvokeCallSniff::class);
+    $services->set(NamespaceDeclarationSniff::class);
+
+    $services->set(DisallowMultiConstantDefinitionSniff::class);
+    $services->set(DisallowMultiPropertyDefinitionSniff::class);
+    $services->set(DuplicateSpacesSniff::class);
+    $services->set(EmptyCommentSniff::class);
+    $services->set(NullTypeHintOnLastPositionSniff::class);
+    $services->set(ParentCallSpacingSniff::class);
+    $services->set(ReferenceThrowableOnlySniff::class);
+    $services->set(RequireShortTernaryOperatorSniff::class);
+    $services->set(RequireCombinedAssignmentOperatorSniff::class);
     $services->set(SuperfluousAbstractClassNamingSniff::class);
     $services->set(SuperfluousInterfaceNamingSniff::class);
-    $services->set(NamespaceDeclarationSniff::class);
     $services->set(SuperfluousTraitNamingSniff::class);
-    $services->set(DisallowDirectMagicInvokeCallSniff::class);
-    $services->set(UnusedVariableSniff::class);
-
-    $services->set(UselessVariableSniff::class);
-
-    $services->set(UnusedInheritedVariablePassedToClosureSniff::class);
-
-    $services->set(UselessSemicolonSniff::class);
-
-    $services->set(UselessParenthesesSniff::class);
-    $services->set(UnusedPrivateElementsSniff::class);
-    $services->set(RequireShortTernaryOperatorSniff::class);
-
-    $services->set(RequireCombinedAssignmentOperatorSniff::class);
-    $services->set(DisallowCommentAfterCodeSniff::class);
-    $services->set(EmptyCommentSniff::class);
-    $services->set(DisallowMultiConstantDefinitionSniff::class);
-
-    $services->set(DisallowMultiPropertyDefinitionSniff::class);
-    $services->set(ModernClassNameReferenceSniff::class);
     $services->set(TraitUseDeclarationSniff::class);
-
-    $services->set(NullTypeHintOnLastPositionSniff::class);
-    $services->set(UselessAliasSniff::class);
-
-    $services->set(ParentCallSpacingSniff::class);
-
-    $services->set(DuplicateSpacesSniff::class);
     $services->set(TraitUseSpacingSniff::class)
         ->property('linesCountAfterLastUse', 1)
         ->property('linesCountAfterLastUseWhenLastInClass', 0)
         ->property('linesCountBeforeFirstUse', 0)
         ->property('linesCountBetweenUses', 0);
-
-    $services->set(UnusedPrivateElementsSniff::class);
-
+    $services->set(UselessAliasSniff::class);
+    $services->set(UselessParenthesesSniff::class);
+    $services->set(UselessConstantTypeHintSniff::class);
+    $services->set(UselessSemicolonSniff::class);
+    $services->set(UselessVariableSniff::class);
+    $services->set(UselessParenthesesSniff::class);
+    $services->set(UselessSemicolonSniff::class);
+    $services->set(UselessVariableSniff::class);
     $services->set(UnusedInheritedVariablePassedToClosureSniff::class);
-
-    $services->set(UnusedParameterSniff::class);
-
+    $services->set(UnusedPrivateElementsSniff::class);
     $services->set(UnusedVariableSniff::class);
 
-    $services->set(ReferenceThrowableOnlySniff::class);
-
-    $parameters = $containerConfigurator->parameters();
-    $parameters->set(
-        Option::SKIP,
-        [
-            UnusedParameterSniff::class . '.UnusedParameter' => null,
-            DisallowCommentAfterCodeSniff::class . '.DisallowedCommentAfterCode' => null,
-            InlineDocCommentDeclarationSniff::class . '.MissingVariable' => null,
-            InlineDocCommentDeclarationSniff::class . '.NoAssignment' => null,
-            UselessFunctionDocCommentSniff::class . '.UselessDocComment' => null,
-            ModernClassNameReferenceSniff::class . '.ClassNameReferencedViaFunctionCall' => null,
-        ]
-    );
 };

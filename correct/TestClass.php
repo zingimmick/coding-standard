@@ -20,6 +20,9 @@ final class TestClass implements TestableContract
 
     private const A = 1;
 
+    /**
+     * @var array<string, bool>
+     */
     public static $config = [
         // test
         'test' => true,
@@ -36,7 +39,7 @@ final class TestClass implements TestableContract
     public $bar;
 
     /**
-     * TestClass constructor
+     * TestClass constructor.
      *
      * @param \Zing\CodingStandard\Correct\Foo $foo
      * @param \Zing\CodingStandard\Correct\Bar $bar
@@ -50,8 +53,6 @@ final class TestClass implements TestableContract
     /**
      * @param $a
      * @param $b
-     *
-     * @return int
      */
     public function a($a, $b): int
     {
@@ -62,7 +63,7 @@ final class TestClass implements TestableContract
         return $a + $b;
     }
 
-    public function concat($a)
+    public function concat($a): string
     {
         return $a . '';
     }
@@ -71,7 +72,7 @@ final class TestClass implements TestableContract
     {
     }
 
-    public function formatConst()
+    public function formatConst(): int
     {
         return self::A ?? self::C;
     }
@@ -110,22 +111,25 @@ final class TestClass implements TestableContract
         return random_int(0, 1) !== 0 && random_int(0, 1) !== 0;
     }
 
-    public function useFunction()
+    public function useFunction(): int
     {
         return count([]);
     }
 
-    public function useConst()
+    public function useConst(): string
     {
         return PHP_EOL;
     }
 
-    public function testSingleArray()
+    /**
+     * @return string[]
+     */
+    public function testSingleArray(): array
     {
         return ['a', 'b']; // post statement comment
     }
 
-    public function testScopeClosingBrace()
+    public function testScopeClosingBrace(): array
     {
         return [
             'eventCrowd' => function ($query) {
