@@ -9,6 +9,20 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 
 <!-- changelog-linker -->
 
+## [3.3.0]
+
+### Changed
+
+- [#57] Bump actions/cache from v2 to v2.1.4
+
+### Deprecated
+
+- [#56] Remove deprecated rector set
+
+### Removed
+
+- [#58] Remove default skip option
+
 ## [3.1.1] - 2020-12-26
 
 ### Changed
@@ -247,3 +261,7 @@ PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLi
 [1.3.1]: https://github.com/zingimmick/coding-standard/compare/1.2.4...1.3.1
 [1.2.4]: https://github.com/zingimmick/coding-standard/compare/1.2.0...1.2.4
 [1.2.0]: https://github.com/zingimmick/coding-standard/compare/1.1.0...1.2.0
+[#58]: https://github.com/zingimmick/coding-standard/pull/58
+[#57]: https://github.com/zingimmick/coding-standard/pull/57
+[#56]: https://github.com/zingimmick/coding-standard/pull/56
+[3.3.0]: https://github.com/zingimmick/coding-standard/compare/3.1.1...3.3.0
