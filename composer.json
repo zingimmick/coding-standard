@@ -15,7 +15,6 @@
     },
     "require": {
         "php": "^7.3 || ^8.0",
-        "phpstan/phpstan": "0.12.81",
         "rector/rector": "^0.9.7",
         "slevomat/coding-standard": "^6.4",
         "symplify/easy-coding-standard": "^9.0"
