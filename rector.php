@@ -51,7 +51,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             SetList::PRIVATIZATION,
             SetList::NAMING,
             SetList::PHPUNIT_CODE_QUALITY,
-            SetList::SYMFONY_AUTOWIRE,
             SetList::PHP_70,
             SetList::PHP_71,
             SetList::PHP_72,
