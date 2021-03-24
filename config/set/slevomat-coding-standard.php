@@ -17,7 +17,6 @@ use SlevomatCodingStandard\Sniffs\Classes\SuperfluousInterfaceNamingSniff;
 use SlevomatCodingStandard\Sniffs\Classes\SuperfluousTraitNamingSniff;
 use SlevomatCodingStandard\Sniffs\Classes\TraitUseDeclarationSniff;
 use SlevomatCodingStandard\Sniffs\Classes\TraitUseSpacingSniff;
-use SlevomatCodingStandard\Sniffs\Classes\UnusedPrivateElementsSniff;
 use SlevomatCodingStandard\Sniffs\Classes\UselessLateStaticBindingSniff;
 use SlevomatCodingStandard\Sniffs\Commenting\EmptyCommentSniff;
 use SlevomatCodingStandard\Sniffs\Commenting\ForbiddenCommentsSniff;
@@ -67,7 +66,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(DisallowLateStaticBindingForConstantsSniff::class);
     $services->set(DisallowMultiConstantDefinitionSniff::class);
     $services->set(DisallowMultiPropertyDefinitionSniff::class);
-    $services->set(ModernClassNameReferenceSniff::class);
+    $services->set(ModernClassNameReferenceSniff::class)->property('enableOnObjects', false);
     $services->set(ParentCallSpacingSniff::class);
     $services->set(SuperfluousAbstractClassNamingSniff::class);
     $services->set(SuperfluousInterfaceNamingSniff::class);
@@ -78,7 +77,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         ->property('linesCountAfterLastUseWhenLastInClass', 0)
         ->property('linesCountBeforeFirstUse', 0)
         ->property('linesCountBetweenUses', 0);
-    $services->set(UnusedPrivateElementsSniff::class);
     $services->set(UselessLateStaticBindingSniff::class);
     $services->set(EmptyCommentSniff::class);
     $services->set(ForbiddenCommentsSniff::class);

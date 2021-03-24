@@ -1,8 +1,10 @@
 name: tests
 
 on:
-  push:
   pull_request:
+  push:
+    branches:
+      - master
   schedule:
     - cron: '0 0 * * *'
 
@@ -20,12 +22,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Cache dependencies
-        uses: actions/cache@v2.1.4
-        with:
-          path: ~/.composer/cache/files
-          key: dependencies-php-${{ matrix.php }}-composer-${{ hashFiles('composer.json') }}
-
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
@@ -34,7 +30,9 @@ jobs:
           coverage: true
 
       - name: Install dependencies
-        run: composer update --prefer-stable --prefer-dist --no-interaction
+        uses: ramsey/composer-install@v1
+        with:
+          dependency-versions: highest
 
       - name: Execute tests
         run: composer run-script test
