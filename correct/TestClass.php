@@ -41,8 +41,8 @@ final class TestClass implements TestableContract
     /**
      * TestClass constructor.
      *
-     * @param \Zing\CodingStandard\Correct\Foo $foo
-     * @param \Zing\CodingStandard\Correct\Bar $bar
+     * @param \Zing\CodingStandard\Correct\Foo $foo the first param
+     * @param \Zing\CodingStandard\Correct\Bar $bar the second param
      */
     public function __construct(Foo $foo, Bar $bar)
     {
@@ -129,6 +129,9 @@ final class TestClass implements TestableContract
         return ['a', 'b']; // post statement comment
     }
 
+    /**
+     * @return string[]|\Zing\CodingStandard\Correct\Closure[]
+     */
     public function testScopeClosingBrace(): array
     {
         return [

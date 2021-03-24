@@ -11,8 +11,6 @@ use Rector\EarlyReturn\Rector\If_\ChangeOrIfReturnToEarlyReturnRector;
 use Rector\Naming\Rector\Assign\RenameVariableToMatchMethodCallReturnTypeRector;
 use Rector\Naming\Rector\ClassMethod\RenameParamToMatchTypeRector;
 use Rector\PHPUnit\Set\PHPUnitSetList;
-use Rector\Privatization\Rector\ClassConst\PrivatizeLocalClassConstantRector;
-use Rector\Privatization\Rector\ClassMethod\PrivatizeLocalOnlyMethodRector;
 use Rector\Privatization\Rector\MethodCall\PrivatizeLocalGetterToPropertyRector;
 use Rector\Privatization\Rector\Property\PrivatizeLocalPropertyToPrivatePropertyRector;
 use Rector\Set\ValueObject\SetList;
@@ -30,7 +28,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $parameters->set(
         Option::SKIP,
         [
-            PrivatizeLocalOnlyMethodRector::class,
             RenameParamToMatchTypeRector::class,
             RenameVariableToMatchMethodCallReturnTypeRector::class,
             EncapsedStringsToSprintfRector::class,
@@ -39,7 +36,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             PrivatizeLocalGetterToPropertyRector::class,
             ChangeAndIfToEarlyReturnRector::class,
             VarConstantCommentRector::class,
-            PrivatizeLocalClassConstantRector::class,
         ]
     );
     $parameters->set(
