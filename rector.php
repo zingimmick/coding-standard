@@ -5,6 +5,7 @@ declare(strict_types=1);
 use Rector\CodingStyle\Rector\ClassConst\VarConstantCommentRector;
 use Rector\CodingStyle\Rector\Encapsed\EncapsedStringsToSprintfRector;
 use Rector\Core\Configuration\Option;
+use Rector\Core\ValueObject\PhpVersion;
 use Rector\Doctrine\Set\DoctrineSetList;
 use Rector\EarlyReturn\Rector\If_\ChangeAndIfToEarlyReturnRector;
 use Rector\EarlyReturn\Rector\If_\ChangeOrIfReturnToEarlyReturnRector;
@@ -69,4 +70,5 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             __DIR__ . '/rector.php',
         ]
     );
+    $parameters->set(Option::PHP_VERSION_FEATURES, PhpVersion::PHP_72);
 };
