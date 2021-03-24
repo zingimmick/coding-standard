@@ -22,7 +22,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $parameters = $containerConfigurator->parameters();
 
     $parameters->set(
-        Option::AUTOLOAD_PATHS,
+        Option::BOOTSTRAP_FILES,
         [
             __DIR__ . '/vendor/squizlabs/php_codesniffer/autoload.php',
         ]
