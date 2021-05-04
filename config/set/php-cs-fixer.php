@@ -29,41 +29,44 @@ use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigura
 use Symplify\CodingStandard\Fixer\Strict\BlankLineAfterStrictTypesFixer;
 
 return static function (ContainerConfigurator $containerConfigurator): void {
-    $containerConfigurator->import(__DIR__ . '/../../vendor/symplify/easy-coding-standard/config/set/php-cs-fixer.php', null, true);
+    $containerConfigurator->import(
+        __DIR__ . '/../../vendor/symplify/easy-coding-standard/config/set/php-cs-fixer.php',
+        null,
+        true
+    );
 
-    $containerConfigurator->import(__DIR__ . '/../../vendor/symplify/easy-coding-standard-prefixed/config/set/php-cs-fixer.php', null, true);
+    $containerConfigurator->import(
+        __DIR__ . '/../../vendor/symplify/easy-coding-standard-prefixed/config/set/php-cs-fixer.php',
+        null,
+        true
+    );
 
-    $containerConfigurator->import(__DIR__ . '/../../../../symplify/easy-coding-standard/config/set/php-cs-fixer.php', null, true);
+    $containerConfigurator->import(
+        __DIR__ . '/../../../../symplify/easy-coding-standard/config/set/php-cs-fixer.php',
+        null,
+        true
+    );
 
     $services = $containerConfigurator->services();
     $services->set(ArraySyntaxFixer::class)
-        ->call(
-            'configure',
+        ->call('configure', [
             [
-                [
-                    'syntax' => 'short',
-                ],
-            ]
-        );
+                'syntax' => 'short',
+            ],
+        ]);
     $services->set(ClassAttributesSeparationFixer::class);
     $services->set(ConcatSpaceFixer::class)
-        ->call(
-            'configure',
+        ->call('configure', [
             [
-                [
-                    'spacing' => 'one',
-                ],
-            ]
-        );
+                'spacing' => 'one',
+            ],
+        ]);
     $services->set(IncrementStyleFixer::class)
-        ->call(
-            'configure',
+        ->call('configure', [
             [
-                [
-                    'style' => 'post',
-                ],
-            ]
-        );
+                'style' => 'post',
+            ],
+        ]);
     $services->set(LogicalOperatorsFixer::class);
     $services->set(MultilineWhitespaceBeforeSemicolonsFixer::class);
     $services->set(NotOperatorWithSuccessorSpaceFixer::class);
@@ -77,63 +80,49 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             ]
         );
     $services->set(OrderedImportsFixer::class)
-        ->call(
-            'configure',
+        ->call('configure', [
             [
-                [
-                    'importsOrder' => ['class', 'function', 'const'],
-                ],
-            ]
-        );
+                'importsOrder' => ['class', 'function', 'const'],
+            ],
+        ]);
     $services->set(PhpdocAlignFixer::class)
-        ->call(
-            'configure',
+        ->call('configure', [
             [
-                [
-                    'align' => 'left',
-                ],
-            ]
-        );
+                'align' => 'left',
+            ],
+        ]);
     $services->set(PhpdocNoAliasTagFixer::class)
-        ->call(
-            'configure',
+        ->call('configure', [
             [
-                [
-                    'replacements' => [
-                        'type' => 'var',
-                        'link' => 'see',
-                    ],
+                'replacements' => [
+                    'type' => 'var',
+                    'link' => 'see',
                 ],
-            ]
-        );
+            ],
+        ]);
 
     $services->set(PhpdocTypesOrderFixer::class)
-        ->call(
-            'configure',
+        ->call('configure', [
             [
-                [
-                    'null_adjustment' => 'always_last',
-                    'sort_algorithm' => 'none',
-                ],
-            ]
-        );
+                'null_adjustment' => 'always_last',
+                'sort_algorithm' => 'none',
+            ],
+        ]);
     $services->set(SimplifiedNullReturnFixer::class);
 
     $services->set(VisibilityRequiredFixer::class)
-        ->call(
-            'configure',
+        ->call('configure', [
             [
-                [
-                    'elements' => ['property', 'method', 'const'],
-                ],
-            ]
-        );
+                'elements' => ['property', 'method', 'const'],
+            ],
+        ]);
     // PHP 70
     $services->set(RandomApiMigrationFixer::class)
-        ->call('configure', [[
-            'mt_rand' => 'random_int',
-            'rand' => 'random_int',
-        ],
+        ->call('configure', [
+            [
+                'mt_rand' => 'random_int',
+                'rand' => 'random_int',
+            ],
         ]);
 
     $services->set(TernaryToNullCoalescingFixer::class);
@@ -148,9 +137,10 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 
     // PHP 71
     $services->set(ListSyntaxFixer::class)
-        ->call('configure', [[
-            'syntax' => 'short',
-        ],
+        ->call('configure', [
+            [
+                'syntax' => 'short',
+            ],
         ]);
 
     $services->set(NullableTypeDeclarationForDefaultNullValueFixer::class);

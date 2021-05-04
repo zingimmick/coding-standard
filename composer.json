@@ -39,6 +39,7 @@
             "cp -R wrong/* fixed/",
             "vendor/bin/rector process --clear-cache",
             "vendor/bin/ecs check --fix --clear-cache",
+            "vendor/bin/ecs check --fix --clear-cache",
             "vendor/bin/phpunit",
             "vendor/bin/ecs check correct --clear-cache"
         ],

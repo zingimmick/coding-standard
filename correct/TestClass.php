@@ -142,13 +142,11 @@ final class TestClass implements TestableContract
                 return $query->with('rule');
             },
             'logs' => function ($query) {
-                return $query->with(
-                    [
-                        'admin' => function ($query) {
-                            return $query->select('id', 'name');
-                        },
-                    ]
-                );
+                return $query->with([
+                    'admin' => function ($query) {
+                        return $query->select('id', 'name');
+                    },
+                ]);
             },
             'images',
         ];

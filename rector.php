@@ -20,12 +20,7 @@ use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigura
 return static function (ContainerConfigurator $containerConfigurator): void {
     $parameters = $containerConfigurator->parameters();
 
-    $parameters->set(
-        Option::BOOTSTRAP_FILES,
-        [
-            __DIR__ . '/vendor/squizlabs/php_codesniffer/autoload.php',
-        ]
-    );
+    $parameters->set(Option::BOOTSTRAP_FILES, [__DIR__ . '/vendor/squizlabs/php_codesniffer/autoload.php']);
     $parameters->set(
         Option::SKIP,
         [
