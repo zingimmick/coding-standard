@@ -24,6 +24,7 @@
         "roave/security-advisories": "dev-master"
     },
     "conflict": {
+        "friendsofphp/php-cs-fixer": "^2.19.0",
         "nikic/php-parser": "^4.10.5"
     },
     "autoload-dev": {
