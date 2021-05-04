@@ -22,11 +22,17 @@ final class StyleTest extends TestCase
 
     public function testTraitFixed(): void
     {
-        self::assertFileEquals(__DIR__ . '/../correct/Concerns/Testable.php', __DIR__ . '/../fixed/Concerns/Testable.php');
+        self::assertFileEquals(
+            __DIR__ . '/../correct/Concerns/Testable.php',
+            __DIR__ . '/../fixed/Concerns/Testable.php'
+        );
     }
 
     public function testInterfaceFixed(): void
     {
-        self::assertFileEquals(__DIR__ . '/../correct/TestableContract.php', __DIR__ . '/../fixed/TestableContract.php');
+        self::assertFileEquals(
+            __DIR__ . '/../correct/TestableContract.php',
+            __DIR__ . '/../fixed/TestableContract.php'
+        );
     }
 }

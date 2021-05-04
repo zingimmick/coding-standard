@@ -149,13 +149,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(DisallowTabIndentSniff::class);
     $services->set(IncrementDecrementSpacingSniff::class);
     $services->set(ScopeIndentSniff::class)
-        ->property(
-            'ignoreIndentationTokens',
-            [
-                'T_COMMENT',
-                'T_DOC_COMMENT_OPEN_TAG',
-            ]
-        );
+        ->property('ignoreIndentationTokens', ['T_COMMENT', 'T_DOC_COMMENT_OPEN_TAG']);
     $services->set(ValidDefaultValueSniff::class);
     $services->set(ObjectOperatorIndentSniff::class);
     $services->set(ClassInstantiationSniff::class);

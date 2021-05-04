@@ -12,20 +12,11 @@ return static function (ContainerConfigurator $containerConfigurator): void {
 
     $parameters = $containerConfigurator->parameters();
 
-    $parameters->set(
-        Option::SETS,
-        [
-            SetList::CLEAN_CODE,
-            SetList::COMMON,
-            SetList::PSR_12,
-        ]
-    );
-    $parameters->set(
-        Option::SKIP,
-        [
-            YodaStyleFixer::class => null,
-        ]
-    );
+    $parameters->set(Option::SETS, [SetList::PSR_12, SetList::SYMPLIFY, SetList::COMMON, SetList::CLEAN_CODE]);
+    $parameters->set(Option::SKIP, [
+        YodaStyleFixer::class => null,
+        \PhpCsFixer\Fixer\ClassNotation\FinalInternalClassFixer::class,
+    ]);
     $parameters->set(
         Option::PATHS,
         [
