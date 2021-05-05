@@ -82,7 +82,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(OrderedImportsFixer::class)
         ->call('configure', [
             [
-                'importsOrder' => ['class', 'function', 'const'],
+                'imports_order' => ['class', 'function', 'const'],
             ],
         ]);
     $services->set(PhpdocAlignFixer::class)
@@ -120,8 +120,10 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(RandomApiMigrationFixer::class)
         ->call('configure', [
             [
-                'mt_rand' => 'random_int',
-                'rand' => 'random_int',
+                'replacements' => [
+                    'mt_rand' => 'random_int',
+                    'rand' => 'random_int',
+                ],
             ],
         ]);
 
