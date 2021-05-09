@@ -23,6 +23,11 @@
         "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0",
         "roave/security-advisories": "dev-master"
     },
+    "autoload": {
+        "psr-4": {
+            "Zing\\CodingStandard\\": "src"
+        }
+    },
     "autoload-dev": {
         "psr-4": {
             "Zing\\CodingStandard\\Tests\\": "tests",
