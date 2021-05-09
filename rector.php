@@ -6,7 +6,6 @@ use Rector\CodingStyle\Rector\ClassConst\VarConstantCommentRector;
 use Rector\CodingStyle\Rector\Encapsed\EncapsedStringsToSprintfRector;
 use Rector\Core\Configuration\Option;
 use Rector\Core\ValueObject\PhpVersion;
-use Rector\Doctrine\Set\DoctrineSetList;
 use Rector\EarlyReturn\Rector\If_\ChangeAndIfToEarlyReturnRector;
 use Rector\EarlyReturn\Rector\If_\ChangeOrIfReturnToEarlyReturnRector;
 use Rector\Naming\Rector\Assign\RenameVariableToMatchMethodCallReturnTypeRector;
@@ -16,10 +15,18 @@ use Rector\Privatization\Rector\MethodCall\PrivatizeLocalGetterToPropertyRector;
 use Rector\Privatization\Rector\Property\PrivatizeLocalPropertyToPrivatePropertyRector;
 use Rector\Set\ValueObject\SetList;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+use Zing\CodingStandard\Set\RectorSetList;
 
 return static function (ContainerConfigurator $containerConfigurator): void {
-    $parameters = $containerConfigurator->parameters();
+    $containerConfigurator->import(RectorSetList::CUSTOM);
+    $containerConfigurator->import(SetList::PHP_70);
+    $containerConfigurator->import(SetList::PHP_71);
+    $containerConfigurator->import(SetList::PHP_72);
+    $containerConfigurator->import(PHPUnitSetList::PHPUNIT_CODE_QUALITY);
+    $containerConfigurator->import(SetList::TYPE_DECLARATION);
+    $containerConfigurator->import(SetList::TYPE_DECLARATION_STRICT);
 
+    $parameters = $containerConfigurator->parameters();
     $parameters->set(Option::BOOTSTRAP_FILES, [__DIR__ . '/vendor/squizlabs/php_codesniffer/autoload.php']);
     $parameters->set(
         Option::SKIP,
@@ -34,26 +41,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             VarConstantCommentRector::class,
         ]
     );
-    $parameters->set(
-        Option::SETS,
-        [
-            DoctrineSetList::DOCTRINE_CODE_QUALITY,
-            SetList::CODING_STYLE,
-            SetList::CODE_QUALITY,
-            SetList::CODE_QUALITY_STRICT,
-            SetList::DEAD_CODE,
-            SetList::PRIVATIZATION,
-            SetList::NAMING,
-            PHPUnitSetList::PHPUNIT_CODE_QUALITY,
-            SetList::PHP_70,
-            SetList::PHP_71,
-            SetList::PHP_72,
-            SetList::EARLY_RETURN,
-            SetList::TYPE_DECLARATION,
-            SetList::TYPE_DECLARATION_STRICT,
-        ]
-    );
-
     $parameters->set(
         Option::PATHS,
         [
