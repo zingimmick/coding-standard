@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/zing/coding-standard"><img src="https://poser.pugx.org/zing/coding-standard/license" alt="License"></a>
 </p>
 
-> **Requires [PHP 7.2.0+](https://php.net/releases/)**
+> **Requires [PHP 7.1.0+](https://php.net/releases/)**
 
 Require Coding Standard using [Composer](https://getcomposer.org):
 
