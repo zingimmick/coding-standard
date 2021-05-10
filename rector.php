@@ -52,5 +52,4 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             __DIR__ . '/rector.php',
         ]
     );
-    $parameters->set(Option::PHP_VERSION_FEATURES, PhpVersion::PHP_72);
 };
