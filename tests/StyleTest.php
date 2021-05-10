@@ -4,35 +4,32 @@ declare(strict_types=1);
 
 namespace Zing\CodingStandard\Tests;
 
+use Symfony\Component\Finder\Finder;
+use Symfony\Component\Finder\SplFileInfo;
+
 /**
  * @internal
  * @coversNothing
  */
 final class StyleTest extends TestCase
 {
-    public function testFileFixed(): void
+    /**
+     * @return \Iterator<\Symfony\Component\Finder\SplFileInfo[]>
+     */
+    public function provideFiles(): \Iterator
     {
-        self::assertFileEquals(__DIR__ . '/../correct/file.php', __DIR__ . '/../fixed/file.php');
+        $files = Finder::create()->in(__DIR__ . '/../correct')->files();
+        foreach ($files as $file) {
+            yield [$file];
+        }
     }
 
-    public function testClassFixed(): void
+    /**
+     * @dataProvider provideFiles
+     */
+    public function testFixed(SplFileInfo $fileInfo): void
     {
-        self::assertFileEquals(__DIR__ . '/../correct/TestClass.php', __DIR__ . '/../fixed/TestClass.php');
-    }
-
-    public function testTraitFixed(): void
-    {
-        self::assertFileEquals(
-            __DIR__ . '/../correct/Concerns/Testable.php',
-            __DIR__ . '/../fixed/Concerns/Testable.php'
-        );
-    }
-
-    public function testInterfaceFixed(): void
-    {
-        self::assertFileEquals(
-            __DIR__ . '/../correct/TestableContract.php',
-            __DIR__ . '/../fixed/TestableContract.php'
-        );
+        $path = $fileInfo->getRelativePath() . '/' . $fileInfo->getFilename();
+        self::assertFileEquals(__DIR__ . '/../correct/' . $path, __DIR__ . '/../fixed/' . $path);
     }
 }
