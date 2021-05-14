@@ -24,6 +24,9 @@
         "roave/security-advisories": "dev-master",
         "symfony/finder": "^4.4 || ^5.0"
     },
+    "conflict": {
+        "nikic/php-parser": ">4.10.5"
+    },
     "autoload": {
         "psr-4": {
             "Zing\\CodingStandard\\": "src"
