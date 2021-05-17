@@ -5,7 +5,6 @@ declare(strict_types=1);
 use Rector\CodingStyle\Rector\ClassConst\VarConstantCommentRector;
 use Rector\CodingStyle\Rector\Encapsed\EncapsedStringsToSprintfRector;
 use Rector\Core\Configuration\Option;
-use Rector\Core\ValueObject\PhpVersion;
 use Rector\EarlyReturn\Rector\If_\ChangeAndIfToEarlyReturnRector;
 use Rector\EarlyReturn\Rector\If_\ChangeOrIfReturnToEarlyReturnRector;
 use Rector\Naming\Rector\Assign\RenameVariableToMatchMethodCallReturnTypeRector;
@@ -22,7 +21,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $containerConfigurator->import(SetList::PHP_70);
     $containerConfigurator->import(SetList::PHP_71);
     $containerConfigurator->import(SetList::PHP_72);
-//    $containerConfigurator->import(PHPUnitSetList::PHPUNIT_CODE_QUALITY);
+    $containerConfigurator->import(PHPUnitSetList::PHPUNIT_CODE_QUALITY);
     $containerConfigurator->import(SetList::TYPE_DECLARATION);
     $containerConfigurator->import(SetList::TYPE_DECLARATION_STRICT);
 
