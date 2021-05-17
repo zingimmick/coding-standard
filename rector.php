@@ -5,7 +5,6 @@ declare(strict_types=1);
 use Rector\CodingStyle\Rector\ClassConst\VarConstantCommentRector;
 use Rector\CodingStyle\Rector\Encapsed\EncapsedStringsToSprintfRector;
 use Rector\Core\Configuration\Option;
-use Rector\Core\ValueObject\PhpVersion;
 use Rector\EarlyReturn\Rector\If_\ChangeAndIfToEarlyReturnRector;
 use Rector\EarlyReturn\Rector\If_\ChangeOrIfReturnToEarlyReturnRector;
 use Rector\Naming\Rector\Assign\RenameVariableToMatchMethodCallReturnTypeRector;
@@ -27,7 +26,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $containerConfigurator->import(SetList::TYPE_DECLARATION_STRICT);
 
     $parameters = $containerConfigurator->parameters();
-    $parameters->set(Option::BOOTSTRAP_FILES, [__DIR__ . '/vendor/squizlabs/php_codesniffer/autoload.php']);
     $parameters->set(
         Option::SKIP,
         [
@@ -52,5 +50,4 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             __DIR__ . '/rector.php',
         ]
     );
-    $parameters->set(Option::PHP_VERSION_FEATURES, PhpVersion::PHP_72);
 };
