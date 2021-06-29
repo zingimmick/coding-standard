@@ -157,7 +157,7 @@ final class TestClass implements TestableContract
         return get_class($object);
     }
 
-    public function getFoo(): Foo
+    public function foo(): Foo
     {
         return $this->foo;
     }
