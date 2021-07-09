@@ -44,11 +44,6 @@
             "vendor/bin/ecs check --fix --clear-cache",
             "vendor/bin/phpunit",
             "vendor/bin/ecs check correct --clear-cache"
-        ],
-        "changelog": [
-            "vendor/bin/changelog-linker dump-merges --in-categories --ansi",
-            "vendor/bin/changelog-linker link --ansi",
-            "vendor/bin/changelog-linker cleanup --ansi"
         ]
     },
     "minimum-stability": "dev",
