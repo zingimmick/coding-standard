@@ -19,7 +19,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $parameters->set(Option::SKIP, [
         YodaStyleFixer::class => null,
         FinalInternalClassFixer::class,
-        RemoveCommentedCodeFixer::class,
     ]);
     $parameters->set(
         Option::PATHS,
