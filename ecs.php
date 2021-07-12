@@ -5,7 +5,6 @@ declare(strict_types=1);
 use PhpCsFixer\Fixer\ClassNotation\FinalInternalClassFixer;
 use PhpCsFixer\Fixer\ControlStructure\YodaStyleFixer;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
-use Symplify\CodingStandard\Fixer\Commenting\RemoveCommentedCodeFixer;
 use Symplify\EasyCodingStandard\ValueObject\Option;
 use Zing\CodingStandard\Set\ECSSetList;
 
