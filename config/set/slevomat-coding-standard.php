@@ -77,7 +77,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         ->property('linesCountAfterLastUse', 1)
         ->property('linesCountAfterLastUseWhenLastInClass', 0)
         ->property('linesCountBeforeFirstUse', 0)
-        ->property('linesCountBetweenUses', 0);
+        ->property('linesCountBetweenUses', 1);
     $services->set(UselessLateStaticBindingSniff::class);
     $services->set(EmptyCommentSniff::class);
     $services->set(ForbiddenCommentsSniff::class);
