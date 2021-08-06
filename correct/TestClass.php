@@ -13,7 +13,9 @@ use const PHP_EOL;
 final class TestClass implements TestableContract
 {
     use Testable;
+
     use TraitA;
+
     use TraitB;
 
     public const C = 2;
