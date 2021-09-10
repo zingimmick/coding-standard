@@ -132,7 +132,7 @@ final class TestClass implements TestableContract
     }
 
     /**
-     * @return string[]|\Zing\CodingStandard\Correct\Closure[]
+     * @return array<int|string, mixed>
      */
     public function testScopeClosingBrace(): array
     {
