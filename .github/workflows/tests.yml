@@ -33,7 +33,6 @@ jobs:
         uses: ramsey/composer-install@v1
         with:
           dependency-versions: highest
-          composer-options: ${{ matrix.flags }}
 
       - name: Execute tests
         run: composer run-script test
