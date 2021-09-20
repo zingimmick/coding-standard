@@ -52,7 +52,6 @@ use SlevomatCodingStandard\Sniffs\TypeHints\NullableTypeForNullDefaultValueSniff
 use SlevomatCodingStandard\Sniffs\TypeHints\NullTypeHintOnLastPositionSniff;
 use SlevomatCodingStandard\Sniffs\TypeHints\ParameterTypeHintSpacingSniff;
 use SlevomatCodingStandard\Sniffs\TypeHints\ReturnTypeHintSpacingSniff;
-use SlevomatCodingStandard\Sniffs\TypeHints\UselessConstantTypeHintSniff;
 use SlevomatCodingStandard\Sniffs\Variables\DuplicateAssignmentToVariableSniff;
 use SlevomatCodingStandard\Sniffs\Variables\UnusedVariableSniff;
 use SlevomatCodingStandard\Sniffs\Variables\UselessVariableSniff;
@@ -113,7 +112,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(NullableTypeForNullDefaultValueSniff::class);
     $services->set(ParameterTypeHintSpacingSniff::class);
     $services->set(ReturnTypeHintSpacingSniff::class);
-    $services->set(UselessConstantTypeHintSniff::class);
     $services->set(DuplicateAssignmentToVariableSniff::class);
     $services->set(UnusedVariableSniff::class);
     $services->set(UselessVariableSniff::class);

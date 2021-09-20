@@ -11,7 +11,6 @@ use Rector\Naming\Rector\Assign\RenameVariableToMatchMethodCallReturnTypeRector;
 use Rector\Naming\Rector\ClassMethod\RenameParamToMatchTypeRector;
 use Rector\PHPUnit\Set\PHPUnitSetList;
 use Rector\Privatization\Rector\MethodCall\PrivatizeLocalGetterToPropertyRector;
-use Rector\Privatization\Rector\Property\PrivatizeLocalPropertyToPrivatePropertyRector;
 use Rector\Set\ValueObject\SetList;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Zing\CodingStandard\Set\RectorSetList;
@@ -33,7 +32,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             RenameParamToMatchTypeRector::class,
             RenameVariableToMatchMethodCallReturnTypeRector::class,
             EncapsedStringsToSprintfRector::class,
-            PrivatizeLocalPropertyToPrivatePropertyRector::class,
             ChangeOrIfReturnToEarlyReturnRector::class,
             PrivatizeLocalGetterToPropertyRector::class,
             ChangeAndIfToEarlyReturnRector::class,
