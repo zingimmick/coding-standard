@@ -13,11 +13,9 @@ use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigura
 use Zing\CodingStandard\Set\RectorSetList;
 
 return static function (ContainerConfigurator $containerConfigurator): void {
-    $containerConfigurator->import(RectorSetList::CUSTOM);
     $containerConfigurator->import(LevelSetList::UP_TO_PHP_72);
+    $containerConfigurator->import(RectorSetList::CUSTOM);
     $containerConfigurator->import(PHPUnitSetList::PHPUNIT_CODE_QUALITY);
-    $containerConfigurator->import(SetList::TYPE_DECLARATION);
-    $containerConfigurator->import(SetList::TYPE_DECLARATION_STRICT);
 
     $parameters = $containerConfigurator->parameters();
     $parameters->set(Option::BOOTSTRAP_FILES, [__DIR__ . '/vendor/squizlabs/php_codesniffer/autoload.php']);

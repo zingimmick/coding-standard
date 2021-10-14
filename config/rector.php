@@ -13,4 +13,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $containerConfigurator->import(SetList::PRIVATIZATION);
     $containerConfigurator->import(SetList::NAMING);
     $containerConfigurator->import(SetList::EARLY_RETURN);
+    $containerConfigurator->import(SetList::TYPE_DECLARATION);
+    $containerConfigurator->import(SetList::TYPE_DECLARATION_STRICT);
 };
