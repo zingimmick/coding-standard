@@ -14,7 +14,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $containerConfigurator->import(ECSSetList::CUSTOM);
 
     $parameters = $containerConfigurator->parameters();
-
+    $parameters->set(Option::PARALLEL, true);
     $parameters->set(Option::SKIP, [
         YodaStyleFixer::class => null,
         FinalInternalClassFixer::class,

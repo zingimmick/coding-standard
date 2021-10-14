@@ -18,8 +18,14 @@ final class TestClass implements TestableContract
 
     use TraitB;
 
+    /**
+     * @var int
+     */
     public const C = 2;
 
+    /**
+     * @var int
+     */
     private const A = 1;
 
     /**
