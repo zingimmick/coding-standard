@@ -8,7 +8,6 @@ use Rector\Naming\Rector\ClassMethod\RenameParamToMatchTypeRector;
 use Rector\PHPUnit\Set\PHPUnitSetList;
 use Rector\Privatization\Rector\MethodCall\PrivatizeLocalGetterToPropertyRector;
 use Rector\Set\ValueObject\LevelSetList;
-use Rector\Set\ValueObject\SetList;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Zing\CodingStandard\Set\RectorSetList;
 
@@ -32,6 +31,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         [
             __DIR__ . '/config',
             __DIR__ . '/fixed',
+            __DIR__ . '/src',
             __DIR__ . '/tests',
             __DIR__ . '/ecs.php',
             __DIR__ . '/rector.php',

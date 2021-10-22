@@ -11,7 +11,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $containerConfigurator->import(SetList::SYMPLIFY);
     $containerConfigurator->import(SetList::COMMON);
     $containerConfigurator->import(SetList::CLEAN_CODE);
-    $containerConfigurator->import(ECSSetList::PHP_CS_FIXER);
-    $containerConfigurator->import(ECSSetList::PHP_CODESNIFFER);
-    $containerConfigurator->import(ECSSetList::SLEVOMAT_CODING_STANDARD);
+    $containerConfigurator->import(ECSSetList::PHP_CS_FIXER_CUSTOM);
+    $containerConfigurator->import(ECSSetList::PHP_CODESNIFFER_CUSTOM);
+    $containerConfigurator->import(ECSSetList::SLEVOMAT_CODING_STANDARD_CUSTOM);
 };
