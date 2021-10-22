@@ -17,10 +17,10 @@ use PhpCsFixer\Fixer\Phpdoc\PhpdocTypesOrderFixer;
 use PhpCsFixer\Fixer\ReturnNotation\SimplifiedNullReturnFixer;
 use PhpCsFixer\Fixer\Semicolon\MultilineWhitespaceBeforeSemicolonsFixer;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
-use Symplify\EasyCodingStandard\ValueObject\Set\SetList;
+use Zing\CodingStandard\Set\PhpCsFixerSetList;
 
 return static function (ContainerConfigurator $containerConfigurator): void {
-    $containerConfigurator->import(SetList::PHP_CS_FIXER);
+    $containerConfigurator->import(PhpCsFixerSetList::PHP_CS_FIXER);
 
     $services = $containerConfigurator->services();
     $services->set(ArraySyntaxFixer::class)

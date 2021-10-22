@@ -1,0 +1,71 @@
+#!/usr/bin/env php
+<?php
+
+use Zing\CodingStandard\PhpCsFixerRuleSetGenerator;
+
+if (is_file(__DIR__ . '/../vendor/autoload.php') === true) {
+    include_once __DIR__ . '/../vendor/autoload.php';
+}
+if (is_file(__DIR__ . '/../vendor/symplify/easy-coding-standard/vendor/autoload.php') === true) {
+    include_once __DIR__ . '/../vendor/symplify/easy-coding-standard/vendor/autoload.php';
+}
+if (is_file(__DIR__ . '/../vendor/symplify/easy-coding-standard/vendor/squizlabs/php_codesniffer/autoload.php') === true) {
+    include_once __DIR__ . '/../vendor/symplify/easy-coding-standard/vendor/squizlabs/php_codesniffer/autoload.php';
+}
+
+$generator = new PhpCsFixerRuleSetGenerator();
+$generator->generate();
+//foreach (\Symfony\Component\Finder\Finder::create()->files()->in(__DIR__ . '/../vendor/symplify/easy-coding-standard/vendor/squizlabs/php_codesniffer/src/Standards')->name('ruleset.xml') as $file) {
+//    $runner = new \PHP_CodeSniffer\Runner();
+//    $runner->config = new \PHP_CodeSniffer\Config();
+//    $runner->config->standards=['Generic'];
+//    $runner->init();
+//
+//    $ruleset = (new \PHP_CodeSniffer\Ruleset($runner->config));
+//    var_dump(count($ruleset->sniffs));
+//    $sniffs = $ruleset->processRuleset($file->getRealPath());
+//$ruleset->registerSniffs($sniffs,[],[]);
+//    $services = [];
+//    foreach ($ruleset->sniffs as $sniff) {
+//        $lines = [];
+//
+//        $lines[] = sprintf("    \$services->set(\\%s::class)",is_object($sniff)? get_class($sniff):$sniff);
+//
+//        $lines[] = ';';
+//        $services[] = implode($lines);
+//    }
+//    foreach ($ruleset->ruleset as $code => $attr) {
+//        if (isset($ruleset->sniffCodes[$code])) {
+//            $sniff = $ruleset->sniffCodes[$code];
+//
+//            $lines = [];
+//            $lines[] = sprintf("    \$services->set(\\%s::class)", $sniff);
+//            if (isset($attr['properties'])) {
+//                foreach ($attr['properties'] as $name => $value) {
+//                    $lines[] = sprintf("->property('%s', %s)", $name, $generator->printValue($value));
+//                }
+//            }
+//            $lines[] = ';';
+//            $services[] = implode($lines);
+//        }
+//    }
+//    $services = implode(PHP_EOL, $services);
+//
+//    $contents = <<<CODE_SAMPLE
+//<?php
+//
+//declare(strict_types=1);
+//
+//use Symfony\\Component\\DependencyInjection\\Loader\\Configurator\\ContainerConfigurator;
+//
+//return static function (ContainerConfigurator \$containerConfigurator): void {
+//    \$services = \$containerConfigurator->services();
+//{$services}
+//};
+//CODE_SAMPLE;
+//    file_put_contents(
+//        sprintf(__DIR__ . '/../config/set/php_codesniffer/%s.php', strtolower($file->getRelativePath())),
+//        $contents
+//    );
+//}
+
