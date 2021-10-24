@@ -236,6 +236,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
                     'switch',
                     'throw',
                     'use',
+                    'use_trait',
                 ],
             ],
         ]);
