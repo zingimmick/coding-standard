@@ -64,7 +64,7 @@ final class ECSSetList
     /**
      * @var string
      */
-    public const PHP_CS_FIXER = self::PHP_CODESNIFFER_CUSTOM;
+    public const PHP_CS_FIXER = self::PHP_CS_FIXER_CUSTOM;
 
     /**
      * @var string
