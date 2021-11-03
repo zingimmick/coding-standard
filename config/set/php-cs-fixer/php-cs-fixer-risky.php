@@ -42,6 +42,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
                 'strict' => true,
             ],
         ]);
+    $services->set(\PhpCsFixer\Fixer\StringNotation\StringLengthToEmptyFixer::class);
     $services->set(\PhpCsFixer\Fixer\Operator\TernaryToElvisOperatorFixer::class);
     $services->set(\PhpCsFixer\Fixer\Alias\ArrayPushFixer::class);
     $services->set(\PhpCsFixer\Fixer\Alias\EregToPregFixer::class);

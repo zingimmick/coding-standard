@@ -33,6 +33,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(\PhpCsFixer\Fixer\Casing\LowercaseKeywordsFixer::class);
     $services->set(\PhpCsFixer\Fixer\ControlStructure\NoBreakCommentFixer::class);
     $services->set(\PhpCsFixer\Fixer\PhpTag\NoClosingTagFixer::class);
+    $services->set(\PhpCsFixer\Fixer\Operator\NoSpaceAroundDoubleColonFixer::class);
     $services->set(\PhpCsFixer\Fixer\Whitespace\NoTrailingWhitespaceFixer::class);
     $services->set(\PhpCsFixer\Fixer\Comment\NoTrailingWhitespaceInCommentFixer::class);
     $services->set(\PhpCsFixer\Fixer\ControlStructure\SwitchCaseSemicolonToColonFixer::class);

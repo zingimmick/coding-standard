@@ -23,7 +23,12 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(\PhpCsFixer\Fixer\Whitespace\IndentationTypeFixer::class);
     $services->set(\PhpCsFixer\Fixer\ControlStructure\ElseifFixer::class);
     $services->set(\PhpCsFixer\Fixer\Whitespace\LineEndingFixer::class);
-    $services->set(\PhpCsFixer\Fixer\ClassNotation\ClassDefinitionFixer::class);
+    $services->set(\PhpCsFixer\Fixer\ClassNotation\ClassDefinitionFixer::class)
+        ->call('configure', [
+            [
+                'space_before_parenthesis' => true,
+            ],
+        ]);
     $services->set(\PhpCsFixer\Fixer\ClassNotation\SingleTraitInsertPerStatementFixer::class);
     $services->set(\PhpCsFixer\Fixer\Basic\BracesFixer::class)
         ->call('configure', [
@@ -46,6 +51,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(\PhpCsFixer\Fixer\Casing\LowercaseKeywordsFixer::class);
     $services->set(\PhpCsFixer\Fixer\ControlStructure\NoBreakCommentFixer::class);
     $services->set(\PhpCsFixer\Fixer\PhpTag\NoClosingTagFixer::class);
+    $services->set(\PhpCsFixer\Fixer\Operator\NoSpaceAroundDoubleColonFixer::class);
     $services->set(\PhpCsFixer\Fixer\Whitespace\NoTrailingWhitespaceFixer::class);
     $services->set(\PhpCsFixer\Fixer\Comment\NoTrailingWhitespaceInCommentFixer::class);
     $services->set(\PhpCsFixer\Fixer\ControlStructure\SwitchCaseSemicolonToColonFixer::class);

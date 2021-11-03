@@ -112,6 +112,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(\PhpCsFixer\Fixer\FunctionNotation\NoSpacesAfterFunctionNameFixer::class);
     $services->set(\PhpCsFixer\Fixer\Whitespace\NoSpacesInsideParenthesisFixer::class);
     $services->set(\PhpCsFixer\Fixer\ArrayNotation\ArraySyntaxFixer::class);
+    $services->set(\PhpCsFixer\Fixer\ControlStructure\EmptyLoopConditionFixer::class);
     $services->set(\PhpCsFixer\Fixer\ArrayNotation\NoMultilineWhitespaceAroundDoubleArrowFixer::class);
     $services->set(\PhpCsFixer\Fixer\Operator\StandardizeIncrementFixer::class);
     $services->set(\PhpCsFixer\Fixer\PhpTag\BlankLineAfterOpeningTagFixer::class);
@@ -123,6 +124,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(\PhpCsFixer\Fixer\FunctionNotation\FunctionTypehintSpaceFixer::class);
     $services->set(\PhpCsFixer\Fixer\ControlStructure\IncludeFixer::class);
     $services->set(\PhpCsFixer\Fixer\Operator\IncrementStyleFixer::class);
+    $services->set(\PhpCsFixer\Fixer\Casing\IntegerLiteralCaseFixer::class);
     $services->set(\PhpCsFixer\Fixer\PhpTag\LinebreakAfterOpeningTagFixer::class);
     $services->set(\PhpCsFixer\Fixer\Casing\MagicConstantCasingFixer::class);
     $services->set(\PhpCsFixer\Fixer\Casing\MagicMethodCasingFixer::class);
@@ -174,6 +176,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(\PhpCsFixer\Fixer\Casing\LowercaseKeywordsFixer::class);
     $services->set(\PhpCsFixer\Fixer\ControlStructure\NoBreakCommentFixer::class);
     $services->set(\PhpCsFixer\Fixer\PhpTag\NoClosingTagFixer::class);
+    $services->set(\PhpCsFixer\Fixer\Operator\NoSpaceAroundDoubleColonFixer::class);
     $services->set(\PhpCsFixer\Fixer\Whitespace\NoTrailingWhitespaceFixer::class);
     $services->set(\PhpCsFixer\Fixer\Comment\NoTrailingWhitespaceInCommentFixer::class);
     $services->set(\PhpCsFixer\Fixer\ControlStructure\SwitchCaseSemicolonToColonFixer::class);
@@ -236,7 +239,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
                     'switch',
                     'throw',
                     'use',
-                    'use_trait',
                 ],
             ],
         ]);
