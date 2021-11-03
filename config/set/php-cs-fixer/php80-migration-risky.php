@@ -14,6 +14,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             ],
         ]);
     $services->set(\PhpCsFixer\Fixer\FunctionNotation\ImplodeCallFixer::class);
+    $services->set(\PhpCsFixer\Fixer\Alias\ModernizeStrposFixer::class);
     $services->set(\PhpCsFixer\Fixer\FunctionNotation\CombineNestedDirnameFixer::class);
     $services->set(\PhpCsFixer\Fixer\Alias\PowToExponentiationFixer::class);
     $services->set(\PhpCsFixer\Fixer\FunctionNotation\VoidReturnFixer::class);

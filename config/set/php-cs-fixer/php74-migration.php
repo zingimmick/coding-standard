@@ -31,4 +31,5 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(\PhpCsFixer\Fixer\Operator\TernaryToNullCoalescingFixer::class);
     $services->set(\PhpCsFixer\Fixer\ArrayNotation\NormalizeIndexBraceFixer::class);
     $services->set(\PhpCsFixer\Fixer\CastNotation\ShortScalarCastFixer::class);
+    $services->set(\PhpCsFixer\Fixer\Operator\AssignNullCoalescingToCoalesceEqualFixer::class);
 };

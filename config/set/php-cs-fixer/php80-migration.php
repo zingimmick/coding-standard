@@ -33,4 +33,5 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(\PhpCsFixer\Fixer\Operator\TernaryToNullCoalescingFixer::class);
     $services->set(\PhpCsFixer\Fixer\NamespaceNotation\CleanNamespaceFixer::class);
     $services->set(\PhpCsFixer\Fixer\CastNotation\NoUnsetCastFixer::class);
+    $services->set(\PhpCsFixer\Fixer\Operator\AssignNullCoalescingToCoalesceEqualFixer::class);
 };
