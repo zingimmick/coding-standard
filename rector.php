@@ -8,7 +8,6 @@ use Rector\Naming\Rector\ClassMethod\RenameParamToMatchTypeRector;
 use Rector\PHPUnit\Set\PHPUnitSetList;
 use Rector\Privatization\Rector\MethodCall\PrivatizeLocalGetterToPropertyRector;
 use Rector\Set\ValueObject\LevelSetList;
-use Rector\TypeDeclaration\Rector\Property\TypedPropertyFromStrictGetterMethodReturnTypeRector;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Zing\CodingStandard\Set\RectorSetList;
 
@@ -25,7 +24,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             RenameParamToMatchTypeRector::class,
             RenameVariableToMatchMethodCallReturnTypeRector::class,
             PrivatizeLocalGetterToPropertyRector::class,
-            TypedPropertyFromStrictGetterMethodReturnTypeRector::class,
         ]
     );
     $parameters->set(
