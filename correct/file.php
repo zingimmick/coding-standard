@@ -7,3 +7,8 @@ function far(): void
 }
 
 far();
+
+function name(Faker\Generator $faker)
+{
+    return $faker->name();
+}
