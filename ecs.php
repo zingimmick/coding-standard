@@ -18,6 +18,9 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $parameters->set(Option::SKIP, [
         YodaStyleFixer::class => null,
         FinalInternalClassFixer::class,
+        \PHP_CodeSniffer\Standards\PSR1\Sniffs\Methods\CamelCapsMethodNameSniff::class => [
+            __DIR__ . '/src/Printer.php',
+        ],
     ]);
     $parameters->set(
         Option::PATHS,
