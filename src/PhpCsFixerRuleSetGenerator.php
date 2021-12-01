@@ -4,12 +4,33 @@ declare(strict_types=1);
 
 namespace Zing\CodingStandard;
 
+use InvalidArgumentException;
 use PhpCsFixer\Fixer\ConfigurableFixerInterface;
-use PhpCsFixer\Fixer\FixerInterface;
 use PhpCsFixer\FixerFactory;
 use PhpCsFixer\RuleSet\RuleSet;
 use PhpCsFixer\RuleSet\RuleSetDescriptionInterface;
 use PhpCsFixer\RuleSet\RuleSets;
+use PhpParser\BuilderHelpers;
+use PhpParser\Node\Arg;
+use PhpParser\Node\Expr\Array_;
+use PhpParser\Node\Expr\ArrayItem;
+use PhpParser\Node\Expr\Assign;
+use PhpParser\Node\Expr\ClassConstFetch;
+use PhpParser\Node\Expr\Closure;
+use PhpParser\Node\Expr\MethodCall;
+use PhpParser\Node\Expr\Variable;
+use PhpParser\Node\Name;
+use PhpParser\Node\Param;
+use PhpParser\Node\Scalar\LNumber;
+use PhpParser\Node\Scalar\String_;
+use PhpParser\Node\Stmt\Declare_;
+use PhpParser\Node\Stmt\DeclareDeclare;
+use PhpParser\Node\Stmt\Expression;
+use PhpParser\Node\Stmt\Nop;
+use PhpParser\Node\Stmt\Return_;
+use PhpParser\Node\Stmt\Use_;
+use PhpParser\Node\Stmt\UseUse;
+use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
 final class PhpCsFixerRuleSetGenerator
 {
@@ -52,91 +73,112 @@ final class PhpCsFixerRuleSetGenerator
         '@PhpCsFixer:risky' => 'php-cs-fixer-risky.php',
         '@Symfony' => 'symfony.php',
         '@Symfony:risky' => 'symfony-risky.php',
+        'laravel' => 'laravel.php',
     ];
 
-    private function printFixer(FixerInterface $fixer, ?array $config): string
-    {
-        if (! $fixer instanceof ConfigurableFixerInterface) {
-            return sprintf('    $services->set(\\%s::class);', get_class($fixer));
-        }
+    /**
+     * @var string
+     */
+    private const SERVICES = 'services';
 
-        if (! $config) {
-            return sprintf('    $services->set(\\%s::class);', get_class($fixer));
-        }
-
-        return sprintf("    \$services->set(\\%s::class)
-        ->call('configure', [
-            %s
-        ]);", get_class($fixer), $this->printArray($config));
-    }
-
-    private function printRuleSetDescription(
+    private function printRuleSetDescription2(
         FixerFactory $fixerFactory,
         RuleSetDescriptionInterface $ruleSetDescription
-    ) {
+    ): string {
         $services = [];
         $ruleSet = new RuleSet($ruleSetDescription->getRules());
         foreach ($fixerFactory->useRuleSet($ruleSet)->getFixers() as $fixer) {
             $config = $ruleSet->getRuleConfiguration($fixer->getName());
-            $services[$fixer->getName()] = $this->printFixer($fixer, $config);
+            $expr = new MethodCall(new Variable(self::SERVICES), 'set', [
+                new Arg(new ClassConstFetch(new Name\FullyQualified(get_class($fixer)), 'class')),
+            ]);
+            if ($fixer instanceof ConfigurableFixerInterface && $config) {
+                $configuration = new ArrayItem(new Array_(array_map(function ($value, $key): ArrayItem {
+                    return new ArrayItem(BuilderHelpers::normalizeValue($value), BuilderHelpers::normalizeValue($key));
+                }, $config, array_keys($config))));
+                $expr = new MethodCall($expr, 'call', [
+                    new Arg(new String_('configure')),
+                    new Arg(new Array_([$configuration])),
+                ]);
+            }
+
+            $services[] = new Expression($expr);
         }
 
-        $services = implode(PHP_EOL, $services);
+        array_unshift(
+            $services,
+            new Expression(new Assign(new Variable(self::SERVICES), new MethodCall(new Variable(
+                'containerConfigurator'
+            ), self::SERVICES)))
+        );
 
-        return <<<CODE_SAMPLE
-<?php
-
-declare(strict_types=1);
-
-use Symfony\\Component\\DependencyInjection\\Loader\\Configurator\\ContainerConfigurator;
-
-return static function (ContainerConfigurator \$containerConfigurator): void {
-    \$services = \$containerConfigurator->services();
-{$services}
-};
-CODE_SAMPLE;
+        return (new Printer([
+            'shortArraySyntax' => true,
+        ]))
+            ->prettyPrintFile([
+                new Declare_([new DeclareDeclare('strict_types', new LNumber(1))]),
+                new Nop(),
+                new Use_([new UseUse(new Name(ContainerConfigurator::class))]),
+                new Nop(),
+                new Return_(new Closure([
+                    'static' => true,
+                    'returnType' => 'void',
+                    'params' => [
+                        new Param(new Variable('containerConfigurator'), null, new Name('ContainerConfigurator')),
+                    ],
+                    'stmts' => $services,
+                ])),
+                new Nop(),
+            ]);
     }
 
     public function generate(): void
     {
-        foreach (RuleSets::getSetDefinitions() as $ruleSetDescription) {
+        foreach ($this->getSetDefinitions() as $setDefinition) {
             $fixerFactory = new FixerFactory();
             $fixerFactory->registerBuiltInFixers();
             file_put_contents(
-                sprintf(__DIR__ . '/../config/set/php-cs-fixer/%s', self::MAP[$ruleSetDescription->getName()]),
-                $this->printRuleSetDescription($fixerFactory, $ruleSetDescription)
+                sprintf(__DIR__ . '/../config/set/php-cs-fixer/%s', self::MAP[$setDefinition->getName()]),
+                $this->printRuleSetDescription2($fixerFactory, $setDefinition)
             );
         }
     }
 
-    public function printArray(array $configuration): string
+    /**
+     * @return array<string, mixed>
+     */
+    private function getSetDefinitions(): array
     {
-        if (array_keys($configuration) === array_keys(array_keys($configuration))) {
-            return sprintf('[%s]', implode(', ', array_map(function ($value): string {
-                return $this->printValue($value);
-            }, $configuration)));
-        }
+        $setDefinitions = RuleSets::getSetDefinitions();
+        $setDefinitions['laravel'] = $this->getLaravelRuleSet();
 
-        return sprintf('[%s]', implode(', ', array_map(function ($value, $key): string {
-            return sprintf(sprintf("'%s' => %%s", $key), $this->printValue($value));
-        }, $configuration, array_keys($configuration))));
+        return $setDefinitions;
     }
 
     /**
-     * @param mixed $value
-     *
-     * @return string|mixed
+     * @return object|void
      */
-    public function printValue($value): string
+    private function getLaravelRuleSet(): ?LaravelSet
     {
-        if (is_bool($value)) {
-            return $value ? 'true' : 'false';
+        $rules = null;
+        file_put_contents(
+            sys_get_temp_dir() . '/laravel.php',
+            file_get_contents(
+                'https://gist.githubusercontent.com/laravel-shift/cab527923ed2a109dda047b97d53c200/raw/.php-cs-fixer.php'
+            ),
+            LOCK_EX
+        );
+
+        try {
+            require sys_get_temp_dir() . '/laravel.php';
+        } catch (InvalidArgumentException $invalidArgumentException) {
+            print_r($invalidArgumentException->getMessage());
         }
 
-        if (is_array($value)) {
-            return $this->printArray($value);
+        if (! isset($rules)) {
+            return null;
         }
 
-        return sprintf("'%s'", $value);
+        return new LaravelSet($rules);
     }
 }
