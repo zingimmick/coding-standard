@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Zing\CodingStandard;
 
-use Nette\Utils\Strings;
 use PhpParser\Node\Expr\ArrayItem;
 use PhpParser\Node\Expr\Closure;
 use PhpParser\Node\Expr\MethodCall;
@@ -16,7 +15,7 @@ final class Printer extends Standard
 {
     protected function pStmt_Declare(Declare_ $node): string
     {
-        return Strings::replace(parent::pStmt_Declare($node), '#\\s+#', '');
+        return preg_replace('#\\s+#', '', parent::pStmt_Declare($node));
     }
 
     protected function hasNodeWithComments(array $nodes): bool
@@ -46,15 +45,15 @@ final class Printer extends Standard
 
     protected function pExpr_MethodCall(MethodCall $node): string
     {
-        $nextCallIndentReplacement = ')' . PHP_EOL . Strings::indent('->', 8, ' ');
+        $nextCallIndentReplacement = ')' . PHP_EOL . preg_replace('#(?:^|[\\r\\n]+)(?=[^\\r\\n])#', '$0' . \str_repeat(' ', 8), '->');
         $content = parent::pExpr_MethodCall($node);
-        $content = Strings::replace($content, '#\\n#', PHP_EOL . str_repeat(' ', 4));
+        $content = preg_replace('#\\n#', PHP_EOL . str_repeat(' ', 4), $content);
 
-        return Strings::replace($content, '#\)->#', $nextCallIndentReplacement);
+        return preg_replace('#\)->#', $nextCallIndentReplacement, $content);
     }
 
     protected function pExpr_Closure(Closure $node): string
     {
-        return Strings::replace(parent::pExpr_Closure($node), '#\) : void#', '): void');
+        return preg_replace('#\) : void#', '): void', parent::pExpr_Closure($node));
     }
 }
