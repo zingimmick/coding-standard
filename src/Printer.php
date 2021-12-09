@@ -45,7 +45,11 @@ final class Printer extends Standard
 
     protected function pExpr_MethodCall(MethodCall $node): string
     {
-        $nextCallIndentReplacement = ')' . PHP_EOL . preg_replace('#(?:^|[\\r\\n]+)(?=[^\\r\\n])#', '$0' . \str_repeat(' ', 8), '->');
+        $nextCallIndentReplacement = ')' . PHP_EOL . preg_replace(
+            '#(?:^|[\\r\\n]+)(?=[^\\r\\n])#',
+            '$0' . \str_repeat(' ', 8),
+            '->'
+        );
         $content = parent::pExpr_MethodCall($node);
         $content = preg_replace('#\\n#', PHP_EOL . str_repeat(' ', 4), $content);
 
