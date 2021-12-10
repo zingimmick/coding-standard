@@ -8,7 +8,6 @@ use Zing\CodingStandard\Set\RectorSetList;
 
 return static function (ContainerConfigurator $containerConfigurator): void {
     $containerConfigurator->import(SetList::CODING_STYLE);
-    $containerConfigurator->import(SetList::CODING_STYLE_ADVANCED);
     $containerConfigurator->import(SetList::CODE_QUALITY);
     $containerConfigurator->import(SetList::DEAD_CODE);
     $containerConfigurator->import(SetList::PRIVATIZATION);
