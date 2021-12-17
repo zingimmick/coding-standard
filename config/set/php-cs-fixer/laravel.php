@@ -40,6 +40,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
         ]);
     $services->set(\PhpCsFixer\Fixer\Basic\BracesFixer::class);
     $services->set(\PhpCsFixer\Fixer\FunctionNotation\FunctionDeclarationFixer::class);
+    $services->set(\PhpCsFixer\Fixer\ArrayNotation\NoMultilineWhitespaceAroundDoubleArrowFixer::class);
     $services->set(\PhpCsFixer\Fixer\FunctionNotation\MethodArgumentSpaceFixer::class)
         ->call('configure', [
             [
@@ -71,7 +72,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             ],
         ]);
     $services->set(\PhpCsFixer\Fixer\PhpTag\BlankLineAfterOpeningTagFixer::class);
-    $services->set(\PhpCsFixer\Fixer\ArrayNotation\NoMultilineWhitespaceAroundDoubleArrowFixer::class);
     $services->set(\PhpCsFixer\Fixer\Import\SingleImportPerStatementFixer::class);
     $services->set(\PhpCsFixer\Fixer\Operator\ConcatSpaceFixer::class)
         ->call('configure', [

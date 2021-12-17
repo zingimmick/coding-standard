@@ -19,9 +19,9 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(\PhpCsFixer\Fixer\FunctionNotation\ImplodeCallFixer::class);
     $services->set(\PhpCsFixer\Fixer\FunctionNotation\CombineNestedDirnameFixer::class);
     $services->set(\PhpCsFixer\Fixer\Alias\PowToExponentiationFixer::class);
+    $services->set(\PhpCsFixer\Fixer\Strict\StrictParamFixer::class);
     $services->set(\PhpCsFixer\Fixer\Comment\CommentToPhpdocFixer::class);
     $services->set(\PhpCsFixer\Fixer\LanguageConstruct\NoUnsetOnPropertyFixer::class);
-    $services->set(\PhpCsFixer\Fixer\Strict\StrictParamFixer::class);
     $services->set(\PhpCsFixer\Fixer\ConstantNotation\NativeConstantInvocationFixer::class)
         ->call('configure', [
             [
