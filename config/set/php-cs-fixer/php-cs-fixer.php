@@ -34,6 +34,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(\PhpCsFixer\Fixer\ControlStructure\EmptyLoopBodyFixer::class);
     $services->set(\PhpCsFixer\Fixer\ControlStructure\NoSuperfluousElseifFixer::class);
     $services->set(\PhpCsFixer\Fixer\ControlStructure\NoUselessElseFixer::class);
+    $services->set(\PhpCsFixer\Fixer\Operator\NewWithBracesFixer::class);
     $services->set(\PhpCsFixer\Fixer\ClassNotation\ClassDefinitionFixer::class)
         ->call('configure', [
             [
@@ -50,6 +51,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             ],
         ]);
     $services->set(\PhpCsFixer\Fixer\Whitespace\MethodChainingIndentationFixer::class);
+    $services->set(\PhpCsFixer\Fixer\ArrayNotation\NoMultilineWhitespaceAroundDoubleArrowFixer::class);
     $services->set(\PhpCsFixer\Fixer\FunctionNotation\FunctionDeclarationFixer::class);
     $services->set(\PhpCsFixer\Fixer\FunctionNotation\MethodArgumentSpaceFixer::class)
         ->call('configure', [
@@ -113,7 +115,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(\PhpCsFixer\Fixer\Whitespace\NoSpacesInsideParenthesisFixer::class);
     $services->set(\PhpCsFixer\Fixer\ArrayNotation\ArraySyntaxFixer::class);
     $services->set(\PhpCsFixer\Fixer\ControlStructure\EmptyLoopConditionFixer::class);
-    $services->set(\PhpCsFixer\Fixer\ArrayNotation\NoMultilineWhitespaceAroundDoubleArrowFixer::class);
     $services->set(\PhpCsFixer\Fixer\Operator\StandardizeIncrementFixer::class);
     $services->set(\PhpCsFixer\Fixer\PhpTag\BlankLineAfterOpeningTagFixer::class);
     $services->set(\PhpCsFixer\Fixer\Import\SingleImportPerStatementFixer::class);
@@ -167,7 +168,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(\PhpCsFixer\Fixer\LanguageConstruct\DeclareEqualNormalizeFixer::class);
     $services->set(\PhpCsFixer\Fixer\CastNotation\LowercaseCastFixer::class);
     $services->set(\PhpCsFixer\Fixer\Casing\LowercaseStaticReferenceFixer::class);
-    $services->set(\PhpCsFixer\Fixer\Operator\NewWithBracesFixer::class);
     $services->set(\PhpCsFixer\Fixer\ClassNotation\NoBlankLinesAfterClassOpeningFixer::class);
     $services->set(\PhpCsFixer\Fixer\CastNotation\ShortScalarCastFixer::class);
     $services->set(\PhpCsFixer\Fixer\Operator\TernaryOperatorSpacesFixer::class);
