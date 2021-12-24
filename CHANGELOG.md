@@ -8,6 +8,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLinker](https://github.com/Symplify/ChangelogLinker).
 
 <!-- changelog-linker -->
+## 4.9.0 - 2021-12-24
+
+## What's Changed
+
+- Fix slevomat/coding-standard config by @zingimmick in https://github.com/zingimmick/coding-standard/pull/113
+
+**Full Changelog**: https://github.com/zingimmick/coding-standard/compare/4.8.4...4.9.0
+
 ## 4.8.4 - 2021-12-17
 
 ## What's Changed
