@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Symfony\Component\DependencyInjection\Loader\Configurator;
 
+use PHP_CodeSniffer\Config;
 use SlevomatCodingStandard\Sniffs\Arrays\DisallowImplicitArrayCreationSniff;
 use SlevomatCodingStandard\Sniffs\Arrays\TrailingArrayCommaSniff;
 use SlevomatCodingStandard\Sniffs\Classes\ClassConstantVisibilitySniff;
@@ -18,8 +19,11 @@ use SlevomatCodingStandard\Sniffs\Classes\SuperfluousTraitNamingSniff;
 use SlevomatCodingStandard\Sniffs\Classes\TraitUseDeclarationSniff;
 use SlevomatCodingStandard\Sniffs\Classes\TraitUseSpacingSniff;
 use SlevomatCodingStandard\Sniffs\Classes\UselessLateStaticBindingSniff;
+use SlevomatCodingStandard\Sniffs\Commenting\DisallowCommentAfterCodeSniff;
 use SlevomatCodingStandard\Sniffs\Commenting\EmptyCommentSniff;
 use SlevomatCodingStandard\Sniffs\Commenting\ForbiddenCommentsSniff;
+use SlevomatCodingStandard\Sniffs\Commenting\InlineDocCommentDeclarationSniff;
+use SlevomatCodingStandard\Sniffs\Commenting\UselessFunctionDocCommentSniff;
 use SlevomatCodingStandard\Sniffs\Commenting\UselessInheritDocCommentSniff;
 use SlevomatCodingStandard\Sniffs\ControlStructures\AssignmentInConditionSniff;
 use SlevomatCodingStandard\Sniffs\ControlStructures\DisallowContinueWithoutIntegerOperandInSwitchSniff;
@@ -29,11 +33,13 @@ use SlevomatCodingStandard\Sniffs\ControlStructures\RequireShortTernaryOperatorS
 use SlevomatCodingStandard\Sniffs\Exceptions\DeadCatchSniff;
 use SlevomatCodingStandard\Sniffs\Exceptions\ReferenceThrowableOnlySniff;
 use SlevomatCodingStandard\Sniffs\Functions\UnusedInheritedVariablePassedToClosureSniff;
+use SlevomatCodingStandard\Sniffs\Functions\UnusedParameterSniff;
 use SlevomatCodingStandard\Sniffs\Functions\UselessParameterDefaultValueSniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\FullyQualifiedClassNameInAnnotationSniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\NamespaceDeclarationSniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\NamespaceSpacingSniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\RequireOneNamespaceInFileSniff;
+use SlevomatCodingStandard\Sniffs\Namespaces\UnusedUsesSniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\UseDoesNotStartWithBackslashSniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\UseFromSameNamespaceSniff;
 use SlevomatCodingStandard\Sniffs\Namespaces\UselessAliasSniff;
@@ -50,7 +56,10 @@ use SlevomatCodingStandard\Sniffs\PHP\UselessSemicolonSniff;
 use SlevomatCodingStandard\Sniffs\TypeHints\LongTypeHintsSniff;
 use SlevomatCodingStandard\Sniffs\TypeHints\NullableTypeForNullDefaultValueSniff;
 use SlevomatCodingStandard\Sniffs\TypeHints\NullTypeHintOnLastPositionSniff;
+use SlevomatCodingStandard\Sniffs\TypeHints\ParameterTypeHintSniff;
 use SlevomatCodingStandard\Sniffs\TypeHints\ParameterTypeHintSpacingSniff;
+use SlevomatCodingStandard\Sniffs\TypeHints\PropertyTypeHintSniff;
+use SlevomatCodingStandard\Sniffs\TypeHints\ReturnTypeHintSniff;
 use SlevomatCodingStandard\Sniffs\TypeHints\ReturnTypeHintSpacingSniff;
 use SlevomatCodingStandard\Sniffs\Variables\DuplicateAssignmentToVariableSniff;
 use SlevomatCodingStandard\Sniffs\Variables\UnusedVariableSniff;
@@ -58,6 +67,7 @@ use SlevomatCodingStandard\Sniffs\Variables\UselessVariableSniff;
 use SlevomatCodingStandard\Sniffs\Whitespaces\DuplicateSpacesSniff;
 
 return static function (ContainerConfigurator $containerConfigurator): void {
+    Config::setConfigData('php_version', 70200);
     $services = $containerConfigurator->services();
     $services->set(DisallowImplicitArrayCreationSniff::class);
     $services->set(TrailingArrayCommaSniff::class);
@@ -65,8 +75,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(DisallowLateStaticBindingForConstantsSniff::class);
     $services->set(DisallowMultiConstantDefinitionSniff::class);
     $services->set(DisallowMultiPropertyDefinitionSniff::class);
-    $services->set(ModernClassNameReferenceSniff::class)
-        ->property('enableOnObjects', false);
+    $services->set(ModernClassNameReferenceSniff::class);
     $services->set(ParentCallSpacingSniff::class);
     $services->set(SuperfluousAbstractClassNamingSniff::class);
     $services->set(SuperfluousInterfaceNamingSniff::class);
@@ -115,4 +124,14 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(UnusedVariableSniff::class);
     $services->set(UselessVariableSniff::class);
     $services->set(DuplicateSpacesSniff::class);
+    $services->set(ParameterTypeHintSniff::class);
+    $services->set(PropertyTypeHintSniff::class);
+    $services->set(ReturnTypeHintSniff::class);
+    $services->set(UnusedUsesSniff::class)
+        ->property('searchAnnotations', true);
+//    $services->set(UselessConstantTypeHintSniff::class);
+    $services->set(InlineDocCommentDeclarationSniff::class);
+    $services->set(UselessFunctionDocCommentSniff::class);
+    $services->set(DisallowCommentAfterCodeSniff::class);
+    $services->set(UnusedParameterSniff::class);
 };
