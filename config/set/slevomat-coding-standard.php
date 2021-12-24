@@ -124,14 +124,16 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(UnusedVariableSniff::class);
     $services->set(UselessVariableSniff::class);
     $services->set(DuplicateSpacesSniff::class);
-    $services->set(ParameterTypeHintSniff::class);
+    // Conflict with declaration must be compatible with parent method
+//    $services->set(\SlevomatCodingStandard\Sniffs\TypeHints\ParameterTypeHintSniff::class);
+//    $services->set(\SlevomatCodingStandard\Sniffs\TypeHints\ParameterTypeHintSniff::class);
     $services->set(PropertyTypeHintSniff::class);
     $services->set(ReturnTypeHintSniff::class);
     $services->set(UnusedUsesSniff::class)
         ->property('searchAnnotations', true);
-//    $services->set(UselessConstantTypeHintSniff::class);
+    // Conflict with VarConstantCommentRector
+//    $services->set(\SlevomatCodingStandard\Sniffs\TypeHints\UselessConstantTypeHintSniff::class);
     $services->set(InlineDocCommentDeclarationSniff::class);
     $services->set(UselessFunctionDocCommentSniff::class);
     $services->set(DisallowCommentAfterCodeSniff::class);
-    $services->set(UnusedParameterSniff::class);
 };
