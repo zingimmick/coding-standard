@@ -18,6 +18,9 @@ final class Printer extends Standard
         return preg_replace('#\\s+#', '', parent::pStmt_Declare($node));
     }
 
+    /**
+     * @param \PhpParser\Node[] $nodes
+     */
     protected function hasNodeWithComments(array $nodes): bool
     {
         if (count($nodes) >= 8) {

@@ -119,7 +119,11 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             new PropertyFetchToMethodCall('Faker\Generator', 'creditCardType', 'creditCardType'),
             new PropertyFetchToMethodCall('Faker\Generator', 'creditCardNumber', 'creditCardNumber'),
             new PropertyFetchToMethodCall('Faker\Generator', 'creditCardExpirationDate', 'creditCardExpirationDate'),
-            new PropertyFetchToMethodCall('Faker\Generator', 'creditCardExpirationDateString', 'creditCardExpirationDateString'),
+            new PropertyFetchToMethodCall(
+                'Faker\Generator',
+                'creditCardExpirationDateString',
+                'creditCardExpirationDateString'
+            ),
             new PropertyFetchToMethodCall('Faker\Generator', 'creditCardDetails', 'creditCardDetails'),
             new PropertyFetchToMethodCall('Faker\Generator', 'iban', 'iban'),
             new PropertyFetchToMethodCall('Faker\Generator', 'swiftBicNumber', 'swiftBicNumber'),

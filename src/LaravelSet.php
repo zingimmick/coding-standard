@@ -14,9 +14,9 @@ final class LaravelSet extends AbstractRuleSetDescription
     private $rules;
 
     /**
-     * @param $rules
+     * @param mixed[] $rules
      */
-    public function __construct($rules)
+    public function __construct(array $rules)
     {
         $this->rules = $rules;
 

@@ -39,8 +39,8 @@ public $bar;
     }
 
     /**
-     * @param $a
-     * @param $b
+     * @param mixed $a
+     * @param mixed $b
      * @return int
      */
    public function a($a,$b):int {
@@ -48,6 +48,10 @@ public $bar;
         return  $a+$b;
     }
 
+    /**
+     * @param mixed $a
+     * @return string
+     */
     public function concat($a)
     {
         return  $a.'';
@@ -69,27 +73,8 @@ public $bar;
         if (random_int(0,1)){
             echo 1;
             echo 2;
-            echo 3;
-            echo 4;
-            echo 5;
-            echo 6;
-            echo 7;
-            echo 8;
-            echo 9;
-            echo 10;
-            echo 11;
-            echo 12;
-            echo 13;
-            echo 14;
-            echo 15;
-            echo 16;
-            echo 17;
-            echo 18;
-            echo 19;
-            echo 20;
-            echo 21;
         }else{
-            echo 22;
+            echo 3;
         }
     }
     public function logicalOperators():bool
@@ -134,6 +119,10 @@ public $bar;
         ];
     }
 
+    /**
+     * @param mixed $object
+     * @return string
+     */
     public function getClassName($object): string
     {
         return get_class($object);

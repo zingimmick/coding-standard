@@ -57,8 +57,8 @@ final class TestClass implements TestableContract
     }
 
     /**
-     * @param $a
-     * @param $b
+     * @param mixed $a
+     * @param mixed $b
      */
     public function a($a, $b): int
     {
@@ -69,6 +69,9 @@ final class TestClass implements TestableContract
         return $a + $b;
     }
 
+    /**
+     * @param mixed $a
+     */
     public function concat($a): string
     {
         return $a . '';
@@ -88,28 +91,9 @@ final class TestClass implements TestableContract
         if (random_int(0, 1) !== 0) {
             echo 1;
             echo 2;
-            echo 3;
-            echo 4;
-            echo 5;
-            echo 6;
-            echo 7;
-            echo 8;
-            echo 9;
-            echo 10;
-            echo 11;
-            echo 12;
-            echo 13;
-            echo 14;
-            echo 15;
-            echo 16;
-            echo 17;
-            echo 18;
-            echo 19;
-            echo 20;
-            echo 21;
         } else {
-            echo 22;
-        }//end if
+            echo 3;
+        }
     }
 
     public function logicalOperators(): bool
@@ -132,7 +116,8 @@ final class TestClass implements TestableContract
      */
     public function testSingleArray(): array
     {
-        return ['a', 'b']; // post statement comment
+        // post statement comment
+        return ['a', 'b'];
     }
 
     /**
@@ -158,6 +143,9 @@ final class TestClass implements TestableContract
         ];
     }
 
+    /**
+     * @param mixed $object
+     */
     public function getClassName($object): string
     {
         return get_class($object);
