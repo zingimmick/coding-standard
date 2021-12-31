@@ -27,7 +27,7 @@ final class TestClass implements TestableContract
     private const A = 1;
 
     /**
-     * @var array<string, bool>
+     * @var array<string, true>
      */
     public static $config = [
         // test
