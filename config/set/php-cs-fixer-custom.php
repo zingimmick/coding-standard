@@ -2,10 +2,8 @@
 
 declare(strict_types=1);
 
-use PhpCsFixer\Fixer\ArrayNotation\ArraySyntaxFixer;
 use PhpCsFixer\Fixer\ClassNotation\ClassAttributesSeparationFixer;
 use PhpCsFixer\Fixer\ClassNotation\OrderedClassElementsFixer;
-use PhpCsFixer\Fixer\ClassNotation\VisibilityRequiredFixer;
 use PhpCsFixer\Fixer\Import\OrderedImportsFixer;
 use PhpCsFixer\Fixer\Operator\ConcatSpaceFixer;
 use PhpCsFixer\Fixer\Operator\IncrementStyleFixer;
@@ -23,12 +21,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $containerConfigurator->import(PhpCsFixerSetList::PHP_CS_FIXER);
 
     $services = $containerConfigurator->services();
-    $services->set(ArraySyntaxFixer::class)
-        ->call('configure', [
-            [
-                'syntax' => 'short',
-            ],
-        ]);
     $services->set(ClassAttributesSeparationFixer::class);
     $services->set(ConcatSpaceFixer::class)
         ->call('configure', [
@@ -84,11 +76,4 @@ return static function (ContainerConfigurator $containerConfigurator): void {
             ],
         ]);
     $services->set(SimplifiedNullReturnFixer::class);
-
-    $services->set(VisibilityRequiredFixer::class)
-        ->call('configure', [
-            [
-                'elements' => ['property', 'method', 'const'],
-            ],
-        ]);
 };
