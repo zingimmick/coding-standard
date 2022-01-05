@@ -9,7 +9,6 @@ use Symfony\Component\Finder\SplFileInfo;
 
 /**
  * @internal
- * @coversNothing
  */
 final class StyleTest extends TestCase
 {
