@@ -8,6 +8,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLinker](https://github.com/Symplify/ChangelogLinker).
 
 <!-- changelog-linker -->
+## 5.1.0 - 2022-01-05
+
+## What's Changed
+
+- Remove default fixers by @zingimmick in https://github.com/zingimmick/coding-standard/pull/115
+- Update license copyright year(s) by @github-actions in https://github.com/zingimmick/coding-standard/pull/116
+- Re-generate custom rule by @zingimmick in https://github.com/zingimmick/coding-standard/pull/117
+- Fix incorrect types by @zingimmick in https://github.com/zingimmick/coding-standard/pull/118
+
+**Full Changelog**: https://github.com/zingimmick/coding-standard/compare/5.0.1...5.1.0
+
 ## 5.0.0 - 2021-12-24
 
 ## What's Changed
