@@ -9,7 +9,7 @@ use PhpCsFixer\RuleSet\AbstractRuleSetDescription;
 final class LaravelSet extends AbstractRuleSetDescription
 {
     /**
-     * @var mixed[]|mixed
+     * @var mixed
      */
     private $rules;
 

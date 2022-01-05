@@ -2,8 +2,7 @@
 
 declare(strict_types=1);
 
-use PhpCsFixer\Fixer\ClassNotation\FinalInternalClassFixer;
-use PhpCsFixer\Fixer\ControlStructure\YodaStyleFixer;
+use PHP_CodeSniffer\Standards\PSR1\Sniffs\Methods\CamelCapsMethodNameSniff;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Symplify\EasyCodingStandard\ValueObject\Option;
 use Zing\CodingStandard\Set\ECSSetList;
@@ -16,11 +15,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $parameters = $containerConfigurator->parameters();
     $parameters->set(Option::PARALLEL, true);
     $parameters->set(Option::SKIP, [
-        YodaStyleFixer::class => null,
-        FinalInternalClassFixer::class,
-        \PHP_CodeSniffer\Standards\PSR1\Sniffs\Methods\CamelCapsMethodNameSniff::class => [
-            __DIR__ . '/src/Printer.php',
-        ],
+        CamelCapsMethodNameSniff::class => [__DIR__ . '/src/Printer.php'],
     ]);
     $parameters->set(
         Option::PATHS,

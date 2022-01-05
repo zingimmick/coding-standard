@@ -74,6 +74,7 @@ final class PhpCsFixerRuleSetGenerator
         '@Symfony' => 'symfony.php',
         '@Symfony:risky' => 'symfony-risky.php',
         'laravel' => 'laravel.php',
+        'custom' => '../php-cs-fixer-custom.php',
     ];
 
     /**
@@ -151,6 +152,10 @@ final class PhpCsFixerRuleSetGenerator
     {
         $setDefinitions = RuleSets::getSetDefinitions();
         $setDefinitions['laravel'] = $this->getLaravelRuleSet();
+        $customSets = [new CustomSet()];
+        foreach ($customSets as $customSet) {
+            $setDefinitions[$customSet->getName()] = $customSet;
+        }
 
         return $setDefinitions;
     }
