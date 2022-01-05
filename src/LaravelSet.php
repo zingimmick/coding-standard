@@ -9,13 +9,11 @@ use PhpCsFixer\RuleSet\AbstractRuleSetDescription;
 final class LaravelSet extends AbstractRuleSetDescription
 {
     /**
-     * @var array<string, bool|array<string, mixed>>
+     * @var array
      */
-    private $rules;
+    private $rules = [];
 
-    /**
-     * @param array<string, bool|array<string, mixed>> $rules
-     */
+
     public function __construct(array $rules)
     {
         $this->rules = $rules;
@@ -34,7 +32,7 @@ final class LaravelSet extends AbstractRuleSetDescription
     }
 
     /**
-     * @return array<string, bool|array<string, mixed>>
+     * @return array
      */
     public function getRules(): array
     {

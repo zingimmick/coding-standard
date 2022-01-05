@@ -35,4 +35,4 @@ jobs:
           dependency-versions: highest
 
       - name: Execute tests
-        run: composer run-script test
+        run: vendor/bin/rector process src/LaravelSet.php --dry-run

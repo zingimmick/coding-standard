@@ -8,14 +8,21 @@ use Rector\Naming\Rector\ClassMethod\RenameParamToMatchTypeRector;
 use Rector\PHPUnit\Set\PHPUnitSetList;
 use Rector\Privatization\Rector\MethodCall\PrivatizeLocalGetterToPropertyRector;
 use Rector\Set\ValueObject\LevelSetList;
+use Rector\Set\ValueObject\SetList;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 use Zing\CodingStandard\Set\RectorSetList;
 
 return static function (ContainerConfigurator $containerConfigurator): void {
-    $containerConfigurator->import(LevelSetList::UP_TO_PHP_72);
-    $containerConfigurator->import(RectorSetList::CUSTOM);
-    $containerConfigurator->import(PHPUnitSetList::PHPUNIT_CODE_QUALITY);
-
+    $services=$containerConfigurator->services();
+//    $services->set(\Rector\TypeDeclaration\Rector\Closure\AddClosureReturnTypeRector::class);
+//    $services->set(\Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromStrictTypedPropertyRector::class);
+//    $services->set(\Rector\TypeDeclaration\Rector\Property\TypedPropertyFromStrictConstructorRector::class);
+//    $services->set(\Rector\TypeDeclaration\Rector\Param\ParamTypeFromStrictTypedPropertyRector::class);
+//    $services->set(\Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromStrictTypedCallRector::class);
+//    $services->set(\Rector\TypeDeclaration\Rector\ClassMethod\AddVoidReturnTypeWhereNoReturnRector::class);
+//    $services->set(\Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromReturnNewRector::class);
+    $services->set(\Rector\TypeDeclaration\Rector\Property\TypedPropertyFromStrictGetterMethodReturnTypeRector::class);
+//    $services->set(\Rector\TypeDeclaration\Rector\ClassMethod\AddMethodCallBasedStrictParamTypeRector::class);
     $parameters = $containerConfigurator->parameters();
     $parameters->set(
         Option::BOOTSTRAP_FILES,
