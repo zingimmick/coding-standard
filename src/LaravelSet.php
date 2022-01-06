@@ -11,7 +11,7 @@ final class LaravelSet extends AbstractRuleSetDescription
     /**
      * @var array<string, bool|array<string, mixed>>
      */
-    private $rules;
+    private $rules = [];
 
     /**
      * @param array<string, bool|array<string, mixed>> $rules
