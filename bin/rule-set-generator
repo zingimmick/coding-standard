@@ -1,8 +1,12 @@
 #!/usr/bin/env php
 <?php
 
+use PhpParser\BuilderFactory;
 use Zing\CodingStandard\PHPCodeSnifferRuleSetGenerator;
 use Zing\CodingStandard\PhpCsFixerRuleSetGenerator;
+use Zing\CodingStandard\Printer;
+use Zing\CodingStandard\Printers\PHPCodeSnifferRuleSetPrinter;
+use Zing\CodingStandard\Printers\PhpCsFixerRuleSetPrinter;
 
 if (is_file(__DIR__ . '/../vendor/autoload.php') === true) {
     include_once __DIR__ . '/../vendor/autoload.php';
@@ -14,9 +18,13 @@ if (is_file(__DIR__ . '/../vendor/symplify/easy-coding-standard/vendor/squizlabs
     include_once __DIR__ . '/../vendor/symplify/easy-coding-standard/vendor/squizlabs/php_codesniffer/autoload.php';
 }
 
+$builderFactory = (new BuilderFactory());
+$printer = new Printer([
+    'shortArraySyntax' => true,
+]);
 $generators = [
-    new PhpCsFixerRuleSetGenerator(),
-    new PHPCodeSnifferRuleSetGenerator(),
+    new PhpCsFixerRuleSetGenerator(new PhpCsFixerRuleSetPrinter($builderFactory,$printer)),
+    new PHPCodeSnifferRuleSetGenerator(new PHPCodeSnifferRuleSetPrinter($builderFactory,$printer)),
 ];
 foreach ($generators as $generator) {
     $generator->generate();

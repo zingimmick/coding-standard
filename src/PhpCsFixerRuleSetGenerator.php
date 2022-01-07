@@ -10,27 +10,7 @@ use PhpCsFixer\FixerFactory;
 use PhpCsFixer\RuleSet\RuleSet;
 use PhpCsFixer\RuleSet\RuleSetDescriptionInterface;
 use PhpCsFixer\RuleSet\RuleSets;
-use PhpParser\BuilderHelpers;
-use PhpParser\Node\Arg;
-use PhpParser\Node\Expr\Array_;
-use PhpParser\Node\Expr\ArrayItem;
-use PhpParser\Node\Expr\Assign;
-use PhpParser\Node\Expr\ClassConstFetch;
-use PhpParser\Node\Expr\Closure;
-use PhpParser\Node\Expr\MethodCall;
-use PhpParser\Node\Expr\Variable;
-use PhpParser\Node\Name;
-use PhpParser\Node\Param;
-use PhpParser\Node\Scalar\LNumber;
-use PhpParser\Node\Scalar\String_;
-use PhpParser\Node\Stmt\Declare_;
-use PhpParser\Node\Stmt\DeclareDeclare;
-use PhpParser\Node\Stmt\Expression;
-use PhpParser\Node\Stmt\Nop;
-use PhpParser\Node\Stmt\Return_;
-use PhpParser\Node\Stmt\Use_;
-use PhpParser\Node\Stmt\UseUse;
-use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+use Zing\CodingStandard\Printers\RuleSetPrinter;
 
 final class PhpCsFixerRuleSetGenerator
 {
@@ -78,59 +58,13 @@ final class PhpCsFixerRuleSetGenerator
     ];
 
     /**
-     * @var string
+     * @var \Zing\CodingStandard\Printers\RuleSetPrinter
      */
-    private const SERVICES = 'services';
+    private $printer;
 
-    private function printRuleSetDescription2(
-        FixerFactory $fixerFactory,
-        RuleSetDescriptionInterface $ruleSetDescription
-    ): string {
-        $services = [];
-        $ruleSet = new RuleSet($ruleSetDescription->getRules());
-        foreach ($fixerFactory->useRuleSet($ruleSet)->getFixers() as $fixer) {
-            $config = $ruleSet->getRuleConfiguration($fixer->getName());
-            $expr = new MethodCall(new Variable(self::SERVICES), 'set', [
-                new Arg(new ClassConstFetch(new Name\FullyQualified(get_class($fixer)), 'class')),
-            ]);
-            if ($fixer instanceof ConfigurableFixerInterface && $config) {
-                $configuration = new ArrayItem(new Array_(array_map(function ($value, $key): ArrayItem {
-                    return new ArrayItem(BuilderHelpers::normalizeValue($value), BuilderHelpers::normalizeValue($key));
-                }, $config, array_keys($config))));
-                $expr = new MethodCall($expr, 'call', [
-                    new Arg(new String_('configure')),
-                    new Arg(new Array_([$configuration])),
-                ]);
-            }
-
-            $services[] = new Expression($expr);
-        }
-
-        array_unshift(
-            $services,
-            new Expression(new Assign(new Variable(self::SERVICES), new MethodCall(new Variable(
-                'containerConfigurator'
-            ), self::SERVICES)))
-        );
-
-        return (new Printer([
-            'shortArraySyntax' => true,
-        ]))
-            ->prettyPrintFile([
-                new Declare_([new DeclareDeclare('strict_types', new LNumber(1))]),
-                new Nop(),
-                new Use_([new UseUse(new Name(ContainerConfigurator::class))]),
-                new Nop(),
-                new Return_(new Closure([
-                    'static' => true,
-                    'returnType' => 'void',
-                    'params' => [
-                        new Param(new Variable('containerConfigurator'), null, new Name('ContainerConfigurator')),
-                    ],
-                    'stmts' => $services,
-                ])),
-                new Nop(),
-            ]);
+    public function __construct(RuleSetPrinter $printer)
+    {
+        $this->printer = $printer;
     }
 
     public function generate(): void
@@ -140,29 +74,41 @@ final class PhpCsFixerRuleSetGenerator
             $fixerFactory->registerBuiltInFixers();
             file_put_contents(
                 sprintf(__DIR__ . '/../config/set/php-cs-fixer/%s', self::MAP[$setDefinition->getName()]),
-                $this->printRuleSetDescription2($fixerFactory, $setDefinition)
+                $this->printer->print($this->formatRulesToServices($fixerFactory, $setDefinition))
             );
         }
     }
 
     /**
-     * @return array<string, mixed>
+     * @return array<string, array<string, mixed>>
      */
-    private function getSetDefinitions(): array
-    {
-        $setDefinitions = RuleSets::getSetDefinitions();
-        $setDefinitions['laravel'] = $this->getLaravelRuleSet();
-        $customSets = [new CustomSet()];
-        foreach ($customSets as $customSet) {
-            $setDefinitions[$customSet->getName()] = $customSet;
+    public function formatRulesToServices(
+        FixerFactory $fixerFactory,
+        RuleSetDescriptionInterface $ruleSetDescription
+    ): array {
+        $services = [];
+        $ruleSet = new RuleSet($ruleSetDescription->getRules());
+        foreach ($fixerFactory->useRuleSet($ruleSet)->getFixers() as $fixer) {
+            $services[get_class($fixer)] = [];
+            $config = $ruleSet->getRuleConfiguration($fixer->getName());
+            if ($fixer instanceof ConfigurableFixerInterface && $config) {
+                $services[get_class($fixer)] = $config;
+            }
         }
 
-        return $setDefinitions;
+        return $services;
     }
 
     /**
-     * @return object|void
+     * @return array<string, mixed>
      */
+    private function getSetDefinitions(): iterable
+    {
+        yield from RuleSets::getSetDefinitions();
+        yield $this->getLaravelRuleSet();
+        yield new CustomSet();
+    }
+
     private function getLaravelRuleSet(): ?LaravelSet
     {
         $rules = null;
