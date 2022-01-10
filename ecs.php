@@ -8,6 +8,7 @@ use Symplify\EasyCodingStandard\ValueObject\Option;
 use Zing\CodingStandard\Set\ECSSetList;
 
 return static function (ContainerConfigurator $containerConfigurator): void {
+    \PHP_CodeSniffer\Config::setConfigData('php_version', 70200);
     $containerConfigurator->import(ECSSetList::PHP71_MIGRATION);
     $containerConfigurator->import(ECSSetList::PHP71_MIGRATION_RISKY);
     $containerConfigurator->import(ECSSetList::CUSTOM);
