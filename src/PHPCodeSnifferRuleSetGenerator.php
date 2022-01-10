@@ -30,11 +30,11 @@ final class PHPCodeSnifferRuleSetGenerator
     /**
      * @var \Zing\CodingStandard\Printers\RuleSetPrinter
      */
-    private $printer;
+    private $ruleSetPrinter;
 
     public function __construct(RuleSetPrinter $printer)
     {
-        $this->printer = $printer;
+        $this->ruleSetPrinter = $printer;
     }
 
     public function generate(): void
@@ -50,7 +50,7 @@ final class PHPCodeSnifferRuleSetGenerator
 
             file_put_contents(
                 sprintf(__DIR__ . '/../config/set/php_codesniffer/%s', self::MAP[$setDefinition->getRelativePath()]),
-                $this->printer->print($this->formatRulesToServices($ruleset))
+                $this->ruleSetPrinter->print($this->formatRulesToServices($ruleset))
             );
         }
     }
