@@ -106,6 +106,7 @@
         <exclude name="Squiz.Objects.DisallowObjectStringIndex"/>
         <exclude name="Squiz.WhiteSpace.PropertyLabelSpacing"/>
         <exclude name="Squiz.Commenting.PostStatementComment"/>
+        <exclude name="Squiz.Classes.ClassFileName"/>
     </rule>
 
     <rule ref="Zend">
