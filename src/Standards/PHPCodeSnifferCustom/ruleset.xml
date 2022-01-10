@@ -150,13 +150,6 @@
             </property>
         </properties>
     </rule>
-    <rule ref="PSR1.Classes.ClassDeclaration.MissingNamespace">
-        <exclude-pattern type="relative">*/migrations/*</exclude-pattern>
-        <exclude-pattern type="relative">*/seeds/*</exclude-pattern>
-    </rule>
-    <rule ref="PSR1.Methods.CamelCapsMethodName">
-        <exclude-pattern>*Test.php</exclude-pattern>
-    </rule>
     <rule ref="Squiz.ControlStructures.ForLoopDeclaration">
         <properties>
             <property name="ignoreNewlines" value="true"/>
