@@ -8,6 +8,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLinker](https://github.com/Symplify/ChangelogLinker).
 
 <!-- changelog-linker -->
+## 5.2.0 - 2022-01-10
+
+## What's Changed
+
+- Generate PHP CodeSniffer rulesets by @zingimmick in https://github.com/zingimmick/coding-standard/pull/120
+- Split printer by @zingimmick in https://github.com/zingimmick/coding-standard/pull/121
+- Fix lint action by @zingimmick in https://github.com/zingimmick/coding-standard/pull/122
+- Re-generate custom ruleset by @zingimmick in https://github.com/zingimmick/coding-standard/pull/123
+- Skip some sniffs by @zingimmick in https://github.com/zingimmick/coding-standard/pull/124
+
+**Full Changelog**: https://github.com/zingimmick/coding-standard/compare/5.1.0...5.2.0
+
 ## 5.1.0 - 2022-01-05
 
 ## What's Changed
