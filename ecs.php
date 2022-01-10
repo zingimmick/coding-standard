@@ -17,6 +17,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $parameters->set(Option::PARALLEL, true);
     $parameters->set(Option::SKIP, [
         CamelCapsMethodNameSniff::class => [__DIR__ . '/src/Printer.php'],
+        \Symplify\CodingStandard\Fixer\LineLength\LineLengthFixer::class => [__DIR__ . '/config'],
     ]);
     $parameters->set(
         Option::PATHS,
