@@ -6,7 +6,7 @@ namespace Zing\CodingStandard\Printers;
 
 use PhpParser\Node\Expr;
 
-class PhpCsFixerRuleSetPrinter extends RuleSetPrinter
+final class PhpCsFixerRuleSetPrinter extends RuleSetPrinter
 {
     public function configureService(Expr $expr, array $configuration): Expr
     {
