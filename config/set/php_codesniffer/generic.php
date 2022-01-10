@@ -68,9 +68,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(\PHP_CodeSniffer\Standards\Generic\Sniffs\Files\OneClassPerFileSniff::class);
     $services->set(\PHP_CodeSniffer\Standards\Generic\Sniffs\Files\ExecutableFileSniff::class);
     $services->set(\PHP_CodeSniffer\Standards\Generic\Sniffs\Files\EndFileNewlineSniff::class);
-    $services->set(
-        \PHP_CodeSniffer\Standards\Generic\Sniffs\Functions\OpeningFunctionBraceKernighanRitchieSniff::class
-    );
+    $services->set(\PHP_CodeSniffer\Standards\Generic\Sniffs\Functions\OpeningFunctionBraceKernighanRitchieSniff::class);
     $services->set(\PHP_CodeSniffer\Standards\Generic\Sniffs\Functions\FunctionCallArgumentSpacingSniff::class);
     $services->set(\PHP_CodeSniffer\Standards\Generic\Sniffs\Functions\CallTimePassByReferenceSniff::class);
     $services->set(\PHP_CodeSniffer\Standards\Generic\Sniffs\Functions\OpeningFunctionBraceBsdAllmanSniff::class);
