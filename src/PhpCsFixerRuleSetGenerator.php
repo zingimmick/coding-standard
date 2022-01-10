@@ -60,11 +60,11 @@ final class PhpCsFixerRuleSetGenerator
     /**
      * @var \Zing\CodingStandard\Printers\RuleSetPrinter
      */
-    private $printer;
+    private $ruleSetPrinter;
 
     public function __construct(RuleSetPrinter $printer)
     {
-        $this->printer = $printer;
+        $this->ruleSetPrinter = $printer;
     }
 
     public function generate(): void
@@ -74,7 +74,7 @@ final class PhpCsFixerRuleSetGenerator
             $fixerFactory->registerBuiltInFixers();
             file_put_contents(
                 sprintf(__DIR__ . '/../config/set/php-cs-fixer/%s', self::MAP[$setDefinition->getName()]),
-                $this->printer->print($this->formatRulesToServices($fixerFactory, $setDefinition))
+                $this->ruleSetPrinter->print($this->formatRulesToServices($fixerFactory, $setDefinition))
             );
         }
     }

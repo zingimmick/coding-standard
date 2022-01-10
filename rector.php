@@ -35,6 +35,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $parameters->set(
         Option::PATHS,
         [
+            __DIR__ . '/bin',
             __DIR__ . '/config',
             __DIR__ . '/fixed',
             __DIR__ . '/src',

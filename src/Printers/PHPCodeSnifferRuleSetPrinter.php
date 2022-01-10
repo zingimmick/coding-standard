@@ -6,7 +6,7 @@ namespace Zing\CodingStandard\Printers;
 
 use PhpParser\Node\Expr;
 
-class PHPCodeSnifferRuleSetPrinter extends RuleSetPrinter
+final class PHPCodeSnifferRuleSetPrinter extends RuleSetPrinter
 {
     public function configureService(Expr $expr, array $configuration): Expr
     {
