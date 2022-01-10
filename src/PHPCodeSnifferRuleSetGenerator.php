@@ -25,6 +25,8 @@ final class PHPCodeSnifferRuleSetGenerator
         'Squiz' => 'squiz.php',
         'Zend' => 'zend.php',
         'SlevomatCodingStandard' => 'slevomat-coding-standard.php',
+        'PHPCodeSnifferCustom' => '../php_codesniffer.php',
+        'SlevomatCodingStandardCustom' => '../slevomat-coding-standard.php',
     ];
 
     /**
@@ -62,18 +64,43 @@ final class PHPCodeSnifferRuleSetGenerator
     {
         $sniffs = [];
         foreach ($ruleset->sniffs as $sniff) {
+            if (! $this->isPhpSniff($sniff, str_contains($ruleset->name, 'Custom'))) {
+                continue;
+            }
+
             $sniffs[is_object($sniff) ? get_class($sniff) : $sniff] = [];
         }
 
         foreach ($ruleset->ruleset as $code => $attr) {
             if (isset($ruleset->sniffCodes[$code])) {
                 $sniff = $ruleset->sniffCodes[$code];
+                if (! $this->isPhpSniff($sniff, str_contains($ruleset->name, 'Custom'))) {
+                    continue;
+                }
 
                 $sniffs[$sniff] = $attr['properties'] ?? [];
             }
         }
 
         return $sniffs;
+    }
+
+    private function isPhpSniff($sniff, bool $isStandard = false): bool
+    {
+        if (! $isStandard) {
+            return true;
+        }
+
+        if (! class_exists($sniff)) {
+            return false;
+        }
+
+        $sniffObject = new $sniff();
+        if (! property_exists($sniffObject, 'supportedTokenizers')) {
+            return true;
+        }
+
+        return in_array('PHP', $sniffObject->supportedTokenizers, true);
     }
 
     /**
@@ -89,6 +116,10 @@ final class PHPCodeSnifferRuleSetGenerator
         yield from Finder::create()
             ->files()
             ->in(__DIR__ . '/../vendor/slevomat/coding-standard')
+            ->name('ruleset.xml');
+        yield from Finder::create()
+            ->files()
+            ->in(__DIR__ . '/Standards')
             ->name('ruleset.xml');
     }
 }

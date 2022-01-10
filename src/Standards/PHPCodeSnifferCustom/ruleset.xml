@@ -1,0 +1,174 @@
+<?xml version="1.0"?>
+<ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="PHP Code Sniffer Custom" xsi:noNamespaceSchemaLocation="../../../vendor/squizlabs/php_codesniffer/phpcs.xsd">
+
+    <rule ref="Generic">
+        <exclude name="Generic.Arrays.DisallowShortArraySyntax"/>
+        <exclude name="Generic.WhiteSpace.DisallowSpaceIndent"/>
+        <exclude name="Generic.PHP.ClosingPHPTag"/>
+        <exclude name="Generic.Files.EndFileNoNewline"/>
+        <exclude name="Generic.PHP.RequireStrictTypes"/>
+        <exclude name="Generic.Files.LowercasedFilename"/>
+        <exclude name="Generic.Formatting.NoSpaceAfterCast"/>
+        <exclude name="Generic.Functions.OpeningFunctionBraceKernighanRitchie"/>
+        <exclude name="Generic.Functions.OpeningFunctionBraceBsdAllman"/>
+        <exclude name="Generic.PHP.UpperCaseConstant"/>
+        <exclude name="Generic.Classes.OpeningBraceSameLine"/>
+        <exclude name="Generic.Commenting.DocComment"/>
+        <exclude name="Generic.NamingConventions.TraitNameSuffix"/>
+        <exclude name="Generic.NamingConventions.AbstractClassNamePrefix"/>
+        <exclude name="Generic.NamingConventions.InterfaceNameSuffix"/>
+        <exclude name="Generic.Formatting.SpaceBeforeCast"/>
+        <exclude name="Generic.NamingConventions.CamelCapsFunctionName"/>
+        <exclude name="Generic.NamingConventions.ConstructorName"/>
+        <exclude name="Generic.WhiteSpace.LanguageConstructSpacing"/>
+        <exclude name="Generic.Files.InlineHTML"/>
+        <exclude name="Generic.Debug.CSSLint"/>
+        <exclude name="Generic.Debug.ESLint"/>
+        <exclude name="Generic.Debug.JSHint"/>
+        <exclude name="Generic.Debug.ClosureLinter"/>
+    </rule>
+
+    <rule ref="PEAR">
+        <exclude name="PEAR.Functions.FunctionCallSignature"/>
+        <exclude name="PEAR.ControlStructures.MultiLineCondition"/>
+        <exclude name="PEAR.Commenting.FileComment"/>
+        <exclude name="Generic.Commenting.DocComment"/>
+        <exclude name="PEAR.Commenting.ClassComment"/>
+        <exclude name="PEAR.Commenting.FunctionComment"/>
+        <exclude name="PEAR.Formatting.MultiLineAssignment"/>
+        <exclude name="PEAR.WhiteSpace.ScopeIndent"/>
+        <exclude name="PEAR.Files.IncludingFile"/>
+        <exclude name="PEAR.NamingConventions.ValidFunctionName"/>
+        <exclude name="PEAR.NamingConventions.ValidVariableName"/>
+        <exclude name="PEAR.ControlStructures.ControlSignature"/>
+    </rule>
+
+    <rule ref="PSR1">
+    </rule>
+
+    <rule ref="PSR2">
+        <exclude name="PSR2.ControlStructures.ControlStructureSpacing"/>
+    </rule>
+
+    <rule ref="PSR12">
+        <exclude name="PSR12.Files.FileHeader"/>
+        <exclude name="PSR12.Classes.AnonClassDeclaration"/>
+        <exclude name="PSR12.Traits.UseDeclaration"/>
+        <exclude name="PSR12.Operators.OperatorSpacing"/>
+    </rule>
+
+    <rule ref="Squiz">
+        <exclude name="PSR12.Traits.UseDeclaration"/>
+        <exclude name="Generic.Commenting.DocComment"/>
+        <exclude name="Squiz.Commenting.FileComment"/>
+        <exclude name="Squiz.Arrays.ArrayDeclaration"/>
+        <exclude name="Generic.Formatting.MultipleStatementAlignment"/>
+        <exclude name="PEAR.Functions.FunctionCallSignature"/>
+        <exclude name="Squiz.Strings.DoubleQuoteUsage"/>
+        <exclude name="Squiz.WhiteSpace.ObjectOperatorSpacing"/>
+        <exclude name="Squiz.ControlStructures.SwitchDeclaration"/>
+        <exclude name="Squiz.Operators.ComparisonOperatorUsage"/>
+        <exclude name="Squiz.PHP.DisallowInlineIf"/>
+        <exclude name="Squiz.Commenting.BlockComment"/>
+        <exclude name="Squiz.Commenting.InlineComment"/>
+        <exclude name="Squiz.Strings.ConcatenationSpacing"/>
+        <exclude name="Squiz.WhiteSpace.OperatorSpacing"/>
+        <exclude name="Squiz.NamingConventions.ValidVariableName"/>
+        <exclude name="Squiz.Formatting.OperatorBracket"/>
+        <exclude name="Squiz.ControlStructures.InlineIfDeclaration"/>
+        <exclude name="Squiz.Commenting.ClosingDeclarationComment"/>
+        <exclude name="Squiz.Files.FileExtension"/>
+        <exclude name="PEAR.Formatting.MultiLineAssignment"/>
+        <exclude name="Squiz.Objects.ObjectInstantiation"/>
+        <exclude name="PEAR.ControlStructures.MultiLineCondition"/>
+        <exclude name="PEAR.Files.IncludingFile"/>
+        <exclude name="Squiz.ControlStructures.ElseIfDeclaration"/>
+        <exclude name="Squiz.WhiteSpace.ControlStructureSpacing"/>
+        <exclude name="Squiz.PHP.DisallowComparisonAssignment"/>
+        <exclude name="Squiz.PHP.DisallowBooleanStatement"/>
+        <exclude name="Squiz.Commenting.ClassComment"/>
+        <exclude name="Squiz.Commenting.VariableComment"/>
+        <exclude name="Squiz.Commenting.FunctionComment"/>
+        <exclude name="Squiz.WhiteSpace.MemberVarSpacing"/>
+        <exclude name="Squiz.WhiteSpace.FunctionSpacing"/>
+        <exclude name="Squiz.WhiteSpace.FunctionClosingBraceSpace"/>
+        <exclude name="Squiz.NamingConventions.ValidFunctionName"/>
+        <exclude name="Squiz.PHP.DisallowMultipleAssignments"/>
+        <exclude name="Squiz.Commenting.FunctionCommentThrowTag"/>
+        <exclude name="Generic.NamingConventions.ConstructorName"/>
+        <exclude name="Squiz.PHP.Heredoc"/>
+        <exclude name="Generic.WhiteSpace.LanguageConstructSpacing"/>
+        <exclude name="Squiz.CSS"/>
+        <exclude name="Squiz.Debug.JSLint"/>
+        <exclude name="Squiz.Debug.JavaScriptLint"/>
+        <exclude name="Squiz.Classes.DuplicateProperty"/>
+        <exclude name="Squiz.Objects.ObjectMemberComma"/>
+        <exclude name="Squiz.Objects.DisallowObjectStringIndex"/>
+        <exclude name="Squiz.WhiteSpace.PropertyLabelSpacing"/>
+        <exclude name="Squiz.Commenting.PostStatementComment"/>
+    </rule>
+
+    <rule ref="Zend">
+        <exclude name="Zend.NamingConventions.ValidVariableName"/>
+        <exclude name="Generic.Functions.OpeningFunctionBraceBsdAllman"/>
+        <exclude name="PEAR.Functions.FunctionCallSignature"/>
+    </rule>
+    <rule ref="Generic.Files.LineLength">
+        <properties>
+            <property name="lineLimit" value="80"/>
+            <property name="absoluteLineLimit" value="0"/>
+            <property name="ignoreComments" value="true"/>
+        </properties>
+    </rule>
+    <rule ref="Generic.ControlStructures.InlineControlStructure">
+        <properties>
+            <property name="error" value="true"/>
+        </properties>
+    </rule>
+    <rule ref="Generic.ControlStructures.InlineControlStructure">
+        <properties>
+            <property name="error" value="true"/>
+        </properties>
+    </rule>
+    <rule ref="Generic.Files.LineEndings">
+        <properties>
+            <property name="eolChar" value="\n"/>
+        </properties>
+    </rule>
+    <rule ref="Generic.Files.LineLength">
+        <properties>
+            <property name="lineLimit" value="120"/>
+            <property name="absoluteLineLimit" value="0"/>
+        </properties>
+    </rule>
+    <rule ref="Generic.WhiteSpace.ScopeIndent">
+        <properties>
+            <property name="ignoreIndentationTokens" type="array">
+                <element value="T_COMMENT"/>
+                <element value="T_DOC_COMMENT_OPEN_TAG"/>
+            </property>
+        </properties>
+    </rule>
+    <rule ref="PSR1.Classes.ClassDeclaration.MissingNamespace">
+        <exclude-pattern type="relative">*/migrations/*</exclude-pattern>
+        <exclude-pattern type="relative">*/seeds/*</exclude-pattern>
+    </rule>
+    <rule ref="PSR1.Methods.CamelCapsMethodName">
+        <exclude-pattern>*Test.php</exclude-pattern>
+    </rule>
+    <rule ref="Squiz.ControlStructures.ForLoopDeclaration">
+        <properties>
+            <property name="ignoreNewlines" value="true"/>
+        </properties>
+    </rule>
+    <rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing">
+        <properties>
+            <property name="equalsSpacing" value="1"/>
+        </properties>
+    </rule>
+    <rule ref="Squiz.WhiteSpace.SuperfluousWhitespace">
+        <properties>
+            <property name="ignoreBlankLines" value="true"/>
+        </properties>
+    </rule>
+</ruleset>
