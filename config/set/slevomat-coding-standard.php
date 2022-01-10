@@ -9,7 +9,9 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(\SlevomatCodingStandard\Sniffs\Numbers\DisallowNumericLiteralSeparatorSniff::class);
     $services->set(\SlevomatCodingStandard\Sniffs\Operators\NegationOperatorSpacingSniff::class);
     $services->set(\SlevomatCodingStandard\Sniffs\Operators\SpreadOperatorSpacingSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Operators\RequireOnlyStandaloneIncrementAndDecrementOperatorsSniff::class);
+    $services->set(
+        \SlevomatCodingStandard\Sniffs\Operators\RequireOnlyStandaloneIncrementAndDecrementOperatorsSniff::class
+    );
     $services->set(\SlevomatCodingStandard\Sniffs\Operators\RequireCombinedAssignmentOperatorSniff::class);
     $services->set(\SlevomatCodingStandard\Sniffs\Classes\ClassMemberSpacingSniff::class);
     $services->set(\SlevomatCodingStandard\Sniffs\Classes\RequireMultiLineMethodSignatureSniff::class);
@@ -74,7 +76,9 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(\SlevomatCodingStandard\Sniffs\ControlStructures\RequireNullCoalesceEqualOperatorSniff::class);
     $services->set(\SlevomatCodingStandard\Sniffs\ControlStructures\NewWithParenthesesSniff::class);
     $services->set(\SlevomatCodingStandard\Sniffs\ControlStructures\UselessTernaryOperatorSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\ControlStructures\DisallowContinueWithoutIntegerOperandInSwitchSniff::class);
+    $services->set(
+        \SlevomatCodingStandard\Sniffs\ControlStructures\DisallowContinueWithoutIntegerOperandInSwitchSniff::class
+    );
     $services->set(\SlevomatCodingStandard\Sniffs\ControlStructures\AssignmentInConditionSniff::class);
     $services->set(\SlevomatCodingStandard\Sniffs\ControlStructures\RequireNullSafeObjectOperatorSniff::class);
     $services->set(\SlevomatCodingStandard\Sniffs\ControlStructures\DisallowNullSafeObjectOperatorSniff::class);

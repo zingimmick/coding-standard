@@ -67,6 +67,7 @@ final class PHPCodeSnifferRuleSetGenerator
             if (! $this->isPhpSniff($sniff, str_contains($ruleset->name, 'Custom'))) {
                 continue;
             }
+
             $sniffs[is_object($sniff) ? get_class($sniff) : $sniff] = [];
         }
 
@@ -76,6 +77,7 @@ final class PHPCodeSnifferRuleSetGenerator
                 if (! $this->isPhpSniff($sniff, str_contains($ruleset->name, 'Custom'))) {
                     continue;
                 }
+
                 $sniffs[$sniff] = $attr['properties'] ?? [];
             }
         }
@@ -88,9 +90,11 @@ final class PHPCodeSnifferRuleSetGenerator
         if (! $isStandard) {
             return true;
         }
+
         if (! class_exists($sniff)) {
             return false;
         }
+
         $sniffObject = new $sniff();
         if (! property_exists($sniffObject, 'supportedTokenizers')) {
             return true;
