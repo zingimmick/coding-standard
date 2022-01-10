@@ -5,6 +5,7 @@ declare(strict_types=1);
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
 
 return static function (ContainerConfigurator $containerConfigurator): void {
+    \PHP_CodeSniffer\Config::setConfigData('php_version', 70200);
     $services = $containerConfigurator->services();
     $services->set(\SlevomatCodingStandard\Sniffs\Numbers\DisallowNumericLiteralSeparatorSniff::class);
     $services->set(\SlevomatCodingStandard\Sniffs\Operators\NegationOperatorSpacingSniff::class);
