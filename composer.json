@@ -47,6 +47,12 @@
             "vendor/bin/ecs check --fix",
             "vendor/bin/phpunit",
             "vendor/bin/ecs check correct"
+        ],
+        "lint:rector": "rector process --ansi --dry-run",
+        "lint:ecs": "ecs check --ansi",
+        "lint": [
+            "@lint:rector",
+            "@lint:ecs"
         ]
     },
     "minimum-stability": "dev",
