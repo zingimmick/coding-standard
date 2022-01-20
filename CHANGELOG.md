@@ -8,6 +8,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLinker](https://github.com/Symplify/ChangelogLinker).
 
 <!-- changelog-linker -->
+## 5.3.0 - 2022-01-20
+
+## What's Changed
+
+- Add ECS set for PHP versions by @zingimmick in https://github.com/zingimmick/coding-standard/pull/125
+
+**Full Changelog**: https://github.com/zingimmick/coding-standard/compare/5.2.0...5.3.0
+
 ## 5.2.0 - 2022-01-10
 
 ## What's Changed
