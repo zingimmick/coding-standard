@@ -291,6 +291,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
                     'goto',
                     'include',
                     'include_once',
+                    'phpdoc',
                     'require',
                     'require_once',
                     'return',
