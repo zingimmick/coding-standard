@@ -19,6 +19,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(\PhpCsFixer\Fixer\Alias\PowToExponentiationFixer::class);
     $services->set(\PhpCsFixer\Fixer\FunctionNotation\VoidReturnFixer::class);
     $services->set(\PhpCsFixer\Fixer\Strict\DeclareStrictTypesFixer::class);
+    $services->set(\PhpCsFixer\Fixer\LanguageConstruct\GetClassToClassKeywordFixer::class);
     $services->set(\PhpCsFixer\Fixer\FunctionNotation\UseArrowFunctionsFixer::class);
     $services->set(\PhpCsFixer\Fixer\Basic\NonPrintableCharacterFixer::class);
     $services->set(\PhpCsFixer\Fixer\Alias\RandomApiMigrationFixer::class)
