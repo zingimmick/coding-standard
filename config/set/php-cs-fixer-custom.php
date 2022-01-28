@@ -122,12 +122,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(\PhpCsFixer\Fixer\FunctionNotation\NoSpacesAfterFunctionNameFixer::class);
     $services->set(\PhpCsFixer\Fixer\Whitespace\NoSpacesInsideParenthesisFixer::class);
     $services->set(\PhpCsFixer\Fixer\StringNotation\EscapeImplicitBackslashesFixer::class);
-    $services->set(\PhpCsFixer\Fixer\ArrayNotation\ArraySyntaxFixer::class)
-        ->call('configure', [
-            [
-                'syntax' => 'short',
-            ],
-        ]);
+    $services->set(\PhpCsFixer\Fixer\ArrayNotation\ArraySyntaxFixer::class);
     $services->set(\PhpCsFixer\Fixer\ControlStructure\EmptyLoopConditionFixer::class);
     $services->set(\PhpCsFixer\Fixer\Operator\StandardizeIncrementFixer::class);
     $services->set(\PhpCsFixer\Fixer\PhpTag\BlankLineAfterOpeningTagFixer::class);
@@ -214,12 +209,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(\PhpCsFixer\Fixer\ClassNotation\NoBlankLinesAfterClassOpeningFixer::class);
     $services->set(\PhpCsFixer\Fixer\CastNotation\ShortScalarCastFixer::class);
     $services->set(\PhpCsFixer\Fixer\Operator\TernaryOperatorSpacesFixer::class);
-    $services->set(\PhpCsFixer\Fixer\ClassNotation\VisibilityRequiredFixer::class)
-        ->call('configure', [
-            [
-                'elements' => ['property', 'method', 'const'],
-            ],
-        ]);
+    $services->set(\PhpCsFixer\Fixer\ClassNotation\VisibilityRequiredFixer::class);
     $services->set(\PhpCsFixer\Fixer\Casing\ConstantCaseFixer::class);
     $services->set(\PhpCsFixer\Fixer\Casing\LowercaseKeywordsFixer::class);
     $services->set(\PhpCsFixer\Fixer\ControlStructure\NoBreakCommentFixer::class);
