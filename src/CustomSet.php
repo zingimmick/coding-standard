@@ -25,9 +25,6 @@ final class CustomSet extends AbstractRuleSetDescription
     {
         return [
             '@PhpCsFixer' => true,
-            'array_syntax' => [
-                'syntax' => 'short',
-            ],
             'class_attributes_separation' => true,
             'concat_space' => [
                 'spacing' => 'one',
@@ -58,9 +55,6 @@ final class CustomSet extends AbstractRuleSetDescription
                 'sort_algorithm' => 'none',
             ],
             'simplified_null_return' => true,
-            'visibility_required' => [
-                'elements' => ['property', 'method', 'const'],
-            ],
             'control_structure_continuation_position' => true,
             'declare_parentheses' => true,
             'nullable_type_declaration_for_default_null_value' => true,
