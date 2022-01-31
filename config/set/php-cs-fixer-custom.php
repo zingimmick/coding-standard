@@ -159,12 +159,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(\PhpCsFixer\Fixer\PhpTag\EchoTagSyntaxFixer::class);
     $services->set(\PhpCsFixer\Fixer\FunctionNotation\FunctionTypehintSpaceFixer::class);
     $services->set(\PhpCsFixer\Fixer\ControlStructure\IncludeFixer::class);
-    $services->set(\PhpCsFixer\Fixer\Operator\IncrementStyleFixer::class)
-        ->call('configure', [
-            [
-                'style' => 'post',
-            ],
-        ]);
+    $services->set(\PhpCsFixer\Fixer\Operator\IncrementStyleFixer::class);
     $services->set(\PhpCsFixer\Fixer\Casing\IntegerLiteralCaseFixer::class);
     $services->set(\PhpCsFixer\Fixer\PhpTag\LinebreakAfterOpeningTagFixer::class);
     $services->set(\PhpCsFixer\Fixer\Casing\MagicConstantCasingFixer::class);

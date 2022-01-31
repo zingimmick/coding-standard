@@ -29,12 +29,7 @@ final class CustomSet extends AbstractRuleSetDescription
             'concat_space' => [
                 'spacing' => 'one',
             ],
-            'increment_style' => [
-                'style' => 'post',
-            ],
-            'logical_operators' => true,
             'multiline_whitespace_before_semicolons' => true,
-            'not_operator_with_successor_space' => true,
             'ordered_class_elements' => [
                 'order' => ['use_trait', 'constant_public', 'constant_protected', 'constant_private'],
             ],
@@ -54,6 +49,8 @@ final class CustomSet extends AbstractRuleSetDescription
                 'null_adjustment' => 'always_last',
                 'sort_algorithm' => 'none',
             ],
+            'logical_operators' => true,
+            'not_operator_with_successor_space' => true,
             'simplified_null_return' => true,
             'control_structure_continuation_position' => true,
             'declare_parentheses' => true,
