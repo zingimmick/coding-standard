@@ -8,6 +8,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLinker](https://github.com/Symplify/ChangelogLinker).
 
 <!-- changelog-linker -->
+## 6.0.0 - 2022-02-04
+
+## What's Changed
+
+- Remove useless configuration by @zingimmick in https://github.com/zingimmick/coding-standard/pull/127
+- Remove PHP version config from slevomat coding standard by @zingimmick in https://github.com/zingimmick/coding-standard/pull/128
+- Use pre-increment and decrement operators instead of post- by @zingimmick in https://github.com/zingimmick/coding-standard/pull/129
+
+**Full Changelog**: https://github.com/zingimmick/coding-standard/compare/5.4.0...6.0.0
+
 ## 5.4.0 - 2022-01-28
 
 ## What's Changed
