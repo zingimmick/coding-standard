@@ -89,10 +89,10 @@ final class PhpCsFixerRuleSetGenerator
         $services = [];
         $ruleSet = new RuleSet($ruleSetDescription->getRules());
         foreach ($fixerFactory->useRuleSet($ruleSet)->getFixers() as $fixer) {
-            $services[get_class($fixer)] = [];
+            $services[\get_class($fixer)] = [];
             $config = $ruleSet->getRuleConfiguration($fixer->getName());
             if ($fixer instanceof ConfigurableFixerInterface && $config) {
-                $services[get_class($fixer)] = $config;
+                $services[\get_class($fixer)] = $config;
             }
         }
 

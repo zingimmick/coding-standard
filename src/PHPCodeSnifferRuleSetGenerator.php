@@ -68,7 +68,7 @@ final class PHPCodeSnifferRuleSetGenerator
                 continue;
             }
 
-            $sniffs[is_object($sniff) ? get_class($sniff) : $sniff] = [];
+            $sniffs[\is_object($sniff) ? \get_class($sniff) : $sniff] = [];
         }
 
         foreach ($ruleset->ruleset as $code => $attr) {
@@ -100,7 +100,7 @@ final class PHPCodeSnifferRuleSetGenerator
             return true;
         }
 
-        return in_array('PHP', $sniffObject->supportedTokenizers, true);
+        return \in_array('PHP', $sniffObject->supportedTokenizers, true);
     }
 
     /**

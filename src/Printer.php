@@ -23,7 +23,7 @@ final class Printer extends Standard
      */
     protected function hasNodeWithComments(array $nodes): bool
     {
-        if (count($nodes) >= 8) {
+        if (\count($nodes) >= 8) {
             return true;
         }
 

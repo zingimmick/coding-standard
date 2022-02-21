@@ -7,7 +7,6 @@ namespace Zing\CodingStandard\Correct;
 use Zing\CodingStandard\Correct\Concerns\Testable;
 use Zing\CodingStandard\Correct\Concerns\TraitA;
 use Zing\CodingStandard\Correct\Concerns\TraitB;
-use function count;
 use const PHP_EOL;
 
 final class TestClass implements TestableContract
@@ -103,7 +102,7 @@ final class TestClass implements TestableContract
 
     public function useFunction(): int
     {
-        return count([]);
+        return \count([]);
     }
 
     public function useConst(): string
@@ -148,7 +147,7 @@ final class TestClass implements TestableContract
      */
     public function getClassName($object): string
     {
-        return get_class($object);
+        return \get_class($object);
     }
 
     public function foo(): Foo

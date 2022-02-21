@@ -16,6 +16,11 @@
             "dealerdirect/phpcodesniffer-composer-installer": true
         }
     },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "6.x-dev"
+        }
+    },
     "require": {
         "php": "^7.2 || ^8.0",
         "rector/rector": "^0.12",

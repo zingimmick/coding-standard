@@ -25,6 +25,7 @@ final class CustomSet extends AbstractRuleSetDescription
     {
         return [
             '@PhpCsFixer' => true,
+            '@PhpCsFixer:risky' => true,
             'class_attributes_separation' => true,
             'concat_space' => [
                 'spacing' => 'one',
