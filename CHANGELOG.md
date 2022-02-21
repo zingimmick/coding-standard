@@ -8,6 +8,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLinker](https://github.com/Symplify/ChangelogLinker).
 
 <!-- changelog-linker -->
+## 6.1.0 - 2022-02-21
+
+## What's Changed
+
+- Bump shivammathur/setup-php from 2.16.0 to 2.17.0 by @dependabot in https://github.com/zingimmick/coding-standard/pull/130
+- Add risky fixers by @zingimmick in https://github.com/zingimmick/coding-standard/pull/131
+- Re-generate custom ruleset by @zingimmick in https://github.com/zingimmick/coding-standard/pull/132
+
+**Full Changelog**: https://github.com/zingimmick/coding-standard/compare/6.0.0...6.1.0
+
 ## 6.0.0 - 2022-02-04
 
 ## What's Changed
