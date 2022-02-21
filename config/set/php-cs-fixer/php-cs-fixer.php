@@ -115,10 +115,12 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(\PhpCsFixer\Fixer\Whitespace\NoSpacesInsideParenthesisFixer::class);
     $services->set(\PhpCsFixer\Fixer\ArrayNotation\ArraySyntaxFixer::class);
     $services->set(\PhpCsFixer\Fixer\ControlStructure\EmptyLoopConditionFixer::class);
+    $services->set(\PhpCsFixer\Fixer\Import\NoUnneededImportAliasFixer::class);
     $services->set(\PhpCsFixer\Fixer\Operator\StandardizeIncrementFixer::class);
     $services->set(\PhpCsFixer\Fixer\PhpTag\BlankLineAfterOpeningTagFixer::class);
     $services->set(\PhpCsFixer\Fixer\Import\SingleImportPerStatementFixer::class);
     $services->set(\PhpCsFixer\Fixer\StringNotation\EscapeImplicitBackslashesFixer::class);
+    $services->set(\PhpCsFixer\Fixer\Casing\ClassReferenceNameCasingFixer::class);
     $services->set(\PhpCsFixer\Fixer\NamespaceNotation\CleanNamespaceFixer::class);
     $services->set(\PhpCsFixer\Fixer\Operator\ConcatSpaceFixer::class);
     $services->set(\PhpCsFixer\Fixer\PhpTag\EchoTagSyntaxFixer::class);
