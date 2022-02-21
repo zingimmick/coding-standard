@@ -118,6 +118,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(\PhpCsFixer\Fixer\Import\SingleImportPerStatementFixer::class);
     $services->set(\PhpCsFixer\Fixer\ArrayNotation\ArraySyntaxFixer::class);
     $services->set(\PhpCsFixer\Fixer\ControlStructure\EmptyLoopConditionFixer::class);
+    $services->set(\PhpCsFixer\Fixer\Import\NoUnneededImportAliasFixer::class);
     $services->set(\PhpCsFixer\Fixer\Operator\StandardizeIncrementFixer::class);
     $services->set(\PhpCsFixer\Fixer\Whitespace\CompactNullableTypehintFixer::class);
     $services->set(\PhpCsFixer\Fixer\LanguageConstruct\DeclareEqualNormalizeFixer::class);
@@ -136,6 +137,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(\PhpCsFixer\Fixer\Comment\NoTrailingWhitespaceInCommentFixer::class);
     $services->set(\PhpCsFixer\Fixer\ControlStructure\SwitchCaseSemicolonToColonFixer::class);
     $services->set(\PhpCsFixer\Fixer\ControlStructure\SwitchCaseSpaceFixer::class);
+    $services->set(\PhpCsFixer\Fixer\Casing\ClassReferenceNameCasingFixer::class);
     $services->set(\PhpCsFixer\Fixer\NamespaceNotation\CleanNamespaceFixer::class);
     $services->set(\PhpCsFixer\Fixer\Operator\ConcatSpaceFixer::class);
     $services->set(\PhpCsFixer\Fixer\PhpTag\EchoTagSyntaxFixer::class);
