@@ -105,7 +105,9 @@ final class PhpCsFixerRuleSetGenerator
     private function getSetDefinitions(): iterable
     {
         yield from RuleSets::getSetDefinitions();
+
         yield $this->getLaravelRuleSet();
+
         yield new CustomSet();
     }
 
