@@ -107,6 +107,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(\PhpCsFixer\Fixer\Phpdoc\PhpdocNoEmptyReturnFixer::class);
     $services->set(\PhpCsFixer\Fixer\FunctionNotation\LambdaNotUsedImportFixer::class);
     $services->set(\PhpCsFixer\Fixer\Phpdoc\NoEmptyPhpdocFixer::class);
+    $services->set(\PhpCsFixer\Fixer\FunctionNotation\NoTrailingCommaInSinglelineFunctionCallFixer::class);
     $services->set(\PhpCsFixer\Fixer\LanguageConstruct\CombineConsecutiveIssetsFixer::class);
     $services->set(\PhpCsFixer\Fixer\Alias\BacktickToShellExecFixer::class);
     $services->set(\PhpCsFixer\Fixer\Comment\NoEmptyCommentFixer::class);
@@ -116,6 +117,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(\PhpCsFixer\Fixer\ArrayNotation\ArraySyntaxFixer::class);
     $services->set(\PhpCsFixer\Fixer\ControlStructure\EmptyLoopConditionFixer::class);
     $services->set(\PhpCsFixer\Fixer\Import\NoUnneededImportAliasFixer::class);
+    $services->set(\PhpCsFixer\Fixer\Comment\SingleLineCommentSpacingFixer::class);
     $services->set(\PhpCsFixer\Fixer\Operator\StandardizeIncrementFixer::class);
     $services->set(\PhpCsFixer\Fixer\PhpTag\BlankLineAfterOpeningTagFixer::class);
     $services->set(\PhpCsFixer\Fixer\Import\SingleImportPerStatementFixer::class);
@@ -266,6 +268,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
                     'switch',
                     'throw',
                     'try',
+                    'yield',
                 ],
             ],
         ]);
