@@ -14,4 +14,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $containerConfigurator->import(ECSSetList::PHP_CS_FIXER_CUSTOM);
     $containerConfigurator->import(ECSSetList::PHP_CODESNIFFER_CUSTOM);
     $containerConfigurator->import(ECSSetList::SLEVOMAT_CODING_STANDARD_CUSTOM);
+
+    $services = $containerConfigurator->services();
+    $services->remove(\Symplify\CodingStandard\Fixer\Spacing\StandaloneLineConstructorParamFixer::class);
 };

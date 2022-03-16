@@ -27,6 +27,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(\PhpCsFixer\Fixer\ClassNotation\ClassDefinitionFixer::class)
         ->call('configure', [
             [
+                'inline_constructor_arguments' => false,
                 'space_before_parenthesis' => true,
             ],
         ]);
