@@ -8,6 +8,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLinker](https://github.com/Symplify/ChangelogLinker).
 
 <!-- changelog-linker -->
+## 6.2.0 - 2022-03-16
+
+## What's Changed
+
+- Bump shivammathur/setup-php from 2.17.0 to 2.17.1 by @dependabot in https://github.com/zingimmick/coding-standard/pull/133
+- Bump actions/checkout from 2.4.0 to 3 by @dependabot in https://github.com/zingimmick/coding-standard/pull/134
+- Enable parallel run for rector by @zingimmick in https://github.com/zingimmick/coding-standard/pull/135
+- Re-generate custom rule by @zingimmick in https://github.com/zingimmick/coding-standard/pull/136
+
+**Full Changelog**: https://github.com/zingimmick/coding-standard/compare/6.1.0...6.2.0
+
 ## 6.1.0 - 2022-02-21
 
 ## What's Changed
