@@ -3,6 +3,11 @@
     "description": "The coding standard of the project.",
     "keywords": ["coding-standard", "php"],
     "license": "MIT",
+    "homepage": "https://github.com/zingimmick/coding-standard",
+    "support": {
+        "issues": "https://github.com/zingimmick/coding-standard/issues",
+        "source": "https://github.com/zingimmick/coding-standard"
+    },
     "authors": [
         {
             "name": "zingimmick",
