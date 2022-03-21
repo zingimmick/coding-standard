@@ -19,7 +19,7 @@ final class CustomSet extends AbstractRuleSetDescription
     }
 
     /**
-     * @return mixed[]
+     * @return array{'@PhpCsFixer': true, '@PhpCsFixer:risky': true, class_attributes_separation: true, concat_space: array{spacing: string}, multiline_whitespace_before_semicolons: true, ordered_class_elements: array{order: string[]}, ordered_imports: array{imports_order: string[]}, phpdoc_align: array{align: string}, phpdoc_no_alias_tag: array{replacements: array{type: string, link: string}}, phpdoc_types_order: array{null_adjustment: string, sort_algorithm: string}, logical_operators: true, not_operator_with_successor_space: true, simplified_null_return: true, control_structure_continuation_position: true, declare_parentheses: true, nullable_type_declaration_for_default_null_value: true, phpdoc_line_span: true, self_static_accessor: true, simplified_if_return: true, yoda_style: true, php_unit_test_class_requires_covers: true}
      */
     public function getRules(): array
     {
