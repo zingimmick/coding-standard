@@ -35,6 +35,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(\SlevomatCodingStandard\Sniffs\Classes\PropertySpacingSniff::class);
     $services->set(\SlevomatCodingStandard\Sniffs\Classes\SuperfluousExceptionNamingSniff::class);
     $services->set(\SlevomatCodingStandard\Sniffs\Classes\ClassConstantVisibilitySniff::class);
+    $services->set(\SlevomatCodingStandard\Sniffs\Classes\RequireAbstractOrFinalSniff::class);
     $services->set(\SlevomatCodingStandard\Sniffs\Classes\MethodSpacingSniff::class);
     $services->set(\SlevomatCodingStandard\Sniffs\Classes\DisallowLateStaticBindingForConstantsSniff::class);
     $services->set(\SlevomatCodingStandard\Sniffs\Classes\DisallowConstructorPropertyPromotionSniff::class);
@@ -52,6 +53,7 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(\SlevomatCodingStandard\Sniffs\PHP\DisallowReferenceSniff::class);
     $services->set(\SlevomatCodingStandard\Sniffs\PHP\UselessSemicolonSniff::class);
     $services->set(\SlevomatCodingStandard\Sniffs\Exceptions\DeadCatchSniff::class);
+    $services->set(\SlevomatCodingStandard\Sniffs\Exceptions\DisallowNonCapturingCatchSniff::class);
     $services->set(\SlevomatCodingStandard\Sniffs\Exceptions\RequireNonCapturingCatchSniff::class);
     $services->set(\SlevomatCodingStandard\Sniffs\Exceptions\ReferenceThrowableOnlySniff::class);
     $services->set(\SlevomatCodingStandard\Sniffs\Namespaces\UselessAliasSniff::class);
