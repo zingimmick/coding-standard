@@ -28,7 +28,6 @@ return static function (ContainerConfigurator $containerConfigurator): void {
     $services->set(\SlevomatCodingStandard\Sniffs\Classes\DisallowMultiPropertyDefinitionSniff::class);
     $services->set(\SlevomatCodingStandard\Sniffs\Classes\PropertySpacingSniff::class);
     $services->set(\SlevomatCodingStandard\Sniffs\Classes\ClassConstantVisibilitySniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Classes\RequireAbstractOrFinalSniff::class);
     $services->set(\SlevomatCodingStandard\Sniffs\Classes\MethodSpacingSniff::class);
     $services->set(\SlevomatCodingStandard\Sniffs\Classes\DisallowLateStaticBindingForConstantsSniff::class);
     $services->set(\SlevomatCodingStandard\Sniffs\Classes\TraitUseDeclarationSniff::class);

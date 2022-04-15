@@ -60,6 +60,7 @@
         <exclude name="SlevomatCodingStandard.Commenting.DeprecatedAnnotationDeclaration"/>
         <exclude name="SlevomatCodingStandard.Classes.SuperfluousErrorNaming"/>
         <exclude name="SlevomatCodingStandard.Commenting.DocCommentSpacing"/>
+        <exclude name="SlevomatCodingStandard.Classes.RequireAbstractOrFinal"/>
     </rule>
 
     <rule ref="SlevomatCodingStandard.Classes.TraitUseSpacing">
