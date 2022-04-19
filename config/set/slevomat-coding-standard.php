@@ -2,104 +2,105 @@
 
 declare(strict_types=1);
 
-use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+use Symplify\EasyCodingStandard\Config\ECSConfig;
 
-return static function (ContainerConfigurator $containerConfigurator): void {
-    $services = $containerConfigurator->services();
-    $services->set(\SlevomatCodingStandard\Sniffs\Numbers\DisallowNumericLiteralSeparatorSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Operators\NegationOperatorSpacingSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Operators\SpreadOperatorSpacingSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Operators\RequireOnlyStandaloneIncrementAndDecrementOperatorsSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Operators\RequireCombinedAssignmentOperatorSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Classes\ClassMemberSpacingSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Classes\RequireMultiLineMethodSignatureSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Classes\ConstantSpacingSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Classes\TraitUseSpacingSniff::class)
-        ->property('linesCountAfterLastUse', '1')
-        ->property('linesCountAfterLastUseWhenLastInClass', '0')
-        ->property('linesCountBeforeFirstUse', '0');
-    $services->set(\SlevomatCodingStandard\Sniffs\Classes\ParentCallSpacingSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Classes\SuperfluousInterfaceNamingSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Classes\SuperfluousTraitNamingSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Classes\SuperfluousAbstractClassNamingSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Classes\DisallowMultiConstantDefinitionSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Classes\ModernClassNameReferenceSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Classes\UselessLateStaticBindingSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Classes\DisallowMultiPropertyDefinitionSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Classes\PropertySpacingSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Classes\ClassConstantVisibilitySniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Classes\MethodSpacingSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Classes\DisallowLateStaticBindingForConstantsSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Classes\TraitUseDeclarationSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Whitespaces\DuplicateSpacesSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\PHP\DisallowDirectMagicInvokeCallSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\PHP\RequireNowdocSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\PHP\TypeCastSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\PHP\ForbiddenClassesSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\PHP\ShortListSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\PHP\ReferenceSpacingSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\PHP\OptimizedFunctionsWithoutUnpackingSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\PHP\UselessParenthesesSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\PHP\UselessSemicolonSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Exceptions\DeadCatchSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Exceptions\DisallowNonCapturingCatchSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Exceptions\RequireNonCapturingCatchSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Exceptions\ReferenceThrowableOnlySniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Namespaces\UselessAliasSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Namespaces\FullyQualifiedClassNameInAnnotationSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Namespaces\UseDoesNotStartWithBackslashSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Namespaces\AlphabeticallySortedUsesSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Namespaces\MultipleUsesPerLineSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Namespaces\UnusedUsesSniff::class)
-        ->property('searchAnnotations', 'true');
-    $services->set(\SlevomatCodingStandard\Sniffs\Namespaces\DisallowGroupUseSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Namespaces\UseSpacingSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Namespaces\NamespaceSpacingSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Namespaces\NamespaceDeclarationSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Namespaces\RequireOneNamespaceInFileSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Namespaces\UseFromSameNamespaceSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Variables\UselessVariableSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Variables\DisallowSuperGlobalVariableSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Variables\UnusedVariableSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Variables\DuplicateAssignmentToVariableSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Arrays\MultiLineArrayEndBracketPlacementSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Arrays\DisallowImplicitArrayCreationSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Arrays\TrailingArrayCommaSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Functions\DisallowNamedArgumentsSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Functions\RequireArrowFunctionSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Functions\UnusedInheritedVariablePassedToClosureSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Functions\UselessParameterDefaultValueSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Functions\ArrowFunctionDeclarationSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\ControlStructures\RequireNullCoalesceOperatorSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\ControlStructures\RequireShortTernaryOperatorSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\ControlStructures\RequireNullCoalesceEqualOperatorSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\ControlStructures\NewWithParenthesesSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\ControlStructures\UselessTernaryOperatorSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\ControlStructures\DisallowContinueWithoutIntegerOperandInSwitchSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\ControlStructures\AssignmentInConditionSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\ControlStructures\RequireNullSafeObjectOperatorSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\ControlStructures\DisallowNullSafeObjectOperatorSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\ControlStructures\LanguageConstructWithParenthesesSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\ControlStructures\UselessIfConditionWithReturnSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\ControlStructures\DisallowYodaComparisonSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\TypeHints\ParameterTypeHintSpacingSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\TypeHints\LongTypeHintsSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\TypeHints\NullTypeHintOnLastPositionSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\TypeHints\PropertyTypeHintSpacingSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\TypeHints\UnionTypeHintFormatSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\TypeHints\PropertyTypeHintSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\TypeHints\DeclareStrictTypesSniff::class)
-        ->property('newlinesCountBetweenOpenTagAndDeclare', '2')
-        ->property('spacesCountAroundEqualsSign', '0');
-    $services->set(\SlevomatCodingStandard\Sniffs\TypeHints\ReturnTypeHintSpacingSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\TypeHints\NullableTypeForNullDefaultValueSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\TypeHints\ReturnTypeHintSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Commenting\UselessInheritDocCommentSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Commenting\ForbiddenAnnotationsSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Commenting\InlineDocCommentDeclarationSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Commenting\UselessFunctionDocCommentSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Commenting\DisallowCommentAfterCodeSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Commenting\ForbiddenCommentsSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Commenting\EmptyCommentSniff::class);
-    $services->set(\SlevomatCodingStandard\Sniffs\Commenting\DisallowOneLinePropertyDocCommentSniff::class);
+return static function (ECSConfig $containerConfigurator): void {
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Numbers\DisallowNumericLiteralSeparatorSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Operators\NegationOperatorSpacingSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Operators\SpreadOperatorSpacingSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Operators\RequireOnlyStandaloneIncrementAndDecrementOperatorsSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Operators\RequireCombinedAssignmentOperatorSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Classes\ClassMemberSpacingSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Classes\RequireMultiLineMethodSignatureSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Classes\ConstantSpacingSniff::class);
+    $containerConfigurator->ruleWithConfiguration(\SlevomatCodingStandard\Sniffs\Classes\TraitUseSpacingSniff::class, [
+        'linesCountAfterLastUse' => '1',
+        'linesCountAfterLastUseWhenLastInClass' => '0',
+        'linesCountBeforeFirstUse' => '0',
+    ]);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Classes\ParentCallSpacingSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Classes\SuperfluousInterfaceNamingSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Classes\SuperfluousTraitNamingSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Classes\SuperfluousAbstractClassNamingSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Classes\DisallowMultiConstantDefinitionSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Classes\ModernClassNameReferenceSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Classes\UselessLateStaticBindingSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Classes\DisallowMultiPropertyDefinitionSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Classes\PropertySpacingSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Classes\ClassConstantVisibilitySniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Classes\MethodSpacingSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Classes\DisallowLateStaticBindingForConstantsSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Classes\TraitUseDeclarationSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Whitespaces\DuplicateSpacesSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\PHP\DisallowDirectMagicInvokeCallSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\PHP\RequireNowdocSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\PHP\TypeCastSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\PHP\ForbiddenClassesSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\PHP\ShortListSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\PHP\ReferenceSpacingSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\PHP\OptimizedFunctionsWithoutUnpackingSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\PHP\UselessParenthesesSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\PHP\UselessSemicolonSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Exceptions\DeadCatchSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Exceptions\DisallowNonCapturingCatchSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Exceptions\RequireNonCapturingCatchSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Exceptions\ReferenceThrowableOnlySniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Namespaces\UselessAliasSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Namespaces\FullyQualifiedClassNameInAnnotationSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Namespaces\UseDoesNotStartWithBackslashSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Namespaces\AlphabeticallySortedUsesSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Namespaces\MultipleUsesPerLineSniff::class);
+    $containerConfigurator->ruleWithConfiguration(\SlevomatCodingStandard\Sniffs\Namespaces\UnusedUsesSniff::class, [
+        'searchAnnotations' => 'true',
+    ]);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Namespaces\DisallowGroupUseSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Namespaces\UseSpacingSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Namespaces\NamespaceSpacingSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Namespaces\NamespaceDeclarationSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Namespaces\RequireOneNamespaceInFileSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Namespaces\UseFromSameNamespaceSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Variables\UselessVariableSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Variables\DisallowSuperGlobalVariableSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Variables\UnusedVariableSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Variables\DuplicateAssignmentToVariableSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Arrays\MultiLineArrayEndBracketPlacementSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Arrays\DisallowImplicitArrayCreationSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Arrays\TrailingArrayCommaSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Functions\DisallowNamedArgumentsSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Functions\RequireArrowFunctionSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Functions\UnusedInheritedVariablePassedToClosureSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Functions\UselessParameterDefaultValueSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Functions\ArrowFunctionDeclarationSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\ControlStructures\RequireNullCoalesceOperatorSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\ControlStructures\RequireShortTernaryOperatorSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\ControlStructures\RequireNullCoalesceEqualOperatorSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\ControlStructures\NewWithParenthesesSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\ControlStructures\UselessTernaryOperatorSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\ControlStructures\DisallowContinueWithoutIntegerOperandInSwitchSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\ControlStructures\AssignmentInConditionSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\ControlStructures\RequireNullSafeObjectOperatorSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\ControlStructures\DisallowNullSafeObjectOperatorSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\ControlStructures\LanguageConstructWithParenthesesSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\ControlStructures\UselessIfConditionWithReturnSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\ControlStructures\DisallowYodaComparisonSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\TypeHints\ParameterTypeHintSpacingSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\TypeHints\LongTypeHintsSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\TypeHints\NullTypeHintOnLastPositionSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\TypeHints\PropertyTypeHintSpacingSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\TypeHints\UnionTypeHintFormatSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\TypeHints\PropertyTypeHintSniff::class);
+    $containerConfigurator->ruleWithConfiguration(\SlevomatCodingStandard\Sniffs\TypeHints\DeclareStrictTypesSniff::class, [
+        'spacesCountAroundEqualsSign' => '0',
+    ]);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\TypeHints\ReturnTypeHintSpacingSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\TypeHints\NullableTypeForNullDefaultValueSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\TypeHints\ReturnTypeHintSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Commenting\UselessInheritDocCommentSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Commenting\ForbiddenAnnotationsSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Commenting\InlineDocCommentDeclarationSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Commenting\UselessFunctionDocCommentSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Commenting\DisallowCommentAfterCodeSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Commenting\ForbiddenCommentsSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Commenting\EmptyCommentSniff::class);
+    $containerConfigurator->rule(\SlevomatCodingStandard\Sniffs\Commenting\DisallowOneLinePropertyDocCommentSniff::class);
 };

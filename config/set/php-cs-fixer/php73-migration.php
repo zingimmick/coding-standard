@@ -2,31 +2,21 @@
 
 declare(strict_types=1);
 
-use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+use Symplify\EasyCodingStandard\Config\ECSConfig;
 
-return static function (ContainerConfigurator $containerConfigurator): void {
-    $services = $containerConfigurator->services();
-    $services->set(\PhpCsFixer\Fixer\FunctionNotation\MethodArgumentSpaceFixer::class)
-        ->call('configure', [
-            [
-                'after_heredoc' => true,
-            ],
-        ]);
-    $services->set(\PhpCsFixer\Fixer\ListNotation\ListSyntaxFixer::class);
-    $services->set(\PhpCsFixer\Fixer\ArrayNotation\ArraySyntaxFixer::class);
-    $services->set(\PhpCsFixer\Fixer\ClassNotation\VisibilityRequiredFixer::class);
-    $services->set(\PhpCsFixer\Fixer\Operator\TernaryToNullCoalescingFixer::class);
-    $services->set(\PhpCsFixer\Fixer\Whitespace\HeredocIndentationFixer::class);
-    $services->set(\PhpCsFixer\Fixer\ArrayNotation\NoWhitespaceBeforeCommaInArrayFixer::class)
-        ->call('configure', [
-            [
-                'after_heredoc' => true,
-            ],
-        ]);
-    $services->set(\PhpCsFixer\Fixer\ControlStructure\TrailingCommaInMultilineFixer::class)
-        ->call('configure', [
-            [
-                'after_heredoc' => true,
-            ],
-        ]);
+return static function (ECSConfig $containerConfigurator): void {
+    $containerConfigurator->ruleWithConfiguration(\PhpCsFixer\Fixer\FunctionNotation\MethodArgumentSpaceFixer::class, [
+        'after_heredoc' => true,
+    ]);
+    $containerConfigurator->rule(\PhpCsFixer\Fixer\ListNotation\ListSyntaxFixer::class);
+    $containerConfigurator->rule(\PhpCsFixer\Fixer\ArrayNotation\ArraySyntaxFixer::class);
+    $containerConfigurator->rule(\PhpCsFixer\Fixer\ClassNotation\VisibilityRequiredFixer::class);
+    $containerConfigurator->rule(\PhpCsFixer\Fixer\Operator\TernaryToNullCoalescingFixer::class);
+    $containerConfigurator->rule(\PhpCsFixer\Fixer\Whitespace\HeredocIndentationFixer::class);
+    $containerConfigurator->ruleWithConfiguration(\PhpCsFixer\Fixer\ArrayNotation\NoWhitespaceBeforeCommaInArrayFixer::class, [
+        'after_heredoc' => true,
+    ]);
+    $containerConfigurator->ruleWithConfiguration(\PhpCsFixer\Fixer\ControlStructure\TrailingCommaInMultilineFixer::class, [
+        'after_heredoc' => true,
+    ]);
 };

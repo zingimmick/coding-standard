@@ -2,44 +2,25 @@
 
 declare(strict_types=1);
 
-use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+use Symplify\EasyCodingStandard\Config\ECSConfig;
 
-return static function (ContainerConfigurator $containerConfigurator): void {
-    $services = $containerConfigurator->services();
-    $services->set(\PhpCsFixer\Fixer\PhpUnit\PhpUnitNoExpectationAnnotationFixer::class)
-        ->call('configure', [
-            [
-                'target' => '4.3',
-            ],
-        ]);
-    $services->set(\PhpCsFixer\Fixer\PhpUnit\PhpUnitNamespacedFixer::class)
-        ->call('configure', [
-            [
-                'target' => '6.0',
-            ],
-        ]);
-    $services->set(\PhpCsFixer\Fixer\PhpUnit\PhpUnitExpectationFixer::class)
-        ->call('configure', [
-            [
-                'target' => '8.4',
-            ],
-        ]);
-    $services->set(\PhpCsFixer\Fixer\PhpUnit\PhpUnitMockFixer::class)
-        ->call('configure', [
-            [
-                'target' => '5.5',
-            ],
-        ]);
-    $services->set(\PhpCsFixer\Fixer\PhpUnit\PhpUnitDedicateAssertFixer::class)
-        ->call('configure', [
-            [
-                'target' => '5.6',
-            ],
-        ]);
-    $services->set(\PhpCsFixer\Fixer\PhpUnit\PhpUnitDedicateAssertInternalTypeFixer::class)
-        ->call('configure', [
-            [
-                'target' => '7.5',
-            ],
-        ]);
+return static function (ECSConfig $containerConfigurator): void {
+    $containerConfigurator->ruleWithConfiguration(\PhpCsFixer\Fixer\PhpUnit\PhpUnitNoExpectationAnnotationFixer::class, [
+        'target' => '4.3',
+    ]);
+    $containerConfigurator->ruleWithConfiguration(\PhpCsFixer\Fixer\PhpUnit\PhpUnitNamespacedFixer::class, [
+        'target' => '6.0',
+    ]);
+    $containerConfigurator->ruleWithConfiguration(\PhpCsFixer\Fixer\PhpUnit\PhpUnitExpectationFixer::class, [
+        'target' => '8.4',
+    ]);
+    $containerConfigurator->ruleWithConfiguration(\PhpCsFixer\Fixer\PhpUnit\PhpUnitMockFixer::class, [
+        'target' => '5.5',
+    ]);
+    $containerConfigurator->ruleWithConfiguration(\PhpCsFixer\Fixer\PhpUnit\PhpUnitDedicateAssertFixer::class, [
+        'target' => '5.6',
+    ]);
+    $containerConfigurator->ruleWithConfiguration(\PhpCsFixer\Fixer\PhpUnit\PhpUnitDedicateAssertInternalTypeFixer::class, [
+        'target' => '7.5',
+    ]);
 };

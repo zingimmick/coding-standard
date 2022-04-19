@@ -2,35 +2,28 @@
 
 declare(strict_types=1);
 
-use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+use Symplify\EasyCodingStandard\Config\ECSConfig;
 
-return static function (ContainerConfigurator $containerConfigurator): void {
-    $services = $containerConfigurator->services();
-    $services->set(\PhpCsFixer\Fixer\ClassNotation\NoPhp4ConstructorFixer::class);
-    $services->set(\PhpCsFixer\Fixer\Alias\NoAliasFunctionsFixer::class)
-        ->call('configure', [
-            [
-                'sets' => ['@all'],
-            ],
-        ]);
-    $services->set(\PhpCsFixer\Fixer\FunctionNotation\ImplodeCallFixer::class);
-    $services->set(\PhpCsFixer\Fixer\Alias\ModernizeStrposFixer::class);
-    $services->set(\PhpCsFixer\Fixer\FunctionNotation\CombineNestedDirnameFixer::class);
-    $services->set(\PhpCsFixer\Fixer\Alias\PowToExponentiationFixer::class);
-    $services->set(\PhpCsFixer\Fixer\FunctionNotation\VoidReturnFixer::class);
-    $services->set(\PhpCsFixer\Fixer\Strict\DeclareStrictTypesFixer::class);
-    $services->set(\PhpCsFixer\Fixer\LanguageConstruct\GetClassToClassKeywordFixer::class);
-    $services->set(\PhpCsFixer\Fixer\FunctionNotation\UseArrowFunctionsFixer::class);
-    $services->set(\PhpCsFixer\Fixer\Basic\NonPrintableCharacterFixer::class);
-    $services->set(\PhpCsFixer\Fixer\Alias\RandomApiMigrationFixer::class)
-        ->call('configure', [
-            [
-                'replacements' => [
-                    'mt_rand' => 'random_int',
-                    'rand' => 'random_int',
-                ],
-            ],
-        ]);
-    $services->set(\PhpCsFixer\Fixer\ClassNotation\NoUnneededFinalMethodFixer::class);
-    $services->set(\PhpCsFixer\Fixer\FunctionNotation\NoUnreachableDefaultArgumentValueFixer::class);
+return static function (ECSConfig $containerConfigurator): void {
+    $containerConfigurator->rule(\PhpCsFixer\Fixer\ClassNotation\NoPhp4ConstructorFixer::class);
+    $containerConfigurator->ruleWithConfiguration(\PhpCsFixer\Fixer\Alias\NoAliasFunctionsFixer::class, [
+        'sets' => ['@all'],
+    ]);
+    $containerConfigurator->rule(\PhpCsFixer\Fixer\FunctionNotation\ImplodeCallFixer::class);
+    $containerConfigurator->rule(\PhpCsFixer\Fixer\Alias\ModernizeStrposFixer::class);
+    $containerConfigurator->rule(\PhpCsFixer\Fixer\FunctionNotation\CombineNestedDirnameFixer::class);
+    $containerConfigurator->rule(\PhpCsFixer\Fixer\Alias\PowToExponentiationFixer::class);
+    $containerConfigurator->rule(\PhpCsFixer\Fixer\FunctionNotation\VoidReturnFixer::class);
+    $containerConfigurator->rule(\PhpCsFixer\Fixer\Strict\DeclareStrictTypesFixer::class);
+    $containerConfigurator->rule(\PhpCsFixer\Fixer\LanguageConstruct\GetClassToClassKeywordFixer::class);
+    $containerConfigurator->rule(\PhpCsFixer\Fixer\FunctionNotation\UseArrowFunctionsFixer::class);
+    $containerConfigurator->rule(\PhpCsFixer\Fixer\Basic\NonPrintableCharacterFixer::class);
+    $containerConfigurator->ruleWithConfiguration(\PhpCsFixer\Fixer\Alias\RandomApiMigrationFixer::class, [
+        'replacements' => [
+            'mt_rand' => 'random_int',
+            'rand' => 'random_int',
+        ],
+    ]);
+    $containerConfigurator->rule(\PhpCsFixer\Fixer\ClassNotation\NoUnneededFinalMethodFixer::class);
+    $containerConfigurator->rule(\PhpCsFixer\Fixer\FunctionNotation\NoUnreachableDefaultArgumentValueFixer::class);
 };

@@ -5,8 +5,7 @@ use PhpParser\BuilderFactory;
 use Zing\CodingStandard\PHPCodeSnifferRuleSetGenerator;
 use Zing\CodingStandard\PhpCsFixerRuleSetGenerator;
 use Zing\CodingStandard\Printer;
-use Zing\CodingStandard\Printers\PHPCodeSnifferRuleSetPrinter;
-use Zing\CodingStandard\Printers\PhpCsFixerRuleSetPrinter;
+use Zing\CodingStandard\Printers\RuleSetPrinter;
 
 if (is_file(__DIR__ . '/../vendor/autoload.php') === true) {
     include_once __DIR__ . '/../vendor/autoload.php';
@@ -23,8 +22,8 @@ $printer = new Printer([
     'shortArraySyntax' => true,
 ]);
 $generators = [
-    new PhpCsFixerRuleSetGenerator(new PhpCsFixerRuleSetPrinter($builderFactory,$printer)),
-    new PHPCodeSnifferRuleSetGenerator(new PHPCodeSnifferRuleSetPrinter($builderFactory,$printer)),
+    new PhpCsFixerRuleSetGenerator(new RuleSetPrinter($builderFactory,$printer)),
+    new PHPCodeSnifferRuleSetGenerator(new RuleSetPrinter($builderFactory,$printer)),
 ];
 foreach ($generators as $generator) {
     $generator->generate();
