@@ -2,26 +2,14 @@
 
 declare(strict_types=1);
 
-use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
-
-return static function (ContainerConfigurator $containerConfigurator): void {
-    $services = $containerConfigurator->services();
-    $services->set(\PhpCsFixer\Fixer\PhpUnit\PhpUnitNoExpectationAnnotationFixer::class)
-        ->call('configure', [
-            [
-                'target' => '4.3',
-            ],
-        ]);
-    $services->set(\PhpCsFixer\Fixer\PhpUnit\PhpUnitNamespacedFixer::class)
-        ->call('configure', [
-            [
-                'target' => '4.8',
-            ],
-        ]);
-    $services->set(\PhpCsFixer\Fixer\PhpUnit\PhpUnitDedicateAssertFixer::class)
-        ->call('configure', [
-            [
-                'target' => '5.0',
-            ],
-        ]);
+return static function (Symplify\EasyCodingStandard\Config\ECSConfig $containerConfigurator): void {
+    $containerConfigurator->ruleWithConfiguration(\PhpCsFixer\Fixer\PhpUnit\PhpUnitNoExpectationAnnotationFixer::class, [
+        'target' => '4.3',
+    ]);
+    $containerConfigurator->ruleWithConfiguration(\PhpCsFixer\Fixer\PhpUnit\PhpUnitNamespacedFixer::class, [
+        'target' => '4.8',
+    ]);
+    $containerConfigurator->ruleWithConfiguration(\PhpCsFixer\Fixer\PhpUnit\PhpUnitDedicateAssertFixer::class, [
+        'target' => '5.0',
+    ]);
 };

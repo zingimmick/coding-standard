@@ -2,22 +2,13 @@
 
 declare(strict_types=1);
 
-use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
-
-return static function (ContainerConfigurator $containerConfigurator): void {
-    $services = $containerConfigurator->services();
-    $services->set(\PhpCsFixer\Fixer\DoctrineAnnotation\DoctrineAnnotationArrayAssignmentFixer::class)
-        ->call('configure', [
-            [
-                'operator' => ':',
-            ],
-        ]);
-    $services->set(\PhpCsFixer\Fixer\DoctrineAnnotation\DoctrineAnnotationBracesFixer::class);
-    $services->set(\PhpCsFixer\Fixer\DoctrineAnnotation\DoctrineAnnotationIndentationFixer::class);
-    $services->set(\PhpCsFixer\Fixer\DoctrineAnnotation\DoctrineAnnotationSpacesFixer::class)
-        ->call('configure', [
-            [
-                'before_array_assignments_colon' => false,
-            ],
-        ]);
+return static function (Symplify\EasyCodingStandard\Config\ECSConfig $containerConfigurator): void {
+    $containerConfigurator->ruleWithConfiguration(\PhpCsFixer\Fixer\DoctrineAnnotation\DoctrineAnnotationArrayAssignmentFixer::class, [
+        'operator' => ':',
+    ]);
+    $containerConfigurator->rule(\PhpCsFixer\Fixer\DoctrineAnnotation\DoctrineAnnotationBracesFixer::class);
+    $containerConfigurator->rule(\PhpCsFixer\Fixer\DoctrineAnnotation\DoctrineAnnotationIndentationFixer::class);
+    $containerConfigurator->ruleWithConfiguration(\PhpCsFixer\Fixer\DoctrineAnnotation\DoctrineAnnotationSpacesFixer::class, [
+        'before_array_assignments_colon' => false,
+    ]);
 };

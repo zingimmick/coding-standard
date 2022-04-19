@@ -4,10 +4,13 @@ declare(strict_types=1);
 
 use PHP_CodeSniffer\Config;
 use Rector\Core\ValueObject\PhpVersion;
-use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+use Symplify\EasyCodingStandard\Config\ECSConfig;
+use Zing\CodingStandard\Set\PhpCsFixerSetList;
 
-return static function (ContainerConfigurator $containerConfigurator): void {
+return static function (ECSConfig $ecsConfig): void {
     Config::setConfigData('php_version', PhpVersion::PHP_70);
-    $containerConfigurator->import(\Zing\CodingStandard\Set\PhpCsFixerSetList::PHP70_MIGRATION);
-    $containerConfigurator->import(\Zing\CodingStandard\Set\PhpCsFixerSetList::PHP70_MIGRATION_RISKY);
+    $ecsConfig->sets([
+        PhpCsFixerSetList::PHP70_MIGRATION,
+        PhpCsFixerSetList::PHP70_MIGRATION_RISKY,
+    ]);
 };
