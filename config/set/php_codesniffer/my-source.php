@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
-return static function (Symplify\EasyCodingStandard\Config\ECSConfig $containerConfigurator): void {
+use Symplify\EasyCodingStandard\Config\ECSConfig;
+
+return static function (ECSConfig $containerConfigurator): void {
     $containerConfigurator->rule(\PHP_CodeSniffer\Standards\MySource\Sniffs\Strings\JoinStringsSniff::class);
     $containerConfigurator->rule(\PHP_CodeSniffer\Standards\MySource\Sniffs\CSS\BrowserSpecificStylesSniff::class);
     $containerConfigurator->rule(\PHP_CodeSniffer\Standards\MySource\Sniffs\Objects\CreateWidgetTypeCallbackSniff::class);
