@@ -5,8 +5,6 @@ use PhpParser\BuilderFactory;
 use Zing\CodingStandard\PHPCodeSnifferRuleSetGenerator;
 use Zing\CodingStandard\PhpCsFixerRuleSetGenerator;
 use Zing\CodingStandard\Printer;
-use Zing\CodingStandard\Printers\PHPCodeSnifferRuleSetPrinter;
-use Zing\CodingStandard\Printers\PhpCsFixerRuleSetPrinter;
 use Zing\CodingStandard\Printers\RuleSetPrinter;
 
 if (is_file(__DIR__ . '/../vendor/autoload.php') === true) {
