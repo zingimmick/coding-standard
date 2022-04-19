@@ -19,17 +19,17 @@ use PhpParser\Node\Stmt\UseUse;
 use Symplify\EasyCodingStandard\Config\ECSConfig;
 use Zing\CodingStandard\Printer;
 
-class RuleSetPrinter
+final class RuleSetPrinter
 {
     /**
      * @var \PhpParser\BuilderFactory
      */
-    protected $builderFactory;
+    private $builderFactory;
 
     /**
      * @var \Zing\CodingStandard\Printer
      */
-    protected $printer;
+    private $printer;
 
     public function __construct(BuilderFactory $builderFactory, Printer $printer)
     {
@@ -61,7 +61,8 @@ class RuleSetPrinter
         return $this->printer
             ->prettyPrintFile([
                 new Declare_([new DeclareDeclare('strict_types', new LNumber(1))]),
-                new Nop(),new Use_([new UseUse(new Name(ECSConfig::class))]),
+                new Nop(),
+                new Use_([new UseUse(new Name(ECSConfig::class))]),
                 new Nop(),
                 new Return_(new Closure([
                     'static' => true,
