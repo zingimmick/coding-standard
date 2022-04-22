@@ -6,7 +6,6 @@ use Rector\Config\RectorConfig;
 use Rector\Set\ValueObject\SetList;
 use Zing\CodingStandard\Set\RectorSetList;
 
-
 return static function (RectorConfig $rectorConfig): void {
     $rectorConfig->sets([
         RectorSetList::FAKER_114,
