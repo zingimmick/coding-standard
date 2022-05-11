@@ -39,7 +39,7 @@ final class RuleSetPrinter
 
     public function print(array $services): string
     {
-        $param = $this->builderFactory->param('containerConfigurator')
+        $param = $this->builderFactory->param('ecsConfig')
             ->setType('ECSConfig')
             ->getNode();
         $stmts = [];

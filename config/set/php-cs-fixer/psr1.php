@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use Symplify\EasyCodingStandard\Config\ECSConfig;
 
-return static function (ECSConfig $containerConfigurator): void {
-    $containerConfigurator->rule(\PhpCsFixer\Fixer\Basic\EncodingFixer::class);
-    $containerConfigurator->rule(\PhpCsFixer\Fixer\PhpTag\FullOpeningTagFixer::class);
+return static function (ECSConfig $ecsConfig): void {
+    $ecsConfig->rule(\PhpCsFixer\Fixer\Basic\EncodingFixer::class);
+    $ecsConfig->rule(\PhpCsFixer\Fixer\PhpTag\FullOpeningTagFixer::class);
 };
