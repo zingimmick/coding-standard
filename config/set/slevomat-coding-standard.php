@@ -68,7 +68,9 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Arrays\TrailingArrayCommaSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Functions\DisallowNamedArgumentsSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Functions\RequireArrowFunctionSniff::class);
+    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Functions\DisallowTrailingCommaInClosureUseSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Functions\UnusedInheritedVariablePassedToClosureSniff::class);
+    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Functions\RequireTrailingCommaInClosureUseSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Functions\UselessParameterDefaultValueSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Functions\ArrowFunctionDeclarationSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\ControlStructures\RequireNullCoalesceOperatorSniff::class);
