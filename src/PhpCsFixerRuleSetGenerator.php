@@ -4,12 +4,16 @@ declare(strict_types=1);
 
 namespace Zing\CodingStandard;
 
-use InvalidArgumentException;
 use PhpCsFixer\Fixer\ConfigurableFixerInterface;
 use PhpCsFixer\FixerFactory;
 use PhpCsFixer\RuleSet\RuleSet;
 use PhpCsFixer\RuleSet\RuleSetDescriptionInterface;
 use PhpCsFixer\RuleSet\RuleSets;
+use PhpParser\ConstExprEvaluator;
+use PhpParser\Node\Expr\Array_;
+use PhpParser\Node\Expr\Assign;
+use PhpParser\Node\Stmt\Expression;
+use PhpParser\ParserFactory;
 use Zing\CodingStandard\Printers\RuleSetPrinter;
 
 final class PhpCsFixerRuleSetGenerator
@@ -62,9 +66,24 @@ final class PhpCsFixerRuleSetGenerator
      */
     private $ruleSetPrinter;
 
-    public function __construct(RuleSetPrinter $printer)
-    {
+    /**
+     * @var \PhpParser\ParserFactory
+     */
+    private $parserFactory;
+
+    /**
+     * @var \PhpParser\ConstExprEvaluator
+     */
+    private $constExprEvaluator;
+
+    public function __construct(
+        RuleSetPrinter $printer,
+        ParserFactory $parserFactory,
+        ConstExprEvaluator $constExprEvaluator
+    ) {
         $this->ruleSetPrinter = $printer;
+        $this->parserFactory = $parserFactory;
+        $this->constExprEvaluator = $constExprEvaluator;
     }
 
     public function generate(): void
@@ -114,18 +133,24 @@ final class PhpCsFixerRuleSetGenerator
     private function getLaravelRuleSet(): ?LaravelSet
     {
         $rules = null;
-        file_put_contents(
-            sys_get_temp_dir() . '/laravel.php',
-            file_get_contents(
-                'https://gist.githubusercontent.com/laravel-shift/cab527923ed2a109dda047b97d53c200/raw/.php-cs-fixer.php'
-            ),
-            LOCK_EX
+        $contents = file_get_contents(
+            'https://gist.githubusercontent.com/laravel-shift/cab527923ed2a109dda047b97d53c200/raw/.php-cs-fixer.php'
         );
+        $stmts = $this->parserFactory->create(ParserFactory::PREFER_PHP7)->parse($contents);
+        foreach ($stmts as $stmt) {
+            if (! $stmt instanceof Expression) {
+                continue;
+            }
 
-        try {
-            require sys_get_temp_dir() . '/laravel.php';
-        } catch (InvalidArgumentException $invalidArgumentException) {
-            print_r($invalidArgumentException->getMessage());
+            if (! $stmt->expr instanceof Assign) {
+                continue;
+            }
+
+            if (! $stmt->expr->expr instanceof Array_) {
+                continue;
+            }
+
+            $rules = $this->constExprEvaluator->evaluateDirectly($stmt->expr->expr);
         }
 
         if (! isset($rules)) {

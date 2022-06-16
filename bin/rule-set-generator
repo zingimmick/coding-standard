@@ -2,6 +2,8 @@
 <?php
 
 use PhpParser\BuilderFactory;
+use PhpParser\ConstExprEvaluator;
+use PhpParser\ParserFactory;
 use Zing\CodingStandard\PHPCodeSnifferRuleSetGenerator;
 use Zing\CodingStandard\PhpCsFixerRuleSetGenerator;
 use Zing\CodingStandard\Printer;
@@ -22,8 +24,8 @@ $printer = new Printer([
     'shortArraySyntax' => true,
 ]);
 $generators = [
-    new PhpCsFixerRuleSetGenerator(new RuleSetPrinter($builderFactory,$printer)),
-    new PHPCodeSnifferRuleSetGenerator(new RuleSetPrinter($builderFactory,$printer)),
+    new PhpCsFixerRuleSetGenerator(new RuleSetPrinter($builderFactory, $printer), new ParserFactory(), new ConstExprEvaluator()),
+    new PHPCodeSnifferRuleSetGenerator(new RuleSetPrinter($builderFactory, $printer)),
 ];
 foreach ($generators as $generator) {
     $generator->generate();
