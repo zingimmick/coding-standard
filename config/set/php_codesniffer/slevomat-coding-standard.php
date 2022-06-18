@@ -17,6 +17,7 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\ForbiddenPublicPropertySniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\ClassStructureSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\RequireMultiLineMethodSignatureSniff::class);
+    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\PropertyDeclarationSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\ConstantSpacingSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\TraitUseSpacingSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\SuperfluousErrorNamingSniff::class);
@@ -130,7 +131,6 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\TypeHints\ParameterTypeHintSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\TypeHints\UselessConstantTypeHintSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\TypeHints\NullTypeHintOnLastPositionSniff::class);
-    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\TypeHints\PropertyTypeHintSpacingSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\TypeHints\DisallowMixedTypeHintSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\TypeHints\UnionTypeHintFormatSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\TypeHints\PropertyTypeHintSniff::class);

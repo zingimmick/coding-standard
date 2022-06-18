@@ -12,6 +12,7 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Operators\RequireCombinedAssignmentOperatorSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\ClassMemberSpacingSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\RequireMultiLineMethodSignatureSniff::class);
+    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\PropertyDeclarationSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\ConstantSpacingSniff::class);
     $ecsConfig->ruleWithConfiguration(\SlevomatCodingStandard\Sniffs\Classes\TraitUseSpacingSniff::class, [
         'linesCountAfterLastUse' => '1',
@@ -88,7 +89,6 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\TypeHints\ParameterTypeHintSpacingSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\TypeHints\LongTypeHintsSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\TypeHints\NullTypeHintOnLastPositionSniff::class);
-    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\TypeHints\PropertyTypeHintSpacingSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\TypeHints\UnionTypeHintFormatSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\TypeHints\PropertyTypeHintSniff::class);
     $ecsConfig->ruleWithConfiguration(\SlevomatCodingStandard\Sniffs\TypeHints\DeclareStrictTypesSniff::class, [
