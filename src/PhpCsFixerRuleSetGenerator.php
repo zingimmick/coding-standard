@@ -11,8 +11,8 @@ use PhpCsFixer\RuleSet\RuleSetDescriptionInterface;
 use PhpCsFixer\RuleSet\RuleSets;
 use PhpParser\ConstExprEvaluator;
 use PhpParser\Node\Expr\Array_;
-use PhpParser\Node\Expr\Assign;
-use PhpParser\Node\Stmt\Expression;
+use PhpParser\Node\Expr\StaticCall;
+use PhpParser\Node\Stmt\Return_;
 use PhpParser\ParserFactory;
 use Zing\CodingStandard\Printers\RuleSetPrinter;
 
@@ -134,23 +134,29 @@ final class PhpCsFixerRuleSetGenerator
     {
         $rules = null;
         $contents = file_get_contents(
-            'https://gist.githubusercontent.com/laravel-shift/cab527923ed2a109dda047b97d53c200/raw/.php-cs-fixer.php'
+            'https://raw.githubusercontent.com/laravel/pint/main/resources/presets/laravel.php'
         );
         $stmts = $this->parserFactory->create(ParserFactory::PREFER_PHP7)->parse($contents);
         foreach ($stmts as $stmt) {
-            if (! $stmt instanceof Expression) {
+            if (! $stmt instanceof Return_) {
                 continue;
             }
 
-            if (! $stmt->expr instanceof Assign) {
+            if (! $stmt->expr instanceof StaticCall) {
                 continue;
             }
 
-            if (! $stmt->expr->expr instanceof Array_) {
+            if (! $stmt->expr->args[0]->value instanceof Array_) {
                 continue;
             }
 
-            $rules = $this->constExprEvaluator->evaluateDirectly($stmt->expr->expr);
+            $rules = $this->constExprEvaluator->evaluateDirectly($stmt->expr->args[0]->value);
+        }
+
+        foreach (array_keys($rules) as $rule) {
+            if (strncmp($rule, 'Laravel/', \strlen('Laravel/')) === 0) {
+                unset($rules[$rule]);
+            }
         }
 
         if (! isset($rules)) {
