@@ -34,12 +34,15 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\DisallowMultiPropertyDefinitionSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\PropertySpacingSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\SuperfluousExceptionNamingSniff::class);
+    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\ClassLengthSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\ClassConstantVisibilitySniff::class);
+    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\BackedEnumTypeSpacingSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\RequireAbstractOrFinalSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\MethodSpacingSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\DisallowLateStaticBindingForConstantsSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\DisallowConstructorPropertyPromotionSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\TraitUseDeclarationSniff::class);
+    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Complexity\CognitiveSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Whitespaces\DuplicateSpacesSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\PHP\DisallowDirectMagicInvokeCallSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\PHP\RequireNowdocSniff::class);
@@ -83,6 +86,7 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Arrays\TrailingArrayCommaSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Files\LineLengthSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Files\FunctionLengthSniff::class);
+    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Files\FileLengthSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Files\TypeNameMatchesFileNameSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Functions\StrictCallSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Functions\RequireTrailingCommaInCallSniff::class);
