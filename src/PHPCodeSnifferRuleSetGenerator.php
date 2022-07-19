@@ -63,23 +63,36 @@ final class PHPCodeSnifferRuleSetGenerator
     private function formatRulesToServices(Ruleset $ruleset): array
     {
         $sniffs = [];
-        foreach ($ruleset->sniffs as $sniff) {
-            if (! $this->isPhpSniff($sniff, str_contains($ruleset->name, 'Custom'))) {
+        $isStandard = str_contains($ruleset->name, 'Custom');
+        $sniffs = $this->formatSniffs($ruleset->sniffs, $isStandard);
+
+        foreach ($ruleset->ruleset as $code => $attr) {
+            if (! isset($ruleset->sniffCodes[$code])) {
+                continue;
+            }
+
+            $sniff = $ruleset->sniffCodes[$code];
+            if (! $this->isPhpSniff($sniff, $isStandard)) {
+                continue;
+            }
+
+            $sniffs[$sniff] = $attr['properties'] ?? [];
+        }
+
+        return $sniffs;
+    }
+
+    /**
+     * @return array<string, array<string, mixed>>
+     */
+    private function formatSniffs(array $sniffs, bool $isStandard = false): array
+    {
+        foreach ($sniffs as $sniff) {
+            if (! $this->isPhpSniff($sniff, $isStandard)) {
                 continue;
             }
 
             $sniffs[\is_object($sniff) ? \get_class($sniff) : $sniff] = [];
-        }
-
-        foreach ($ruleset->ruleset as $code => $attr) {
-            if (isset($ruleset->sniffCodes[$code])) {
-                $sniff = $ruleset->sniffCodes[$code];
-                if (! $this->isPhpSniff($sniff, str_contains($ruleset->name, 'Custom'))) {
-                    continue;
-                }
-
-                $sniffs[$sniff] = $attr['properties'] ?? [];
-            }
         }
 
         return $sniffs;
