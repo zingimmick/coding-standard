@@ -52,7 +52,7 @@
         "test": [
             "rm -rf fixed/*.php",
             "cp -R wrong/* fixed/",
-            "vendor/bin/rector process",
+            "vendor/bin/rector process --debug",
             "vendor/bin/ecs check --fix",
             "vendor/bin/ecs check --fix",
             "vendor/bin/phpunit",
