@@ -125,18 +125,20 @@ final class TestClass implements TestableContract
     public function testScopeClosingBrace(): array
     {
         return [
-            'eventCrowd' => function ($query) {
+            'eventCrowd' => static function ($query) {
                 return $query->with('rule');
             },
-            'eventAuction' => function ($query) {
+            'eventAuction' => static function ($query) {
                 return $query->with('rule');
             },
-            'logs' => function ($query) {
-                return $query->with([
-                    'admin' => function ($query) {
-                        return $query->select('id', 'name');
-                    },
-                ]);
+            'logs' => static function ($query) {
+                return $query->with(
+                    [
+                        'admin' => static function ($query) {
+                            return $query->select('id', 'name');
+                        },
+                    ]
+                );
             },
             'images',
         ];
