@@ -8,6 +8,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLinker](https://github.com/Symplify/ChangelogLinker).
 
 <!-- changelog-linker -->
+## 6.10.0 - 2022-08-07
+
+<!-- Release notes generated using configuration in .github/release.yml at 6.x -->
+### What's Changed
+
+#### Other Changes
+
+- Re-generate rulesets by @zingimmick in https://github.com/zingimmick/coding-standard/pull/154
+
+**Full Changelog**: https://github.com/zingimmick/coding-standard/compare/6.9.0...6.10.0
+
 ## 6.8.0 - 2022-06-18
 
 <!-- Release notes generated using configuration in .github/release.yml at 6.x -->
