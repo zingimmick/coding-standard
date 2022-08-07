@@ -58,7 +58,9 @@ return static function (ECSConfig $ecsConfig): void {
         'searchAnnotations' => 'true',
     ]);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Namespaces\DisallowGroupUseSniff::class);
-    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Namespaces\UseSpacingSniff::class);
+    $ecsConfig->ruleWithConfiguration(\SlevomatCodingStandard\Sniffs\Namespaces\UseSpacingSniff::class, [
+        'linesCountBetweenUseTypes' => '1',
+    ]);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Namespaces\NamespaceSpacingSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Namespaces\NamespaceDeclarationSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Namespaces\RequireOneNamespaceInFileSniff::class);

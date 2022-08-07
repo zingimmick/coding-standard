@@ -7,6 +7,7 @@ namespace Zing\CodingStandard\Correct;
 use Zing\CodingStandard\Correct\Concerns\Testable;
 use Zing\CodingStandard\Correct\Concerns\TraitA;
 use Zing\CodingStandard\Correct\Concerns\TraitB;
+
 use const PHP_EOL;
 
 final class TestClass implements TestableContract

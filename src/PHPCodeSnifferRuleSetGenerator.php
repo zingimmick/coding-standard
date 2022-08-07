@@ -130,6 +130,7 @@ final class PHPCodeSnifferRuleSetGenerator
             ->files()
             ->in(__DIR__ . '/../vendor/slevomat/coding-standard')
             ->name('ruleset.xml');
+
         yield from Finder::create()
             ->files()
             ->in(__DIR__ . '/Standards')

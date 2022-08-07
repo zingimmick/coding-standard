@@ -63,6 +63,11 @@
         <exclude name="SlevomatCodingStandard.Classes.RequireAbstractOrFinal"/>
     </rule>
 
+    <rule ref="SlevomatCodingStandard.Namespaces.UseSpacing">
+        <properties>
+            <property name="linesCountBetweenUseTypes" value="1"></property>
+        </properties>
+    </rule>
     <rule ref="SlevomatCodingStandard.Classes.TraitUseSpacing">
         <properties>
             <property name="linesCountAfterLastUse" value="1"/>
