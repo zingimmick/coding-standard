@@ -8,6 +8,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLinker](https://github.com/Symplify/ChangelogLinker).
 
 <!-- changelog-linker -->
+## 6.10.1 - 2022-08-13
+
+<!-- Release notes generated using configuration in .github/release.yml at 6.x -->
+### What's Changed
+
+#### Other Changes
+
+- Exclude FileTooLong or ClassTooLong by @zingimmick in https://github.com/zingimmick/coding-standard/pull/155
+
+**Full Changelog**: https://github.com/zingimmick/coding-standard/compare/6.10.0...6.10.1
+
 ## 6.10.0 - 2022-08-07
 
 <!-- Release notes generated using configuration in .github/release.yml at 6.x -->
