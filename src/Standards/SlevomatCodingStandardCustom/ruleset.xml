@@ -61,6 +61,9 @@
         <exclude name="SlevomatCodingStandard.Classes.SuperfluousErrorNaming"/>
         <exclude name="SlevomatCodingStandard.Commenting.DocCommentSpacing"/>
         <exclude name="SlevomatCodingStandard.Classes.RequireAbstractOrFinal"/>
+        <exclude name="SlevomatCodingStandard.Files.FileLength"/>
+        <exclude name="SlevomatCodingStandard.Complexity.Cognitive"/>
+        <exclude name="SlevomatCodingStandard.Classes.ClassLength"/>
     </rule>
 
     <rule ref="SlevomatCodingStandard.Namespaces.UseSpacing">
