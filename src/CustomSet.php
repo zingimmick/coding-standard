@@ -61,6 +61,9 @@ final class CustomSet extends AbstractRuleSetDescription
             'simplified_if_return' => true,
             'yoda_style' => false,
             'php_unit_test_class_requires_covers' => false,
+            'fopen_flags' => [
+                'b_mode' => true,
+            ],
         ];
     }
 }
