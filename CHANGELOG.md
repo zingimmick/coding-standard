@@ -8,6 +8,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLinker](https://github.com/Symplify/ChangelogLinker).
 
 <!-- changelog-linker -->
+## 6.10.4 - 2022-08-21
+
+<!-- Release notes generated using configuration in .github/release.yml at 6.x -->
+### What's Changed
+
+#### Other Changes
+
+- Add extracted fixers from BracesFixer by @zingimmick in https://github.com/zingimmick/coding-standard/pull/159
+
+**Full Changelog**: https://github.com/zingimmick/coding-standard/compare/6.10.3...6.10.4
+
 ## 6.10.3 - 2022-08-20
 
 <!-- Release notes generated using configuration in .github/release.yml at 6.x -->
