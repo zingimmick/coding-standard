@@ -51,6 +51,8 @@ final class PhpCsFixerRuleSetGenerator
         '@PHPUnit60Migration:risky' => 'phpunit60-migration-risky.php',
         '@PHPUnit75Migration:risky' => 'phpunit75-migration-risky.php',
         '@PHPUnit84Migration:risky' => 'phpunit84-migration-risky.php',
+        '@PER' => 'per.php',
+        '@PER:risky' => 'per-risky.php',
         '@PSR1' => 'psr1.php',
         '@PSR12' => 'psr12.php',
         '@PSR12:risky' => 'psr12-risky.php',
