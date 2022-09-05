@@ -70,6 +70,7 @@ final class CustomSet extends AbstractRuleSetDescription
             'control_structure_braces' => true,
             // Temporarily disable OperatorLinebreakFixer
             'operator_linebreak' => false,
+            'phpdoc_indent' => false,
         ];
     }
 }
