@@ -68,9 +68,6 @@ final class CustomSet extends AbstractRuleSetDescription
             'no_multiple_statements_per_line' => true,
             'curly_braces_position' => true,
             'control_structure_braces' => true,
-            // Temporarily disable OperatorLinebreakFixer
-            'operator_linebreak' => false,
-            'phpdoc_indent' => false,
         ];
     }
 }
