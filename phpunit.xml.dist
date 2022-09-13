@@ -1,6 +1,7 @@
-<?xml version="1.0" encoding="utf-8" ?>
-<phpunit bootstrap="vendor/autoload.php" colors="true" verbose="true">
-    <testsuite name="all">
-        <directory>tests</directory>
-    </testsuite>
+<?xml version="1.0" encoding="utf-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bootstrap="vendor/autoload.php" colors="true" verbose="true" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
+  <coverage/>
+  <testsuite name="all">
+    <directory>tests</directory>
+  </testsuite>
 </phpunit>
