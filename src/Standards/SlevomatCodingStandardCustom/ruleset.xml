@@ -43,6 +43,7 @@
         <exclude name="SlevomatCodingStandard.Functions.DisallowEmptyFunction"/>
         <exclude name="SlevomatCodingStandard.ControlStructures.DisallowEmpty"/>
         <exclude name="SlevomatCodingStandard.TypeHints.ParameterTypeHint"/>
+        <exclude name="SlevomatCodingStandard.TypeHints.PropertyTypeHint"/>
         <exclude name="SlevomatCodingStandard.Classes.ClassStructure"/>
         <exclude name="SlevomatCodingStandard.Functions.RequireTrailingCommaInDeclaration"/>
         <exclude name="SlevomatCodingStandard.Functions.RequireSingleLineCall"/>

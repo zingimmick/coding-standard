@@ -93,7 +93,6 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\TypeHints\LongTypeHintsSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\TypeHints\NullTypeHintOnLastPositionSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\TypeHints\UnionTypeHintFormatSniff::class);
-    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\TypeHints\PropertyTypeHintSniff::class);
     $ecsConfig->ruleWithConfiguration(\SlevomatCodingStandard\Sniffs\TypeHints\DeclareStrictTypesSniff::class, [
         'spacesCountAroundEqualsSign' => '0',
     ]);
