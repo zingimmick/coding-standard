@@ -29,14 +29,9 @@ final class PHPCodeSnifferRuleSetGenerator
         'SlevomatCodingStandardCustom' => '../slevomat-coding-standard.php',
     ];
 
-    /**
-     * @var \Zing\CodingStandard\Printers\RuleSetPrinter
-     */
-    private $ruleSetPrinter;
-
-    public function __construct(RuleSetPrinter $printer)
-    {
-        $this->ruleSetPrinter = $printer;
+    public function __construct(
+        private RuleSetPrinter $ruleSetPrinter
+    ) {
     }
 
     public function generate(): void
@@ -92,7 +87,7 @@ final class PHPCodeSnifferRuleSetGenerator
                 continue;
             }
 
-            $sniffs[\is_object($sniff) ? \get_class($sniff) : $sniff] = [];
+            $sniffs[\is_object($sniff) ? $sniff::class : $sniff] = [];
         }
 
         return $sniffs;

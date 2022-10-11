@@ -9,17 +9,11 @@ use PhpCsFixer\RuleSet\AbstractRuleSetDescription;
 final class LaravelSet extends AbstractRuleSetDescription
 {
     /**
-     * @var array<string, bool|array<string, mixed>>
-     */
-    private $rules = [];
-
-    /**
      * @param array<string, bool|array<string, mixed>> $rules
      */
-    public function __construct(array $rules)
-    {
-        $this->rules = $rules;
-
+    public function __construct(
+        private array $rules
+    ) {
         parent::__construct();
     }
 

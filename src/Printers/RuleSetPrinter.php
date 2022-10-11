@@ -21,20 +21,10 @@ use Zing\CodingStandard\Printer;
 
 final class RuleSetPrinter
 {
-    /**
-     * @var \PhpParser\BuilderFactory
-     */
-    private $builderFactory;
-
-    /**
-     * @var \Zing\CodingStandard\Printer
-     */
-    private $printer;
-
-    public function __construct(BuilderFactory $builderFactory, Printer $printer)
-    {
-        $this->builderFactory = $builderFactory;
-        $this->printer = $printer;
+    public function __construct(
+        private BuilderFactory $builderFactory,
+        private Printer $printer
+    ) {
     }
 
     public function print(array $services): string

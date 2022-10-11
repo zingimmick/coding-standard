@@ -65,29 +65,11 @@ final class PhpCsFixerRuleSetGenerator
         'custom' => '../php-cs-fixer-custom.php',
     ];
 
-    /**
-     * @var \Zing\CodingStandard\Printers\RuleSetPrinter
-     */
-    private $ruleSetPrinter;
-
-    /**
-     * @var \PhpParser\ParserFactory
-     */
-    private $parserFactory;
-
-    /**
-     * @var \PhpParser\ConstExprEvaluator
-     */
-    private $constExprEvaluator;
-
     public function __construct(
-        RuleSetPrinter $printer,
-        ParserFactory $parserFactory,
-        ConstExprEvaluator $constExprEvaluator
+        private RuleSetPrinter $ruleSetPrinter,
+        private ParserFactory $parserFactory,
+        private ConstExprEvaluator $constExprEvaluator
     ) {
-        $this->ruleSetPrinter = $printer;
-        $this->parserFactory = $parserFactory;
-        $this->constExprEvaluator = $constExprEvaluator;
     }
 
     public function generate(): void
@@ -112,10 +94,10 @@ final class PhpCsFixerRuleSetGenerator
         $services = [];
         $ruleSet = new RuleSet($ruleSetDescription->getRules());
         foreach ($fixerFactory->useRuleSet($ruleSet)->getFixers() as $fixer) {
-            $services[\get_class($fixer)] = [];
+            $services[$fixer::class] = [];
             $config = $ruleSet->getRuleConfiguration($fixer->getName());
             if ($fixer instanceof ConfigurableFixerInterface && $config) {
-                $services[\get_class($fixer)] = $config;
+                $services[$fixer::class] = $config;
             }
         }
 
@@ -139,7 +121,7 @@ final class PhpCsFixerRuleSetGenerator
         $rules = $this->getLaravelRules();
 
         foreach (array_keys($rules) as $rule) {
-            if (strncmp($rule, 'Laravel/', \strlen('Laravel/')) === 0) {
+            if (str_starts_with($rule, 'Laravel/')) {
                 unset($rules[$rule]);
             }
         }
@@ -152,12 +134,12 @@ final class PhpCsFixerRuleSetGenerator
     }
 
     /**
-     * @return array<string, bool|array<string, mixed>>
+     * @return array<string, mixed>[]|bool[]|null
      */
     private function getLaravelRules(): ?array
     {
         $contents = file_get_contents(
-            'https://raw.githubusercontent.com/laravel/pint/main/resources/presets/laravel.php'
+            __DIR__.'/../laravel.php'
         );
         $stmts = $this->parserFactory->create(ParserFactory::PREFER_PHP7)->parse($contents);
         foreach ($stmts as $stmt) {
