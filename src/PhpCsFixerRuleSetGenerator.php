@@ -139,7 +139,7 @@ final class PhpCsFixerRuleSetGenerator
     private function getLaravelRules(): ?array
     {
         $contents = file_get_contents(
-            __DIR__.'/../laravel.php'
+            'https://raw.githubusercontent.com/laravel/pint/main/resources/presets/laravel.php'
         );
         $stmts = $this->parserFactory->create(ParserFactory::PREFER_PHP7)->parse($contents);
         foreach ($stmts as $stmt) {
