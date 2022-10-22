@@ -5,7 +5,6 @@ declare(strict_types=1);
 use Symplify\EasyCodingStandard\Config\ECSConfig;
 
 return static function (ECSConfig $ecsConfig): void {
-    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Numbers\DisallowNumericLiteralSeparatorSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Operators\NegationOperatorSpacingSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Operators\SpreadOperatorSpacingSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Operators\RequireOnlyStandaloneIncrementAndDecrementOperatorsSniff::class);
@@ -63,6 +62,11 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Namespaces\NamespaceDeclarationSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Namespaces\RequireOneNamespaceInFileSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Namespaces\UseFromSameNamespaceSniff::class);
+    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Attributes\RequireAttributeAfterDocCommentSniff::class);
+    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Attributes\DisallowMultipleAttributesPerLineSniff::class);
+    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Attributes\AttributesOrderSniff::class);
+    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Attributes\AttributeAndTargetSpacingSniff::class);
+    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Attributes\DisallowAttributesJoiningSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Variables\UselessVariableSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Variables\DisallowSuperGlobalVariableSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Variables\UnusedVariableSniff::class);
