@@ -43,7 +43,6 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\PHP\UselessParenthesesSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\PHP\UselessSemicolonSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Exceptions\DeadCatchSniff::class);
-    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Exceptions\DisallowNonCapturingCatchSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Exceptions\RequireNonCapturingCatchSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Exceptions\ReferenceThrowableOnlySniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Namespaces\UselessAliasSniff::class);

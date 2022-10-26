@@ -66,6 +66,7 @@
         <exclude name="SlevomatCodingStandard.Complexity.Cognitive"/>
         <exclude name="SlevomatCodingStandard.Classes.ClassLength"/>
         <exclude name="SlevomatCodingStandard.Numbers.DisallowNumericLiteralSeparator"/>
+        <exclude name="SlevomatCodingStandard.Exceptions.DisallowNonCapturingCatch"/>
     </rule>
 
     <rule ref="SlevomatCodingStandard.Namespaces.UseSpacing">
