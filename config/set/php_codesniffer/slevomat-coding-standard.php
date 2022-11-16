@@ -76,6 +76,11 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Namespaces\UseFromSameNamespaceSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Namespaces\UseOnlyWhitelistedNamespacesSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Namespaces\FullyQualifiedExceptionsSniff::class);
+    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Attributes\RequireAttributeAfterDocCommentSniff::class);
+    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Attributes\DisallowMultipleAttributesPerLineSniff::class);
+    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Attributes\AttributesOrderSniff::class);
+    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Attributes\AttributeAndTargetSpacingSniff::class);
+    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Attributes\DisallowAttributesJoiningSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Variables\UselessVariableSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Variables\DisallowSuperGlobalVariableSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Variables\UnusedVariableSniff::class);

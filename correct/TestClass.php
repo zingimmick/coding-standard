@@ -8,17 +8,12 @@ use Zing\CodingStandard\Correct\Concerns\Testable;
 use Zing\CodingStandard\Correct\Concerns\TraitA;
 use Zing\CodingStandard\Correct\Concerns\TraitB;
 
-use const PHP_EOL;
-
 final class TestClass implements TestableContract
 {
     use Testable;
     use TraitA;
     use TraitB;
 
-    /**
-     * @var int
-     */
     public const C = 2;
 
     /**
@@ -26,23 +21,10 @@ final class TestClass implements TestableContract
      */
     private const A = 1;
 
-    /**
-     * @var array<string, true>
-     */
-    public static $config = [
+    public static array $config = [
         // test
         'test' => true,
     ];
-
-    /**
-     * @var \Zing\CodingStandard\Correct\Foo
-     */
-    private $foo;
-
-    /**
-     * @var \Zing\CodingStandard\Correct\Bar
-     */
-    public $bar;
 
     /**
      * TestClass constructor.
@@ -50,17 +32,13 @@ final class TestClass implements TestableContract
      * @param \Zing\CodingStandard\Correct\Foo $foo the first param
      * @param \Zing\CodingStandard\Correct\Bar $bar the second param
      */
-    public function __construct(Foo $foo, Bar $bar)
-    {
-        $this->foo = $foo;
-        $this->bar = $bar;
+    public function __construct(
+        protected Foo $foo,
+        public Bar $bar
+    ) {
     }
 
-    /**
-     * @param mixed $a
-     * @param mixed $b
-     */
-    public function a($a, $b): int
+    public function a(mixed $a, mixed $b): int|float|array
     {
         if (! $a) {
             return 0;
@@ -69,10 +47,7 @@ final class TestClass implements TestableContract
         return $a + $b;
     }
 
-    /**
-     * @param mixed $a
-     */
-    public function concat($a): string
+    public function concat(mixed $a): string
     {
         return $a . '';
     }
@@ -126,31 +101,20 @@ final class TestClass implements TestableContract
     public function testScopeClosingBrace(): array
     {
         return [
-            'eventCrowd' => static function ($query) {
-                return $query->with('rule');
-            },
-            'eventAuction' => static function ($query) {
-                return $query->with('rule');
-            },
-            'logs' => static function ($query) {
-                return $query->with(
-                    [
-                        'admin' => static function ($query) {
-                            return $query->select('id', 'name');
-                        },
-                    ]
-                );
-            },
+            'eventCrowd' => static fn ($query) => $query->with('rule'),
+            'eventAuction' => static fn ($query) => $query->with('rule'),
+            'logs' => static fn ($query) => $query->with(
+                [
+                    'admin' => static fn ($query) => $query->select('id', 'name'),
+                ]
+            ),
             'images',
         ];
     }
 
-    /**
-     * @param mixed $object
-     */
-    public function getClassName($object): string
+    public function getClassName(mixed $object): string|bool
     {
-        return \get_class($object);
+        return $object::class;
     }
 
     public function foo(): Foo

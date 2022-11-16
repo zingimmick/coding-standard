@@ -37,6 +37,7 @@ final class PhpCsFixerRuleSetGenerator
         '@PHP80Migration' => 'php80-migration.php',
         '@PHP80Migration:risky' => 'php80-migration-risky.php',
         '@PHP81Migration' => 'php81-migration.php',
+        '@PHP82Migration' => 'php82-migration.php',
         '@PHPUnit30Migration:risky' => 'phpunit30-migration-risky.php',
         '@PHPUnit32Migration:risky' => 'phpunit32-migration-risky.php',
         '@PHPUnit35Migration:risky' => 'phpunit35-migration-risky.php',

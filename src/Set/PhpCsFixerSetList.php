@@ -74,6 +74,21 @@ final class PhpCsFixerSetList
     /**
      * @var string
      */
+    public const PHP82_MIGRATION = __DIR__ . '/../../config/set/php-cs-fixer/php82-migration.php';
+
+    /**
+     * @var string
+     */
+    public const PER = __DIR__ . '/../../config/set/php-cs-fixer/per.php';
+
+    /**
+     * @var string
+     */
+    public const PER_RISKY = __DIR__ . '/../../config/set/php-cs-fixer/per-risky.php';
+
+    /**
+     * @var string
+     */
     public const PHP_CS_FIXER = __DIR__ . '/../../config/set/php-cs-fixer/php-cs-fixer.php';
 
     /**
