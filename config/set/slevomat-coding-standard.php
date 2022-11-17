@@ -5,7 +5,6 @@ declare(strict_types=1);
 use Symplify\EasyCodingStandard\Config\ECSConfig;
 
 return static function (ECSConfig $ecsConfig): void {
-    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Numbers\DisallowNumericLiteralSeparatorSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Operators\NegationOperatorSpacingSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Operators\SpreadOperatorSpacingSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Operators\RequireOnlyStandaloneIncrementAndDecrementOperatorsSniff::class);
@@ -44,7 +43,6 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\PHP\UselessParenthesesSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\PHP\UselessSemicolonSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Exceptions\DeadCatchSniff::class);
-    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Exceptions\DisallowNonCapturingCatchSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Exceptions\RequireNonCapturingCatchSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Exceptions\ReferenceThrowableOnlySniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Namespaces\UselessAliasSniff::class);
