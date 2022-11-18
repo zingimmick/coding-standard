@@ -31,7 +31,7 @@ jobs:
           coverage: true
 
       - name: Install dependencies
-        uses: ramsey/composer-install@v1
+        uses: ramsey/composer-install@v2
         with:
           dependency-versions: highest
 
