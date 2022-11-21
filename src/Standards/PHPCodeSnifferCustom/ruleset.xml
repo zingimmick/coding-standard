@@ -26,6 +26,7 @@
         <exclude name="Generic.Debug.ESLint"/>
         <exclude name="Generic.Debug.JSHint"/>
         <exclude name="Generic.Debug.ClosureLinter"/>
+        <exclude name="Generic.CodeAnalysis.UnusedFunctionParameter"/>
     </rule>
 
     <rule ref="PEAR">
