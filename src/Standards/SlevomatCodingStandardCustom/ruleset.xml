@@ -67,6 +67,7 @@
         <exclude name="SlevomatCodingStandard.Classes.ClassLength"/>
         <exclude name="SlevomatCodingStandard.Numbers.DisallowNumericLiteralSeparator"/>
         <exclude name="SlevomatCodingStandard.Exceptions.DisallowNonCapturingCatch"/>
+        <exclude name="SlevomatCodingStandard.TypeHints.ReturnTypeHint"/>
     </rule>
 
     <rule ref="SlevomatCodingStandard.Namespaces.UseSpacing">
@@ -83,7 +84,7 @@
     </rule>
     <rule ref="SlevomatCodingStandard.Namespaces.UnusedUses">
         <properties>
-            <property name="searchAnnotations" value="true"/>
+            <property name="searchAnnotations" value="1"/>
         </properties>
     </rule>
     <rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
