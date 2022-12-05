@@ -108,7 +108,7 @@ final class PhpCsFixerRuleSetGenerator
     /**
      * @return array<string, mixed>
      */
-    private function getSetDefinitions(): iterable
+    private function getSetDefinitions(): \Iterator
     {
         yield from RuleSets::getSetDefinitions();
 

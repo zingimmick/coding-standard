@@ -114,7 +114,7 @@ final class PHPCodeSnifferRuleSetGenerator
     /**
      * @return iterable<\Symfony\Component\Finder\SplFileInfo>
      */
-    private function getSetDefinitions(): iterable
+    private function getSetDefinitions(): \Iterator
     {
         yield from Finder::create()
             ->files()
