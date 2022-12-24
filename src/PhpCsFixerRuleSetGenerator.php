@@ -112,67 +112,6 @@ final class PhpCsFixerRuleSetGenerator
     {
         yield from RuleSets::getSetDefinitions();
 
-        yield $this->getLaravelRuleSet();
-
         yield new CustomSet();
-    }
-
-    private function getLaravelRuleSet(): ?LaravelSet
-    {
-        $rules = $this->getLaravelRules();
-
-        foreach (array_keys($rules) as $rule) {
-            if (str_starts_with($rule, 'Laravel/')) {
-                unset($rules[$rule]);
-            }
-        }
-
-        if (! isset($rules)) {
-            return null;
-        }
-
-        return new LaravelSet($rules);
-    }
-
-    /**
-     * @return array<string, mixed>[]|bool[]|null
-     */
-    private function getLaravelRules(): ?array
-    {
-        $contents = file_get_contents(
-            'https://raw.githubusercontent.com/laravel/pint/main/resources/presets/laravel.php'
-        );
-        $stmts = $this->parserFactory->create(ParserFactory::PREFER_PHP7)->parse($contents);
-        foreach ($stmts as $stmt) {
-            $expr = $this->findLaravelRulesExprFromStmt($stmt);
-            if (! $expr instanceof \PhpParser\Node\Expr) {
-                continue;
-            }
-
-            return $this->constExprEvaluator->evaluateDirectly($stmt->expr->args[0]->value);
-        }
-
-        return null;
-    }
-
-    private function findLaravelRulesExprFromStmt(Stmt $stmt): ?Expr
-    {
-        if (! $stmt instanceof Return_) {
-            return null;
-        }
-
-        if (! $stmt->expr instanceof StaticCall) {
-            return null;
-        }
-
-        if ($stmt->expr->args === []) {
-            return null;
-        }
-
-        if (! $stmt->expr->args[0]->value instanceof Array_) {
-            return null;
-        }
-
-        return $stmt->expr->args[0]->value;
     }
 }
