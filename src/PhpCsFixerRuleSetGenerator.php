@@ -9,13 +9,6 @@ use PhpCsFixer\FixerFactory;
 use PhpCsFixer\RuleSet\RuleSet;
 use PhpCsFixer\RuleSet\RuleSetDescriptionInterface;
 use PhpCsFixer\RuleSet\RuleSets;
-use PhpParser\ConstExprEvaluator;
-use PhpParser\Node\Expr;
-use PhpParser\Node\Expr\Array_;
-use PhpParser\Node\Expr\StaticCall;
-use PhpParser\Node\Stmt;
-use PhpParser\Node\Stmt\Return_;
-use PhpParser\ParserFactory;
 use Zing\CodingStandard\Printers\RuleSetPrinter;
 
 final class PhpCsFixerRuleSetGenerator
@@ -67,9 +60,7 @@ final class PhpCsFixerRuleSetGenerator
     ];
 
     public function __construct(
-        private RuleSetPrinter $ruleSetPrinter,
-        private ParserFactory $parserFactory,
-        private ConstExprEvaluator $constExprEvaluator
+        private RuleSetPrinter $ruleSetPrinter
     ) {
     }
 
