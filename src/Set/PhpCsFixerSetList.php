@@ -195,9 +195,4 @@ final class PhpCsFixerSetList
      * @var string
      */
     public const SYMFONY_RISKY = __DIR__ . '/../../config/set/php-cs-fixer/symfony-risky.php';
-
-    /**
-     * @var string
-     */
-    public const LARAVEL = __DIR__ . '/../../config/set/php-cs-fixer/laravel.php';
 }
