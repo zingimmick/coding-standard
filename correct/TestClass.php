@@ -21,7 +21,7 @@ final class TestClass implements TestableContract
      */
     private const A = 1;
 
-    public static array $config = [
+    public static $config = [
         // test
         'test' => true,
     ];
@@ -33,12 +33,12 @@ final class TestClass implements TestableContract
      * @param \Zing\CodingStandard\Correct\Bar $bar the second param
      */
     public function __construct(
-        protected Foo $foo,
+        private Foo $foo,
         public Bar $bar
     ) {
     }
 
-    public function a(mixed $a, mixed $b): int|float|array
+    public function a(mixed $a, mixed $b): int
     {
         if (! $a) {
             return 0;
@@ -47,7 +47,10 @@ final class TestClass implements TestableContract
         return $a + $b;
     }
 
-    public function concat(mixed $a): string
+    /**
+     * @return string
+     */
+    public function concat(mixed $a)
     {
         return $a . '';
     }
@@ -56,7 +59,7 @@ final class TestClass implements TestableContract
     {
     }
 
-    public function formatConst(): int
+    public function formatConst()
     {
         return self::A ?? self::C;
     }
@@ -81,23 +84,17 @@ final class TestClass implements TestableContract
         return \count([]);
     }
 
-    public function useConst(): string
+    public function useConst()
     {
         return PHP_EOL;
     }
 
-    /**
-     * @return string[]
-     */
     public function testSingleArray(): array
     {
         // post statement comment
         return ['a', 'b'];
     }
 
-    /**
-     * @return array<int|string, mixed>
-     */
     public function testScopeClosingBrace(): array
     {
         return [
@@ -112,7 +109,7 @@ final class TestClass implements TestableContract
         ];
     }
 
-    public function getClassName(mixed $object): string|bool
+    public function getClassName(mixed $object): string
     {
         return $object::class;
     }
