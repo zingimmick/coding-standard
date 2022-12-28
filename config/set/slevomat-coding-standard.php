@@ -51,7 +51,7 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Namespaces\AlphabeticallySortedUsesSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Namespaces\MultipleUsesPerLineSniff::class);
     $ecsConfig->ruleWithConfiguration(\SlevomatCodingStandard\Sniffs\Namespaces\UnusedUsesSniff::class, [
-        'searchAnnotations' => 'true',
+        'searchAnnotations' => '1',
     ]);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Namespaces\DisallowGroupUseSniff::class);
     $ecsConfig->ruleWithConfiguration(\SlevomatCodingStandard\Sniffs\Namespaces\UseSpacingSniff::class, [
@@ -101,7 +101,6 @@ return static function (ECSConfig $ecsConfig): void {
     ]);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\TypeHints\ReturnTypeHintSpacingSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\TypeHints\NullableTypeForNullDefaultValueSniff::class);
-    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\TypeHints\ReturnTypeHintSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Commenting\UselessInheritDocCommentSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Commenting\ForbiddenAnnotationsSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Commenting\InlineDocCommentDeclarationSniff::class);
