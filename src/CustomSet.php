@@ -59,8 +59,6 @@ final class CustomSet extends AbstractRuleSetDescription
             'phpdoc_line_span' => true,
             'self_static_accessor' => true,
             'simplified_if_return' => true,
-            'yoda_style' => false,
-            'php_unit_test_class_requires_covers' => false,
             'fopen_flags' => [
                 'b_mode' => true,
             ],
@@ -68,6 +66,11 @@ final class CustomSet extends AbstractRuleSetDescription
             'no_multiple_statements_per_line' => true,
             'curly_braces_position' => true,
             'control_structure_braces' => true,
+            'no_useless_concat_operator' => [
+                'juggle_simple_strings' => true,
+            ],
+            'yoda_style' => false,
+            'php_unit_test_class_requires_covers' => false,
         ];
     }
 }
