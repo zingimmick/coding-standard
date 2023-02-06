@@ -169,6 +169,11 @@ final class PhpCsFixerSetList
     /**
      * @var string
      */
+    public const PHPUNIT100_MIGRATION_RISKY = __DIR__ . '/../../config/set/php-cs-fixer/phpunit100-migration-risky.php';
+
+    /**
+     * @var string
+     */
     public const PSR1 = __DIR__ . '/../../config/set/php-cs-fixer/psr1.php';
 
     /**
