@@ -15,7 +15,7 @@ final class StyleTest extends TestCase
     /**
      * @return \Iterator<\Symfony\Component\Finder\SplFileInfo[]>
      */
-    public function provideFiles(): \Iterator
+    public static function provideFiles(): \Iterator
     {
         $files = Finder::create()->in(__DIR__ . '/../correct')->files();
         foreach ($files as $file) {

@@ -34,7 +34,7 @@
         "symplify/easy-coding-standard": "^11.1.9"
     },
     "require-dev": {
-        "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0",
+        "phpunit/phpunit": "^9.3.3 || ^10.0",
         "roave/security-advisories": "dev-master",
         "symfony/finder": "^4.4 || ^5.0 || ^6.0"
     },
