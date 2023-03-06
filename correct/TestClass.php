@@ -47,10 +47,7 @@ final class TestClass implements TestableContract
         return $a + $b;
     }
 
-    /**
-     * @return string
-     */
-    public function concat(mixed $a)
+    public function concat(mixed $a): string
     {
         return $a . '';
     }
