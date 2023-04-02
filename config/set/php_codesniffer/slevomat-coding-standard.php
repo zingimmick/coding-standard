@@ -16,6 +16,7 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\ClassMemberSpacingSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\ForbiddenPublicPropertySniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\ClassStructureSniff::class);
+    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\RequireSelfReferenceSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\RequireMultiLineMethodSignatureSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\PropertyDeclarationSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\ConstantSpacingSniff::class);
@@ -35,6 +36,7 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\PropertySpacingSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\SuperfluousExceptionNamingSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\ClassLengthSniff::class);
+    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\EnumCaseSpacingSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\ClassConstantVisibilitySniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\BackedEnumTypeSpacingSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\RequireAbstractOrFinalSniff::class);
@@ -81,12 +83,14 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Attributes\AttributesOrderSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Attributes\AttributeAndTargetSpacingSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Attributes\DisallowAttributesJoiningSniff::class);
+    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Variables\DisallowVariableVariableSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Variables\UselessVariableSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Variables\DisallowSuperGlobalVariableSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Variables\UnusedVariableSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Variables\DuplicateAssignmentToVariableSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Arrays\MultiLineArrayEndBracketPlacementSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Arrays\DisallowImplicitArrayCreationSniff::class);
+    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Arrays\AlphabeticallySortedByKeysSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Arrays\SingleLineArrayWhitespaceSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Arrays\TrailingArrayCommaSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Files\LineLengthSniff::class);
@@ -112,6 +116,7 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Functions\DisallowTrailingCommaInCallSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Functions\DisallowArrowFunctionSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Functions\UnusedParameterSniff::class);
+    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\ControlStructures\DisallowTrailingMultiLineTernaryOperatorSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\ControlStructures\RequireYodaComparisonSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\ControlStructures\RequireMultiLineConditionSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\ControlStructures\RequireNullCoalesceOperatorSniff::class);
