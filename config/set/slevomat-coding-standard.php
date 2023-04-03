@@ -75,7 +75,6 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Variables\DuplicateAssignmentToVariableSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Arrays\MultiLineArrayEndBracketPlacementSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Arrays\DisallowImplicitArrayCreationSniff::class);
-    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Arrays\AlphabeticallySortedByKeysSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Arrays\TrailingArrayCommaSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Functions\DisallowNamedArgumentsSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Functions\RequireArrowFunctionSniff::class);
