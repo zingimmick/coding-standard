@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Zing\CodingStandard;
 
+use PhpParser\Node\Expr;
 use PhpParser\Node\Expr\ArrayItem;
 use PhpParser\Node\Expr\Closure;
 use PhpParser\Node\Expr\MethodCall;
@@ -39,7 +40,7 @@ final class Printer extends Standard
             return true;
         }
 
-        if ($nodes[0]->key !== null) {
+        if ($nodes[0]->key instanceof Expr) {
             return true;
         }
 
