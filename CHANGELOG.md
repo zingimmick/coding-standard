@@ -8,6 +8,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLinker](https://github.com/Symplify/ChangelogLinker).
 
 <!-- changelog-linker -->
+## 7.5.0 - 2023-04-05
+
+<!-- Release notes generated using configuration in .github/release.yml at 7.x -->
+### What's Changed
+
+#### Other Changes
+
+- Remove rector/rector 0.14 by @zingimmick in https://github.com/zingimmick/coding-standard/pull/168
+
+**Full Changelog**: https://github.com/zingimmick/coding-standard/compare/7.4.0...7.5.0
+
 ## 7.3.0 - 2023-01-10
 
 <!-- Release notes generated using configuration in .github/release.yml at 7.x -->
