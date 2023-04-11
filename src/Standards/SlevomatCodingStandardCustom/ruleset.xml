@@ -69,6 +69,7 @@
         <exclude name="SlevomatCodingStandard.Exceptions.DisallowNonCapturingCatch"/>
         <exclude name="SlevomatCodingStandard.TypeHints.ReturnTypeHint"/>
         <exclude name="SlevomatCodingStandard.Arrays.AlphabeticallySortedByKeys"/>
+        <exclude name="SlevomatCodingStandard.Arrays.DisallowPartiallyKeyed"/>
     </rule>
 
     <rule ref="SlevomatCodingStandard.Namespaces.UseSpacing">

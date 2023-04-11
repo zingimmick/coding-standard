@@ -5,6 +5,7 @@ declare(strict_types=1);
 use Symplify\EasyCodingStandard\Config\ECSConfig;
 
 return static function (ECSConfig $ecsConfig): void {
+    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Strings\DisallowVariableParsingSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Numbers\DisallowNumericLiteralSeparatorSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Numbers\RequireNumericLiteralSeparatorSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Operators\DisallowEqualOperatorsSniff::class);
@@ -19,6 +20,7 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\RequireSelfReferenceSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\RequireMultiLineMethodSignatureSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\PropertyDeclarationSniff::class);
+    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\DisallowStringExpressionPropertyFetchSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\ConstantSpacingSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\TraitUseSpacingSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\SuperfluousErrorNamingSniff::class);
@@ -93,6 +95,7 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Arrays\AlphabeticallySortedByKeysSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Arrays\SingleLineArrayWhitespaceSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Arrays\TrailingArrayCommaSniff::class);
+    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Arrays\DisallowPartiallyKeyedSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Files\LineLengthSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Files\FunctionLengthSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Files\FileLengthSniff::class);

@@ -5,6 +5,7 @@ declare(strict_types=1);
 use Symplify\EasyCodingStandard\Config\ECSConfig;
 
 return static function (ECSConfig $ecsConfig): void {
+    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Strings\DisallowVariableParsingSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Operators\NegationOperatorSpacingSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Operators\SpreadOperatorSpacingSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Operators\RequireOnlyStandaloneIncrementAndDecrementOperatorsSniff::class);
@@ -13,6 +14,7 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\RequireSelfReferenceSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\RequireMultiLineMethodSignatureSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\PropertyDeclarationSniff::class);
+    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\DisallowStringExpressionPropertyFetchSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\ConstantSpacingSniff::class);
     $ecsConfig->ruleWithConfiguration(\SlevomatCodingStandard\Sniffs\Classes\TraitUseSpacingSniff::class, [
         'linesCountAfterLastUse' => '1',
