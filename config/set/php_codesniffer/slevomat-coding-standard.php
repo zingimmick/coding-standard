@@ -94,6 +94,7 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Arrays\DisallowImplicitArrayCreationSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Arrays\AlphabeticallySortedByKeysSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Arrays\SingleLineArrayWhitespaceSniff::class);
+    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Arrays\ArrayAccessSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Arrays\TrailingArrayCommaSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Arrays\DisallowPartiallyKeyedSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Files\LineLengthSniff::class);
