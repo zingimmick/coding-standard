@@ -50,6 +50,8 @@ final class CustomSet extends AbstractRuleSetDescription
                 'null_adjustment' => 'always_last',
                 'sort_algorithm' => 'none',
             ],
+            'ordered_types' => true,
+            'phpdoc_param_order' => true,
             'logical_operators' => true,
             'not_operator_with_successor_space' => true,
             'simplified_null_return' => true,
