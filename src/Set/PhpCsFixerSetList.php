@@ -89,6 +89,16 @@ final class PhpCsFixerSetList
     /**
      * @var string
      */
+    public const PER_CS10 = __DIR__ . '/../../config/set/php-cs-fixer/per-cs10.php';
+
+    /**
+     * @var string
+     */
+    public const PER_CS10_RISKY = __DIR__ . '/../../config/set/php-cs-fixer/per-cs10-risky.php';
+
+    /**
+     * @var string
+     */
     public const PHP_CS_FIXER = __DIR__ . '/../../config/set/php-cs-fixer/php-cs-fixer.php';
 
     /**
