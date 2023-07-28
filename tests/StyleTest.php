@@ -15,7 +15,7 @@ final class StyleTest extends TestCase
     /**
      * @return \Iterator<\Symfony\Component\Finder\SplFileInfo[]>
      */
-    public static function provideFiles(): \Iterator
+    public static function provideFixedCases(): iterable
     {
         $files = Finder::create()->in(__DIR__ . '/../correct')->files();
         foreach ($files as $file) {
@@ -24,7 +24,7 @@ final class StyleTest extends TestCase
     }
 
     /**
-     * @dataProvider provideFiles
+     * @dataProvider provideFixedCases
      */
     public function testFixed(SplFileInfo $fileInfo): void
     {
