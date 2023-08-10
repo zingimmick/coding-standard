@@ -26,8 +26,6 @@ return static function (RectorConfig $rectorConfig): void {
         PrivatizeLocalGetterToPropertyRector::class,
         SimplifyIfNotNullReturnRector::class,
         PreferPHPUnitThisCallRector::class,
-        // Temporarily disable for test
-        NewlineAfterStatementRector::class,
     ]);
 
     $rectorConfig->paths([
