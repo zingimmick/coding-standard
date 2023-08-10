@@ -3,7 +3,6 @@
 declare(strict_types=1);
 
 use Rector\CodeQuality\Rector\If_\SimplifyIfNotNullReturnRector;
-use Rector\CodingStyle\Rector\Stmt\NewlineAfterStatementRector;
 use Rector\Config\RectorConfig;
 use Rector\Naming\Rector\Assign\RenameVariableToMatchMethodCallReturnTypeRector;
 use Rector\Naming\Rector\ClassMethod\RenameParamToMatchTypeRector;
@@ -26,8 +25,6 @@ return static function (RectorConfig $rectorConfig): void {
         PrivatizeLocalGetterToPropertyRector::class,
         SimplifyIfNotNullReturnRector::class,
         PreferPHPUnitThisCallRector::class,
-        // Temporarily disable for test
-        NewlineAfterStatementRector::class,
     ]);
 
     $rectorConfig->paths([
