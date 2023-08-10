@@ -8,6 +8,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLinker](https://github.com/Symplify/ChangelogLinker).
 
 <!-- changelog-linker -->
+## 7.8.2 - 2023-08-10
+
+<!-- Release notes generated using configuration in .github/release.yml at 7.x -->
+### What's Changed
+
+#### Other Changes
+
+- Remove temporary skipped rector rule by @zingimmick in https://github.com/zingimmick/coding-standard/pull/183
+
+**Full Changelog**: https://github.com/zingimmick/coding-standard/compare/7.8.1...7.8.2
+
 ## 7.8.1 - 2023-08-04
 
 <!-- Release notes generated using configuration in .github/release.yml at 7.x -->
