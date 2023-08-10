@@ -16,9 +16,6 @@ final class TestClass implements TestableContract
 
     public const C = 2;
 
-    /**
-     * @var int
-     */
     private const A = 1;
 
     public static $config = [
@@ -56,7 +53,7 @@ final class TestClass implements TestableContract
     {
     }
 
-    public function formatConst()
+    public function formatConst(): int
     {
         return self::A ?? self::C;
     }
