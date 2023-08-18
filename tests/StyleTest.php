@@ -29,6 +29,6 @@ final class StyleTest extends TestCase
     public function testFixed(SplFileInfo $fileInfo): void
     {
         $path = $fileInfo->getRelativePath() . '/' . $fileInfo->getFilename();
-        self::assertFileEquals(__DIR__ . '/../correct/' . $path, __DIR__ . '/../fixed/' . $path);
+        $this->assertFileEquals(__DIR__ . '/../correct/' . $path, __DIR__ . '/../fixed/' . $path);
     }
 }

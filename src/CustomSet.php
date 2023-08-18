@@ -52,6 +52,9 @@ final class CustomSet extends AbstractRuleSetDescription
             ],
             'yield_from_array_to_yields' => true,
             'nullable_type_declaration' => true,
+            'php_unit_test_case_static_method_calls' => [
+                'call_type' => 'this',
+            ],
             'ordered_types' => true,
             'phpdoc_param_order' => true,
             'logical_operators' => true,

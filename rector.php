@@ -24,7 +24,6 @@ return static function (RectorConfig $rectorConfig): void {
         RenameVariableToMatchMethodCallReturnTypeRector::class,
         PrivatizeLocalGetterToPropertyRector::class,
         SimplifyIfNotNullReturnRector::class,
-        PreferPHPUnitThisCallRector::class,
     ]);
 
     $rectorConfig->paths([
