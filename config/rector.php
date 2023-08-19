@@ -13,8 +13,10 @@ return static function (RectorConfig $rectorConfig): void {
         SetList::PRIVATIZATION,
         SetList::NAMING,
         SetList::TYPE_DECLARATION,
+        SetList::INSTANCEOF,
         SetList::EARLY_RETURN,
         SetList::CODING_STYLE,
+        SetList::STRICT_BOOLEANS,
         RectorSetList::FAKER_114,
     ]);
 };
