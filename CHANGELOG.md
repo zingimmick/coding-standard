@@ -8,6 +8,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLinker](https://github.com/Symplify/ChangelogLinker).
 
 <!-- changelog-linker -->
+## 7.10.0 - 2023-08-19
+
+<!-- Release notes generated using configuration in .github/release.yml at 7.x -->
+### What's Changed
+
+#### Exciting New Features 🎉
+
+- Add SetList::INSTANCEOF and SetList::STRICT_BOOLEANS to RectorSetList::CUSTOM by @zingimmick in https://github.com/zingimmick/coding-standard/pull/186
+
+**Full Changelog**: https://github.com/zingimmick/coding-standard/compare/7.9.1...7.10.0
+
 ## 7.9.1 - 2023-08-18
 
 <!-- Release notes generated using configuration in .github/release.yml at 7.x -->
