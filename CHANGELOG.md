@@ -8,6 +8,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLinker](https://github.com/Symplify/ChangelogLinker).
 
 <!-- changelog-linker -->
+## 7.11.0 - 2023-09-27
+
+<!-- Release notes generated using configuration in .github/release.yml at 7.x -->
+**Full Changelog**: https://github.com/zingimmick/coding-standard/compare/7.10.0...7.11.0
+
 ## 7.10.0 - 2023-08-19
 
 <!-- Release notes generated using configuration in .github/release.yml at 7.x -->
