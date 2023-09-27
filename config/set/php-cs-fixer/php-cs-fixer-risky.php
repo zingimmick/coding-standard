@@ -27,6 +27,7 @@ return static function (ECSConfig $ecsConfig): void {
         'strict' => true,
     ]);
     $ecsConfig->rule(\PhpCsFixer\Fixer\PhpUnit\PhpUnitTestAnnotationFixer::class);
+    $ecsConfig->rule(\PhpCsFixer\Fixer\PhpUnit\PhpUnitDataProviderReturnTypeFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\LanguageConstruct\FunctionToConstantFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\LanguageConstruct\IsNullFixer::class);
     $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\FunctionNotation\NativeFunctionInvocationFixer::class, [
@@ -55,11 +56,12 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\PhpCsFixer\Fixer\Alias\SetTypeToCastFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\StringNotation\StringLineEndingFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\PhpUnit\PhpUnitDataProviderNameFixer::class);
-    $ecsConfig->rule(\PhpCsFixer\Fixer\PhpUnit\PhpUnitDataProviderReturnTypeFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\PhpUnit\PhpUnitStrictFixer::class);
     $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\PhpUnit\PhpUnitTestCaseStaticMethodCallsFixer::class, [
         'call_type' => 'self',
     ]);
+    $ecsConfig->rule(\PhpCsFixer\Fixer\FunctionNotation\StaticLambdaFixer::class);
+    $ecsConfig->rule(\PhpCsFixer\Fixer\ArrayNotation\YieldFromArrayToYieldsFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\PhpUnit\PhpUnitConstructFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\Basic\PsrAutoloadingFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\ClassNotation\SelfAccessorFixer::class);

@@ -79,6 +79,7 @@ final class CustomSet extends AbstractRuleSetDescription
             'yoda_style' => false,
             'php_unit_test_class_requires_covers' => false,
             'php_unit_data_provider_return_type' => false,
+            'single_line_empty_body' => false,
         ];
     }
 }
