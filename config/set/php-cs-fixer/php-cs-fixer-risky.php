@@ -20,16 +20,17 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\PhpCsFixer\Fixer\Strict\StrictParamFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\Comment\CommentToPhpdocFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\LanguageConstruct\NoUnsetOnPropertyFixer::class);
+    $ecsConfig->rule(\PhpCsFixer\Fixer\Operator\LongToShorthandOperatorFixer::class);
+    $ecsConfig->rule(\PhpCsFixer\Fixer\PhpUnit\PhpUnitTestAnnotationFixer::class);
+    $ecsConfig->rule(\PhpCsFixer\Fixer\LanguageConstruct\FunctionToConstantFixer::class);
+    $ecsConfig->rule(\PhpCsFixer\Fixer\PhpUnit\PhpUnitDataProviderReturnTypeFixer::class);
+    $ecsConfig->rule(\PhpCsFixer\Fixer\LanguageConstruct\IsNullFixer::class);
     $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\ConstantNotation\NativeConstantInvocationFixer::class, [
         'fix_built_in' => false,
         'include' => ['DIRECTORY_SEPARATOR', 'PHP_INT_SIZE', 'PHP_SAPI', 'PHP_VERSION_ID'],
         'scope' => 'namespaced',
         'strict' => true,
     ]);
-    $ecsConfig->rule(\PhpCsFixer\Fixer\PhpUnit\PhpUnitTestAnnotationFixer::class);
-    $ecsConfig->rule(\PhpCsFixer\Fixer\PhpUnit\PhpUnitDataProviderReturnTypeFixer::class);
-    $ecsConfig->rule(\PhpCsFixer\Fixer\LanguageConstruct\FunctionToConstantFixer::class);
-    $ecsConfig->rule(\PhpCsFixer\Fixer\LanguageConstruct\IsNullFixer::class);
     $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\FunctionNotation\NativeFunctionInvocationFixer::class, [
         'include' => ['@compiler_optimized'],
         'scope' => 'namespaced',

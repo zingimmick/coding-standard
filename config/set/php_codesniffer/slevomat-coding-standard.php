@@ -104,6 +104,7 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Functions\StrictCallSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Functions\RequireTrailingCommaInCallSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Functions\DisallowNamedArgumentsSniff::class);
+    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Functions\NamedArgumentSpacingSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Functions\FunctionLengthSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Functions\RequireArrowFunctionSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Functions\DisallowTrailingCommaInClosureUseSniff::class);
