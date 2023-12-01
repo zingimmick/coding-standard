@@ -69,10 +69,6 @@ final class CustomSet extends AbstractRuleSetDescription
             'fopen_flags' => [
                 'b_mode' => true,
             ],
-            'statement_indentation' => true,
-            'no_multiple_statements_per_line' => true,
-            'curly_braces_position' => true,
-            'control_structure_braces' => true,
             'no_useless_concat_operator' => [
                 'juggle_simple_strings' => true,
             ],
