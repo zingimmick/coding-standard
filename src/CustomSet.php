@@ -34,9 +34,6 @@ final class CustomSet extends AbstractRuleSetDescription
             'ordered_class_elements' => [
                 'order' => ['use_trait', 'constant_public', 'constant_protected', 'constant_private'],
             ],
-            'ordered_imports' => [
-                'imports_order' => ['class', 'function', 'const'],
-            ],
             'phpdoc_align' => [
                 'align' => 'left',
             ],
