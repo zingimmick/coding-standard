@@ -8,6 +8,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLinker](https://github.com/Symplify/ChangelogLinker).
 
 <!-- changelog-linker -->
+## 7.12.0 - 2023-12-01
+
+<!-- Release notes generated using configuration in .github/release.yml at 7.x -->
+### What's Changed
+
+#### Other Changes
+
+* Support for PHP 8.3 by @zingimmick in https://github.com/zingimmick/coding-standard/pull/190
+* Re-generate ruleset for friendsofphp/php-cs-fixer 3.40 by @zingimmick in https://github.com/zingimmick/coding-standard/pull/194
+
+**Full Changelog**: https://github.com/zingimmick/coding-standard/compare/7.11.0...7.12.0
+
 ## 7.11.0 - 2023-09-27
 
 <!-- Release notes generated using configuration in .github/release.yml at 7.x -->
