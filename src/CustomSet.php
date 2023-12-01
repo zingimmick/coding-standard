@@ -34,9 +34,6 @@ final class CustomSet extends AbstractRuleSetDescription
             'ordered_class_elements' => [
                 'order' => ['use_trait', 'constant_public', 'constant_protected', 'constant_private'],
             ],
-            'ordered_imports' => [
-                'imports_order' => ['class', 'function', 'const'],
-            ],
             'phpdoc_align' => [
                 'align' => 'left',
             ],
@@ -50,29 +47,19 @@ final class CustomSet extends AbstractRuleSetDescription
                 'null_adjustment' => 'always_last',
                 'sort_algorithm' => 'none',
             ],
-            'yield_from_array_to_yields' => true,
             'nullable_type_declaration' => true,
             'php_unit_test_case_static_method_calls' => [
                 'call_type' => 'this',
             ],
-            'ordered_types' => true,
             'phpdoc_param_order' => true,
-            'logical_operators' => true,
             'not_operator_with_successor_space' => true,
             'simplified_null_return' => true,
-            'control_structure_continuation_position' => true,
-            'declare_parentheses' => true,
             'nullable_type_declaration_for_default_null_value' => true,
             'phpdoc_line_span' => true,
-            'self_static_accessor' => true,
             'simplified_if_return' => true,
             'fopen_flags' => [
                 'b_mode' => true,
             ],
-            'statement_indentation' => true,
-            'no_multiple_statements_per_line' => true,
-            'curly_braces_position' => true,
-            'control_structure_braces' => true,
             'no_useless_concat_operator' => [
                 'juggle_simple_strings' => true,
             ],
