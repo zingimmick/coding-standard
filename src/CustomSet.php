@@ -50,7 +50,6 @@ final class CustomSet extends AbstractRuleSetDescription
                 'null_adjustment' => 'always_last',
                 'sort_algorithm' => 'none',
             ],
-            'yield_from_array_to_yields' => true,
             'nullable_type_declaration' => true,
             'php_unit_test_case_static_method_calls' => [
                 'call_type' => 'this',
