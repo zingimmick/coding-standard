@@ -64,7 +64,6 @@ final class CustomSet extends AbstractRuleSetDescription
             'declare_parentheses' => true,
             'nullable_type_declaration_for_default_null_value' => true,
             'phpdoc_line_span' => true,
-            'self_static_accessor' => true,
             'simplified_if_return' => true,
             'fopen_flags' => [
                 'b_mode' => true,
