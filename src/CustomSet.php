@@ -55,9 +55,7 @@ final class CustomSet extends AbstractRuleSetDescription
             'php_unit_test_case_static_method_calls' => [
                 'call_type' => 'this',
             ],
-            'ordered_types' => true,
             'phpdoc_param_order' => true,
-            'logical_operators' => true,
             'not_operator_with_successor_space' => true,
             'simplified_null_return' => true,
             'nullable_type_declaration_for_default_null_value' => true,
