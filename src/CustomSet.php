@@ -60,8 +60,6 @@ final class CustomSet extends AbstractRuleSetDescription
             'logical_operators' => true,
             'not_operator_with_successor_space' => true,
             'simplified_null_return' => true,
-            'control_structure_continuation_position' => true,
-            'declare_parentheses' => true,
             'nullable_type_declaration_for_default_null_value' => true,
             'phpdoc_line_span' => true,
             'simplified_if_return' => true,
