@@ -62,7 +62,7 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Generic\Sniffs\Files\ByteOrderMarkSniff::class);
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Generic\Sniffs\Files\OneObjectStructurePerFileSniff::class);
     $ecsConfig->ruleWithConfiguration(\PHP_CodeSniffer\Standards\Generic\Sniffs\Files\LineEndingsSniff::class, [
-        'eolChar' => '\\n',
+        'eolChar' => '\n',
     ]);
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Generic\Sniffs\Files\OneTraitPerFileSniff::class);
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Generic\Sniffs\Files\OneInterfacePerFileSniff::class);

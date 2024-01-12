@@ -149,7 +149,7 @@ return static function (ECSConfig $ecsConfig): void {
         'absoluteLineLimit' => '0',
     ]);
     $ecsConfig->ruleWithConfiguration(\PHP_CodeSniffer\Standards\Generic\Sniffs\Files\LineEndingsSniff::class, [
-        'eolChar' => '\\n',
+        'eolChar' => '\n',
     ]);
     $ecsConfig->ruleWithConfiguration(\PHP_CodeSniffer\Standards\Generic\Sniffs\Formatting\MultipleStatementAlignmentSniff::class, [
         'maxPadding' => '20',

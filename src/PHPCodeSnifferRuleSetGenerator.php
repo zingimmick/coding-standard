@@ -71,7 +71,10 @@ final class PHPCodeSnifferRuleSetGenerator
                 continue;
             }
 
-            $sniffs[$sniff] = $attr['properties'] ?? [];
+            $sniffs[$sniff] = array_map(
+                static fn ($property): mixed => $property['value'] ?? $property,
+                $attr['properties'] ?? []
+            );
         }
 
         return $sniffs;

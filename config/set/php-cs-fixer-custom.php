@@ -99,7 +99,10 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\PhpCsFixer\Fixer\Phpdoc\PhpdocReturnSelfReferenceFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\StringNotation\SingleQuoteFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\PhpUnit\PhpUnitTestAnnotationFixer::class);
-    $ecsConfig->rule(\PhpCsFixer\Fixer\Import\FullyQualifiedStrictTypesFixer::class);
+    $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\Import\FullyQualifiedStrictTypesFixer::class, [
+        'leading_backslash_in_global_namespace' => true,
+        'phpdoc_tags' => [],
+    ]);
     $ecsConfig->rule(\PhpCsFixer\Fixer\Phpdoc\PhpdocLineSpanFixer::class);
     $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\Phpdoc\NoSuperfluousPhpdocTagsFixer::class, [
         'allow_mixed' => true,
@@ -259,7 +262,9 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\Phpdoc\PhpdocOrderFixer::class, [
         'order' => ['param', 'return', 'throws'],
     ]);
-    $ecsConfig->rule(\PhpCsFixer\Fixer\Whitespace\StatementIndentationFixer::class);
+    $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\Whitespace\StatementIndentationFixer::class, [
+        'stick_comment_to_next_continuous_control_statement' => true,
+    ]);
     $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\Phpdoc\PhpdocSeparationFixer::class, [
         'groups' => [
             ['Annotation', 'NamedArgumentConstructor', 'Target'],

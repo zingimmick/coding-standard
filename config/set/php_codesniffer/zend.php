@@ -23,6 +23,6 @@ return static function (ECSConfig $ecsConfig): void {
         'absoluteLineLimit' => '120',
     ]);
     $ecsConfig->ruleWithConfiguration(\PHP_CodeSniffer\Standards\Generic\Sniffs\Files\LineEndingsSniff::class, [
-        'eolChar' => '\\n',
+        'eolChar' => '\n',
     ]);
 };

@@ -43,7 +43,9 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\PhpCsFixer\Fixer\ClassNotation\NoBlankLinesAfterClassOpeningFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\CastNotation\ShortScalarCastFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\Operator\TernaryOperatorSpacesFixer::class);
-    $ecsConfig->rule(\PhpCsFixer\Fixer\Operator\UnaryOperatorSpacesFixer::class);
+    $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\Operator\UnaryOperatorSpacesFixer::class, [
+        'only_dec_inc' => true,
+    ]);
     $ecsConfig->rule(\PhpCsFixer\Fixer\Casing\ConstantCaseFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\ControlStructure\ControlStructureContinuationPositionFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\Whitespace\LineEndingFixer::class);
@@ -60,6 +62,7 @@ return static function (ECSConfig $ecsConfig): void {
         'allow_single_line_empty_anonymous_classes' => true,
     ]);
     $ecsConfig->rule(\PhpCsFixer\Fixer\Whitespace\StatementIndentationFixer::class);
+    $ecsConfig->rule(\PhpCsFixer\Fixer\CastNotation\CastSpacesFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\Import\SingleLineAfterImportsFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\FunctionNotation\ReturnTypeDeclarationFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\Basic\SingleLineEmptyBodyFixer::class);
