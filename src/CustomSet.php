@@ -63,6 +63,10 @@ final class CustomSet extends AbstractRuleSetDescription
             'no_useless_concat_operator' => [
                 'juggle_simple_strings' => true,
             ],
+            'fully_qualified_strict_types' => [
+                'leading_backslash_in_global_namespace' => true,
+                'phpdoc_tags' => [],
+            ],
             'yoda_style' => false,
             'php_unit_test_class_requires_covers' => false,
             'php_unit_data_provider_return_type' => false,

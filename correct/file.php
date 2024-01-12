@@ -8,7 +8,7 @@ function far(): void
 
 far();
 
-function name(Faker\Generator $faker): string
+function name(\Faker\Generator $faker): string
 {
     return $faker->name();
 }

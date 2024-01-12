@@ -6,6 +6,7 @@ namespace Zing\CodingStandard\Printers;
 
 use PhpParser\BuilderFactory;
 use PhpParser\Node\Expr\Closure;
+use PhpParser\Node\Identifier;
 use PhpParser\Node\Name;
 use PhpParser\Node\Name\FullyQualified;
 use PhpParser\Node\Scalar\LNumber;
@@ -56,7 +57,7 @@ final class RuleSetPrinter
                 new Nop(),
                 new Return_(new Closure([
                     'static' => true,
-                    'returnType' => 'void',
+                    'returnType' => new Identifier('void'),
                     'params' => [$param],
                     'stmts' => $stmts,
                 ])),
