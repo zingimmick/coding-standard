@@ -8,6 +8,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLinker](https://github.com/Symplify/ChangelogLinker).
 
 <!-- changelog-linker -->
+## 7.13.0 - 2024-01-12
+
+<!-- Release notes generated using configuration in .github/release.yml at 7.x -->
+### What's Changed
+
+#### Other Changes
+
+* Update symfony/finder requirement from ^6.0 to ^6.0 || ^7.0 by @zingimmick in https://github.com/zingimmick/coding-standard/pull/195
+* Update license copyright year(s) by @github-actions in https://github.com/zingimmick/coding-standard/pull/196
+* Support Rector 0.19 by @zingimmick in https://github.com/zingimmick/coding-standard/pull/198
+
+**Full Changelog**: https://github.com/zingimmick/coding-standard/compare/7.12.0...7.13.0
+
 ## 7.12.0 - 2023-12-01
 
 <!-- Release notes generated using configuration in .github/release.yml at 7.x -->
