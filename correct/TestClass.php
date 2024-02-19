@@ -8,7 +8,7 @@ use Zing\CodingStandard\Correct\Concerns\Testable;
 use Zing\CodingStandard\Correct\Concerns\TraitA;
 use Zing\CodingStandard\Correct\Concerns\TraitB;
 
-final class TestClass implements TestableContract
+class TestClass implements TestableContract
 {
     use Testable;
     use TraitA;
@@ -24,15 +24,21 @@ final class TestClass implements TestableContract
     ];
 
     /**
+     * @var \Zing\CodingStandard\Correct\Bar
+     */
+    public $bar;
+
+    /**
      * TestClass constructor.
      *
      * @param \Zing\CodingStandard\Correct\Foo $foo the first param
      * @param \Zing\CodingStandard\Correct\Bar $bar the second param
      */
     public function __construct(
-        private Foo $foo,
-        public Bar $bar
+        protected Foo $foo,
+        Bar $bar
     ) {
+        $this->bar = $bar;
     }
 
     public function a(mixed $a, mixed $b): int
