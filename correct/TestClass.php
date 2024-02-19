@@ -24,15 +24,19 @@ class TestClass implements TestableContract
     ];
 
     /**
-     * TestClass constructor.
+     * @var Bar
+     */
+    public $bar;
+
+    /**
+     * TestClass constructor
      *
      * @param \Zing\CodingStandard\Correct\Foo $foo the first param
      * @param \Zing\CodingStandard\Correct\Bar $bar the second param
      */
-    public function __construct(
-        private Foo $foo,
-        public Bar $bar
-    ) {
+    public function __construct(private Foo $foo, Bar $bar)
+    {
+        $this->bar = $bar;
     }
 
     public function a(mixed $a, mixed $b): int
