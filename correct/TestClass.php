@@ -8,7 +8,7 @@ use Zing\CodingStandard\Correct\Concerns\Testable;
 use Zing\CodingStandard\Correct\Concerns\TraitA;
 use Zing\CodingStandard\Correct\Concerns\TraitB;
 
-final class TestClass implements TestableContract
+class TestClass implements TestableContract
 {
     use Testable;
     use TraitA;
