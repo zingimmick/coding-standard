@@ -35,10 +35,9 @@ class TestClass implements TestableContract
      * @param \Zing\CodingStandard\Correct\Bar $bar the second param
      */
     public function __construct(
-        private Foo $foo,
+        protected Foo $foo,
         Bar $bar
-    )
-    {
+    ) {
         $this->bar = $bar;
     }
 
