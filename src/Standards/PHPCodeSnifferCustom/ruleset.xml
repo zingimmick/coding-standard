@@ -2,7 +2,7 @@
 <ruleset
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     name="PHP Code Sniffer Custom"
-    xsi:noNamespaceSchemaLocation="../../../vendor/squizlabs/php_codesniffer/phpcs.xsd">
+    name="PHP Code Sniffer Custom">
 
     <rule ref="Generic">
         <exclude name="Generic.Arrays.DisallowShortArraySyntax"/>
