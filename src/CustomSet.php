@@ -47,14 +47,12 @@ final class CustomSet extends AbstractRuleSetDescription
                 'null_adjustment' => 'always_last',
                 'sort_algorithm' => 'none',
             ],
-            'nullable_type_declaration' => true,
             'php_unit_test_case_static_method_calls' => [
                 'call_type' => 'this',
             ],
             'phpdoc_param_order' => true,
             'not_operator_with_successor_space' => true,
             'simplified_null_return' => true,
-            'nullable_type_declaration_for_default_null_value' => true,
             'phpdoc_line_span' => true,
             'simplified_if_return' => true,
             'fopen_flags' => [

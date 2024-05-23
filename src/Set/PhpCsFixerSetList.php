@@ -84,6 +84,11 @@ final class PhpCsFixerSetList
     /**
      * @var string
      */
+    public const PHP84_MIGRATION = __DIR__ . '/../../config/set/php-cs-fixer/php84-migration.php';
+
+    /**
+     * @var string
+     */
     public const PER = __DIR__ . '/../../config/set/php-cs-fixer/per.php';
 
     /**
