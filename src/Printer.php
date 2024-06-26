@@ -16,7 +16,7 @@ final class Printer extends Standard
 {
     protected function pStmt_Declare(Declare_ $node): string
     {
-        return preg_replace('#\\s+#', '', parent::pStmt_Declare($node));
+        return preg_replace('#\s+#', '', parent::pStmt_Declare($node));
     }
 
     /**
