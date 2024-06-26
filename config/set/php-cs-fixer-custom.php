@@ -79,9 +79,7 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\PhpCsFixer\Fixer\Phpdoc\PhpdocTypesFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\Operator\StandardizeIncrementFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\ReturnNotation\SimplifiedNullReturnFixer::class);
-    $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\StringNotation\StringImplicitBackslashesFixer::class, [
-        'single_quoted' => 'ignore',
-    ]);
+    $ecsConfig->rule(\PhpCsFixer\Fixer\StringNotation\StringImplicitBackslashesFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\Operator\IncrementStyleFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\Phpdoc\PhpdocScalarFixer::class);
     $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\Phpdoc\GeneralPhpdocTagRenameFixer::class, [
