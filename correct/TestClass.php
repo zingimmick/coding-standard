@@ -100,11 +100,9 @@ class TestClass implements TestableContract
         return [
             'eventCrowd' => static fn ($query) => $query->with('rule'),
             'eventAuction' => static fn ($query) => $query->with('rule'),
-            'logs' => static fn ($query) => $query->with(
-                [
-                    'admin' => static fn ($query) => $query->select('id', 'name'),
-                ]
-            ),
+            'logs' => static fn ($query) => $query->with([
+                'admin' => static fn ($query) => $query->select('id', 'name'),
+            ]),
             'images',
         ];
     }
