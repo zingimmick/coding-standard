@@ -84,7 +84,7 @@ class TestClass implements TestableContract
         return \count([]);
     }
 
-    public function useConst()
+    public function useConst(): string
     {
         return PHP_EOL;
     }
