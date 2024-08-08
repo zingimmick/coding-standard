@@ -46,7 +46,7 @@ final class PHPCodeSnifferRuleSetGenerator
             $ruleset->registerSniffs($sniffs, [], []);
 
             file_put_contents(
-                sprintf(__DIR__ . '/../config/set/php_codesniffer/%s', self::MAP[$setDefinition->getRelativePath()]),
+                \sprintf(__DIR__ . '/../config/set/php_codesniffer/%s', self::MAP[$setDefinition->getRelativePath()]),
                 $this->ruleSetPrinter->print($this->formatRulesToServices($ruleset))
             );
         }

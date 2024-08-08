@@ -29,8 +29,6 @@ class TestClass implements TestableContract
     public $bar;
 
     /**
-     * TestClass constructor.
-     *
      * @param \Zing\CodingStandard\Correct\Foo $foo the first param
      * @param \Zing\CodingStandard\Correct\Bar $bar the second param
      */
