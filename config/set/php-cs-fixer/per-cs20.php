@@ -19,9 +19,51 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\Operator\NewWithParenthesesFixer::class, [
         'anonymous_class' => false,
     ]);
+    $ecsConfig->rule(\PhpCsFixer\Fixer\ArrayNotation\ArraySyntaxFixer::class);
     $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\ClassNotation\ClassDefinitionFixer::class, [
         'inline_constructor_arguments' => false,
         'space_before_parenthesis' => true,
+    ]);
+    $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\LanguageConstruct\SingleSpaceAroundConstructFixer::class, [
+        'constructs_followed_by_a_single_space' => [
+            'abstract',
+            'as',
+            'case',
+            'catch',
+            'class',
+            'const',
+            'const_import',
+            'do',
+            'else',
+            'elseif',
+            'enum',
+            'final',
+            'finally',
+            'for',
+            'foreach',
+            'function',
+            'function_import',
+            'if',
+            'insteadof',
+            'interface',
+            'match',
+            'named_argument',
+            'namespace',
+            'new',
+            'private',
+            'protected',
+            'public',
+            'readonly',
+            'static',
+            'switch',
+            'trait',
+            'try',
+            'type_colon',
+            'use',
+            'use_lambda',
+            'while',
+        ],
+        'constructs_preceded_by_a_single_space' => ['as', 'else', 'elseif', 'use_lambda'],
     ]);
     $ecsConfig->rule(\PhpCsFixer\Fixer\ClassNotation\SingleTraitInsertPerStatementFixer::class);
     $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\FunctionNotation\FunctionDeclarationFixer::class, [
@@ -62,7 +104,7 @@ return static function (ECSConfig $ecsConfig): void {
     ]);
     $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\ControlStructure\TrailingCommaInMultilineFixer::class, [
         'after_heredoc' => true,
-        'elements' => ['arguments', 'arrays', 'match', 'parameters'],
+        'elements' => ['arguments', 'array_destructuring', 'arrays', 'match', 'parameters'],
     ]);
     $ecsConfig->rule(\PhpCsFixer\Fixer\Basic\NoMultipleStatementsPerLineFixer::class);
     $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\Basic\BracesPositionFixer::class, [
@@ -73,6 +115,9 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\PhpCsFixer\Fixer\Import\SingleLineAfterImportsFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\FunctionNotation\ReturnTypeDeclarationFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\Basic\SingleLineEmptyBodyFixer::class);
+    $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\Whitespace\NoExtraBlankLinesFixer::class, [
+        'tokens' => ['use'],
+    ]);
     $ecsConfig->rule(\PhpCsFixer\Fixer\Import\NoLeadingImportSlashFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\NamespaceNotation\BlankLineAfterNamespaceFixer::class);
     $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\Import\OrderedImportsFixer::class, [

@@ -16,6 +16,35 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\PhpCsFixer\Fixer\Whitespace\IndentationTypeFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\ControlStructure\ElseifFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\ClassNotation\ClassDefinitionFixer::class);
+    $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\LanguageConstruct\SingleSpaceAroundConstructFixer::class, [
+        'constructs_followed_by_a_single_space' => [
+            'abstract',
+            'as',
+            'case',
+            'catch',
+            'class',
+            'do',
+            'else',
+            'elseif',
+            'final',
+            'for',
+            'foreach',
+            'function',
+            'if',
+            'interface',
+            'namespace',
+            'private',
+            'protected',
+            'public',
+            'static',
+            'switch',
+            'trait',
+            'try',
+            'use_lambda',
+            'while',
+        ],
+        'constructs_preceded_by_a_single_space' => ['as', 'else', 'elseif', 'use_lambda'],
+    ]);
     $ecsConfig->rule(\PhpCsFixer\Fixer\FunctionNotation\FunctionDeclarationFixer::class);
     $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\FunctionNotation\MethodArgumentSpaceFixer::class, [
         'attribute_placement' => 'ignore',

@@ -21,6 +21,41 @@ return static function (ECSConfig $ecsConfig): void {
         'inline_constructor_arguments' => false,
         'space_before_parenthesis' => true,
     ]);
+    $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\LanguageConstruct\SingleSpaceAroundConstructFixer::class, [
+        'constructs_followed_by_a_single_space' => [
+            'abstract',
+            'as',
+            'case',
+            'catch',
+            'class',
+            'const_import',
+            'do',
+            'else',
+            'elseif',
+            'final',
+            'finally',
+            'for',
+            'foreach',
+            'function',
+            'function_import',
+            'if',
+            'insteadof',
+            'interface',
+            'namespace',
+            'new',
+            'private',
+            'protected',
+            'public',
+            'static',
+            'switch',
+            'trait',
+            'try',
+            'use',
+            'use_lambda',
+            'while',
+        ],
+        'constructs_preceded_by_a_single_space' => ['as', 'else', 'elseif', 'use_lambda'],
+    ]);
     $ecsConfig->rule(\PhpCsFixer\Fixer\ClassNotation\SingleTraitInsertPerStatementFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\FunctionNotation\FunctionDeclarationFixer::class);
     $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\FunctionNotation\MethodArgumentSpaceFixer::class, [
@@ -63,6 +98,9 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\PhpCsFixer\Fixer\Import\SingleLineAfterImportsFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\FunctionNotation\ReturnTypeDeclarationFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\NamespaceNotation\BlankLineAfterNamespaceFixer::class);
+    $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\Whitespace\NoExtraBlankLinesFixer::class, [
+        'tokens' => ['use'],
+    ]);
     $ecsConfig->rule(\PhpCsFixer\Fixer\Import\NoLeadingImportSlashFixer::class);
     $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\Import\OrderedImportsFixer::class, [
         'imports_order' => ['class', 'function', 'const'],
