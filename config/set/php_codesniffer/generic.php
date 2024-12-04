@@ -8,6 +8,7 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Generic\Sniffs\Metrics\NestingLevelSniff::class);
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Generic\Sniffs\Metrics\CyclomaticComplexitySniff::class);
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Generic\Sniffs\Strings\UnnecessaryStringConcatSniff::class);
+    $ecsConfig->rule(\PHP_CodeSniffer\Standards\Generic\Sniffs\Strings\UnnecessaryHeredocSniff::class);
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Generic\Sniffs\Classes\DuplicateClassNameSniff::class);
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Generic\Sniffs\Classes\OpeningBraceSameLineSniff::class);
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Generic\Sniffs\CodeAnalysis\UnusedFunctionParameterSniff::class);
@@ -42,6 +43,7 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Generic\Sniffs\VersionControl\GitMergeConflictSniff::class);
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Generic\Sniffs\WhiteSpace\ScopeIndentSniff::class);
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Generic\Sniffs\WhiteSpace\ArbitraryParenthesesSpacingSniff::class);
+    $ecsConfig->rule(\PHP_CodeSniffer\Standards\Generic\Sniffs\WhiteSpace\HereNowdocIdentifierSpacingSniff::class);
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Generic\Sniffs\WhiteSpace\DisallowTabIndentSniff::class);
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Generic\Sniffs\WhiteSpace\IncrementDecrementSpacingSniff::class);
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Generic\Sniffs\WhiteSpace\LanguageConstructSpacingSniff::class);

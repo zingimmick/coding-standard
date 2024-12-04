@@ -11,6 +11,6 @@ return static function (ECSConfig $ecsConfig): void {
     Config::setConfigData('php_version', PhpVersion::PHP_84);
     $ecsConfig->sets([
         PhpCsFixerSetList::PHP84_MIGRATION,
-        PhpCsFixerSetList::PHP80_MIGRATION_RISKY,
+        PhpCsFixerSetList::PHP82_MIGRATION_RISKY,
     ]);
 };
