@@ -39,7 +39,11 @@ class TestClass implements TestableContract
         $this->bar = $bar;
     }
 
-    public function a(mixed $a, mixed $b): int
+    /**
+     * @param mixed $a
+     * @param mixed $b
+     */
+    public function a($a, $b): int
     {
         if (! $a) {
             return 0;
@@ -48,7 +52,10 @@ class TestClass implements TestableContract
         return $a + $b;
     }
 
-    public function concat(mixed $a): string
+    /**
+     * @param mixed $a
+     */
+    public function concat(string $a): string
     {
         return $a . '';
     }
@@ -105,7 +112,10 @@ class TestClass implements TestableContract
         ];
     }
 
-    public function getClassName(mixed $object): string
+    /**
+     * @param mixed $object
+     */
+    public function getClassName($object): string
     {
         return $object::class;
     }
