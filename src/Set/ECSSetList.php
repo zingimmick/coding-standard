@@ -104,6 +104,11 @@ final class ECSSetList
     /**
      * @var string
      */
+    public const PHP_55 = __DIR__ . '/../../config/set/php55.php';
+
+    /**
+     * @var string
+     */
     public const PHP_56 = __DIR__ . '/../../config/set/php56.php';
 
     /**
