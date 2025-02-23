@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Zing\CodingStandard\Tests;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo;
 
@@ -26,6 +27,7 @@ final class StyleTest extends TestCase
     /**
      * @dataProvider provideFixedCases
      */
+    #[DataProvider('provideFixedCases')]
     public function testFixed(SplFileInfo $fileInfo): void
     {
         $path = $fileInfo->getRelativePath() . '/' . $fileInfo->getFilename();
