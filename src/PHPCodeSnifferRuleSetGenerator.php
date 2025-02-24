@@ -12,9 +12,6 @@ use Zing\CodingStandard\Printers\RuleSetPrinter;
 
 final class PHPCodeSnifferRuleSetGenerator
 {
-    /**
-     * @var array<string, string>
-     */
     private const MAP = [
         'Generic' => 'generic.php',
         'MySource' => 'my-source.php',
@@ -41,7 +38,7 @@ final class PHPCodeSnifferRuleSetGenerator
         $runner->init();
         foreach ($this->getSetDefinitions() as $setDefinition) {
             $runner->config->standards = [$setDefinition->getPath()];
-            $ruleset = (new Ruleset($runner->config));
+            $ruleset = new Ruleset($runner->config);
             $sniffs = $ruleset->processRuleset($setDefinition->getRealPath());
             $ruleset->registerSniffs($sniffs, [], []);
 
@@ -71,13 +68,40 @@ final class PHPCodeSnifferRuleSetGenerator
                 continue;
             }
 
-            $sniffs[$sniff] = array_map(
-                static fn ($property): mixed => $property['value'] ?? $property,
-                $attr['properties'] ?? []
-            );
+            $sniffs[$sniff] = $this->formatProperties($sniff, $attr);
         }
 
         return $sniffs;
+    }
+
+    /**
+     * @param mixed $sniff
+     * @param mixed $attr
+     *
+     * @return mixed[]
+     */
+    private function formatProperties($sniff, $attr): array
+    {
+        $reflectionClass = new \ReflectionClass($sniff);
+        $properties = [];
+        foreach ($attr['properties'] ?? [] as $key => $property) {
+            $value = $property['value'] ?? $property;
+            $type = $reflectionClass->getProperty($key)
+                ->getType();
+            if ($type === null) {
+                $properties[$key] = $value;
+
+                continue;
+            }
+
+            $properties[$key] = match ($type->getName()) {
+                'int' => (int) $value,
+                'bool' => (bool) $value,
+                default => $value,
+            };
+        }
+
+        return $properties;
     }
 
     /**
