@@ -13,9 +13,6 @@ use Zing\CodingStandard\Printers\RuleSetPrinter;
 
 final class PhpCsFixerRuleSetGenerator
 {
-    /**
-     * @var array<string, string>
-     */
     private const MAP = [
         '@DoctrineAnnotation' => 'doctrine-annotation.php',
         '@PHP54Migration' => 'php54-migration.php',

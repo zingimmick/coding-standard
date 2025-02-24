@@ -144,10 +144,12 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\ControlStructures\LanguageConstructWithParenthesesSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\ControlStructures\UselessIfConditionWithReturnSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\ControlStructures\DisallowYodaComparisonSniff::class);
+    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\TypeHints\DNFTypeHintFormatSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\TypeHints\ParameterTypeHintSpacingSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\TypeHints\LongTypeHintsSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\TypeHints\ParameterTypeHintSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\TypeHints\UselessConstantTypeHintSniff::class);
+    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\TypeHints\ClassConstantTypeHintSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\TypeHints\NullTypeHintOnLastPositionSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\TypeHints\DisallowMixedTypeHintSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\TypeHints\UnionTypeHintFormatSniff::class);

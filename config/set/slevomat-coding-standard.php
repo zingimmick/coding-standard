@@ -17,9 +17,9 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\DisallowStringExpressionPropertyFetchSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\ConstantSpacingSniff::class);
     $ecsConfig->ruleWithConfiguration(\SlevomatCodingStandard\Sniffs\Classes\TraitUseSpacingSniff::class, [
-        'linesCountAfterLastUse' => '1',
-        'linesCountAfterLastUseWhenLastInClass' => '0',
-        'linesCountBeforeFirstUse' => '0',
+        'linesCountAfterLastUse' => 1,
+        'linesCountAfterLastUseWhenLastInClass' => 0,
+        'linesCountBeforeFirstUse' => 0,
     ]);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\ParentCallSpacingSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\SuperfluousInterfaceNamingSniff::class);
@@ -55,11 +55,11 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Namespaces\AlphabeticallySortedUsesSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Namespaces\MultipleUsesPerLineSniff::class);
     $ecsConfig->ruleWithConfiguration(\SlevomatCodingStandard\Sniffs\Namespaces\UnusedUsesSniff::class, [
-        'searchAnnotations' => '1',
+        'searchAnnotations' => true,
     ]);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Namespaces\DisallowGroupUseSniff::class);
     $ecsConfig->ruleWithConfiguration(\SlevomatCodingStandard\Sniffs\Namespaces\UseSpacingSniff::class, [
-        'linesCountBetweenUseTypes' => '1',
+        'linesCountBetweenUseTypes' => 1,
     ]);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Namespaces\NamespaceSpacingSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Namespaces\NamespaceDeclarationSniff::class);
@@ -100,12 +100,14 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\ControlStructures\LanguageConstructWithParenthesesSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\ControlStructures\UselessIfConditionWithReturnSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\ControlStructures\DisallowYodaComparisonSniff::class);
+    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\TypeHints\DNFTypeHintFormatSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\TypeHints\ParameterTypeHintSpacingSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\TypeHints\LongTypeHintsSniff::class);
+    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\TypeHints\ClassConstantTypeHintSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\TypeHints\NullTypeHintOnLastPositionSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\TypeHints\UnionTypeHintFormatSniff::class);
     $ecsConfig->ruleWithConfiguration(\SlevomatCodingStandard\Sniffs\TypeHints\DeclareStrictTypesSniff::class, [
-        'spacesCountAroundEqualsSign' => '0',
+        'spacesCountAroundEqualsSign' => 0,
     ]);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\TypeHints\ReturnTypeHintSpacingSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\TypeHints\NullableTypeForNullDefaultValueSniff::class);
