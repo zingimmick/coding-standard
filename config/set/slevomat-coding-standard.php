@@ -67,7 +67,9 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Namespaces\UseFromSameNamespaceSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Attributes\RequireAttributeAfterDocCommentSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Attributes\DisallowMultipleAttributesPerLineSniff::class);
-    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Attributes\AttributesOrderSniff::class);
+    $ecsConfig->ruleWithConfiguration(\SlevomatCodingStandard\Sniffs\Attributes\AttributesOrderSniff::class, [
+        'orderAlphabetically' => true,
+    ]);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Attributes\AttributeAndTargetSpacingSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Attributes\DisallowAttributesJoiningSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Variables\DisallowVariableVariableSniff::class);
