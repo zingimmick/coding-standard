@@ -14,6 +14,16 @@ use Symfony\Component\Finder\SplFileInfo;
 final class StyleTest extends TestCase
 {
     /**
+     * @dataProvider provideFixedCases
+     */
+    #[DataProvider('provideFixedCases')]
+    public function testFixed(SplFileInfo $fileInfo): void
+    {
+        $path = $fileInfo->getRelativePath() . '/' . $fileInfo->getFilename();
+        $this->assertFileEquals(__DIR__ . '/../correct/' . $path, __DIR__ . '/../fixed/' . $path);
+    }
+
+    /**
      * @return \Iterator<\Symfony\Component\Finder\SplFileInfo[]>
      */
     public static function provideFixedCases(): iterable
@@ -22,15 +32,5 @@ final class StyleTest extends TestCase
         foreach ($files as $file) {
             yield [$file];
         }
-    }
-
-    /**
-     * @dataProvider provideFixedCases
-     */
-    #[DataProvider('provideFixedCases')]
-    public function testFixed(SplFileInfo $fileInfo): void
-    {
-        $path = $fileInfo->getRelativePath() . '/' . $fileInfo->getFilename();
-        $this->assertFileEquals(__DIR__ . '/../correct/' . $path, __DIR__ . '/../fixed/' . $path);
     }
 }
