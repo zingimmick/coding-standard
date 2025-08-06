@@ -8,6 +8,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLinker](https://github.com/Symplify/ChangelogLinker).
 
 <!-- changelog-linker -->
+## 7.23.1 - 2025-08-06
+
+<!-- Release notes generated using configuration in .github/release.yml at 7.x -->
+### What's Changed
+
+#### Other Changes
+
+* Bump shivammathur/setup-php from 2.32.0 to 2.33.0 by @dependabot[bot] in https://github.com/zingimmick/coding-standard/pull/219
+* Bump stefanzweifel/git-auto-commit-action from 5 to 6 by @dependabot[bot] in https://github.com/zingimmick/coding-standard/pull/220
+* Bump shivammathur/setup-php from 2.33.0 to 2.34.0 by @dependabot[bot] in https://github.com/zingimmick/coding-standard/pull/221
+* Bump shivammathur/setup-php from 2.34.0 to 2.34.1 by @dependabot[bot] in https://github.com/zingimmick/coding-standard/pull/222
+* Bump shivammathur/setup-php from 2.34.1 to 2.35.1 by @dependabot[bot] in https://github.com/zingimmick/coding-standard/pull/223
+* Bump shivammathur/setup-php from 2.35.1 to 2.35.2 by @dependabot[bot] in https://github.com/zingimmick/coding-standard/pull/224
+
+**Full Changelog**: https://github.com/zingimmick/coding-standard/compare/7.23.0...7.23.1
+
 ## 7.23.0 - 2025-03-18
 
 <!-- Release notes generated using configuration in .github/release.yml at 7.x -->
