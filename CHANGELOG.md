@@ -8,6 +8,21 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLinker](https://github.com/Symplify/ChangelogLinker).
 
 <!-- changelog-linker -->
+## 7.23.2 - 2025-09-21
+
+<!-- Release notes generated using configuration in .github/release.yml at 7.x -->
+### What's Changed
+
+#### Other Changes
+
+* Bump shivammathur/setup-php from 2.35.2 to 2.35.3 by @dependabot[bot] in https://github.com/zingimmick/coding-standard/pull/225
+* Bump actions/checkout from 4 to 5 by @dependabot[bot] in https://github.com/zingimmick/coding-standard/pull/226
+* Bump shivammathur/setup-php from 2.35.3 to 2.35.4 by @dependabot[bot] in https://github.com/zingimmick/coding-standard/pull/227
+* Re-generate ruleset for friendsofphp/php-cs-fixer 3.87.2 by @zingimmick in https://github.com/zingimmick/coding-standard/pull/229
+* Bump shivammathur/setup-php from 2.35.4 to 2.35.5 by @dependabot[bot] in https://github.com/zingimmick/coding-standard/pull/228
+
+**Full Changelog**: https://github.com/zingimmick/coding-standard/compare/7.23.1...7.23.2
+
 ## 7.23.1 - 2025-08-06
 
 <!-- Release notes generated using configuration in .github/release.yml at 7.x -->
