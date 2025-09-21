@@ -40,6 +40,8 @@ final class PhpCsFixerSetList
 
     public const PHP84_MIGRATION = __DIR__ . '/../../config/set/php-cs-fixer/php84-migration.php';
 
+    public const PHP85_MIGRATION = __DIR__ . '/../../config/set/php-cs-fixer/php85-migration.php';
+
     public const PER = __DIR__ . '/../../config/set/php-cs-fixer/per.php';
 
     public const PER_RISKY = __DIR__ . '/../../config/set/php-cs-fixer/per-risky.php';
@@ -55,6 +57,10 @@ final class PhpCsFixerSetList
     public const PER_CS20 = __DIR__ . '/../../config/set/php-cs-fixer/per-cs20.php';
 
     public const PER_CS20_RISKY = __DIR__ . '/../../config/set/php-cs-fixer/per-cs20-risky.php';
+
+    public const PER_CS30 = __DIR__ . '/../../config/set/php-cs-fixer/per-cs30.php';
+
+    public const PER_CS30_RISKY = __DIR__ . '/../../config/set/php-cs-fixer/per-cs30-risky.php';
 
     public const PHP_CS_FIXER = __DIR__ . '/../../config/set/php-cs-fixer/php-cs-fixer.php';
 

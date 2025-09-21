@@ -38,6 +38,9 @@
         "roave/security-advisories": "dev-master",
         "symfony/finder": "^6.0 || ^7.0"
     },
+    "conflict": {
+        "squizlabs/php_codesniffer": ">=4.0.0"
+    },
     "autoload": {
         "psr-4": {
             "Zing\\CodingStandard\\": "src"
