@@ -67,4 +67,6 @@ final class ECSSetList
     public const PHP_83 = __DIR__ . '/../../config/set/php83.php';
 
     public const PHP_84 = __DIR__ . '/../../config/set/php84.php';
+
+    public const PHP_85 = __DIR__ . '/../../config/set/php85.php';
 }
