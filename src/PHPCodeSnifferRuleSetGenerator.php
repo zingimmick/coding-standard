@@ -80,7 +80,7 @@ final class PHPCodeSnifferRuleSetGenerator
      *
      * @return mixed[]
      */
-    private function formatProperties($sniff, $attr): array
+    private function formatProperties($sniff, array $attr): array
     {
         $reflectionClass = new \ReflectionClass($sniff);
         $properties = [];
