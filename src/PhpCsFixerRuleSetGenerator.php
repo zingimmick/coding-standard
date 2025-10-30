@@ -6,8 +6,10 @@ namespace Zing\CodingStandard;
 
 use PhpCsFixer\Fixer\ConfigurableFixerInterface;
 use PhpCsFixer\FixerFactory;
+use PhpCsFixer\RuleSet\AutomaticRuleSetDefinitionInterface;
+use PhpCsFixer\RuleSet\DeprecatedRuleSetDefinitionInterface;
 use PhpCsFixer\RuleSet\RuleSet;
-use PhpCsFixer\RuleSet\RuleSetDescriptionInterface;
+use PhpCsFixer\RuleSet\RuleSetDefinitionInterface;
 use PhpCsFixer\RuleSet\RuleSets;
 use Zing\CodingStandard\Printers\RuleSetPrinter;
 
@@ -15,58 +17,55 @@ final class PhpCsFixerRuleSetGenerator
 {
     private const MAP = [
         '@DoctrineAnnotation' => 'doctrine-annotation.php',
-        '@PHP54Migration' => 'php54-migration.php',
-        '@PHP56Migration:risky' => 'php56-migration-risky.php',
-        '@PHP70Migration' => 'php70-migration.php',
-        '@PHP70Migration:risky' => 'php70-migration-risky.php',
-        '@PHP71Migration' => 'php71-migration.php',
-        '@PHP71Migration:risky' => 'php71-migration-risky.php',
-        '@PHP73Migration' => 'php73-migration.php',
-        '@PHP74Migration' => 'php74-migration.php',
-        '@PHP74Migration:risky' => 'php74-migration-risky.php',
-        '@PHP80Migration' => 'php80-migration.php',
-        '@PHP80Migration:risky' => 'php80-migration-risky.php',
-        '@PHP81Migration' => 'php81-migration.php',
-        '@PHP82Migration' => 'php82-migration.php',
-        '@PHP82Migration:risky' => 'php82-migration-risky.php',
-        '@PHP83Migration' => 'php83-migration.php',
-        '@PHP84Migration' => 'php84-migration.php',
-        '@PHP85Migration' => 'php85-migration.php',
-        '@PHPUnit30Migration:risky' => 'phpunit30-migration-risky.php',
-        '@PHPUnit32Migration:risky' => 'phpunit32-migration-risky.php',
-        '@PHPUnit35Migration:risky' => 'phpunit35-migration-risky.php',
-        '@PHPUnit43Migration:risky' => 'phpunit43-migration-risky.php',
-        '@PHPUnit48Migration:risky' => 'phpunit48-migration-risky.php',
-        '@PHPUnit50Migration:risky' => 'phpunit50-migration-risky.php',
-        '@PHPUnit52Migration:risky' => 'phpunit52-migration-risky.php',
-        '@PHPUnit54Migration:risky' => 'phpunit54-migration-risky.php',
-        '@PHPUnit55Migration:risky' => 'phpunit55-migration-risky.php',
-        '@PHPUnit56Migration:risky' => 'phpunit56-migration-risky.php',
-        '@PHPUnit57Migration:risky' => 'phpunit57-migration-risky.php',
-        '@PHPUnit60Migration:risky' => 'phpunit60-migration-risky.php',
-        '@PHPUnit75Migration:risky' => 'phpunit75-migration-risky.php',
-        '@PHPUnit84Migration:risky' => 'phpunit84-migration-risky.php',
-        '@PHPUnit91Migration:risky' => 'phpunit91-migration-risky.php',
-        '@PHPUnit100Migration:risky' => 'phpunit100-migration-risky.php',
-        '@PER' => 'per.php',
-        '@PER:risky' => 'per-risky.php',
         '@PER-CS' => 'per-cs.php',
+        '@PER-CS1x0' => 'per-cs1x0.php',
+        '@PER-CS1x0:risky' => 'per-cs1x0-risky.php',
+        '@PER-CS2x0' => 'per-cs2x0.php',
+        '@PER-CS2x0:risky' => 'per-cs2x0-risky.php',
+        '@PER-CS3x0' => 'per-cs3x0.php',
+        '@PER-CS3x0:risky' => 'per-cs3x0-risky.php',
         '@PER-CS:risky' => 'per-cs-risky.php',
-        '@PER-CS1.0' => 'per-cs10.php',
-        '@PER-CS1.0:risky' => 'per-cs10-risky.php',
-        '@PER-CS2.0' => 'per-cs20.php',
-        '@PER-CS2.0:risky' => 'per-cs20-risky.php',
-        '@PER-CS3.0' => 'per-cs30.php',
-        '@PER-CS3.0:risky' => 'per-cs30-risky.php',
+        '@PHP5x4Migration' => 'php5x4-migration.php',
+        '@PHP5x6Migration:risky' => 'php5x6-migration-risky.php',
+        '@PHP7x0Migration' => 'php7x0-migration.php',
+        '@PHP7x0Migration:risky' => 'php7x0-migration-risky.php',
+        '@PHP7x1Migration' => 'php7x1-migration.php',
+        '@PHP7x1Migration:risky' => 'php7x1-migration-risky.php',
+        '@PHP7x3Migration' => 'php7x3-migration.php',
+        '@PHP7x4Migration' => 'php7x4-migration.php',
+        '@PHP7x4Migration:risky' => 'php7x4-migration-risky.php',
+        '@PHP8x0Migration' => 'php8x0-migration.php',
+        '@PHP8x0Migration:risky' => 'php8x0-migration-risky.php',
+        '@PHP8x1Migration' => 'php8x1-migration.php',
+        '@PHP8x2Migration' => 'php8x2-migration.php',
+        '@PHP8x2Migration:risky' => 'php8x2-migration-risky.php',
+        '@PHP8x3Migration' => 'php8x3-migration.php',
+        '@PHP8x4Migration' => 'php8x4-migration.php',
+        '@PHP8x5Migration' => 'php8x5-migration.php',
+        '@PHPUnit3x0Migration:risky' => 'phpunit3x0-migration-risky.php',
+        '@PHPUnit3x2Migration:risky' => 'phpunit3x2-migration-risky.php',
+        '@PHPUnit3x5Migration:risky' => 'phpunit3x5-migration-risky.php',
+        '@PHPUnit4x3Migration:risky' => 'phpunit4x3-migration-risky.php',
+        '@PHPUnit4x8Migration:risky' => 'phpunit4x8-migration-risky.php',
+        '@PHPUnit5x0Migration:risky' => 'phpunit5x0-migration-risky.php',
+        '@PHPUnit5x2Migration:risky' => 'phpunit5x2-migration-risky.php',
+        '@PHPUnit5x4Migration:risky' => 'phpunit5x4-migration-risky.php',
+        '@PHPUnit5x5Migration:risky' => 'phpunit5x5-migration-risky.php',
+        '@PHPUnit5x6Migration:risky' => 'phpunit5x6-migration-risky.php',
+        '@PHPUnit5x7Migration:risky' => 'phpunit5x7-migration-risky.php',
+        '@PHPUnit6x0Migration:risky' => 'phpunit6x0-migration-risky.php',
+        '@PHPUnit7x5Migration:risky' => 'phpunit7x5-migration-risky.php',
+        '@PHPUnit8x4Migration:risky' => 'phpunit8x4-migration-risky.php',
+        '@PHPUnit9x1Migration:risky' => 'phpunit9x1-migration-risky.php',
+        '@PHPUnit10x0Migration:risky' => 'phpunit10x0-migration-risky.php',
         '@PSR1' => 'psr1.php',
+        '@PSR2' => 'psr2.php',
         '@PSR12' => 'psr12.php',
         '@PSR12:risky' => 'psr12-risky.php',
-        '@PSR2' => 'psr2.php',
         '@PhpCsFixer' => 'php-cs-fixer.php',
         '@PhpCsFixer:risky' => 'php-cs-fixer-risky.php',
         '@Symfony' => 'symfony.php',
         '@Symfony:risky' => 'symfony-risky.php',
-        'laravel' => 'laravel.php',
         'custom' => '../php-cs-fixer-custom.php',
     ];
 
@@ -78,6 +77,14 @@ final class PhpCsFixerRuleSetGenerator
     public function generate(): void
     {
         foreach ($this->getSetDefinitions() as $setDefinition) {
+            if ($setDefinition instanceof DeprecatedRuleSetDefinitionInterface) {
+                continue;
+            }
+
+            if ($setDefinition instanceof AutomaticRuleSetDefinitionInterface) {
+                continue;
+            }
+
             $fixerFactory = new FixerFactory();
             $fixerFactory->registerBuiltInFixers();
             file_put_contents(
@@ -92,7 +99,7 @@ final class PhpCsFixerRuleSetGenerator
      */
     public function formatRulesToServices(
         FixerFactory $fixerFactory,
-        RuleSetDescriptionInterface $ruleSetDescription
+        RuleSetDefinitionInterface $ruleSetDescription
     ): array {
         $services = [];
         $ruleSet = new RuleSet($ruleSetDescription->getRules());

@@ -76,7 +76,7 @@ final class PHPCodeSnifferRuleSetGenerator
 
     /**
      * @param mixed $sniff
-     * @param mixed $attr
+     * @param array<string, mixed> $attr
      *
      * @return mixed[]
      */
@@ -105,6 +105,8 @@ final class PHPCodeSnifferRuleSetGenerator
     }
 
     /**
+     * @param array<string, \PHP_CodeSniffer\Sniffs\Sniff> $sniffs
+     *
      * @return array<string, array<string, mixed>>
      */
     private function formatSniffs(array $sniffs, bool $isStandard = false): array

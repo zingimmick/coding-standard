@@ -10,13 +10,15 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\ClassNotation\OrderedClassElementsFixer::class, [
         'order' => ['use_trait'],
     ]);
+    $ecsConfig->rule(\PhpCsFixer\Fixer\ClassNotation\ModifierKeywordsFixer::class);
     $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\ClassNotation\SingleClassElementPerStatementFixer::class, [
         'elements' => ['property'],
     ]);
-    $ecsConfig->rule(\PhpCsFixer\Fixer\ClassNotation\VisibilityRequiredFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\Whitespace\IndentationTypeFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\ControlStructure\ElseifFixer::class);
-    $ecsConfig->rule(\PhpCsFixer\Fixer\Operator\NewWithParenthesesFixer::class);
+    $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\Operator\NewWithParenthesesFixer::class, [
+        'anonymous_class' => true,
+    ]);
     $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\ClassNotation\ClassDefinitionFixer::class, [
         'inline_constructor_arguments' => false,
         'space_before_parenthesis' => true,
@@ -57,8 +59,11 @@ return static function (ECSConfig $ecsConfig): void {
         'constructs_preceded_by_a_single_space' => ['as', 'else', 'elseif', 'use_lambda'],
     ]);
     $ecsConfig->rule(\PhpCsFixer\Fixer\ClassNotation\SingleTraitInsertPerStatementFixer::class);
-    $ecsConfig->rule(\PhpCsFixer\Fixer\FunctionNotation\FunctionDeclarationFixer::class);
+    $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\FunctionNotation\FunctionDeclarationFixer::class, [
+        'closure_fn_spacing' => 'one',
+    ]);
     $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\FunctionNotation\MethodArgumentSpaceFixer::class, [
+        'after_heredoc' => false,
         'attribute_placement' => 'ignore',
         'on_multiline' => 'ensure_fully_multiline',
     ]);

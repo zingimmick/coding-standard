@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Zing\CodingStandard;
 
-use PhpCsFixer\RuleSet\AbstractRuleSetDescription;
+use PhpCsFixer\RuleSet\AbstractRuleSetDefinition;
 
-final class CustomSet extends AbstractRuleSetDescription
+final class CustomSet extends AbstractRuleSetDefinition
 {
     public function getName(): string
     {

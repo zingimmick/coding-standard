@@ -16,7 +16,7 @@ return static function (ECSConfig $ecsConfig): void {
     ]);
     $ecsConfig->rule(\PhpCsFixer\Fixer\PhpUnit\PhpUnitDataProviderMethodOrderFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\ClassNotation\SingleClassElementPerStatementFixer::class);
-    $ecsConfig->rule(\PhpCsFixer\Fixer\ClassNotation\VisibilityRequiredFixer::class);
+    $ecsConfig->rule(\PhpCsFixer\Fixer\ClassNotation\ModifierKeywordsFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\ClassNotation\ClassAttributesSeparationFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\Whitespace\IndentationTypeFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\ControlStructure\NoAlternativeSyntaxFixer::class);
@@ -47,7 +47,9 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\PhpCsFixer\Fixer\ClassNotation\SingleTraitInsertPerStatementFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\FunctionNotation\CombineNestedDirnameFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\Alias\PowToExponentiationFixer::class);
-    $ecsConfig->rule(\PhpCsFixer\Fixer\FunctionNotation\FunctionDeclarationFixer::class);
+    $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\FunctionNotation\FunctionDeclarationFixer::class, [
+        'closure_fn_spacing' => 'one',
+    ]);
     $ecsConfig->rule(\PhpCsFixer\Fixer\FunctionNotation\LambdaNotUsedImportFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\ArrayNotation\NoMultilineWhitespaceAroundDoubleArrowFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\Strict\StrictParamFixer::class);
@@ -73,7 +75,9 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\PhpCsFixer\Fixer\Whitespace\ArrayIndentationFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\Phpdoc\AlignMultilineCommentFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\Comment\CommentToPhpdocFixer::class);
-    $ecsConfig->rule(\PhpCsFixer\Fixer\Phpdoc\PhpdocToCommentFixer::class);
+    $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\Phpdoc\PhpdocToCommentFixer::class, [
+        'allow_before_return_statement' => false,
+    ]);
     $ecsConfig->rule(\PhpCsFixer\Fixer\LanguageConstruct\NoUnsetOnPropertyFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\LanguageConstruct\CombineConsecutiveUnsetsFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\Phpdoc\PhpdocIndentFixer::class);
@@ -85,7 +89,19 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\PhpCsFixer\Fixer\ReturnNotation\SimplifiedNullReturnFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\StringNotation\StringImplicitBackslashesFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\Operator\IncrementStyleFixer::class);
-    $ecsConfig->rule(\PhpCsFixer\Fixer\Phpdoc\PhpdocScalarFixer::class);
+    $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\Phpdoc\PhpdocScalarFixer::class, [
+        'types' => [
+            'boolean',
+            'callback',
+            'double',
+            'integer',
+            'never-return',
+            'never-returns',
+            'no-return',
+            'real',
+            'str',
+        ],
+    ]);
     $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\Phpdoc\GeneralPhpdocTagRenameFixer::class, [
         'replacements' => [
             'inheritDocs' => 'inheritDoc',
@@ -233,7 +249,9 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\PhpCsFixer\Fixer\Operator\StandardizeNotEqualsFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\ControlStructure\SwitchContinueToBreakFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\ArrayNotation\TrimArraySpacesFixer::class);
-    $ecsConfig->rule(\PhpCsFixer\Fixer\Whitespace\TypeDeclarationSpacesFixer::class);
+    $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\Whitespace\TypeDeclarationSpacesFixer::class, [
+        'elements' => ['function', 'property'],
+    ]);
     $ecsConfig->rule(\PhpCsFixer\Fixer\StringNotation\NoTrailingWhitespaceInStringFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\PhpUnit\PhpUnitDataProviderNameFixer::class);
     $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\PhpUnit\PhpUnitDataProviderStaticFixer::class, [
@@ -286,6 +304,7 @@ return static function (ECSConfig $ecsConfig): void {
             ['property', 'property-read', 'property-write'],
             ['deprecated', 'link', 'see', 'since'],
         ],
+        'skip_unlisted_annotations' => false,
     ]);
     $ecsConfig->rule(\PhpCsFixer\Fixer\Phpdoc\PhpdocTrimFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\PhpUnit\PhpUnitConstructFixer::class);

@@ -11,7 +11,7 @@ return static function (ECSConfig $ecsConfig): void {
         'order' => ['use_trait'],
     ]);
     $ecsConfig->rule(\PhpCsFixer\Fixer\ClassNotation\SingleClassElementPerStatementFixer::class);
-    $ecsConfig->rule(\PhpCsFixer\Fixer\ClassNotation\VisibilityRequiredFixer::class);
+    $ecsConfig->rule(\PhpCsFixer\Fixer\ClassNotation\ModifierKeywordsFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\Whitespace\IndentationTypeFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\ControlStructure\ElseifFixer::class);
     $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\Operator\NewWithParenthesesFixer::class, [
@@ -67,7 +67,9 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\FunctionNotation\FunctionDeclarationFixer::class, [
         'closure_fn_spacing' => 'none',
     ]);
-    $ecsConfig->rule(\PhpCsFixer\Fixer\FunctionNotation\MethodArgumentSpaceFixer::class);
+    $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\FunctionNotation\MethodArgumentSpaceFixer::class, [
+        'after_heredoc' => false,
+    ]);
     $ecsConfig->rule(\PhpCsFixer\Fixer\Whitespace\ArrayIndentationFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\FunctionNotation\NoSpacesAfterFunctionNameFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\Whitespace\SpacesInsideParenthesesFixer::class);

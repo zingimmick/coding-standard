@@ -94,6 +94,9 @@ class TestClass implements TestableContract
         return PHP_EOL;
     }
 
+    /**
+     * @return array<int, string>
+     */
     public function testSingleArray(): array
     {
         // post statement comment
