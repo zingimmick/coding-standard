@@ -8,6 +8,18 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLinker](https://github.com/Symplify/ChangelogLinker).
 
 <!-- changelog-linker -->
+## 7.24.0 - 2025-10-30
+
+<!-- Release notes generated using configuration in .github/release.yml at 7.x -->
+### What's Changed
+
+#### Other Changes
+
+* Support for PHP 8.5 by @zingimmick in https://github.com/zingimmick/coding-standard/pull/231
+* Bump stefanzweifel/git-auto-commit-action from 6 to 7 by @dependabot[bot] in https://github.com/zingimmick/coding-standard/pull/230
+
+**Full Changelog**: https://github.com/zingimmick/coding-standard/compare/7.23.2...7.24.0
+
 ## 7.23.2 - 2025-09-21
 
 <!-- Release notes generated using configuration in .github/release.yml at 7.x -->
