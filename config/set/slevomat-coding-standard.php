@@ -118,6 +118,7 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Commenting\InlineDocCommentDeclarationSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Commenting\UselessFunctionDocCommentSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Commenting\AnnotationNameSniff::class);
+    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Commenting\RequireOneDocCommentSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Commenting\DisallowCommentAfterCodeSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Commenting\ForbiddenCommentsSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Commenting\EmptyCommentSniff::class);
