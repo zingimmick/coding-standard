@@ -11,33 +11,12 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\Operators\ComparisonOperatorUsageSniff::class);
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\Operators\IncrementDecrementUsageSniff::class);
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\Operators\ValidLogicalOperatorsSniff::class);
-    $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\CSS\DisallowMultipleStyleDefinitionsSniff::class);
-    $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\CSS\LowercaseStyleDefinitionSniff::class);
-    $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\CSS\ClassDefinitionNameSpacingSniff::class);
-    $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\CSS\OpacitySniff::class);
-    $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\CSS\ClassDefinitionOpeningBraceSpaceSniff::class);
-    $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\CSS\ColonSpacingSniff::class);
-    $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\CSS\ForbiddenStylesSniff::class);
-    $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\CSS\NamedColoursSniff::class);
-    $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\CSS\ClassDefinitionClosingBraceSpaceSniff::class);
-    $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\CSS\ColourDefinitionSniff::class);
-    $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\CSS\DuplicateClassDefinitionSniff::class);
-    $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\CSS\EmptyStyleDefinitionSniff::class);
-    $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\CSS\EmptyClassDefinitionSniff::class);
-    $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\CSS\MissingColonSniff::class);
-    $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\CSS\DuplicateStyleDefinitionSniff::class);
-    $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\CSS\ShorthandSizeSniff::class);
-    $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\CSS\SemicolonSpacingSniff::class);
-    $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\CSS\IndentationSniff::class);
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\Classes\ValidClassNameSniff::class);
-    $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\Classes\DuplicatePropertySniff::class);
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\Classes\LowercaseClassKeywordsSniff::class);
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\Classes\SelfMemberReferenceSniff::class);
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\Classes\ClassFileNameSniff::class);
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\Classes\ClassDeclarationSniff::class);
-    $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\Objects\ObjectMemberCommaSniff::class);
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\Objects\ObjectInstantiationSniff::class);
-    $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\Objects\DisallowObjectStringIndexSniff::class);
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\Scope\MemberVarScopeSniff::class);
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\Scope\MethodScopeSniff::class);
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\Scope\StaticThisUsageSniff::class);
@@ -55,7 +34,6 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\PHP\DisallowComparisonAssignmentSniff::class);
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\PHP\EmbeddedPhpSniff::class);
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\PHP\NonExecutableCodeSniff::class);
-    $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\WhiteSpace\PropertyLabelSpacingSniff::class);
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\WhiteSpace\ControlStructureSpacingSniff::class);
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\WhiteSpace\FunctionSpacingSniff::class);
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\WhiteSpace\MemberVarSpacingSniff::class);
@@ -66,7 +44,6 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\WhiteSpace\LogicalOperatorSpacingSniff::class);
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\WhiteSpace\ScopeClosingBraceSniff::class);
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\WhiteSpace\SuperfluousWhitespaceSniff::class);
-    $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\WhiteSpace\LanguageConstructSpacingSniff::class);
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\WhiteSpace\FunctionOpeningBraceSpaceSniff::class);
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\WhiteSpace\ScopeKeywordSpacingSniff::class);
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\WhiteSpace\SemicolonSpacingSniff::class);
@@ -101,8 +78,6 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\Commenting\EmptyCatchCommentSniff::class);
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\Commenting\FunctionCommentThrowTagSniff::class);
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\Commenting\BlockCommentSniff::class);
-    $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\Debug\JSLintSniff::class);
-    $ecsConfig->rule(\PHP_CodeSniffer\Standards\Squiz\Sniffs\Debug\JavaScriptLintSniff::class);
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Generic\Sniffs\Arrays\DisallowLongArraySyntaxSniff::class);
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Generic\Sniffs\CodeAnalysis\EmptyStatementSniff::class);
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Generic\Sniffs\Commenting\TodoSniff::class);
@@ -128,7 +103,6 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\PEAR\Sniffs\Functions\ValidDefaultValueSniff::class);
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\PSR2\Sniffs\Files\EndFileNewlineSniff::class);
     $ecsConfig->rule(\PHP_CodeSniffer\Standards\Zend\Sniffs\Files\ClosingTagSniff::class);
-    $ecsConfig->rule(\PHP_CodeSniffer\Standards\Zend\Sniffs\Debug\CodeAnalyzerSniff::class);
     $ecsConfig->ruleWithConfiguration(\PHP_CodeSniffer\Standards\Generic\Sniffs\Files\LineLengthSniff::class, [
         'lineLimit' => '120',
         'absoluteLineLimit' => '0',
@@ -138,20 +112,13 @@ return static function (ECSConfig $ecsConfig): void {
     ]);
     $ecsConfig->ruleWithConfiguration(\PHP_CodeSniffer\Standards\Generic\Sniffs\Formatting\MultipleStatementAlignmentSniff::class, [
         'maxPadding' => '20',
-        'error' => 'true',
     ]);
     $ecsConfig->ruleWithConfiguration(\PHP_CodeSniffer\Standards\Generic\Sniffs\PHP\ForbiddenFunctionsSniff::class, [
         'forbiddenFunctions' => [
-            'sizeof' => 'count',
-            'delete' => 'unset',
             'print' => 'echo',
             'is_null' => 'null',
             'create_function' => 'null',
         ],
-    ]);
-    $ecsConfig->ruleWithConfiguration(\PHP_CodeSniffer\Standards\Generic\Sniffs\Debug\ClosureLinterSniff::class, [
-        'errorCodes' => ['0210'],
-        'ignoreCodes' => ['0001', '0110', '0240'],
     ]);
     $ecsConfig->ruleWithConfiguration(\PHP_CodeSniffer\Standards\PEAR\Sniffs\Functions\FunctionCallSignatureSniff::class, [
         'allowMultipleArguments' => 'false',

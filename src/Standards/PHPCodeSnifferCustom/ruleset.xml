@@ -11,7 +11,6 @@
         <exclude name="Generic.Files.EndFileNoNewline"/>
         <exclude name="Generic.PHP.RequireStrictTypes"/>
         <exclude name="Generic.Files.LowercasedFilename"/>
-        <exclude name="Generic.Formatting.NoSpaceAfterCast"/>
         <exclude name="Generic.Functions.OpeningFunctionBraceKernighanRitchie"/>
         <exclude name="Generic.Functions.OpeningFunctionBraceBsdAllman"/>
         <exclude name="Generic.PHP.UpperCaseConstant"/>
@@ -25,10 +24,6 @@
         <exclude name="Generic.NamingConventions.ConstructorName"/>
         <exclude name="Generic.WhiteSpace.LanguageConstructSpacing"/>
         <exclude name="Generic.Files.InlineHTML"/>
-        <exclude name="Generic.Debug.CSSLint"/>
-        <exclude name="Generic.Debug.ESLint"/>
-        <exclude name="Generic.Debug.JSHint"/>
-        <exclude name="Generic.Debug.ClosureLinter"/>
         <exclude name="Generic.CodeAnalysis.UnusedFunctionParameter"/>
     </rule>
 
@@ -102,13 +97,6 @@
         <exclude name="Generic.NamingConventions.ConstructorName"/>
         <exclude name="Squiz.PHP.Heredoc"/>
         <exclude name="Generic.WhiteSpace.LanguageConstructSpacing"/>
-        <exclude name="Squiz.CSS"/>
-        <exclude name="Squiz.Debug.JSLint"/>
-        <exclude name="Squiz.Debug.JavaScriptLint"/>
-        <exclude name="Squiz.Classes.DuplicateProperty"/>
-        <exclude name="Squiz.Objects.ObjectMemberComma"/>
-        <exclude name="Squiz.Objects.DisallowObjectStringIndex"/>
-        <exclude name="Squiz.WhiteSpace.PropertyLabelSpacing"/>
         <exclude name="Squiz.Commenting.PostStatementComment"/>
         <exclude name="Squiz.Classes.ClassFileName"/>
     </rule>
