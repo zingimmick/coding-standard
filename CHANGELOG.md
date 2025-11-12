@@ -8,6 +8,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLinker](https://github.com/Symplify/ChangelogLinker).
 
 <!-- changelog-linker -->
+## 7.25.0 - 2025-11-12
+
+<!-- Release notes generated using configuration in .github/release.yml at 7.x -->
+### What's Changed
+
+#### Other Changes
+
+* Support ECS 13.0 by @zingimmick in https://github.com/zingimmick/coding-standard/pull/232
+
+**Full Changelog**: https://github.com/zingimmick/coding-standard/compare/7.24.0...7.25.0
+
 ## 7.24.0 - 2025-10-30
 
 <!-- Release notes generated using configuration in .github/release.yml at 7.x -->
