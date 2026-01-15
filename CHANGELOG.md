@@ -8,6 +8,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLinker](https://github.com/Symplify/ChangelogLinker).
 
 <!-- changelog-linker -->
+## 7.26.0 - 2026-01-15
+
+<!-- Release notes generated using configuration in .github/release.yml at 7.x -->
+### What's Changed
+
+#### Other Changes
+
+* Bump actions/checkout from 5 to 6 by @dependabot[bot] in https://github.com/zingimmick/coding-standard/pull/233
+* Bump shivammathur/setup-php from 2.35.5 to 2.36.0 by @dependabot[bot] in https://github.com/zingimmick/coding-standard/pull/234
+* Update license copyright year(s) by @github-actions[bot] in https://github.com/zingimmick/coding-standard/pull/235
+
+**Full Changelog**: https://github.com/zingimmick/coding-standard/compare/7.25.0...7.26.0
+
 ## 7.25.0 - 2025-11-12
 
 <!-- Release notes generated using configuration in .github/release.yml at 7.x -->
