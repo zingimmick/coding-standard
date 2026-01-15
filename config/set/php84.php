@@ -11,6 +11,6 @@ return static function (ECSConfig $ecsConfig): void {
     SniffSettingsHelper::setPhpVersion(PhpVersion::PHP_84);
     $ecsConfig->sets([
         PhpCsFixerSetList::PHP84_MIGRATION,
-        PhpCsFixerSetList::PHP82_MIGRATION_RISKY,
+        PhpCsFixerSetList::PHP84_MIGRATION_RISKY,
     ]);
 };

@@ -33,6 +33,7 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\EnumCaseSpacingSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\ClassConstantVisibilitySniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\BackedEnumTypeSpacingSniff::class);
+    $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\ClassKeywordOrderSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\MethodSpacingSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\DisallowLateStaticBindingForConstantsSniff::class);
     $ecsConfig->rule(\SlevomatCodingStandard\Sniffs\Classes\TraitUseDeclarationSniff::class);

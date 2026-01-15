@@ -32,15 +32,23 @@ final class PhpCsFixerSetList
 
     public const PHP81_MIGRATION = __DIR__ . '/../../config/set/php-cs-fixer/php8x1-migration.php';
 
+    public const PHP81_MIGRATION_RISKY = __DIR__ . '/../../config/set/php-cs-fixer/php8x1-migration-risky.php';
+
     public const PHP82_MIGRATION = __DIR__ . '/../../config/set/php-cs-fixer/php8x2-migration.php';
 
     public const PHP82_MIGRATION_RISKY = __DIR__ . '/../../config/set/php-cs-fixer/php8x2-migration-risky.php';
 
     public const PHP83_MIGRATION = __DIR__ . '/../../config/set/php-cs-fixer/php8x3-migration.php';
 
+    public const PHP83_MIGRATION_RISKY = __DIR__ . '/../../config/set/php-cs-fixer/php8x3-migration-risky.php';
+
     public const PHP84_MIGRATION = __DIR__ . '/../../config/set/php-cs-fixer/php8x4-migration.php';
 
+    public const PHP84_MIGRATION_RISKY = __DIR__ . '/../../config/set/php-cs-fixer/php8x4-migration-risky.php';
+
     public const PHP85_MIGRATION = __DIR__ . '/../../config/set/php-cs-fixer/php8x5-migration.php';
+
+    public const PHP85_MIGRATION_RISKY = __DIR__ . '/../../config/set/php-cs-fixer/php8x5-migration-risky.php';
 
     /**
      * @deprecated Use \Zing\CodingStandard\Set\PhpCsFixerSetList::PER_CS instead
@@ -101,6 +109,8 @@ final class PhpCsFixerSetList
     public const PHPUNIT84_MIGRATION_RISKY = __DIR__ . '/../../config/set/php-cs-fixer/phpunit8x4-migration-risky.php';
 
     public const PHPUNIT100_MIGRATION_RISKY = __DIR__ . '/../../config/set/php-cs-fixer/phpunit10x0-migration-risky.php';
+
+    public const PHPUNIT110_MIGRATION_RISKY = __DIR__ . '/../../config/set/php-cs-fixer/phpunit11x0-migration-risky.php';
 
     public const PSR1 = __DIR__ . '/../../config/set/php-cs-fixer/psr1.php';
 
