@@ -8,6 +8,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLinker](https://github.com/Symplify/ChangelogLinker).
 
 <!-- changelog-linker -->
+## 7.27.0 - 2026-07-08
+
+<!-- Release notes generated using configuration in .github/release.yml at 7.x -->
+### What's Changed
+
+#### Other Changes
+
+* Bump ramsey/composer-install from 3 to 4 by @dependabot[bot] in https://github.com/zingimmick/coding-standard/pull/237
+* Bump shivammathur/setup-php from 2.36.0 to 2.37.0 by @dependabot[bot] in https://github.com/zingimmick/coding-standard/pull/236
+* Support for PHPUnit 13 by @zingimmick in https://github.com/zingimmick/coding-standard/pull/238
+* Bump shivammathur/setup-php from 2.37.0 to 2.37.1 by @dependabot[bot] in https://github.com/zingimmick/coding-standard/pull/239
+* Bump shivammathur/setup-php from 2.37.1 to 2.37.2 by @dependabot[bot] in https://github.com/zingimmick/coding-standard/pull/240
+* Bump actions/checkout from 6 to 7 by @dependabot[bot] in https://github.com/zingimmick/coding-standard/pull/241
+
+**Full Changelog**: https://github.com/zingimmick/coding-standard/compare/7.26.0...7.27.0
+
 ## 7.26.0 - 2026-01-15
 
 <!-- Release notes generated using configuration in .github/release.yml at 7.x -->
