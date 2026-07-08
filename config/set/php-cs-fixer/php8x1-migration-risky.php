@@ -9,11 +9,11 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\Alias\NoAliasFunctionsFixer::class, [
         'sets' => ['@all'],
     ]);
-    $ecsConfig->rule(\PhpCsFixer\Fixer\Alias\ModernizeStrposFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\FunctionNotation\ImplodeCallFixer::class);
+    $ecsConfig->rule(\PhpCsFixer\Fixer\Alias\ModernizeStrposFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\FunctionNotation\CombineNestedDirnameFixer::class);
-    $ecsConfig->rule(\PhpCsFixer\Fixer\FunctionNotation\UseArrowFunctionsFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\Alias\PowToExponentiationFixer::class);
+    $ecsConfig->rule(\PhpCsFixer\Fixer\FunctionNotation\UseArrowFunctionsFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\FunctionNotation\VoidReturnFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\Strict\DeclareStrictTypesFixer::class);
     $ecsConfig->rule(\PhpCsFixer\Fixer\LanguageConstruct\GetClassToClassKeywordFixer::class);
@@ -22,7 +22,9 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\PhpCsFixer\Fixer\Basic\NonPrintableCharacterFixer::class);
     $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\Alias\RandomApiMigrationFixer::class, [
         'replacements' => [
+            'mt_getrandmax' => 'getrandmax',
             'mt_rand' => 'random_int',
+            'mt_srand' => 'srand',
             'rand' => 'random_int',
         ],
     ]);

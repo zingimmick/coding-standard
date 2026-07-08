@@ -11,10 +11,10 @@ return static function (ECSConfig $ecsConfig): void {
         'after_heredoc' => true,
     ]);
     $ecsConfig->rule(\PhpCsFixer\Fixer\ListNotation\ListSyntaxFixer::class);
-    $ecsConfig->rule(\PhpCsFixer\Fixer\Operator\TernaryToNullCoalescingFixer::class);
     $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\ArrayNotation\NoWhitespaceBeforeCommaInArrayFixer::class, [
         'after_heredoc' => true,
     ]);
+    $ecsConfig->rule(\PhpCsFixer\Fixer\Operator\TernaryToNullCoalescingFixer::class);
     $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\ControlStructure\TrailingCommaInMultilineFixer::class, [
         'after_heredoc' => true,
     ]);

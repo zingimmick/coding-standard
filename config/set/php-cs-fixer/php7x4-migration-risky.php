@@ -15,7 +15,9 @@ return static function (ECSConfig $ecsConfig): void {
     $ecsConfig->rule(\PhpCsFixer\Fixer\Basic\NonPrintableCharacterFixer::class);
     $ecsConfig->ruleWithConfiguration(\PhpCsFixer\Fixer\Alias\RandomApiMigrationFixer::class, [
         'replacements' => [
+            'mt_getrandmax' => 'getrandmax',
             'mt_rand' => 'random_int',
+            'mt_srand' => 'srand',
             'rand' => 'random_int',
         ],
     ]);
