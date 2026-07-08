@@ -55,7 +55,7 @@ class TestClass implements TestableContract
     /**
      * @param mixed $a
      */
-    public function concat(string $a): string
+    public function concat($a): string
     {
         return $a . '';
     }
@@ -111,9 +111,11 @@ class TestClass implements TestableContract
         return [
             'eventCrowd' => static fn ($query) => $query->with('rule'),
             'eventAuction' => static fn ($query) => $query->with('rule'),
-            'logs' => static fn ($query) => $query->with([
-                'admin' => static fn ($query) => $query->select('id', 'name'),
-            ]),
+            'logs' => static fn ($query) => $query->with(
+                [
+                    'admin' => static fn ($query) => $query->select('id', 'name'),
+                ]
+            ),
             'images',
         ];
     }
