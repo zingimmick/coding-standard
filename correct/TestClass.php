@@ -71,7 +71,7 @@ class TestClass implements TestableContract
 
     public function longConditionClosingComment(): void
     {
-        if (random_int(0, 1) !== 0) {
+        if (random_int(0, 1)) {
             echo 1;
             echo 2;
         } else {

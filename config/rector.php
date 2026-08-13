@@ -5,8 +5,8 @@ declare(strict_types=1);
 use Rector\Config\RectorConfig;
 use Rector\Set\ValueObject\SetList;
 
-return static function (RectorConfig $rectorConfig): void {
-    $rectorConfig->sets([
+return RectorConfig::configure()
+    ->withSets([
         SetList::CODE_QUALITY,
         SetList::DEAD_CODE,
         SetList::PRIVATIZATION,
@@ -16,6 +16,4 @@ return static function (RectorConfig $rectorConfig): void {
         SetList::INSTANCEOF,
         SetList::EARLY_RETURN,
         SetList::CODING_STYLE,
-        SetList::STRICT_BOOLEANS,
     ]);
-};

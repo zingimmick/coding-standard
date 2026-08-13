@@ -8,16 +8,15 @@ use Symplify\CodingStandard\Fixer\LineLength\LineLengthFixer;
 use Symplify\EasyCodingStandard\Config\ECSConfig;
 use Zing\CodingStandard\Set\ECSSetList;
 
-return static function (ECSConfig $ecsConfig): void {
-    $ecsConfig->sets([ECSSetList::PHP_80, ECSSetList::CUSTOM]);
-    $ecsConfig->parallel();
-    $ecsConfig->skip([
+return ECSConfig::configure()
+    ->withSets([ECSSetList::PHP_80, ECSSetList::CUSTOM])
+    ->withParallel()
+    ->withSkip([
         CamelCapsMethodNameSniff::class => [__DIR__ . '/src/Printer.php'],
         LineLengthFixer::class => [__DIR__ . '/config'],
         FileLengthSniff::class => [__DIR__ . '/config'],
-    ]);
-
-    $ecsConfig->paths([
+    ])
+    ->withPaths([
         __DIR__ . '/bin',
         __DIR__ . '/config',
         __DIR__ . '/fixed',
@@ -26,4 +25,3 @@ return static function (ECSConfig $ecsConfig): void {
         __DIR__ . '/ecs.php',
         __DIR__ . '/rector.php',
     ]);
-};
