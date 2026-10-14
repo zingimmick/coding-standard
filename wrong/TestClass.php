@@ -8,7 +8,10 @@ use const PHP_EOL;
 use function count;
 use Zing\CodingStandard\Correct\Concerns\Testable;
 use Zing\CodingStandard\Correct\Concerns\TraitA;
+use \Zing\CodingStandard\Correct\Foo;
+
 use Zing\CodingStandard\Correct\Concerns\TraitB;
+use function GuzzleHttp\Psr7\stream_for;
 
 class TestClass implements TestableContract
 {use Testable,TraitA;
@@ -20,8 +23,7 @@ public const C = 2;
 // test
         'test' => true,
     ];
-    /** @var Foo */
-protected $foo;
+protected Foo $foo;
     /**
      * @var Bar
      */
@@ -131,5 +133,17 @@ public $bar;
     public function foo(): Foo
     {
         return $this->foo;
+    }
+
+    /**
+     * @param array{size?: int, metadata?: array<string, mixed>} $options
+     */
+    protected function streamFor(string $content = '', array $options = []): \Psr\Http\Message\StreamInterface
+    {
+        if (\function_exists('\GuzzleHttp\Psr7\stream_for')) {
+            return stream_for($content, $options);
+        }
+
+        return Utils::streamFor($content, $options);
     }
 }

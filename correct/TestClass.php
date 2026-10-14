@@ -8,6 +8,8 @@ use Zing\CodingStandard\Correct\Concerns\Testable;
 use Zing\CodingStandard\Correct\Concerns\TraitA;
 use Zing\CodingStandard\Correct\Concerns\TraitB;
 
+use function GuzzleHttp\Psr7\stream_for;
+
 class TestClass implements TestableContract
 {
     use Testable;
@@ -131,5 +133,17 @@ class TestClass implements TestableContract
     public function foo(): Foo
     {
         return $this->foo;
+    }
+
+    /**
+     * @param array{size?: int, metadata?: array<string, mixed>} $options
+     */
+    protected function streamFor(string $content = '', array $options = []): \Psr\Http\Message\StreamInterface
+    {
+        if (\function_exists('\GuzzleHttp\Psr7\stream_for')) {
+            return stream_for($content, $options);
+        }
+
+        return Utils::streamFor($content, $options);
     }
 }
