@@ -14,4 +14,7 @@ return ECSConfig::configure()
         ECSSetList::PHP_CS_FIXER_CUSTOM,
         ECSSetList::PHP_CODESNIFFER_CUSTOM,
         ECSSetList::SLEVOMAT_CODING_STANDARD_CUSTOM,
+    ])
+    ->withSkip([
+        \Symplify\CodingStandard\Fixer\Spacing\NoBlankLineBetweenImportsFixer::class,
     ]);
