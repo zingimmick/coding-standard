@@ -88,7 +88,7 @@ final class PHPCodeSnifferRuleSetGenerator
             $value = $property['value'] ?? $property;
             $type = $reflectionClass->getProperty($key)
                 ->getType();
-            if ($type === null) {
+            if (! $type instanceof \ReflectionType) {
                 $properties[$key] = $value;
 
                 continue;

@@ -106,7 +106,7 @@ class TestClass implements TestableContract
     }
 
     /**
-     * @return array<string|int, \Closure(mixed $query): mixed|string>
+     * @return array<int|string, \Closure(mixed $query): mixed|string>
      */
     public function testScopeClosingBrace(): array
     {

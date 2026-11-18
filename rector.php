@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 use Rector\CodeQuality\Rector\If_\SimplifyIfNotNullReturnRector;
 use Rector\Config\RectorConfig;
-use Rector\Naming\Rector\Assign\RenameVariableToMatchMethodCallReturnTypeRector;
-use Rector\Naming\Rector\ClassMethod\RenameParamToMatchTypeRector;
 use Rector\PHPUnit\Set\PHPUnitSetList;
 use Rector\Privatization\Rector\MethodCall\PrivatizeLocalGetterToPropertyRector;
 use Rector\Set\ValueObject\LevelSetList;
@@ -19,8 +17,6 @@ return RectorConfig::configure()
         __DIR__ . '/vendor/symplify/easy-coding-standard/vendor/autoload.php',
     ])
     ->withSkip([
-        RenameParamToMatchTypeRector::class,
-        RenameVariableToMatchMethodCallReturnTypeRector::class,
         PrivatizeLocalGetterToPropertyRector::class,
         SimplifyIfNotNullReturnRector::class,
     ])
