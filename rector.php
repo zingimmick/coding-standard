@@ -19,8 +19,6 @@ return RectorConfig::configure()
         __DIR__ . '/vendor/symplify/easy-coding-standard/vendor/autoload.php',
     ])
     ->withSkip([
-        RenameParamToMatchTypeRector::class,
-        RenameVariableToMatchMethodCallReturnTypeRector::class,
         PrivatizeLocalGetterToPropertyRector::class,
         SimplifyIfNotNullReturnRector::class,
     ])
