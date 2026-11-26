@@ -12,7 +12,5 @@ return RectorConfig::configure()
         SetList::PRIVATIZATION,
         SetList::TYPE_DECLARATION,
         SetList::TYPE_DECLARATION_DOCBLOCKS,
-        SetList::INSTANCEOF,
-        SetList::EARLY_RETURN,
         SetList::CODING_STYLE,
     ]);
