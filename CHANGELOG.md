@@ -8,6 +8,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 PRs and issues are linked, so you can find more about it. Thanks to [ChangelogLinker](https://github.com/Symplify/ChangelogLinker).
 
 <!-- changelog-linker -->
+## 7.30.0 - 2026-11-26
+
+<!-- Release notes generated using configuration in .github/release.yml at 7.x -->
+### What's Changed
+
+#### Other Changes
+
+* Remove roave/security-advisories dependency by @zingimmick in https://github.com/zingimmick/coding-standard/pull/244
+* Support for PHP 8.6 by @zingimmick in https://github.com/zingimmick/coding-standard/pull/245
+* Remove NAMING set from rector configuration by @zingimmick in https://github.com/zingimmick/coding-standard/pull/246
+
+**Full Changelog**: https://github.com/zingimmick/coding-standard/compare/7.29.0...7.30.0
+
 ## 7.29.0 - 2026-10-14
 
 <!-- Release notes generated using configuration in .github/release.yml at 7.x -->
