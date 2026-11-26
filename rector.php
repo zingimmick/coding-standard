@@ -6,12 +6,11 @@ use Rector\CodeQuality\Rector\If_\SimplifyIfNotNullReturnRector;
 use Rector\Config\RectorConfig;
 use Rector\PHPUnit\Set\PHPUnitSetList;
 use Rector\Privatization\Rector\MethodCall\PrivatizeLocalGetterToPropertyRector;
-use Rector\Set\ValueObject\LevelSetList;
 use Zing\CodingStandard\Set\RectorSetList;
 
 return RectorConfig::configure()
-    ->withPhpSets()
     ->withSets([RectorSetList::CUSTOM, PHPUnitSetList::PHPUNIT_CODE_QUALITY])
+    ->withPhpSets()
     ->withParallel()
     ->withBootstrapFiles([
         __DIR__ . '/vendor/squizlabs/php_codesniffer/autoload.php',
