@@ -10,10 +10,7 @@ return RectorConfig::configure()
         SetList::CODE_QUALITY,
         SetList::DEAD_CODE,
         SetList::PRIVATIZATION,
-        SetList::NAMING,
         SetList::TYPE_DECLARATION,
         SetList::TYPE_DECLARATION_DOCBLOCKS,
-        SetList::INSTANCEOF,
-        SetList::EARLY_RETURN,
         SetList::CODING_STYLE,
     ]);
