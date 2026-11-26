@@ -10,7 +10,8 @@ use Rector\Set\ValueObject\LevelSetList;
 use Zing\CodingStandard\Set\RectorSetList;
 
 return RectorConfig::configure()
-    ->withSets([LevelSetList::UP_TO_PHP_80, RectorSetList::CUSTOM, PHPUnitSetList::PHPUNIT_CODE_QUALITY])
+    ->withPhpSets()
+    ->withSets([RectorSetList::CUSTOM, PHPUnitSetList::PHPUNIT_CODE_QUALITY])
     ->withParallel()
     ->withBootstrapFiles([
         __DIR__ . '/vendor/squizlabs/php_codesniffer/autoload.php',
